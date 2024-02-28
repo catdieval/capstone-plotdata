@@ -18,7 +18,7 @@ export default function Title() {
   return (
     <>
       <StyledTitle>
-        <Image src={logoImage} alt={""} width={300} height={74} />
+        <Image src={logoImage} alt={"plotdata-logo"} width={300} height={74} />
       </StyledTitle>
     </>
   );
