@@ -9,6 +9,6 @@ const StyledButton = styled.button`
   font-weight: bold;
 `;
 
-export default function Button() {
-  return <StyledButton></StyledButton>;
+export default function Button({ children }) {
+  return <StyledButton>{children}</StyledButton>;
 }
