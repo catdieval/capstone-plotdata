@@ -1,15 +1,16 @@
 import Heading from "../../Layout/Heading";
 import Paragraph from "../../Layout/Paragraph";
-import InputTypeSubmit from "../../Layout/InputTypeSubmit";
+import CenteredDiv from "../../Layout/CenteredDiv";
 import CorrectArrays from "../CorrectArrays";
 import FileUploader from "../FileUploader";
 import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 const { convertCSVToArray } = require("convert-csv-to-array");
+import styled from "styled-components";
 
 export default function UploadData() {
   //State to store keys from the CSV file
-  const [keynames, setKeyNames] = useLocalStorageState("keynames", {
+  const [keynames, setKeynames] = useLocalStorageState("keynames", {
     defaultValue: [],
   });
 
@@ -56,5 +57,51 @@ export default function UploadData() {
     reader.readAsText(fileObj);
   };
 
-  return <></>;
+  const StyledInputTypeSubmit = styled.input.attrs({
+    type: "submit",
+  })`
+    background-color: deepskyblue;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  `;
+
+  return (
+    <>
+      <Heading>Step 1: Upload a CSV file to get the data.</Heading>
+      <Paragraph>
+        <b>Notes:</b>
+        <br></br>
+        The file should have a header.<br></br>
+        The file should be comma-delimited and the decimal separator for numbers
+        should be a period (.).<br></br>
+        If the file contains missing values, then replace these values in the
+        file by null.
+      </Paragraph>
+      <form onSubmit={handleSubmit}>
+        <CenteredDiv>
+          <FileUploader handleFile={handleFile} />
+          {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
+          <StyledInputTypeSubmit
+            type="submit"
+            value="Submit"
+            onClick={handleConversion}
+            disabled={!isUploaded}
+          />
+        </CenteredDiv>
+      </form>
+    </>
+  );
 }
+
+/*
+style={{
+              backgroundColor: "#1f77b4",
+              padding: "10px",
+              cursor: "pointer",
+              fontSize: "16px",
+              color: "white",
+              fontWeight: "bold",
+            }}
+*/
