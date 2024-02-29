@@ -6,7 +6,7 @@ import FileUploader from "../FileUploader";
 import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 const { convertCSVToArray } = require("convert-csv-to-array");
-import styled from "styled-components";
+import { StyledInputTypeSubmit } from "@/Layout/StyledInputTypeSubmit";
 
 export default function UploadData() {
   //State to store keys from the CSV file
@@ -57,16 +57,6 @@ export default function UploadData() {
     reader.readAsText(fileObj);
   };
 
-  const StyledInputTypeSubmit = styled.input.attrs({
-    type: "submit",
-  })`
-    background-color: deepskyblue;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-  `;
-
   return (
     <>
       <Heading>Step 1: Upload a CSV file to get the data.</Heading>
@@ -94,14 +84,3 @@ export default function UploadData() {
     </>
   );
 }
-
-/*
-style={{
-              backgroundColor: "#1f77b4",
-              padding: "10px",
-              cursor: "pointer",
-              fontSize: "16px",
-              color: "white",
-              fontWeight: "bold",
-            }}
-*/
