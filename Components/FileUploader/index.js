@@ -19,15 +19,13 @@ export default function FileUploader({ handleFile }) {
 
   return (
     <>
-      <div>
-        <Button onClick={handleClick}>Choose a file</Button>
-        <StyledInput
-          type="file"
-          accept=".csv"
-          ref={hiddenFileInput}
-          onChange={handleChange}
-        />
-      </div>
+      <Button onClick={handleClick}>Choose a file</Button>
+      <StyledInput
+        type="file"
+        accept=".csv"
+        ref={hiddenFileInput}
+        onChange={handleChange}
+      />
     </>
   );
 }
