@@ -21,5 +21,20 @@ export default function UploadData() {
   //State to store the file object
   const [fileObj, setFileObj] = useState({});
 
+  // State to store the isUploaded status
+  const [isUploaded, setIsUploaded] = useState(false);
+
+  const handleFile = (file) => {
+    setFileObj(file);
+    setIsUploaded(true);
+  };
+
+  // Name of file
+  const fileName = fileObj.name;
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return <></>;
 }
