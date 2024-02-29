@@ -1,6 +1,10 @@
 import Button from "@/Layout/Button";
 import { useRef } from "react";
+import styled from "styled-components";
 
+const StyledInput = styled.input`
+  display: none;
+`;
 export default function FileUploader({ handleFile }) {
   const hiddenFileInput = useRef(null);
 
@@ -15,13 +19,15 @@ export default function FileUploader({ handleFile }) {
 
   return (
     <>
-      <Button onClick={handleClick}>Choose a file</Button>
-      <input
-        type="file"
-        accept=".csv"
-        ref={hiddenFileInput}
-        onChange={handleChange}
-      />
+      <div>
+        <Button onClick={handleClick}>Choose a file</Button>
+        <StyledInput
+          type="file"
+          accept=".csv"
+          ref={hiddenFileInput}
+          onChange={handleChange}
+        />
+      </div>
     </>
   );
 }
