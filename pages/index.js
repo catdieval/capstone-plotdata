@@ -1,3 +1,9 @@
+import UploadData from "../Components/UploadData";
+
 export default function HomePage() {
-  return <div></div>;
+  return (
+    <div>
+      <UploadData />
+    </div>
+  );
 }
