@@ -36,5 +36,25 @@ export default function UploadData() {
     event.preventDefault();
   };
 
+  // Reading the file and converting the result to an array of objects
+  const handleConversion = () => {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      const arrayOfObjects = convertCSVToArray(e.target.result, {
+        separator: ",",
+      });
+
+      // The output of the convertCSVToArray function needs further processing
+      const [keys, ...correctValues] = CorrectArrays(arrayOfObjects);
+
+      setKeynames(keys);
+      setVals(correctValues);
+      alert("File processed successfully");
+    };
+
+    reader.readAsText(fileObj);
+  };
+
   return <></>;
 }
