@@ -1,13 +1,21 @@
 import Title from "./Title";
 import Head from "next/head";
+import styled from "styled-components";
 
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  margin-top: 140px;
+  min-height: 100vh;
+  max-width: 640px;
+`;
 export default function Layout({ children }) {
   return (
     <div>
       <Head>
         <title>PlotData</title>
       </Head>
-      <main>{children}</main>
+      <Main>{children}</Main>
       <Title />
     </div>
   );
