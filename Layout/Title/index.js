@@ -16,10 +16,8 @@ const StyledTitle = styled.section`
 
 export default function Title() {
   return (
-    <>
-      <StyledTitle>
-        <Image src={logoImage} alt={"plotdata-logo"} width={300} height={74} />
-      </StyledTitle>
-    </>
+    <StyledTitle>
+      <Image src={logoImage} alt={"plotdata-logo"} width={300} height={74} />
+    </StyledTitle>
   );
 }
