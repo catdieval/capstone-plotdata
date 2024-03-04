@@ -1,16 +1,14 @@
-export default function CorrectArrays(arrayofobjects) {
-  const [keyitems, ...csvArray] = arrayofobjects;
-  const csvArray2 = csvArray.filter(
-    (row, index, arr) => index !== arr.length - 1
+export default function CorrectArrays(arrayOfObjects) {
+  const [keyItems, ...csvArray] = arrayOfObjects.slice(0, -1);
+
+  const correctedArray = csvArray.map((row) =>
+    Object.fromEntries(
+      Object.entries(row).map(([key, value]) => [
+        key,
+        value === "null" ? null : value,
+      ])
+    )
   );
 
-  let csvArray3 = [...csvArray2];
-  for (let i = 0; i < csvArray3.length; i++) {
-    for (let key in csvArray3[i]) {
-      if (csvArray3[i][key] == "null") {
-        csvArray3[i][key] = JSON.parse(csvArray3[i][key]);
-      }
-    }
-  }
-  return [keyitems, ...csvArray3];
+  return [keyItems, ...correctedArray];
 }
