@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyledInput = styled.input`
   display: none;
 `;
-export default function FileUploader({ onFileUpload }) {
+export default function FileUploader({ onFileUploaded }) {
   const hiddenFileInput = useRef(null);
 
   function handleClick() {
@@ -14,7 +14,7 @@ export default function FileUploader({ onFileUpload }) {
 
   function handleChange(event) {
     const fileUploaded = event.target.files[0];
-    onFileUpload(fileUploaded);
+    onFileUploaded(fileUploaded);
   }
 
   return (

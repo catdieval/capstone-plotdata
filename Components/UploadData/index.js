@@ -71,7 +71,7 @@ export default function UploadData() {
       </Paragraph>
       <form onSubmit={handleSubmit}>
         <CenteredDiv>
-          <FileUploader handleFile={handleFile} />
+          <FileUploader onFileUploaded={handleFile} />
           {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
           <StyledInputTypeSubmit
             type="submit"
