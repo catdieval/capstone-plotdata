@@ -41,8 +41,8 @@ export default function UploadData() {
   const handleConversion = () => {
     const reader = new FileReader();
 
-    reader.onload = function (e) {
-      const arrayOfObjects = convertCSVToArray(e.target.result, {
+    reader.onload = function (loadEvent) {
+      const arrayOfObjects = convertCSVToArray(loadEvent.target.result, {
         separator: ",",
       });
 
