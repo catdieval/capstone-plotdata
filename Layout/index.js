@@ -1,4 +1,4 @@
-import Title from "./Title";
+import Title from "../Components/Title";
 import Head from "next/head";
 import styled from "styled-components";
 

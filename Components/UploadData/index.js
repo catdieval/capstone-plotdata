@@ -1,12 +1,12 @@
-import Heading from "../../Layout/Heading";
-import Paragraph from "../../Layout/Paragraph";
-import CenteredDiv from "../../Layout/CenteredDiv";
+import Heading from "../Heading";
+import Paragraph from "../Paragraph";
+import CenteredDiv from "../CenteredDiv";
 import CorrectArrays from "../CorrectArrays";
 import FileUploader from "../FileUploader";
 import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 const { convertCSVToArray } = require("convert-csv-to-array");
-import { StyledInputTypeSubmit } from "@/Layout/StyledInputTypeSubmit";
+import { StyledInputTypeSubmit } from "@/Components/StyledInputTypeSubmit";
 
 export default function UploadData() {
   //State to store keys from the CSV file
