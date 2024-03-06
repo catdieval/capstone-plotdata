@@ -9,9 +9,9 @@ export default function ChartItem({ name, icon }) {
     { defaultValue: "" }
   );
 
-  function handleClick(event) {
-    setClickedChartType(event.target.innerText);
-    alert(`You chose ${name}`);
+  function handleClick(element) {
+    setClickedChartType(element.target.innerText);
+    alert(`You chose ${element.target.innerText}`);
   }
 
   return (
