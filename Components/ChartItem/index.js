@@ -11,6 +11,7 @@ export default function ChartItem({ name, icon }) {
 
   function handleClick(event) {
     setClickedChartType(event.target.innerText);
+    alert(`You chose ${name}`);
   }
 
   return (
