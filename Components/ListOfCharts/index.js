@@ -9,7 +9,9 @@ export default function ListOfCharts() {
       <Heading>Step 2: Select the type of chart</Heading>
       <FlexContainer $direction="row">
         {chartarray.map((chart) => {
-          return <ChartItem key={chart.name} name={chart.name} />;
+          return (
+            <ChartItem key={chart.name} icon={chart.icon} name={chart.name} />
+          );
         })}
       </FlexContainer>
     </>
