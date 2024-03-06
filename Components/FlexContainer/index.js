@@ -12,8 +12,9 @@ import styled from "styled-components";
 // }
 
 export const FlexContainer = styled.section`
-  flex-direction: ${(props) => (props.$direction ? "column" : "row")};
+  flex-direction: ${(props) =>
+    props.$direction === "column" ? "column" : "row"};
   display: flex;
-  //flex-wrap: wrap;
+  flex-wrap: wrap;
   justify-content: space-around;
 `;
