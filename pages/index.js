@@ -1,11 +1,11 @@
 import UploadData from "../Components/UploadData";
-import ChartItem from "@/Components/ChartItem";
+import ListOfCharts from "@/Components/ListOfCharts/ListofCharts";
 
 export default function HomePage() {
   return (
     <div>
       <UploadData />
-      <ChartItem />
+      <ListOfCharts />
     </div>
   );
 }
