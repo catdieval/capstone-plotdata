@@ -1,5 +1,5 @@
 import UploadData from "../Components/UploadData";
-import ListOfCharts from "@/Components/ListOfCharts/ListofCharts";
+import ListOfCharts from "../Components/ListOfCharts";
 
 export default function HomePage() {
   return (
