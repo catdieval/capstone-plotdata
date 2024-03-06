@@ -1,7 +1,7 @@
 import Heading from "../Heading";
 import { FlexContainer } from "../FlexContainer";
 import ChartItem from "../ChartItem";
-import { chartArray } from "@/lib/listOfPlotTypes";
+import { chartArray } from "../../lib/listOfPlotTypes";
 
 export default function ListOfCharts() {
   return (
