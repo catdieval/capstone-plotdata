@@ -10,7 +10,7 @@ import { FlexContainer } from "../FlexContainer";
 const name = "bar-plot";
 
 export default function ChartItem() {
-  const [clickedChartType, setclickedChartType] = useLocalStorageState(
+  const [clickedChartType, setClickedChartType] = useLocalStorageState(
     "clickedChartType",
     { defaultValue: "" }
   );
