@@ -9,14 +9,14 @@ export default function ChartItem({ name, icon }) {
     { defaultValue: "" }
   );
 
-  function handleClick(element) {
+  function handleChartType(element) {
     setClickedChartType(element.target.innerText);
     alert(`You chose ${element.target.innerText}`);
   }
 
   return (
     <FlexContainer $direction="column">
-      <Button onClick={handleClick}>{name}</Button>
+      <Button onClick={handleChartType}>{name}</Button>
       <Image src={icon} height={200} width={200} alt={name} />
     </FlexContainer>
   );
