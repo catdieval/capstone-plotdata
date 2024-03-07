@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const FlexContainer = styled.section`
   flex-direction: ${(props) =>
@@ -6,4 +6,14 @@ export const FlexContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+
+  ${(props) =>
+    props.$grid === "grid" &&
+    css`
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin: 0;
+      padding: 0;
+    `};
 `;
