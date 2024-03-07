@@ -1,13 +1,19 @@
 import useLocalStorageState from "use-local-storage-state";
+import { useState, useEffect } from "react";
 import Button from "../Button";
 import Image from "next/image";
 import { FlexContainer } from "../FlexContainer";
 
 export default function ChartItem({ name, icon }) {
-  const [clickedChartType, setClickedChartType] = useLocalStorageState(
-    "clickedChartType",
-    { defaultValue: "" }
-  );
+  // const [clickedChartType, setClickedChartType] = useLocalStorageState(
+  //   "clickedChartType",
+  //   { defaultValue: "" }
+  // );
+  const [clickedChartType, setClickedChartType] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("clickedChartType", JSON.stringify(clickedChartType));
+  }, [clickedChartType]);
 
   function handleChartType(element) {
     setClickedChartType(element.target.innerText);
