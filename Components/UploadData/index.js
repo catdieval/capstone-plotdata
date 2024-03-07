@@ -6,7 +6,7 @@ import FileUploader from "../FileUploader";
 import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 const { convertCSVToArray } = require("convert-csv-to-array");
-import { StyledInputTypeSubmit } from "@/Components/StyledInputTypeSubmit";
+import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 
 export default function UploadData() {
   //State to store keys from the CSV file
