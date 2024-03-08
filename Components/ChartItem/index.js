@@ -5,15 +5,11 @@ import Image from "next/image";
 import { FlexContainer } from "../FlexContainer";
 
 export default function ChartItem({ name, icon }) {
-  // const [clickedChartType, setClickedChartType] = useLocalStorageState(
-  //   "clickedChartType",
-  //   { defaultValue: "" }
-  // );
-  const [clickedChartType, setClickedChartType] = useState("");
-
-  useEffect(() => {
-    localStorage.setItem("clickedChartType", JSON.stringify(clickedChartType));
-  }, [clickedChartType]);
+  const [clickedChartType, setClickedChartType] = useLocalStorageState(
+    "clickedChartType",
+    { defaultValue: "" }
+  );
+  console.log(clickedChartType);
 
   function handleChartType(element) {
     setClickedChartType(element.target.innerText);
