@@ -10,8 +10,6 @@ export default function App({ Component, pageProps }) {
     alert(`You chose ${element.target.innerText}`);
   }
 
-  console.log(`At the beginning we have ${clickedChartType}`);
-
   return (
     <>
       <Layout>
@@ -19,7 +17,7 @@ export default function App({ Component, pageProps }) {
         <Component
           {...pageProps}
           clickedChartType={clickedChartType}
-          handleChartType={handleChartType}
+          onSelectChartType={handleChartType}
         />
       </Layout>
     </>

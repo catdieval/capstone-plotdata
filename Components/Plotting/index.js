@@ -49,7 +49,7 @@ export default function Plotting({ clickedChartType }) {
                 displayModeBar: true,
                 modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
               }}
-            ></Plot>
+            />
           </CenteredDiv>
         </>
       ) : null}

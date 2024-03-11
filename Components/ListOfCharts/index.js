@@ -3,7 +3,7 @@ import { FlexContainer } from "../FlexContainer";
 import ChartItem from "../ChartItem";
 import { chartArray } from "../../lib/listOfPlotTypes";
 
-export default function ListOfCharts({ handleChartType }) {
+export default function ListOfCharts({ onSelectChartType }) {
   return (
     <>
       <Heading>Step 2: Select the type of chart</Heading>
@@ -14,7 +14,7 @@ export default function ListOfCharts({ handleChartType }) {
               key={chart.name}
               icon={chart.icon}
               name={chart.name}
-              handleChartType={handleChartType}
+              onSelectChartType={onSelectChartType}
             />
           );
         })}
