@@ -1,11 +1,14 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.section`
-  flex-direction: ${(props) =>
-    props.$direction === "column" ? "column" : "row"};
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  ${(props) =>
+    props.$direction === "column" &&
+    css`
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    `};
 
   ${(props) =>
     props.$grid === "grid" &&
