@@ -1,4 +1,5 @@
 import Heading from "../Heading";
+import { Card } from "../Card/card.styled";
 import Paragraph from "../Paragraph";
 import CenteredDiv from "../CenteredDiv";
 import CorrectArrays from "../CorrectArrays";
@@ -60,15 +61,18 @@ export default function UploadData() {
   return (
     <>
       <Heading>Step 1: Upload a CSV file to get the data.</Heading>
-      <Paragraph>
-        <b>Notes:</b>
-        <br></br>
-        The file should have a header.<br></br>
-        The file should be comma-delimited and the decimal separator for numbers
-        should be a period (.).<br></br>
-        If the file contains missing values, then replace these values in the
-        file by null.
-      </Paragraph>
+      <Card>
+        <Paragraph>
+          <b>Notes:</b>
+          <br></br>
+          The file should have a header.<br></br>
+          The file should be comma-delimited and the decimal separator for
+          numbers should be a period (.).<br></br>
+          If the file contains missing values, then replace these values in the
+          file by null.
+        </Paragraph>
+      </Card>
+
       <form onSubmit={handleSubmit}>
         <CenteredDiv>
           <FileUploader onFileUploaded={handleFile} />

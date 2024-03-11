@@ -1,23 +1,12 @@
-import useLocalStorageState from "use-local-storage-state";
 import Button from "../Button";
 import Image from "next/image";
-import { FlexContainer } from "../FlexContainer";
+import { Container } from "../Container";
 
-export default function ChartItem({ name, icon }) {
-  const [clickedChartType, setClickedChartType] = useLocalStorageState(
-    "clickedChartType",
-    { defaultValue: "" }
-  );
-
-  function handleChartType(element) {
-    setClickedChartType(element.target.innerText);
-    alert(`You chose ${element.target.innerText}`);
-  }
-
+export default function ChartItem({ name, icon, onSelectChartType }) {
   return (
-    <FlexContainer $direction="column">
-      <Button onClick={handleChartType}>{name}</Button>
+    <Container $direction="column">
+      <Button onClick={onSelectChartType}>{name}</Button>
       <Image src={icon} height={200} width={200} alt={name} />
-    </FlexContainer>
+    </Container>
   );
 }
