@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const FlexContainer = styled.section`
+export const Container = styled.section`
   flex-direction: ${(props) =>
     props.$direction === "column" ? "column" : "row"};
   display: flex;

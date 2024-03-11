@@ -1,5 +1,5 @@
 import Heading from "../Heading";
-import { FlexContainer } from "../FlexContainer";
+import { Container } from "../Container";
 import ChartItem from "../ChartItem";
 import { chartArray } from "../../lib/listOfPlotTypes";
 
@@ -7,7 +7,7 @@ export default function ListOfCharts({ onSelectChartType }) {
   return (
     <>
       <Heading>Step 2: Select the type of chart</Heading>
-      <FlexContainer $grid="grid">
+      <Container $grid="grid">
         {chartArray.map((chart) => {
           return (
             <ChartItem
@@ -18,7 +18,7 @@ export default function ListOfCharts({ onSelectChartType }) {
             />
           );
         })}
-      </FlexContainer>
+      </Container>
     </>
   );
 }

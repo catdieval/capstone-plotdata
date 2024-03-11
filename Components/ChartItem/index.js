@@ -1,12 +1,12 @@
 import Button from "../Button";
 import Image from "next/image";
-import { FlexContainer } from "../FlexContainer";
+import { Container } from "../Container";
 
 export default function ChartItem({ name, icon, onSelectChartType }) {
   return (
-    <FlexContainer $direction="column">
+    <Container $direction="column">
       <Button onClick={onSelectChartType}>{name}</Button>
       <Image src={icon} height={200} width={200} alt={name} />
-    </FlexContainer>
+    </Container>
   );
 }
