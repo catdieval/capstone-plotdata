@@ -1,1 +1,1 @@
-export default function ChooseVariables() {}
+export default function ChooseVariables({ keynames, vals }) {}
