@@ -1,14 +1,18 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledButton = styled.button`
-  background-color: #1f77b4;
+  background-color: var(--primary-color);
   border-radius: 12px;
   border: none;
-  padding: 10px;
+  padding: 10px 20px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
   color: white;
-  font-weight: bold;
+  font-weight: 700;
+
+  &:hover {
+    background-color: var(--primary-color-shade);
+  }
 `;
 
 export default function Button({ children, onClick }) {
