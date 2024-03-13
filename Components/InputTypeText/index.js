@@ -9,8 +9,8 @@ export default function InputTypeText({
         `${idString}:`
         <input
           type="text"
-          id="idString"
-          placeholder="placeholderString"
+          id={idString}
+          placeholder={placeholderString}
           onChange={onChange}
           required
         />
