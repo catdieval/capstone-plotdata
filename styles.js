@@ -14,8 +14,15 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    --primary-color:#1f77b4;
+    --primary-color-shade:#1c6ba2;
+    --secondary-color:#00bfff;
+    --neutral-color:#F8F8F8;
+  }
+
   body {
-   
+    background-color:var(--neutral-color);
     font-family: ${plotDataFont.style.fontFamily};
     
   }
