@@ -1,0 +1,56 @@
+import { convertStringToNumber } from "convert-string-to-number";
+
+export default function ConvertCSVToArrayOfObjects(
+  data,
+  { header, separator }
+) {
+  const csv = data;
+
+  const rows = csv.split("\n");
+
+  const rows2 = rows.map((row) => {
+    return row.trim();
+  });
+
+  const rows3 = rows2.filter((row) => {
+    return row !== "";
+  });
+
+  const array = [];
+
+  let headerRow;
+  let headerObj;
+  const content = [];
+
+  rows3.forEach((row, idx) => {
+    if (idx === 0) {
+      headerRow = row.split(separator);
+      if (header) {
+        array.push(headerRow);
+      }
+      headerRow.forEach((headerItem) => {
+        headerObj = Object.assign({}, headerObj, {
+          [headerItem]: undefined,
+        });
+      });
+    } else if (rows3.length !== idx) {
+      const values = row.split(separator);
+
+      values.forEach((value, i) => {
+        const convertedToNumber = convertStringToNumber(value);
+        const thisValue = Number.isNaN(convertedToNumber)
+          ? value
+          : convertedToNumber;
+        headerObj = Object.assign({}, headerObj, {
+          [headerRow[i]]: thisValue,
+        });
+      });
+
+      content.push(headerObj);
+    }
+  });
+
+  array.push(...content);
+
+  return array;
+}
