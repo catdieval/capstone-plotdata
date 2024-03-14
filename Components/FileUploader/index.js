@@ -1,4 +1,3 @@
-//import Button from "@/Components/Button";
 import Button from "../Button";
 import { useRef } from "react";
 import styled from "styled-components";
