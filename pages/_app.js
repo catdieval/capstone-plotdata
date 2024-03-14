@@ -7,14 +7,14 @@ const { convertCSVToArray } = require("convert-csv-to-array");
 
 export default function App({ Component, pageProps }) {
   //State to store keys from the CSV file
-  const [keynames, setKeynames] = useLocalStorageState("keynames", {
-    defaultValue: [],
-  });
+
+  const [keynames, setKeynames] = useState([]);
 
   //State to store the values
-  const [vals, setVals] = useLocalStorageState("vals", {
+  /*const [vals, setVals] = useLocalStorageState("vals", {
     defaultValue: [],
-  });
+  }); */
+  const [vals, setVals] = useState([]);
 
   // State to store the file object
   const [fileObj, setFileObj] = useState({});
