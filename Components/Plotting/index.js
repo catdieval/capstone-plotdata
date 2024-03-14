@@ -2,6 +2,7 @@ import Paragraph from "../Paragraph";
 import CenteredDiv from "../CenteredDiv";
 import { chartArray } from "../../lib/listOfPlotTypes";
 import dynamic from "next/dynamic";
+import { Card } from "../Card/card.styled";
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
 export default function Plotting({ clickedChartType }) {
@@ -24,7 +25,7 @@ export default function Plotting({ clickedChartType }) {
             You can interact with the graph by using the functions at the top of
             the graph.
           </Paragraph>
-          <CenteredDiv>
+          <Card $variant="graph">
             <Plot
               data={[
                 {
@@ -50,7 +51,7 @@ export default function Plotting({ clickedChartType }) {
                 modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
               }}
             />
-          </CenteredDiv>
+          </Card>
         </>
       ) : null}
     </>
