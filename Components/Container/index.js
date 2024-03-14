@@ -15,8 +15,19 @@ export const Container = styled.section`
     css`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
-      margin: 0;
+      gap: 2rem;
+      margin: 40px;
       padding: 0;
+    `};
+
+  ${(props) =>
+    props.$centered === "center" &&
+    css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin-top: 60px;
+      margin-bottom: 60px;
     `};
 `;
