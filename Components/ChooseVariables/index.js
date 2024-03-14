@@ -44,6 +44,17 @@ export default function ChooseVariables({ keynames, vals }) {
     }
   }
 
+  function handleAssignVariables() {
+    if (vals.length > 0) {
+      var tempXArray = new Array(vals.length);
+      var tempYArray = new Array(vals.length);
+      setXVariable(tempXArray);
+      setYVariable(tempYArray);
+      alert("Data for the x and y variables are assigned.");
+      console.log(tempXArray);
+    }
+  }
+
   return (
     <>
       {keynames.length > 0 ? (
@@ -66,8 +77,8 @@ export default function ChooseVariables({ keynames, vals }) {
               <br></br>
               <br></br>
               <StyledInputTypeSubmit
-                type="submit"
                 value="Next"
+                onClick={handleAssignVariables}
                 disabled={!hasChosenYVariable}
               />
             </CenteredDiv>

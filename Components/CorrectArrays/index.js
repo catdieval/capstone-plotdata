@@ -4,7 +4,8 @@ export default function CorrectArrays(arrayOfObjects) {
 
   // The array of objects returned by convertCSVToArray has one row
   // too many at the end (a copy of the last row), so we remove it
-  const [keyItems, ...csvArray] = arrayOfObjects.slice(0, -1);
+  //const [keyItems, ...csvArray] = arrayOfObjects.slice(0, -1);
+  const [keyItems, ...csvArray] = arrayOfObjects;
 
   // The array of objects returned by convertCSVToArray converts the
   // null values into strings, but we want to undo this.
