@@ -3,7 +3,7 @@ import Layout from "../Components/Layout";
 import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import CorrectArrays from "../Components/CorrectArrays";
-const { convertCSVToArray } = require("convert-csv-to-array");
+import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
 export default function App({ Component, pageProps }) {
   //State to store keys from the CSV file
@@ -11,10 +11,10 @@ export default function App({ Component, pageProps }) {
   const [keynames, setKeynames] = useState([]);
 
   //State to store the values
-  /*const [vals, setVals] = useLocalStorageState("vals", {
+  const [vals, setVals] = useLocalStorageState("vals", {
     defaultValue: [],
-  }); */
-  const [vals, setVals] = useState([]);
+  });
+  //const [vals, setVals] = useState([]);
 
   // State to store the file object
   const [fileObj, setFileObj] = useState({});
@@ -30,12 +30,11 @@ export default function App({ Component, pageProps }) {
     setIsUploaded(true);
   };
 
-  // Reading the file and converting the result to an array of objects
   const handleConversion = () => {
     const reader = new FileReader();
 
-    reader.onload = function (loadEvent) {
-      const arrayOfObjects = convertCSVToArray(loadEvent.target.result, {
+    reader.onload = function (event) {
+      const arrayOfObjects = ConvertCSVToArray(event.target.result, {
         separator: ",",
       });
 
