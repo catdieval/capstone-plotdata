@@ -4,13 +4,13 @@ export default function InputTypeText({
   idString,
 }) {
   return (
-    <label htmlFor="idString">
+    <label htmlFor={idString}>
       {idString}:
       <input
         type="text"
         id={idString}
         placeholder={placeholderString}
-        size={100}
+        size={50}
         onChange={onChange}
         required
       />
