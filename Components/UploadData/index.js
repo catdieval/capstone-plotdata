@@ -60,7 +60,7 @@ export default function UploadData() {
 
   return (
     <>
-      <Heading>Step 1: Upload a CSV file to get the data.</Heading>
+      <Heading>Step 1: Upload a CSV file.</Heading>
       <Card>
         <Paragraph $variant="bold">Requirements:</Paragraph>
         <Paragraph $variant="start">
@@ -82,7 +82,7 @@ export default function UploadData() {
           {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
           <StyledInputTypeSubmit
             type="submit"
-            value="Submit"
+            value="Next"
             onClick={handleConversion}
             disabled={!isUploaded}
           />
