@@ -1,7 +1,7 @@
 import Heading from "../Heading";
 import { Card } from "../Card/card.styled";
 import Paragraph from "../Paragraph";
-import CenteredDiv from "../CenteredDiv";
+import { Container } from "../Container";
 import CorrectArrays from "../CorrectArrays";
 import FileUploader from "../FileUploader";
 import { useState } from "react";
@@ -74,7 +74,7 @@ export default function UploadData() {
       </Card>
 
       <form onSubmit={handleSubmit}>
-        <CenteredDiv>
+        <Container $centered="center">
           <FileUploader onFileUploaded={handleFile} />
           {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
           <StyledInputTypeSubmit
@@ -83,7 +83,7 @@ export default function UploadData() {
             onClick={handleConversion}
             disabled={!isUploaded}
           />
-        </CenteredDiv>
+        </Container>
       </form>
     </>
   );
