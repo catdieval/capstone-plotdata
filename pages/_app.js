@@ -1,13 +1,9 @@
 import GlobalStyle from "../styles";
 import Layout from "../Components/Layout";
-
-import useLocalStorageState from "use-local-storage-state";
+import { useState } from "react";
 
 export default function App({ Component, pageProps }) {
-  const [clickedChartType, setClickedChartType] = useLocalStorageState(
-    "clickedChartType",
-    { defaultValue: "" }
-  );
+  const [clickedChartType, setClickedChartType] = useState("");
 
   function handleChartType(element) {
     setClickedChartType(element.target.innerText);
