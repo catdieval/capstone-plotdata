@@ -1,10 +1,12 @@
-import Button from "@/Components/Button";
+//import Button from "@/Components/Button";
+import Button from "../Button";
 import { useRef } from "react";
 import styled from "styled-components";
 
 const StyledInput = styled.input`
   display: none;
 `;
+
 export default function FileUploader({ onUploadFile }) {
   // Create a reference to the hidden file input element
   const hiddenFileInput = useRef(null);
