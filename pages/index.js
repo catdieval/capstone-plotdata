@@ -1,8 +1,11 @@
 import UploadData from "../Components/UploadData";
 import ListOfCharts from "../Components/ListOfCharts";
 import Plotting from "../Components/Plotting";
+import ChooseVariables from "../Components/ChooseVariables";
 
 export default function HomePage({
+  keynames,
+  vals,
   fileObj,
   isUploaded,
   onUploadFile,
@@ -19,6 +22,7 @@ export default function HomePage({
         onConversion={onConversion}
       />
       <ListOfCharts onSelectChartType={onSelectChartType} />
+      <ChooseVariables keynames={keynames} vals={vals} />
       <Plotting clickedChartType={clickedChartType} />
     </div>
   );
