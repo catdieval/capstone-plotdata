@@ -62,14 +62,17 @@ export default function UploadData() {
     <>
       <Heading>Step 1: Upload a CSV file to get the data.</Heading>
       <Card>
-        <Paragraph>
-          <b>Notes:</b>
-          <br></br>
-          The file should have a header.<br></br>
-          The file should be comma-delimited and the decimal separator for
-          numbers should be a period (.).<br></br>
-          If the file contains missing values, then replace these values in the
-          file by null.
+        <Paragraph>Requirements:</Paragraph>
+        <Paragraph $variant="start">
+          <span> ✔ </span> The file should have a header.
+        </Paragraph>
+        <Paragraph $variant="start">
+          <span> ✔ </span>The file should be comma-delimited and the decimal
+          separator for numbers should be a period (.).
+        </Paragraph>
+        <Paragraph $variant="start">
+          <span> ✔ </span> If the file contains missing values, then replace
+          these values in the file by null.
         </Paragraph>
       </Card>
 
