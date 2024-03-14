@@ -38,8 +38,7 @@ export default function UploadData({
           <FileUploader onUploadFile={onUploadFile} />
           {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
           <StyledInputTypeSubmit
-            type="submit"
-            value="Submit"
+            value="Next"
             onClick={onConversion}
             disabled={!isUploaded}
           />
