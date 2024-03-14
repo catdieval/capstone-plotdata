@@ -4,17 +4,16 @@ export default function InputTypeText({
   idString,
 }) {
   return (
-    <form>
-      <label htmlFor="idString">
-        `${idString}:`
-        <input
-          type="text"
-          id={idString}
-          placeholder={placeholderString}
-          onChange={onChange}
-          required
-        />
-      </label>
-    </form>
+    <label htmlFor="idString">
+      {idString}:
+      <input
+        type="text"
+        id={idString}
+        placeholder={placeholderString}
+        size={100}
+        onChange={onChange}
+        required
+      />
+    </label>
   );
 }
