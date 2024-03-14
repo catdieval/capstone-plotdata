@@ -11,7 +11,6 @@ export default function App({ Component, pageProps }) {
 
   function handleChartType(element) {
     setClickedChartType(element.target.innerText);
-    alert(`You chose ${element.target.innerText}`);
   }
 
   return (
