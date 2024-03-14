@@ -21,6 +21,17 @@ export const Container = styled.section`
     `};
 
   ${(props) =>
+    props.$wrap === "wrap" &&
+    css`
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      margin: 40px;
+      padding: 0;
+    `};
+
+  ${(props) =>
     props.$centered === "center" &&
     css`
       display: flex;
