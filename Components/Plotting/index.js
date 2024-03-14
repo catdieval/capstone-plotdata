@@ -18,7 +18,7 @@ export default function Plotting({ clickedChartType, XLabel, YLabel }) {
 
   return (
     <>
-      {match != -1 ? (
+      {match != -1 && XLabel != " " && YLabel != " " ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
@@ -36,12 +36,12 @@ export default function Plotting({ clickedChartType, XLabel, YLabel }) {
               ]}
               layout={{
                 xaxis: {
-                  title: XLabel,
+                  title: { text: XLabel },
                   showline: true,
                   ticks: "outside",
                 },
                 yaxis: {
-                  title: YLabel,
+                  title: { text: YLabel },
                   ticks: "outside",
                 },
                 width: 600,
