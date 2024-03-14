@@ -62,7 +62,7 @@ export default function UploadData() {
     <>
       <Heading>Step 1: Upload a CSV file to get the data.</Heading>
       <Card>
-        <Paragraph>Requirements:</Paragraph>
+        <Paragraph $variant="bold">Requirements:</Paragraph>
         <Paragraph $variant="start">
           <span> ✔ </span> The file should have a header.
         </Paragraph>

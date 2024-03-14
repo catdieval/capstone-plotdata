@@ -10,10 +10,13 @@ const StyledP = styled.p`
     props.$variant === "start" &&
     css`
       text-align: start;
-      font-weight: 400;
-      line-height: 1.2rem;
-      font-size: 1.1rem;
       padding: 10px;
+    `};
+
+  ${(props) =>
+    props.$variant === "bold" &&
+    css`
+      font-weight: 600;
     `};
 `;
 

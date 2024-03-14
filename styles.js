@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import { Bai_Jamjuree } from "next/font/google";
 
 const plotDataFont = Bai_Jamjuree({
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
   style: ["normal"],
   subsets: ["latin"],
 });
