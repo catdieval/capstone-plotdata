@@ -1,5 +1,4 @@
 import Paragraph from "../Paragraph";
-import CenteredDiv from "../CenteredDiv";
 import { chartArray } from "../../lib/listOfPlotTypes";
 import dynamic from "next/dynamic";
 import { Card } from "../Card/card.styled";
