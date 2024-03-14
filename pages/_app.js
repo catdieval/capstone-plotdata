@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }) {
   //Labels to the Axes:
   const [XLabel, setXLabel] = useState("");
   const [YLabel, setYLabel] = useState("");
+  const [hasEnteredYLabel, sethasEnteredYLabel] = useState(false);
   function handleXLabelChange(event) {
     setXLabel(event.target.value);
   }
@@ -34,6 +35,8 @@ export default function App({ Component, pageProps }) {
           YLabel={YLabel}
           handleXLabelChange={handleXLabelChange}
           handleYLabelChange={handleYLabelChange}
+          hasEnteredYLabel={hasEnteredYLabel}
+          sethasEnteredYLabel={sethasEnteredYLabel}
         />
       </Layout>
     </>
