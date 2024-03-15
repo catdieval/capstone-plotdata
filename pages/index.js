@@ -6,8 +6,8 @@ import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 export default function HomePage({
   clickedChartType,
   onSelectChartType,
-  handleXLabelChange,
-  handleYLabelChange,
+  onXLabelChange,
+  onYLabelChange,
   hasEnteredYLabel,
   XLabel,
   YLabel,
@@ -17,8 +17,8 @@ export default function HomePage({
       <UploadData />
       <ListOfCharts onSelectChartType={onSelectChartType} />
       <XandYLabelsGraph
-        handleXLabelChange={handleXLabelChange}
-        handleYLabelChange={handleYLabelChange}
+        onXLabelChange={onXLabelChange}
+        onYLabelChange={onYLabelChange}
         hasEnteredYLabel={hasEnteredYLabel}
       />
       <Plotting
