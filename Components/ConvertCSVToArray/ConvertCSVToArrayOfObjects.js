@@ -8,10 +8,14 @@ export default function ConvertCSVToArrayOfObjects(
 
   const rows = csv.split("\n");
 
+  // rows contains an inpredictable number of extra rows at the end which are empty
+  // strings with unpredictable length (the function was impure), so we remove the
+  // blank spaces from the strings in rows
   const rows2 = rows.map((row) => {
     return row.trim();
   });
 
+  // rows2 now contains extra rows with "", so we filter out these strings
   const rows3 = rows2.filter((row) => {
     return row !== "";
   });
