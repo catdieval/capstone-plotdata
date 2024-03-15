@@ -1,58 +1,26 @@
-import useLocalStorageState from "use-local-storage-state";
-import { useState } from "react";
 import Heading from "../Heading";
 import CenteredDiv from "../CenteredDiv";
 import Paragraph from "../Paragraph";
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 import DropDownMenu from "../DropDownMenu";
 
-export default function ChooseVariables({ keynames, vals }) {
-  const [xVariable, setXVariable] = useLocalStorageState("xVariable", {
-    defaultValue: [],
-  });
-
-  const [yVariable, setYVariable] = useLocalStorageState("yVariable", {
-    defaultValue: [],
-  });
-
-  const [xKey, setXKey] = useLocalStorageState("xKey", {
-    defaultValue: "",
-  });
-
-  const [yKey, setYKey] = useLocalStorageState("yKey", {
-    defaultValue: "",
-  });
-
-  const [hasChosenYVariable, setHasChosenYVariable] = useState(false);
-
+export default function ChooseVariables({
+  keynames,
+  hasChosenYVariable,
+  onAssignVariables,
+  onXChange,
+  onYChange,
+  xKey,
+  yKey,
+}) {
   function handleSubmit(event) {
     event.preventDefault();
   }
 
-  function handleXChange(event) {
-    const choice = event.target.value;
-    if (choice != "") {
-      setXKey(choice);
-    }
-  }
-
-  function handleYChange(event) {
-    const choice = event.target.value;
-    if (choice != "") {
-      setYKey(choice);
-      setHasChosenYVariable(true);
-    }
-  }
-
-  function handleAssignVariables() {
-    if (vals.length > 0) {
-      var tempXArray = new Array(vals.length);
-      var tempYArray = new Array(vals.length);
-      setXVariable(tempXArray);
-      setYVariable(tempYArray);
-      alert("Data for the x and y variables are assigned.");
-      console.log(tempXArray);
-    }
+  if (xKey == yKey && xKey !== "") {
+    alert(
+      "Are you sure you want to use the same variable for x as for y? It would give a meaningless plot."
+    );
   }
 
   return (
@@ -65,20 +33,20 @@ export default function ChooseVariables({ keynames, vals }) {
               <Paragraph>Variable for the x-axis:</Paragraph>
               <DropDownMenu
                 idString="x"
-                onChange={handleXChange}
+                onChange={onXChange}
                 arrayOfOptions={keynames}
               />
               <Paragraph>Variable for the y-axis:</Paragraph>
               <DropDownMenu
                 idString="y"
-                onChange={handleYChange}
+                onChange={onYChange}
                 arrayOfOptions={keynames}
               />
               <br></br>
               <br></br>
               <StyledInputTypeSubmit
                 value="Next"
-                onClick={handleAssignVariables}
+                onClick={onAssignVariables}
                 disabled={!hasChosenYVariable}
               />
             </CenteredDiv>
