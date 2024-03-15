@@ -4,7 +4,7 @@ export default function CorrectArrays(arrayOfObjects) {
 
   const [keyItems, ...csvArray] = arrayOfObjects;
 
-  // The array of objects returned by convertCSVToArray converts the
+  // The array of objects returned by ConvertCSVToArray converts the
   // null values into strings, but we want to undo this.
 
   const correctedArray = csvArray.map((row) =>
