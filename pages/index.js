@@ -21,7 +21,7 @@ export default function HomePage({
         onUploadFile={onUploadFile}
         onConversion={onConversion}
       />
-      <ListOfCharts onSelectChartType={onSelectChartType} />
+      <ListOfCharts onSelectChartType={onSelectChartType} keynames={keynames} />
       <ChooseVariables keynames={keynames} vals={vals} />
       <Plotting clickedChartType={clickedChartType} />
     </div>
