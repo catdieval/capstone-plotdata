@@ -5,13 +5,20 @@ import ChooseVariables from "../Components/ChooseVariables";
 
 export default function HomePage({
   keynames,
-  vals,
   fileObj,
   isUploaded,
   onUploadFile,
   onConversion,
   clickedChartType,
   onSelectChartType,
+  xKey,
+  yKey,
+  xVariable,
+  yVariable,
+  hasChosenYVariable,
+  onXChange,
+  onYChange,
+  onAssignVariables,
 }) {
   return (
     <div>
@@ -22,8 +29,20 @@ export default function HomePage({
         onConversion={onConversion}
       />
       <ListOfCharts onSelectChartType={onSelectChartType} keynames={keynames} />
-      <ChooseVariables keynames={keynames} vals={vals} />
-      <Plotting clickedChartType={clickedChartType} />
+      <ChooseVariables
+        keynames={keynames}
+        hasChosenYVariable={hasChosenYVariable}
+        onAssignVariables={onAssignVariables}
+        onXChange={onXChange}
+        onYChange={onYChange}
+        xKey={xKey}
+        yKey={yKey}
+      />
+      <Plotting
+        clickedChartType={clickedChartType}
+        xVariable={xVariable}
+        yVariable={yVariable}
+      />
     </div>
   );
 }
