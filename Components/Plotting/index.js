@@ -18,7 +18,7 @@ export default function Plotting({ clickedChartType, XLabel, YLabel }) {
 
   return (
     <>
-      {match != -1 && XLabel != " " && YLabel != " " ? (
+      {match != -1 && XLabel != "" && YLabel != "" ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
