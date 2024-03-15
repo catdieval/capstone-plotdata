@@ -6,12 +6,12 @@ import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 import CenteredDiv from "../CenteredDiv";
 
 export default function XandYLabelsGraph({
-  handleXLabelChange,
-  handleYLabelChange,
+  onXLabelChange,
+  onYLabelChange,
   hasEnteredYLabel,
 }) {
-  const xKey = "Age";
-  const yKey = "Height";
+  const xKey = "age";
+  const yKey = "boys-height";
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -41,7 +41,7 @@ export default function XandYLabelsGraph({
                 placeholderString={
                   "Fill me with name and unit, e.g. Age (years)"
                 }
-                onChange={handleXLabelChange}
+                onChange={onXLabelChange}
               />
               <br></br>
               <br></br>
@@ -50,12 +50,11 @@ export default function XandYLabelsGraph({
                 placeholderString={
                   "Fill me with name and unit, e.g. Height (inches)"
                 }
-                onChange={handleYLabelChange}
+                onChange={onYLabelChange}
               />
               <br></br>
               <br></br>
               <StyledInputTypeSubmit
-                type="submit"
                 value="Next"
                 onClick={handleAxesLabels}
                 disabled={!hasEnteredYLabel}

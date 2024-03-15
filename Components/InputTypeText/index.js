@@ -4,9 +4,10 @@ export default function InputTypeText({
   idString,
 }) {
   return (
-    <label htmlFor={idString}>
-      {idString}:
+    <>
+      <label htmlFor={idString}>{idString}:</label>
       <input
+        name={idString}
         type="text"
         id={idString}
         placeholder={placeholderString}
@@ -14,6 +15,6 @@ export default function InputTypeText({
         onChange={onChange}
         required
       />
-    </label>
+    </>
   );
 }

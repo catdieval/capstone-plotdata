@@ -13,13 +13,15 @@ export default function App({ Component, pageProps }) {
   //Labels to the Axes:
   const [XLabel, setXLabel] = useState("");
   const [YLabel, setYLabel] = useState("");
-  const [hasEnteredYLabel, sethasEnteredYLabel] = useState(false);
+  const [hasEnteredYLabel, setHasEnteredYLabel] = useState(false);
+
   function handleXLabelChange(event) {
     setXLabel(event.target.value);
   }
+
   function handleYLabelChange(event) {
     setYLabel(event.target.value);
-    sethasEnteredYLabel(true);
+    setHasEnteredYLabel(true);
   }
   /////////////////////////////////////////////////////////////////////////////////////
 
@@ -33,10 +35,9 @@ export default function App({ Component, pageProps }) {
           onSelectChartType={handleChartType}
           XLabel={XLabel}
           YLabel={YLabel}
-          handleXLabelChange={handleXLabelChange}
-          handleYLabelChange={handleYLabelChange}
+          onXLabelChange={handleXLabelChange}
+          onYLabelChange={handleYLabelChange}
           hasEnteredYLabel={hasEnteredYLabel}
-          sethasEnteredYLabel={sethasEnteredYLabel}
         />
       </Layout>
     </>
