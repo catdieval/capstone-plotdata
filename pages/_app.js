@@ -1,7 +1,6 @@
 import GlobalStyle from "../styles";
 import Layout from "../Components/Layout";
 import { useState } from "react";
-import useLocalStorageState from "use-local-storage-state";
 import CorrectArrays from "../Components/CorrectArrays";
 import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
@@ -11,9 +10,6 @@ export default function App({ Component, pageProps }) {
   const [keynames, setKeynames] = useState([]);
 
   //State to store the values
-  /*const [vals, setVals] = useLocalStorageState("vals", {
-    defaultValue: [],
-  }); */
   const [vals, setVals] = useState([]);
 
   // State to store the file object
@@ -61,15 +57,14 @@ export default function App({ Component, pageProps }) {
       var tempYArray = new Array(vals.length);
 
       // In tempXArray fill in with the values associated to the key in vals
-      // corresponding to the XKey value.
+      // corresponding to the xKey value.
       // In tempYArray fill in with the values associated to the key in vals
-      // corresponding to the YKey value.
+      // corresponding to the yKey value.
 
       for (let i = 0; i < vals.length; i++) {
         for (let key in vals[i]) {
           if (key == xKey) {
             tempXArray[i] = vals[i][key];
-            console.log(`Index ${i}: ${tempXArray[i]}`);
           }
           if (key == yKey) {
             tempYArray[i] = vals[i][key];
