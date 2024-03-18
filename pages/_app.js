@@ -9,11 +9,10 @@ export default function App({ Component, pageProps }) {
     setClickedChartType(element.target.innerText);
     alert(`You chose ${element.target.innerText}`);
   }
-  //////////////////////////////////////////////////////////////////////////////////
+
   //Labels to the Axes:
-  const [XLabel, setXLabel] = useState("");
-  const [YLabel, setYLabel] = useState("");
-  const [hasEnteredYLabel, setHasEnteredYLabel] = useState(false);
+  const [xLabel, setXLabel] = useState("");
+  const [yLabel, setYLabel] = useState("");
 
   function handleXLabelChange(event) {
     setXLabel(event.target.value);
@@ -21,9 +20,7 @@ export default function App({ Component, pageProps }) {
 
   function handleYLabelChange(event) {
     setYLabel(event.target.value);
-    setHasEnteredYLabel(true);
   }
-  /////////////////////////////////////////////////////////////////////////////////////
 
   return (
     <>
@@ -33,11 +30,10 @@ export default function App({ Component, pageProps }) {
           {...pageProps}
           clickedChartType={clickedChartType}
           onSelectChartType={handleChartType}
-          XLabel={XLabel}
-          YLabel={YLabel}
+          xLabel={xLabel}
+          yLabel={yLabel}
           onXLabelChange={handleXLabelChange}
           onYLabelChange={handleYLabelChange}
-          hasEnteredYLabel={hasEnteredYLabel}
         />
       </Layout>
     </>

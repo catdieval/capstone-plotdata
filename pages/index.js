@@ -8,9 +8,8 @@ export default function HomePage({
   onSelectChartType,
   onXLabelChange,
   onYLabelChange,
-  hasEnteredYLabel,
-  XLabel,
-  YLabel,
+  xLabel,
+  yLabel,
 }) {
   return (
     <div>
@@ -19,12 +18,13 @@ export default function HomePage({
       <XandYLabelsGraph
         onXLabelChange={onXLabelChange}
         onYLabelChange={onYLabelChange}
-        hasEnteredYLabel={hasEnteredYLabel}
+        xLabel={xLabel}
+        yLabel={yLabel}
       />
       <Plotting
         clickedChartType={clickedChartType}
-        XLabel={XLabel}
-        YLabel={YLabel}
+        xLabel={xLabel}
+        yLabel={yLabel}
       />
     </div>
   );
