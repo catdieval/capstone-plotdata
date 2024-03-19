@@ -11,12 +11,23 @@ export const Container = styled.section`
     `};
 
   ${(props) =>
-    props.$grid === "grid" &&
+    props.$wrap === "wrap" &&
     css`
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 3rem;
-      margin: 0;
+      margin: 30px;
       padding: 0;
+    `};
+
+  ${(props) =>
+    props.$centered === "center" &&
+    css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 60px 30px;
     `};
 `;
