@@ -15,7 +15,6 @@ export default function HomePage({
   yKey,
   xVariable,
   yVariable,
-  hasChosenYVariable,
   onXChange,
   onYChange,
   onAssignVariables,
@@ -31,7 +30,6 @@ export default function HomePage({
       <ListOfCharts onSelectChartType={onSelectChartType} keynames={keynames} />
       <ChooseVariables
         keynames={keynames}
-        hasChosenYVariable={hasChosenYVariable}
         onAssignVariables={onAssignVariables}
         onXChange={onXChange}
         onYChange={onYChange}
