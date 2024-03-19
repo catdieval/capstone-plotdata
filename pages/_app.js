@@ -33,22 +33,14 @@ export default function App({ Component, pageProps }) {
   // State to store the value selected by the user in the dropdown menu for the x variable
   const [yKey, setYKey] = useState("");
 
-  // State to store the status if the user has chosen the y variable
-  const [hasChosenYVariable, setHasChosenYVariable] = useState(false);
-
   function handleXChange(event) {
     const choice = event.target.value;
-    if (choice != "") {
-      setXKey(choice);
-    }
+    setXKey(choice);
   }
 
   function handleYChange(event) {
     const choice = event.target.value;
-    if (choice != "") {
-      setYKey(choice);
-      setHasChosenYVariable(true);
-    }
+    setYKey(choice);
   }
 
   function handleAssignVariables() {
@@ -123,7 +115,6 @@ export default function App({ Component, pageProps }) {
           yKey={yKey}
           xVariable={xVariable}
           yVariable={yVariable}
-          hasChosenYVariable={hasChosenYVariable}
           onXChange={handleXChange}
           onYChange={handleYChange}
           onAssignVariables={handleAssignVariables}
