@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }) {
   // State to store the value selected by the user in the dropdown menu for the x variable
   const [xKey, setXKey] = useState("");
 
-  // State to store the value selected by the user in the dropdown menu for the x variable
+  // State to store the value selected by the user in the dropdown menu for the y variable
   const [yKey, setYKey] = useState("");
 
   function handleXChange(event) {
