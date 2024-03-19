@@ -24,6 +24,10 @@ export default function XandYLabelsGraph({
     }
   }
 
+  function completedXAndYLabels() {
+    return xLabel.length === 0 || yLabel.length === 0;
+  }
+
   return (
     <>
       <Heading>Step 4: Give labels to axes</Heading>
@@ -56,7 +60,7 @@ export default function XandYLabelsGraph({
           <StyledInputTypeSubmit
             value="Next"
             onClick={handleAxesLabels}
-            disabled={xLabel.length === 0 || yLabel.length === 0}
+            disabled={completedXAndYLabels()}
           />
         </form>
       </CenteredDiv>
