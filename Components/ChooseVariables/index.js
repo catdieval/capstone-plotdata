@@ -6,7 +6,6 @@ import DropDownMenu from "../DropDownMenu";
 
 export default function ChooseVariables({
   keynames,
-  hasChosenYVariable,
   onAssignVariables,
   onXChange,
   onYChange,
@@ -21,6 +20,10 @@ export default function ChooseVariables({
     alert(
       "Are you sure you want to use the same variable for x as for y? It would give a meaningless plot."
     );
+  }
+
+  function completedXAndYKeys() {
+    return xKey.length === 0 || yKey.length === 0;
   }
 
   return (
@@ -47,7 +50,7 @@ export default function ChooseVariables({
               <StyledInputTypeSubmit
                 value="Next"
                 onClick={onAssignVariables}
-                disabled={!hasChosenYVariable}
+                disabled={completedXAndYKeys()}
               />
             </CenteredDiv>
           </form>
