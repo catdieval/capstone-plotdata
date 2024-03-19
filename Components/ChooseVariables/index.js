@@ -30,7 +30,7 @@ export default function ChooseVariables({
     <>
       {keynames.length > 0 ? (
         <>
-          <Heading>Step 3: choose the variables you want to plot</Heading>
+          <Heading>Step 3: Choose the variables you want to plot</Heading>
           <form onSubmit={handleSubmit}>
             <CenteredDiv>
               <Paragraph>Variable for the x-axis:</Paragraph>
