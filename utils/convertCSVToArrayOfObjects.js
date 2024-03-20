@@ -26,8 +26,8 @@ export default function convertCSVToArrayOfObjects(
   let headerObj;
   const content = [];
 
-  rows3.forEach((row, idx) => {
-    if (idx === 0) {
+  rows3.forEach((row, index) => {
+    if (index === 0) {
       headerRow = row.split(separator);
       if (header) {
         array.push(headerRow);
@@ -37,7 +37,7 @@ export default function convertCSVToArrayOfObjects(
           [headerItem]: undefined,
         });
       });
-    } else if (rows3.length !== idx) {
+    } else if (index !== rows3.length) {
       const values = row.split(separator);
 
       values.forEach((value, i) => {
