@@ -45,8 +45,8 @@ export default function App({ Component, pageProps }) {
 
   function handleAssignVariables() {
     if (vals.length > 0 && xKey != "" && yKey != "") {
-      var tempXArray = new Array(vals.length);
-      var tempYArray = new Array(vals.length);
+      let tempXArray = new Array(vals.length);
+      let tempYArray = new Array(vals.length);
 
       // In tempXArray fill in with the values associated to the key in vals
       // corresponding to the xKey value.
@@ -55,10 +55,10 @@ export default function App({ Component, pageProps }) {
 
       for (let i = 0; i < vals.length; i++) {
         for (let key in vals[i]) {
-          if (key == xKey) {
+          if (key === xKey) {
             tempXArray[i] = vals[i][key];
           }
-          if (key == yKey) {
+          if (key === yKey) {
             tempYArray[i] = vals[i][key];
           }
         }
