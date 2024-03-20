@@ -16,7 +16,7 @@ export default function ChooseVariables({
     event.preventDefault();
   }
 
-  if (xKey == yKey && xKey !== "") {
+  if (xKey === yKey && xKey !== "") {
     alert(
       "Are you sure you want to use the same variable for x as for y? It would give a meaningless plot."
     );
@@ -28,7 +28,7 @@ export default function ChooseVariables({
 
   return (
     <>
-      {keynames.length > 0 ? (
+      {keynames.length > 0 && (
         <>
           <Heading>Step 3: Choose the variables you want to plot</Heading>
           <form onSubmit={handleSubmit}>
@@ -55,7 +55,7 @@ export default function ChooseVariables({
             </CenteredDiv>
           </form>
         </>
-      ) : null}
+      )}
     </>
   );
 }
