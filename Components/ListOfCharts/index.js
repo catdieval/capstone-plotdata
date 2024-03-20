@@ -6,7 +6,7 @@ import { chartArray } from "../../lib/listOfPlotTypes";
 export default function ListOfCharts({ onSelectChartType, keynames }) {
   return (
     <>
-      {keynames.length > 0 ? (
+      {keynames.length > 0 && (
         <>
           <Heading>Step 2: Select the type of chart</Heading>
           <Container $grid="grid">
@@ -22,7 +22,7 @@ export default function ListOfCharts({ onSelectChartType, keynames }) {
             })}
           </Container>
         </>
-      ) : null}
+      )}
     </>
   );
 }
