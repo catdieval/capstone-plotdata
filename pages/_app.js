@@ -9,6 +9,18 @@ export default function App({ Component, pageProps }) {
     setClickedChartType(element.target.innerText);
   }
 
+  //Labels to the Axes:
+  const [xLabel, setXLabel] = useState("");
+  const [yLabel, setYLabel] = useState("");
+
+  function handleXLabelChange(event) {
+    setXLabel(event.target.value);
+  }
+
+  function handleYLabelChange(event) {
+    setYLabel(event.target.value);
+  }
+
   return (
     <>
       <Layout>
@@ -17,6 +29,10 @@ export default function App({ Component, pageProps }) {
           {...pageProps}
           clickedChartType={clickedChartType}
           onSelectChartType={handleChartType}
+          xLabel={xLabel}
+          yLabel={yLabel}
+          onXLabelChange={handleXLabelChange}
+          onYLabelChange={handleYLabelChange}
         />
       </Layout>
     </>

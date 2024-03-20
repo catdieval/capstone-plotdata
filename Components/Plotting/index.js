@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { Card } from "../Card/card.styled";
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
-export default function Plotting({ clickedChartType }) {
+export default function Plotting({ clickedChartType, xLabel, yLabel }) {
   const XVariable = [1, 2, 3, 4, 6, 8, 10, 12, 14, 16, 18, 20];
   const YVariable = [32, 37, 40.5, 43, 49, 54, 59, 63.5, 69.5, 73, 74, null];
   const match = chartArray.findIndex(
@@ -18,7 +18,7 @@ export default function Plotting({ clickedChartType }) {
 
   return (
     <>
-      {match != -1 ? (
+      {match != -1 && xLabel != "" && yLabel != "" ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
@@ -36,10 +36,12 @@ export default function Plotting({ clickedChartType }) {
               ]}
               layout={{
                 xaxis: {
+                  title: { text: xLabel },
                   showline: true,
                   ticks: "outside",
                 },
                 yaxis: {
+                  title: { text: yLabel },
                   ticks: "outside",
                 },
                 width: 600,
