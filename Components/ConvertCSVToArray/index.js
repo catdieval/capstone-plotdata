@@ -1,5 +1,5 @@
-import CheckIfValid from "./CheckIfValid";
-import ConvertCSVToArrayOfObjects from "./ConvertCSVToArrayOfObjects";
+import checkIfValid from "../../utils/checkIfValid";
+import convertCSVToArrayOfObjects from "../../utils/convertCSVToArrayOfObjects";
 
 export default function ConvertCSVToArray(data, { header, separator } = {}) {
   const thisOptions = {
@@ -7,7 +7,7 @@ export default function ConvertCSVToArray(data, { header, separator } = {}) {
     separator: separator || ",",
   };
 
-  CheckIfValid(data, thisOptions);
+  checkIfValid(data, thisOptions);
 
-  return ConvertCSVToArrayOfObjects(data, thisOptions);
+  return convertCSVToArrayOfObjects(data, thisOptions);
 }
