@@ -4,9 +4,9 @@ export default function DropDownMenu({ idString, onChange, arrayOfOptions }) {
       <label htmlFor={idString}>{idString}:</label>
       <select required name={idString} id={idString} onChange={onChange}>
         <option value="">Select</option>
-        {arrayOfOptions.map((optionname) => (
-          <option key={optionname} value={optionname}>
-            {optionname}
+        {arrayOfOptions.map((optionName) => (
+          <option key={optionName} value={optionName}>
+            {optionName}
           </option>
         ))}
       </select>
