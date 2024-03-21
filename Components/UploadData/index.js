@@ -1,8 +1,7 @@
 import Heading from "../Heading";
 import { Card } from "../Card/card.styled";
 import Paragraph from "../Paragraph";
-import CenteredDiv from "../CenteredDiv";
-import CorrectArrays from "../CorrectArrays";
+import { Container } from "../Container";
 import FileUploader from "../FileUploader";
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 
@@ -21,7 +20,7 @@ export default function UploadData({
 
   return (
     <>
-      <Heading>Step 1: Upload a CSV file to get the data.</Heading>
+      <Heading>Step 1: Upload a CSV file to get the data</Heading>
       <Card>
         <Paragraph $variant="bold">Requirements:</Paragraph>
         <Paragraph $variant="start">
@@ -38,13 +37,12 @@ export default function UploadData({
       </Card>
 
       <form onSubmit={handleSubmit}>
-        <CenteredDiv>
-          <FileUploader onFileUploaded={handleFile} />
+        <Container $centered="center">
+          <FileUploader onUploadFile={onUploadFile} />
           {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
           <StyledInputTypeSubmit
-            type="submit"
-            value="Submit"
-            onClick={handleConversion}
+            value="Next"
+            onClick={onConversion}
             disabled={!isUploaded}
           />
         </Container>
