@@ -1,46 +1,13 @@
 import UploadData from "../Components/UploadData";
 import ListOfCharts from "../Components/ListOfCharts";
 import Plotting from "../Components/Plotting";
-import ChooseVariables from "../Components/ChooseVariables";
 
-export default function HomePage({
-  keynames,
-  fileObj,
-  isUploaded,
-  onUploadFile,
-  onConversion,
-  clickedChartType,
-  onSelectChartType,
-  xKey,
-  yKey,
-  xVariable,
-  yVariable,
-  onXChange,
-  onYChange,
-  onAssignVariables,
-}) {
+export default function HomePage({ clickedChartType, onSelectChartType }) {
   return (
     <div>
-      <UploadData
-        fileObj={fileObj}
-        isUploaded={isUploaded}
-        onUploadFile={onUploadFile}
-        onConversion={onConversion}
-      />
-      <ListOfCharts onSelectChartType={onSelectChartType} keynames={keynames} />
-      <ChooseVariables
-        keynames={keynames}
-        onAssignVariables={onAssignVariables}
-        onXChange={onXChange}
-        onYChange={onYChange}
-        xKey={xKey}
-        yKey={yKey}
-      />
-      <Plotting
-        clickedChartType={clickedChartType}
-        xVariable={xVariable}
-        yVariable={yVariable}
-      />
+      <UploadData />
+      <ListOfCharts onSelectChartType={onSelectChartType} />
+      <Plotting clickedChartType={clickedChartType} />
     </div>
   );
 }

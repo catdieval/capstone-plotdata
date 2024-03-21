@@ -6,8 +6,9 @@ const Main = styled.main`
   display: flex;
   margin: auto;
   margin-top: 140px;
-  align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   min-height: 100vh;
   max-width: 640px;
 `;

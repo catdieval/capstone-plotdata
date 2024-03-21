@@ -9,7 +9,7 @@ export default function ListOfCharts({ onSelectChartType, keynames }) {
       {keynames.length > 0 && (
         <>
           <Heading>Step 2: Select the type of chart</Heading>
-          <Container $grid="grid">
+          <Container $wrap="wrap">
             {chartArray.map((chart) => {
               return (
                 <ChartItem

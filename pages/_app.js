@@ -96,7 +96,18 @@ export default function App({ Component, pageProps }) {
 
   function handleSelectChartType(element) {
     setClickedChartType(element.target.innerText);
-    alert(`You chose ${element.target.innerText}`);
+  }
+
+  //Labels to the Axes:
+  const [xLabel, setXLabel] = useState("");
+  const [yLabel, setYLabel] = useState("");
+
+  function handleXLabelChange(event) {
+    setXLabel(event.target.value);
+  }
+
+  function handleYLabelChange(event) {
+    setYLabel(event.target.value);
   }
 
   return (
@@ -111,14 +122,7 @@ export default function App({ Component, pageProps }) {
           onUploadFile={handleUploadFile}
           onConversion={handleConversion}
           clickedChartType={clickedChartType}
-          xKey={xKey}
-          yKey={yKey}
-          xVariable={xVariable}
-          yVariable={yVariable}
-          onXChange={handleXChange}
-          onYChange={handleYChange}
-          onAssignVariables={handleAssignVariables}
-          onSelectChartType={handleSelectChartType}
+          onSelectChartType={handleChartType}
         />
       </Layout>
     </>
