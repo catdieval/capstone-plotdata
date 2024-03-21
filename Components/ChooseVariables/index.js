@@ -1,11 +1,12 @@
 import Heading from "../Heading";
-import CenteredDiv from "../CenteredDiv";
+import { Container } from "../Container";
 import Paragraph from "../Paragraph";
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 import DropDownMenu from "../DropDownMenu";
 
 export default function ChooseVariables({
   keynames,
+  clickedChartType,
   onAssignVariables,
   onXChange,
   onYChange,
@@ -28,11 +29,11 @@ export default function ChooseVariables({
 
   return (
     <>
-      {keynames.length > 0 && (
+      {clickedChartType.length > 0 && (
         <>
           <Heading>Step 3: Choose the variables you want to plot</Heading>
           <form onSubmit={handleSubmit}>
-            <CenteredDiv>
+            <Container $centered="center">
               <Paragraph>Variable for the x-axis:</Paragraph>
               <DropDownMenu
                 idString="x"
@@ -52,7 +53,7 @@ export default function ChooseVariables({
                 onClick={onAssignVariables}
                 disabled={completedXAndYKeys()}
               />
-            </CenteredDiv>
+            </Container>
           </form>
         </>
       )}
