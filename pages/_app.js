@@ -33,43 +33,6 @@ export default function App({ Component, pageProps }) {
   // State to store the value selected by the user in the dropdown menu for the y variable
   const [yKey, setYKey] = useState("");
 
-  function handleXChange(event) {
-    const choice = event.target.value;
-    setXKey(choice);
-  }
-
-  function handleYChange(event) {
-    const choice = event.target.value;
-    setYKey(choice);
-  }
-
-  function handleAssignVariables() {
-    if (vals.length > 0 && xKey != "" && yKey != "") {
-      let tempXArray = new Array(vals.length);
-      let tempYArray = new Array(vals.length);
-
-      // In tempXArray fill in with the values associated to the key in vals
-      // corresponding to the xKey value.
-      // In tempYArray fill in with the values associated to the key in vals
-      // corresponding to the yKey value.
-
-      for (let i = 0; i < vals.length; i++) {
-        for (let key in vals[i]) {
-          if (key === xKey) {
-            tempXArray[i] = vals[i][key];
-          }
-          if (key === yKey) {
-            tempYArray[i] = vals[i][key];
-          }
-        }
-      }
-
-      setXVariable(tempXArray);
-      setYVariable(tempYArray);
-      alert("Data for the x and y variables are assigned.");
-    }
-  }
-
   const handleUploadFile = (file) => {
     setFileObj(file);
     setIsUploaded(true);
@@ -98,6 +61,43 @@ export default function App({ Component, pageProps }) {
     setClickedChartType(element.target.innerText);
   }
 
+  function handleXChange(event) {
+    const choice = event.target.value;
+    setXKey(choice);
+  }
+
+  function handleYChange(event) {
+    const choice = event.target.value;
+    setYKey(choice);
+  }
+
+  function handleAssignVariables() {
+    if (vals.length > 0 && xKey !== "" && yKey !== "") {
+      let tempXArray = new Array(vals.length);
+      let tempYArray = new Array(vals.length);
+
+      // In tempXArray fill in with the values associated to the key in vals
+      // corresponding to the xKey value.
+      // In tempYArray fill in with the values associated to the key in vals
+      // corresponding to the yKey value.
+
+      for (let i = 0; i < vals.length; i++) {
+        for (let key in vals[i]) {
+          if (key === xKey) {
+            tempXArray[i] = vals[i][key];
+          }
+          if (key === yKey) {
+            tempYArray[i] = vals[i][key];
+          }
+        }
+      }
+
+      setXVariable(tempXArray);
+      setYVariable(tempYArray);
+      alert("Data for the x and y variables are assigned.");
+    }
+  }
+
   //Labels to the Axes:
   const [xLabel, setXLabel] = useState("");
   const [yLabel, setYLabel] = useState("");
@@ -122,7 +122,18 @@ export default function App({ Component, pageProps }) {
           onUploadFile={handleUploadFile}
           onConversion={handleConversion}
           clickedChartType={clickedChartType}
-          onSelectChartType={handleChartType}
+          onSelectChartType={handleSelectChartType}
+          xKey={xKey}
+          yKey={yKey}
+          xVariable={xVariable}
+          yVariable={yVariable}
+          onXChange={handleXChange}
+          onYChange={handleYChange}
+          onAssignVariables={handleAssignVariables}
+          xLabel={xLabel}
+          yLabel={yLabel}
+          onXLabelChange={handleXLabelChange}
+          onYLabelChange={handleYLabelChange}
         />
       </Layout>
     </>
