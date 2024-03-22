@@ -45,7 +45,7 @@ export default function Plotting({
                 },
               ]}
               layout={{
-                title: titleLabel,
+                title: { text: titleLabel },
                 xaxis: {
                   title: { text: xLabel },
                   showline: true,
