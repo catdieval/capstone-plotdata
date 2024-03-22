@@ -3,7 +3,7 @@ import ListOfCharts from "../Components/ListOfCharts";
 import Plotting from "../Components/Plotting";
 import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
-import GraphTitle from "@/Components/GraphTitle";
+import GraphTitle from "../Components/GraphTitle";
 
 export default function HomePage({
   keynames,
