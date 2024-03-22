@@ -14,12 +14,9 @@ export default function ChartItem({
   onSelectChartType,
   clickedChartType,
 }) {
-  function compareChartTypeName() {
-    return clickedChartType === name;
-  }
   return (
     <Container $direction="column">
-      <Button isActive={compareChartTypeName()} onClick={onSelectChartType}>
+      <Button isActive={clickedChartType === name} onClick={onSelectChartType}>
         {name}
       </Button>
       <ImageContainer>

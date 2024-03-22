@@ -21,7 +21,7 @@ export default function ListOfCharts({
                   icon={icon}
                   name={name}
                   clickedChartType={clickedChartType}
-                  onSelectChartType={() => onSelectChartType({ name })}
+                  onSelectChartType={() => onSelectChartType(name)}
                 />
               );
             })}
