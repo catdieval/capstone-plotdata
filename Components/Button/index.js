@@ -12,18 +12,9 @@ const StyledButton = styled.button`
   font-weight: 700;
 `;
 
-export default function Button({
-  children,
-  onClick,
-  $variant,
-  clickedChartType,
-}) {
+export default function Button({ children, onClick, $variant, isActive }) {
   return (
-    <StyledButton
-      $variant={$variant}
-      isActive={clickedChartType}
-      onClick={onClick}
-    >
+    <StyledButton $variant={$variant} isActive={isActive} onClick={onClick}>
       {children}
     </StyledButton>
   );
