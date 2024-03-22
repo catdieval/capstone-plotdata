@@ -98,7 +98,7 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  //Labels to the Axes:
+  //Step 4: Labels to the Axes:
   const [xLabel, setXLabel] = useState("");
   const [yLabel, setYLabel] = useState("");
 
@@ -108,6 +108,13 @@ export default function App({ Component, pageProps }) {
 
   function handleYLabelChange(event) {
     setYLabel(event.target.value);
+  }
+
+  //Step 5: GraphTitle
+  const [titleLabel, setTitleLabel] = useState("");
+
+  function handleTitleChange(event) {
+    setTitleLabel(event.target.value);
   }
 
   return (
@@ -134,6 +141,8 @@ export default function App({ Component, pageProps }) {
           yLabel={yLabel}
           onXLabelChange={handleXLabelChange}
           onYLabelChange={handleYLabelChange}
+          titleLabel={titleLabel}
+          onTitleChange={handleTitleChange}
         />
       </Layout>
     </>
