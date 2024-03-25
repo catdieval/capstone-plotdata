@@ -32,7 +32,11 @@ export default function HomePage({
         onUploadFile={onUploadFile}
         onConversion={onConversion}
       />
-      <ListOfCharts onSelectChartType={onSelectChartType} keynames={keynames} />
+      <ListOfCharts
+        onSelectChartType={onSelectChartType}
+        keynames={keynames}
+        clickedChartType={clickedChartType}
+      />
       <ChooseVariables
         keynames={keynames}
         clickedChartType={clickedChartType}

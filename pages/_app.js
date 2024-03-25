@@ -57,8 +57,8 @@ export default function App({ Component, pageProps }) {
     reader.readAsText(fileObj);
   };
 
-  function handleSelectChartType(element) {
-    setClickedChartType(element.target.innerText);
+  function handleSelectChartType(name) {
+    setClickedChartType(name);
   }
 
   function handleXChange(event) {

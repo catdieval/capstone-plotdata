@@ -8,10 +8,15 @@ const ImageContainer = styled.div`
   justify-content: center;
 `;
 
-export default function ChartItem({ name, icon, onSelectChartType }) {
+export default function ChartItem({
+  name,
+  icon,
+  onSelectChartType,
+  clickedChartType,
+}) {
   return (
     <Container $direction="column">
-      <Button $variant="selected" onClick={onSelectChartType}>
+      <Button isActive={clickedChartType === name} onClick={onSelectChartType}>
         {name}
       </Button>
       <ImageContainer>
