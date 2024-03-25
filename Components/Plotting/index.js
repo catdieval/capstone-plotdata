@@ -10,6 +10,7 @@ export default function Plotting({
   yVariable,
   xLabel,
   yLabel,
+  titleLabel,
 }) {
   const match = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
@@ -26,7 +27,8 @@ export default function Plotting({
       xVariable.length > 0 &&
       yVariable.length > 0 &&
       xLabel != "" &&
-      yLabel != "" ? (
+      yLabel != "" &&
+      titleLabel != "" ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
@@ -43,6 +45,7 @@ export default function Plotting({
                 },
               ]}
               layout={{
+                title: { text: titleLabel },
                 xaxis: {
                   title: { text: xLabel },
                   showline: true,

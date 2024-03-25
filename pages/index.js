@@ -3,6 +3,7 @@ import ListOfCharts from "../Components/ListOfCharts";
 import Plotting from "../Components/Plotting";
 import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
+import GraphTitle from "../Components/GraphTitle";
 
 export default function HomePage({
   keynames,
@@ -23,6 +24,8 @@ export default function HomePage({
   onYLabelChange,
   xLabel,
   yLabel,
+  titleLabel,
+  onTitleChange,
 }) {
   return (
     <div>
@@ -56,12 +59,19 @@ export default function HomePage({
         xLabel={xLabel}
         yLabel={yLabel}
       />
+      <GraphTitle
+        xLabel={xLabel}
+        yLabel={yLabel}
+        titleLabel={titleLabel}
+        onTitleChange={onTitleChange}
+      />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}
         yVariable={yVariable}
         xLabel={xLabel}
         yLabel={yLabel}
+        titleLabel={titleLabel}
       />
     </div>
   );

@@ -5,8 +5,8 @@ import CorrectArrays from "../Components/CorrectArrays";
 import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
 export default function App({ Component, pageProps }) {
+  //Step 1: Upload CSV-file
   //State to store keys from the CSV file
-
   const [keynames, setKeynames] = useState([]);
 
   //State to store the values
@@ -18,20 +18,25 @@ export default function App({ Component, pageProps }) {
   // State to store the isUploaded status
   const [isUploaded, setIsUploaded] = useState(false);
 
+  // Step 2: Choose chart type
   // State to store the selected chart type
   const [clickedChartType, setClickedChartType] = useState("");
 
-  // State to store the values of the x variable
+  // Step 3: Choose variables
+  // States to store the values of the x and y variables
   const [xVariable, setXVariable] = useState([]);
-
-  // State to store the values of the y variable
   const [yVariable, setYVariable] = useState([]);
 
-  // State to store the value selected by the user in the dropdown menu for the x variable
+  // States to store the values selected by the user in the dropdown menus for the x and y variables
   const [xKey, setXKey] = useState("");
-
-  // State to store the value selected by the user in the dropdown menu for the y variable
   const [yKey, setYKey] = useState("");
+
+  //Step 4: Labels to the axes:
+  const [xLabel, setXLabel] = useState("");
+  const [yLabel, setYLabel] = useState("");
+
+  //Step 5: Add a title to the graph
+  const [titleLabel, setTitleLabel] = useState("");
 
   const handleUploadFile = (file) => {
     setFileObj(file);
@@ -98,16 +103,16 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  //Labels to the Axes:
-  const [xLabel, setXLabel] = useState("");
-  const [yLabel, setYLabel] = useState("");
-
   function handleXLabelChange(event) {
     setXLabel(event.target.value);
   }
 
   function handleYLabelChange(event) {
     setYLabel(event.target.value);
+  }
+
+  function handleTitleChange(event) {
+    setTitleLabel(event.target.value);
   }
 
   return (
@@ -134,6 +139,8 @@ export default function App({ Component, pageProps }) {
           yLabel={yLabel}
           onXLabelChange={handleXLabelChange}
           onYLabelChange={handleYLabelChange}
+          titleLabel={titleLabel}
+          onTitleChange={handleTitleChange}
         />
       </Layout>
     </>
