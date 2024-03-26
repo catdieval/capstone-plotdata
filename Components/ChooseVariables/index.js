@@ -36,13 +36,13 @@ export default function ChooseVariables({
             <Container $centered="center">
               <Paragraph>Variable for the x-axis:</Paragraph>
               <DropDownMenu
-                idString="x"
+                idString="x :"
                 onChange={onXChange}
                 arrayOfOptions={keynames}
               />
               <Paragraph>Variable for the y-axis:</Paragraph>
               <DropDownMenu
-                idString="y"
+                idString="y :"
                 onChange={onYChange}
                 arrayOfOptions={keynames}
               />
