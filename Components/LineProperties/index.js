@@ -31,7 +31,7 @@ export default function LineProperties() {
   return (
     <Container $centered="center">
       <Heading>Line Properties</Heading>
-      <form $variant="form" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <Container>
           {" "}
           <Paragraph> Line color</Paragraph>
