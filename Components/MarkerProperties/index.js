@@ -31,4 +31,8 @@ export default function MarkerProperties() {
   function handleMarkerProperties() {
     alert("You chose the marker properties.");
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
 }
