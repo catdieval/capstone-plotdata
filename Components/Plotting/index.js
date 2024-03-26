@@ -11,6 +11,7 @@ export default function Plotting({
   xLabel,
   yLabel,
   titleLabel,
+  barColor,
 }) {
   const match = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
@@ -35,34 +36,66 @@ export default function Plotting({
             the graph.
           </Paragraph>
           <Card $variant="graph">
-            <Plot
-              data={[
-                {
-                  x: xVariable,
-                  y: yVariable,
-                  mode: selectedMode,
-                  type: selectedType,
-                },
-              ]}
-              layout={{
-                title: { text: titleLabel },
-                xaxis: {
-                  title: { text: xLabel },
-                  showline: true,
-                  ticks: "outside",
-                },
-                yaxis: {
-                  title: { text: yLabel },
-                  ticks: "outside",
-                },
-                width: 600,
-                height: 500,
-              }}
-              config={{
-                displayModeBar: true,
-                modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
-              }}
-            />
+            {clickedChartType === "bar-plot" ? (
+              <Plot
+                data={[
+                  {
+                    x: xVariable,
+                    y: yVariable,
+                    mode: selectedMode,
+                    type: selectedType,
+                    marker: { color: barColor },
+                  },
+                ]}
+                layout={{
+                  title: { text: titleLabel },
+                  xaxis: {
+                    title: { text: xLabel },
+                    showline: true,
+                    ticks: "outside",
+                  },
+                  yaxis: {
+                    title: { text: yLabel },
+                    ticks: "outside",
+                  },
+                  width: 600,
+                  height: 500,
+                }}
+                config={{
+                  displayModeBar: true,
+                  modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
+                }}
+              />
+            ) : (
+              <Plot
+                data={[
+                  {
+                    x: xVariable,
+                    y: yVariable,
+                    mode: selectedMode,
+                    type: selectedType,
+                  },
+                ]}
+                layout={{
+                  title: { text: titleLabel },
+                  xaxis: {
+                    title: { text: xLabel },
+                    showline: true,
+                    ticks: "outside",
+                  },
+                  yaxis: {
+                    title: { text: yLabel },
+                    ticks: "outside",
+                  },
+                  width: 600,
+                  height: 500,
+                }}
+                config={{
+                  displayModeBar: true,
+                  modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
+                }}
+              />
+            )}
           </Card>
         </>
       ) : null}
