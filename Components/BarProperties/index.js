@@ -1,8 +1,8 @@
 import { barColorArray } from "@/lib/listOfBarProperties";
 import DropDownMenu from "../DropDownMenu";
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
-import Heading from "../Heading";
 import { Container } from "../Container";
+import Paragraph from "../Paragraph";
 
 export default function BarProperties({
   barColor,
@@ -11,7 +11,7 @@ export default function BarProperties({
   titleLabel,
 }) {
   function handleBarProperties() {
-    if (barColor != "") {
+    if (barColor.lenght > 0) {
       alert("You chose the bar properties.");
     }
   }
@@ -27,11 +27,11 @@ export default function BarProperties({
     <>
       {clickedChartType === "bar-plot" && titleLabel.length > 0 ? (
         <>
-          <Heading>Bar Properties</Heading>
+          <Paragraph> Bar Properties</Paragraph>
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
               <DropDownMenu
-                idString="Bar color:"
+                idString="Bar color"
                 onChange={onBarColorChange}
                 arrayOfOptions={barColorArray}
               />

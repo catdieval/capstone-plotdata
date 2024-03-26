@@ -29,7 +29,8 @@ export default function Plotting({
       yVariable.length > 0 &&
       xLabel != "" &&
       yLabel != "" &&
-      titleLabel != "" ? (
+      titleLabel != "" &&
+      barColor != "" ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
