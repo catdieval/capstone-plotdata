@@ -11,7 +11,7 @@ export default function BarProperties({
   titleLabel,
 }) {
   function handleBarProperties() {
-    if (barColor.lenght > 0) {
+    if (barColor.length > 0) {
       alert("You chose the bar properties.");
     }
   }
@@ -20,7 +20,7 @@ export default function BarProperties({
   }
 
   function completedBarProperties() {
-    return barColor === 0;
+    return barColor.length === 0;
   }
 
   return (
