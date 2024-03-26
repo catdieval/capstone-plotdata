@@ -1,7 +1,14 @@
+import styled from "styled-components";
+
+const StyledLabel = styled.label`
+  font-weight: 400;
+  margin: 0.6rem;
+`;
+
 export default function DropDownMenu({ idString, onChange, arrayOfOptions }) {
   return (
     <>
-      <label htmlFor={idString}>{idString}</label>
+      <StyledLabel htmlFor={idString}>{idString}</StyledLabel>
       <select required name={idString} id={idString} onChange={onChange}>
         <option value="">Select</option>
         {arrayOfOptions.map((optionName) => (
