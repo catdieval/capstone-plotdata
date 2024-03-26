@@ -32,9 +32,7 @@ export default function MarkerProperties({ clickedChartType, titleLabel }) {
 
   function completedMarkerProperties() {
     return (
-      markerColor.length === 0 ||
-      markerSymbol.length === 0 ||
-      markerSize.length === 0
+      markerColor.length === 0 || markerSymbol.length === 0 || markerSize === 0
     );
   }
 
