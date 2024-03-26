@@ -12,7 +12,7 @@ import {
 export default function LineProperties() {
   const [lineColor, setLineColor] = useState("");
   const [lineStyle, setLineStyle] = useState("");
-  const [lineWidth, setLineWidth] = useState("");
+  const [lineWidth, setLineWidth] = useState(0);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -24,6 +24,7 @@ export default function LineProperties() {
   function handleLineStyleChange(event) {
     setLineStyle(event.target.value);
   }
+
   function handleLineWidthChange(event) {
     setLineWidth(event.target.value);
   }
@@ -46,7 +47,7 @@ export default function LineProperties() {
           />
           <Paragraph> Line width</Paragraph>
           <DropDownMenu
-            onChange={handleLineStyleChange}
+            onChange={handleLineWidthChange}
             arrayOfOptions={lineWidthArray}
           />
         </Container>
