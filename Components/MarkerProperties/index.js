@@ -10,7 +10,7 @@ import {
   markerSizeArray,
 } from "../../lib/listOfMarkerProperties";
 
-export default function MarkerProperties() {
+export default function MarkerProperties({ clickedChartType }) {
   const [markerColor, setMarkerColor] = useState("");
   const [markerSymbol, setMarkerSymbol] = useState("");
   const [markerSize, setMarkerSize] = useState(0);
@@ -48,31 +48,36 @@ export default function MarkerProperties() {
 
   return (
     <>
-      <Heading>Marker properties</Heading>
-      <form onSubmit={handleSubmit}>
-        <Container $centered="center">
-          <Paragraph>Marker color:</Paragraph>
-          <DropDownMenu
-            onChange={handleMarkerColorChange}
-            arrayOfOptions={markerColorArray}
-          />
-          <Paragraph>Marker symbol:</Paragraph>
-          <DropDownMenu
-            onChange={handleMarkerSymbolChange}
-            arrayOfOptions={markerSymbolArray}
-          />
-          <Paragraph>Marker size:</Paragraph>
-          <DropDownMenu
-            onChange={handleMarkerSizeChange}
-            arrayOfOptions={markerSizeArray}
-          />
-          <StyledInputTypeSubmit
-            value="Next"
-            onClick={handleMarkerProperties}
-            disabled={completedMarkerProperties()}
-          />
-        </Container>
-      </form>
+      {(clickedChartType === "scatter-plot" ||
+        clickedChartType === "line-markers-plot") && (
+        <>
+          <Heading>Marker properties</Heading>
+          <form onSubmit={handleSubmit}>
+            <Container $centered="center">
+              <Paragraph>Marker color:</Paragraph>
+              <DropDownMenu
+                onChange={handleMarkerColorChange}
+                arrayOfOptions={markerColorArray}
+              />
+              <Paragraph>Marker symbol:</Paragraph>
+              <DropDownMenu
+                onChange={handleMarkerSymbolChange}
+                arrayOfOptions={markerSymbolArray}
+              />
+              <Paragraph>Marker size:</Paragraph>
+              <DropDownMenu
+                onChange={handleMarkerSizeChange}
+                arrayOfOptions={markerSizeArray}
+              />
+              <StyledInputTypeSubmit
+                value="Next"
+                onClick={handleMarkerProperties}
+                disabled={completedMarkerProperties()}
+              />
+            </Container>
+          </form>
+        </>
+      )}
     </>
   );
 }
