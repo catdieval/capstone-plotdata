@@ -20,7 +20,7 @@ export default function UploadData({
 
   return (
     <>
-      <Heading>Step 1: Upload a CSV file to get the data</Heading>
+      <Heading>Step 1: Upload a CSV file</Heading>
       <Card>
         <Paragraph $variant="bold">Requirements:</Paragraph>
         <Paragraph $variant="start">
