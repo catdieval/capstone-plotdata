@@ -3,6 +3,12 @@ import Heading from "../Heading";
 import { Container } from "../Container";
 import Paragraph from "../Paragraph";
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
+import DropDownMenu from "../DropDownMenu";
+import {
+  markerColorArray,
+  markerSymbolArray,
+  markerSizeArray,
+} from "../../lib/listOfMarkerProperties";
 
 export default function MarkerProperties() {
   const [markerColor, setMarkerColor] = useState("");
@@ -19,7 +25,7 @@ export default function MarkerProperties() {
     setMarkerSymbol(choice);
   }
 
-  function handleMarkerSize(event) {
+  function handleMarkerSizeChange(event) {
     const choice = event.target.value;
     setMarkerSize(choice);
   }
@@ -46,8 +52,20 @@ export default function MarkerProperties() {
       <form onSubmit={handleSubmit}>
         <Container $centered="center">
           <Paragraph>Marker color:</Paragraph>
+          <DropDownMenu
+            onChange={handleMarkerColorChange}
+            arrayOfOptions={markerColorArray}
+          />
           <Paragraph>Marker symbol:</Paragraph>
+          <DropDownMenu
+            onChange={handleMarkerSymbolChange}
+            arrayOfOptions={markerSymbolArray}
+          />
           <Paragraph>Marker size:</Paragraph>
+          <DropDownMenu
+            onChange={handleMarkerSizeChange}
+            arrayOfOptions={markerSizeArray}
+          />
           <StyledInputTypeSubmit
             value="Next"
             onClick={handleMarkerProperties}
