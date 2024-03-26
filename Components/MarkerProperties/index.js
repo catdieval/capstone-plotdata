@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Heading from "../Heading";
+import { Container } from "../Container";
+import Paragraph from "../Paragraph";
 
 export default function MarkerProperties() {
   const [markerColor, setMarkerColor] = useState("");
@@ -40,7 +42,13 @@ export default function MarkerProperties() {
   return (
     <>
       <Heading>Marker properties</Heading>
-      <form onSubmit={handleSubmit}></form>
+      <form onSubmit={handleSubmit}>
+        <Container $centered="center">
+          <Paragraph>Marker color:</Paragraph>
+          <Paragraph>Marker symbol:</Paragraph>
+          <Paragraph>Marker size:</Paragraph>
+        </Container>
+      </form>
     </>
   );
 }
