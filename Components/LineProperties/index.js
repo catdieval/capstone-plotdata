@@ -1,8 +1,13 @@
 import Heading from "../Heading";
 import { useState } from "react";
-import { Card } from "../Card/card.styled";
 import { Container } from "../Container";
 import Paragraph from "../Paragraph";
+import DropDownMenu from "../DropDownMenu";
+import {
+  lineColorArray,
+  lineStyleArray,
+  lineWidthArray,
+} from "@/lib/listOfLineProperties";
 
 export default function LineProperties() {
   const [lineColor, setLineColor] = useState("");
@@ -30,8 +35,20 @@ export default function LineProperties() {
         <Container>
           {" "}
           <Paragraph> Line color</Paragraph>
+          <DropDownMenu
+            onChange={handleLineColorChange}
+            arrayOfOptions={lineColorArray}
+          />
           <Paragraph> Line style</Paragraph>
+          <DropDownMenu
+            onChange={handleLineStyleChange}
+            arrayOfOptions={lineStyleArray}
+          />
           <Paragraph> Line width</Paragraph>
+          <DropDownMenu
+            onChange={handleLineStyleChange}
+            arrayOfOptions={lineWidthArray}
+          />
         </Container>
       </form>
     </Container>
