@@ -27,4 +27,8 @@ export default function MarkerProperties() {
       markerSize.length === 0
     );
   }
+
+  function handleMarkerProperties() {
+    alert("You chose the marker properties.");
+  }
 }
