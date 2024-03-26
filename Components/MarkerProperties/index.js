@@ -2,6 +2,7 @@ import { useState } from "react";
 import Heading from "../Heading";
 import { Container } from "../Container";
 import Paragraph from "../Paragraph";
+import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 
 export default function MarkerProperties() {
   const [markerColor, setMarkerColor] = useState("");
@@ -47,6 +48,11 @@ export default function MarkerProperties() {
           <Paragraph>Marker color:</Paragraph>
           <Paragraph>Marker symbol:</Paragraph>
           <Paragraph>Marker size:</Paragraph>
+          <StyledInputTypeSubmit
+            value="Next"
+            onClick={handleMarkerProperties}
+            disabled={completedMarkerProperties()}
+          />
         </Container>
       </form>
     </>
