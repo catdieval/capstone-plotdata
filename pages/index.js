@@ -4,6 +4,7 @@ import Plotting from "../Components/Plotting";
 import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
 import GraphTitle from "../Components/GraphTitle";
+import LineProperties from "@/Components/LineProperties";
 
 export default function HomePage({
   keynames,
@@ -65,6 +66,7 @@ export default function HomePage({
         titleLabel={titleLabel}
         onTitleChange={onTitleChange}
       />
+      <LineProperties />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}
