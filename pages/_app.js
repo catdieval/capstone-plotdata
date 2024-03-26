@@ -38,6 +38,9 @@ export default function App({ Component, pageProps }) {
   //Step 5: Add a title to the graph
   const [titleLabel, setTitleLabel] = useState("");
 
+  //Step 6: Properties
+  const [barColor, setBarColor] = useState("");
+
   const handleUploadFile = (file) => {
     setFileObj(file);
     setIsUploaded(true);
@@ -115,6 +118,10 @@ export default function App({ Component, pageProps }) {
     setTitleLabel(event.target.value);
   }
 
+  function handleBarColorChange(event) {
+    setBarColor(event.target.value);
+  }
+
   return (
     <>
       <Layout>
@@ -141,6 +148,8 @@ export default function App({ Component, pageProps }) {
           onYLabelChange={handleYLabelChange}
           titleLabel={titleLabel}
           onTitleChange={handleTitleChange}
+          barColor={barColor}
+          onBarColorChange={handleBarColorChange}
         />
       </Layout>
     </>
