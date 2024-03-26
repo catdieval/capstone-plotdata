@@ -19,4 +19,12 @@ export default function MarkerProperties() {
     const choice = event.target.value;
     setMarkerSize(choice);
   }
+
+  function completedMarkerProperties() {
+    return (
+      markerColor.length === 0 ||
+      markerSymbol.length === 0 ||
+      markerSize.length === 0
+    );
+  }
 }
