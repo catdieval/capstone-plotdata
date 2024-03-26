@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Heading from "../Heading";
 
 export default function MarkerProperties() {
   const [markerColor, setMarkerColor] = useState("");
@@ -35,4 +36,11 @@ export default function MarkerProperties() {
   function handleSubmit(event) {
     event.preventDefault();
   }
+
+  return (
+    <>
+      <Heading>Marker properties</Heading>
+      <form onSubmit={handleSubmit}></form>
+    </>
+  );
 }
