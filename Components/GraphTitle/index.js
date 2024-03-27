@@ -38,8 +38,7 @@ export default function GraphTitle({
                 placeholderString={"Fill me with a title"}
                 onChange={onTitleChange}
               />
-              <br></br>
-              <br></br>
+
               <StyledInputTypeSubmit
                 value="Next"
                 onClick={handleTitle}
