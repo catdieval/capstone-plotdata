@@ -35,7 +35,7 @@ export default function LineProperties({ clickedChartType, titleLabel }) {
       `You have applied for line-color: ${lineColor}, line-style: ${lineStyle} and line-width: ${lineWidth} `
     );
   }
-  console.log(clickedChartType);
+  console.log(lineWidth);
   return (
     <>
       {clickedChartType === "line-plot" && titleLabel.length > 0 && (
@@ -63,7 +63,7 @@ export default function LineProperties({ clickedChartType, titleLabel }) {
               disabled={
                 lineColor.length === 0 ||
                 lineStyle.length === 0 ||
-                lineWidth.length === 0
+                lineWidth.toString().length === 0
               }
             />
           </Container>
