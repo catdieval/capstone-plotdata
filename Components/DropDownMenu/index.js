@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledLabel = styled.label`
   font-weight: 400;
-  margin: 0.6rem;
+  margin: 0.3rem;
 `;
 
 export default function DropDownMenu({ idString, onChange, arrayOfOptions }) {
