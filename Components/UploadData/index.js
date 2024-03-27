@@ -37,10 +37,11 @@ export default function UploadData({
       </Card>
 
       <form onSubmit={handleSubmit}>
-        <Container $centered="center">
+        <Container $centered="center" $margin>
           <FileUploader onUploadFile={onUploadFile} />
           {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
           <StyledInputTypeSubmit
+            $nomargin
             value="Next"
             onClick={onConversion}
             disabled={!isUploaded}
