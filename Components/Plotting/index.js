@@ -22,6 +22,14 @@ export default function Plotting({
     var selectedType = chartArray[match].type;
   }
 
+  var dataOptions = {
+    x: xVariable,
+    y: yVariable,
+    mode: selectedMode,
+    type: selectedType,
+    marker: { color: barColor },
+  };
+
   return (
     <>
       {match != -1 &&
@@ -39,15 +47,7 @@ export default function Plotting({
           <Card $variant="graph">
             {clickedChartType === "bar-plot" ? (
               <Plot
-                data={[
-                  {
-                    x: xVariable,
-                    y: yVariable,
-                    mode: selectedMode,
-                    type: selectedType,
-                    marker: { color: barColor },
-                  },
-                ]}
+                data={[dataOptions]}
                 layout={{
                   title: { text: titleLabel },
                   xaxis: {

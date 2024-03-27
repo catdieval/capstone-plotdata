@@ -119,7 +119,8 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleBarColorChange(event) {
-    setBarColor(event.target.value);
+    const choice = event.target.value;
+    setBarColor(choice);
   }
 
   return (

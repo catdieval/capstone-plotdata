@@ -1,8 +1,8 @@
-import { barColorArray } from "@/lib/listOfBarProperties";
+import { barColorArray } from "../../lib/listOfBarProperties.js";
 import DropDownMenu from "../DropDownMenu";
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 import { Container } from "../Container";
-import Paragraph from "../Paragraph";
+import Heading from "../Heading";
 
 export default function BarProperties({
   barColor,
@@ -25,9 +25,9 @@ export default function BarProperties({
 
   return (
     <>
-      {clickedChartType === "bar-plot" && titleLabel.length > 0 ? (
+      {clickedChartType === "bar-plot" && titleLabel.length > 0 && (
         <>
-          <Paragraph> Bar Properties</Paragraph>
+          <Heading> Bar Properties</Heading>
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
               <DropDownMenu
@@ -43,7 +43,7 @@ export default function BarProperties({
             </Container>
           </form>
         </>
-      ) : null}
+      )}
     </>
   );
 }
