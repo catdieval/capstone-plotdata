@@ -51,7 +51,6 @@ export default function XandYLabelsGraph({
                 onChange={onXLabelChange}
               />
               <br></br>
-              <br></br>
               <InputTypeText
                 idString={"Label for the y-axis"}
                 placeholderString={
@@ -59,8 +58,7 @@ export default function XandYLabelsGraph({
                 }
                 onChange={onYLabelChange}
               />
-              <br></br>
-              <br></br>
+
               <StyledInputTypeSubmit
                 value="Next"
                 onClick={handleAxesLabels}
