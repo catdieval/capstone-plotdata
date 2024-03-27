@@ -1,15 +1,15 @@
-import Heading from "../Heading";
+import { StyledH3 } from "../Heading";
 import { useState } from "react";
 import { Container } from "../Container";
-import Paragraph from "../Paragraph";
 import DropDownMenu from "../DropDownMenu";
 import {
   lineColorArray,
   lineStyleArray,
   lineWidthArray,
 } from "@/lib/listOfLineProperties";
+import { Card } from "../Card/card.styled";
 
-export default function LineProperties() {
+export default function LineProperties({ clickedChartType, titleLabel }) {
   const [lineColor, setLineColor] = useState("");
   const [lineStyle, setLineStyle] = useState("");
   const [lineWidth, setLineWidth] = useState(0);
@@ -30,28 +30,27 @@ export default function LineProperties() {
   }
 
   return (
-    <Container $centered="center">
-      <Heading>Line Properties</Heading>
+    <>
       <form onSubmit={handleSubmit}>
-        <Container>
-          {" "}
-          <Paragraph> Line color</Paragraph>
+        <Container $centered="center">
+          <StyledH3>Line Properties</StyledH3>
           <DropDownMenu
+            idString="Line Color"
             onChange={handleLineColorChange}
             arrayOfOptions={lineColorArray}
           />
-          <Paragraph> Line style</Paragraph>
           <DropDownMenu
+            idString="Line Style"
             onChange={handleLineStyleChange}
             arrayOfOptions={lineStyleArray}
           />
-          <Paragraph> Line width</Paragraph>
           <DropDownMenu
+            idString="Line Width"
             onChange={handleLineWidthChange}
             arrayOfOptions={lineWidthArray}
           />
         </Container>
       </form>
-    </Container>
+    </>
   );
 }
