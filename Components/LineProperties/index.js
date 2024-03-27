@@ -6,8 +6,9 @@ import {
   lineColorArray,
   lineStyleArray,
   lineWidthArray,
-} from "@/lib/listOfLineProperties";
-import { Card } from "../Card/card.styled";
+} from "../../lib/listOfLineProperties";
+
+import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 
 export default function LineProperties({ clickedChartType, titleLabel }) {
   const [lineColor, setLineColor] = useState("");
@@ -29,6 +30,12 @@ export default function LineProperties({ clickedChartType, titleLabel }) {
     setLineWidth(event.target.value);
   }
 
+  function handleLineProperties() {
+    confirm(
+      `You have choose line-color: ${lineColor}, line-style: ${lineStyle} and line-width: ${lineWidth} `
+    );
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -48,6 +55,15 @@ export default function LineProperties({ clickedChartType, titleLabel }) {
             idString="Line Width"
             onChange={handleLineWidthChange}
             arrayOfOptions={lineWidthArray}
+          />
+          <StyledInputTypeSubmit
+            value="Next"
+            onClick={handleLineProperties}
+            disabled={
+              lineColor.length === 0 ||
+              lineStyle.length === 0 ||
+              lineWidth.length === 0
+            }
           />
         </Container>
       </form>
