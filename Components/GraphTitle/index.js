@@ -28,7 +28,7 @@ export default function GraphTitle({
     <>
       {xLabel.length > 0 && yLabel.length > 0 && (
         <>
-          <Heading> Step 5: Give a title to the Graph </Heading>
+          <Heading> Step 5: Give a title to the graph </Heading>
           <Paragraph>Label for the x-axis: {xLabel}</Paragraph>
           <Paragraph>Label for the y-axis: {yLabel}</Paragraph>
           <form onSubmit={handleSubmit}>
