@@ -11,9 +11,7 @@ export default function BarProperties({
   titleLabel,
 }) {
   function handleBarProperties() {
-    if (barColor.length > 0) {
-      alert("You chose the bar properties.");
-    }
+    alert("You chose the bar properties.");
   }
   function handleSubmit(event) {
     event.preventDefault();
