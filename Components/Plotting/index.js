@@ -22,13 +22,15 @@ export default function Plotting({
     var selectedType = chartArray[match].type;
   }
 
-  var dataOptions = {
-    x: xVariable,
-    y: yVariable,
-    mode: selectedMode,
-    type: selectedType,
-    marker: { color: barColor },
-  };
+  if (clickedChartType === "bar-plot") {
+    var dataOptions = {
+      x: xVariable,
+      y: yVariable,
+      mode: selectedMode,
+      type: selectedType,
+      marker: { color: barColor },
+    };
+  }
 
   return (
     <>
