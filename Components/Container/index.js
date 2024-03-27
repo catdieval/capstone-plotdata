@@ -28,6 +28,6 @@ export const Container = styled.section`
       flex-direction: column;
       align-items: center;
       padding: 0;
-      margin: 60px 30px;
+      margin: ${(props) => (props.$margin ? "60px 30px" : "")};
     `};
 `;
