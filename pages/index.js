@@ -66,7 +66,10 @@ export default function HomePage({
         titleLabel={titleLabel}
         onTitleChange={onTitleChange}
       />
-      <LineProperties />
+      <LineProperties
+        clickedChartType={clickedChartType}
+        titleLabel={titleLabel}
+      />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}

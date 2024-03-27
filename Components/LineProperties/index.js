@@ -32,41 +32,43 @@ export default function LineProperties({ clickedChartType, titleLabel }) {
 
   function handleLineProperties() {
     confirm(
-      `You have choose line-color: ${lineColor}, line-style: ${lineStyle} and line-width: ${lineWidth} `
+      `You have applied for line-color: ${lineColor}, line-style: ${lineStyle} and line-width: ${lineWidth} `
     );
   }
-
+  console.log(clickedChartType);
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <Container $centered="center">
-          <StyledH3>Line Properties</StyledH3>
-          <DropDownMenu
-            idString="Line Color"
-            onChange={handleLineColorChange}
-            arrayOfOptions={lineColorArray}
-          />
-          <DropDownMenu
-            idString="Line Style"
-            onChange={handleLineStyleChange}
-            arrayOfOptions={lineStyleArray}
-          />
-          <DropDownMenu
-            idString="Line Width"
-            onChange={handleLineWidthChange}
-            arrayOfOptions={lineWidthArray}
-          />
-          <StyledInputTypeSubmit
-            value="Next"
-            onClick={handleLineProperties}
-            disabled={
-              lineColor.length === 0 ||
-              lineStyle.length === 0 ||
-              lineWidth.length === 0
-            }
-          />
-        </Container>
-      </form>
+      {clickedChartType === "line-plot" && titleLabel.length > 0 && (
+        <form onSubmit={handleSubmit}>
+          <Container $centered="center">
+            <StyledH3>Line Properties</StyledH3>
+            <DropDownMenu
+              idString="Line Color"
+              onChange={handleLineColorChange}
+              arrayOfOptions={lineColorArray}
+            />
+            <DropDownMenu
+              idString="Line Style"
+              onChange={handleLineStyleChange}
+              arrayOfOptions={lineStyleArray}
+            />
+            <DropDownMenu
+              idString="Line Width"
+              onChange={handleLineWidthChange}
+              arrayOfOptions={lineWidthArray}
+            />
+            <StyledInputTypeSubmit
+              value="Next"
+              onClick={handleLineProperties}
+              disabled={
+                lineColor.length === 0 ||
+                lineStyle.length === 0 ||
+                lineWidth.length === 0
+              }
+            />
+          </Container>
+        </form>
+      )}
     </>
   );
 }
