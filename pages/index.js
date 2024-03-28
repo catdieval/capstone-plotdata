@@ -4,6 +4,7 @@ import Plotting from "../Components/Plotting";
 import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
 import GraphTitle from "../Components/GraphTitle";
+import BarProperties from "../Components/BarProperties";
 
 export default function HomePage({
   keynames,
@@ -26,6 +27,8 @@ export default function HomePage({
   yLabel,
   titleLabel,
   onTitleChange,
+  barColor,
+  onBarColorChange,
 }) {
   return (
     <div>
@@ -65,6 +68,12 @@ export default function HomePage({
         titleLabel={titleLabel}
         onTitleChange={onTitleChange}
       />
+      <BarProperties
+        barColor={barColor}
+        onBarColorChange={onBarColorChange}
+        clickedChartType={clickedChartType}
+        titleLabel={titleLabel}
+      />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}
@@ -72,6 +81,7 @@ export default function HomePage({
         xLabel={xLabel}
         yLabel={yLabel}
         titleLabel={titleLabel}
+        barColor={barColor}
       />
     </div>
   );

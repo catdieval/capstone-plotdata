@@ -11,6 +11,7 @@ export default function Plotting({
   xLabel,
   yLabel,
   titleLabel,
+  barColor,
 }) {
   const match = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
@@ -21,6 +22,16 @@ export default function Plotting({
     var selectedType = chartArray[match].type;
   }
 
+  if (clickedChartType === "bar-plot") {
+    var dataOptions = {
+      x: xVariable,
+      y: yVariable,
+      mode: selectedMode,
+      type: selectedType,
+      marker: { color: barColor },
+    };
+  }
+
   return (
     <>
       {match != -1 &&
@@ -28,41 +39,66 @@ export default function Plotting({
       yVariable.length > 0 &&
       xLabel != "" &&
       yLabel != "" &&
-      titleLabel != "" ? (
+      titleLabel != "" &&
+      barColor != "" ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
             the graph.
           </Paragraph>
           <Card $variant="graph">
-            <Plot
-              data={[
-                {
-                  x: xVariable,
-                  y: yVariable,
-                  mode: selectedMode,
-                  type: selectedType,
-                },
-              ]}
-              layout={{
-                title: { text: titleLabel },
-                xaxis: {
-                  title: { text: xLabel },
-                  showline: true,
-                  ticks: "outside",
-                },
-                yaxis: {
-                  title: { text: yLabel },
-                  ticks: "outside",
-                },
-                width: 600,
-                height: 500,
-              }}
-              config={{
-                displayModeBar: true,
-                modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
-              }}
-            />
+            {clickedChartType === "bar-plot" ? (
+              <Plot
+                data={[dataOptions]}
+                layout={{
+                  title: { text: titleLabel },
+                  xaxis: {
+                    title: { text: xLabel },
+                    showline: true,
+                    ticks: "outside",
+                  },
+                  yaxis: {
+                    title: { text: yLabel },
+                    ticks: "outside",
+                  },
+                  width: 600,
+                  height: 500,
+                }}
+                config={{
+                  displayModeBar: true,
+                  modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
+                }}
+              />
+            ) : (
+              <Plot
+                data={[
+                  {
+                    x: xVariable,
+                    y: yVariable,
+                    mode: selectedMode,
+                    type: selectedType,
+                  },
+                ]}
+                layout={{
+                  title: { text: titleLabel },
+                  xaxis: {
+                    title: { text: xLabel },
+                    showline: true,
+                    ticks: "outside",
+                  },
+                  yaxis: {
+                    title: { text: yLabel },
+                    ticks: "outside",
+                  },
+                  width: 600,
+                  height: 500,
+                }}
+                config={{
+                  displayModeBar: true,
+                  modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
+                }}
+              />
+            )}
           </Card>
         </>
       ) : null}
