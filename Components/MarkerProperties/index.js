@@ -10,7 +10,10 @@ import {
   markerSizeArray,
 } from "../../lib/listOfMarkerProperties";
 
-export default function MarkerProperties({ clickedChartType, titleLabel }) {
+export default function MarkerProperties({
+  clickedChartType,
+  hasCompletedStep5,
+}) {
   const [markerColor, setMarkerColor] = useState("");
   const [markerSymbol, setMarkerSymbol] = useState("");
   const [markerSize, setMarkerSize] = useState(0);
@@ -46,7 +49,7 @@ export default function MarkerProperties({ clickedChartType, titleLabel }) {
 
   return (
     <>
-      {titleLabel.length > 0 &&
+      {hasCompletedStep5 === true &&
         (clickedChartType === "scatter-plot" ||
           clickedChartType === "line-markers-plot") && (
           <>
