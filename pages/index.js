@@ -27,6 +27,12 @@ export default function HomePage({
   yLabel,
   titleLabel,
   onTitleChange,
+  onLineColorChange,
+  onLineStyleChange,
+  onLineWidthChange,
+  lineColor,
+  lineStyle,
+  lineWidth,
 }) {
   return (
     <div>
@@ -69,6 +75,12 @@ export default function HomePage({
       <LineProperties
         clickedChartType={clickedChartType}
         titleLabel={titleLabel}
+        onLineColorChange={onLineColorChange}
+        onLineStyleChange={onLineStyleChange}
+        onLineWidthChange={onLineWidthChange}
+        lineColor={lineColor}
+        lineStyle={lineStyle}
+        lineWidth={lineWidth}
       />
       <Plotting
         clickedChartType={clickedChartType}

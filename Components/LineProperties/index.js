@@ -10,51 +10,45 @@ import {
 
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 
-export default function LineProperties({ clickedChartType, titleLabel }) {
-  const [lineColor, setLineColor] = useState("");
-  const [lineStyle, setLineStyle] = useState("");
-  const [lineWidth, setLineWidth] = useState(0);
-
+export default function LineProperties({
+  clickedChartType,
+  titleLabel,
+  onLineColorChange,
+  onLineStyleChange,
+  onLineWidthChange,
+  lineColor,
+  lineStyle,
+  lineWidth,
+}) {
   function handleSubmit(event) {
     event.preventDefault();
   }
-  function handleLineColorChange(event) {
-    setLineColor(event.target.value);
-  }
-
-  function handleLineStyleChange(event) {
-    setLineStyle(event.target.value);
-  }
-
-  function handleLineWidthChange(event) {
-    setLineWidth(event.target.value);
-  }
-
+  console.log(lineColor);
   function handleLineProperties() {
     confirm(
       `You have applied for line-color: ${lineColor}, line-style: ${lineStyle} and line-width: ${lineWidth} `
     );
   }
-  console.log(lineWidth);
+
   return (
     <>
       {clickedChartType === "line-plot" && titleLabel.length > 0 && (
         <form onSubmit={handleSubmit}>
-          <Container $centered="center">
+          <Container $centered="center" $gap>
             <StyledH3>Line Properties</StyledH3>
             <DropDownMenu
               idString="Line Color"
-              onChange={handleLineColorChange}
+              onChange={onLineColorChange}
               arrayOfOptions={lineColorArray}
             />
             <DropDownMenu
               idString="Line Style"
-              onChange={handleLineStyleChange}
+              onChange={onLineStyleChange}
               arrayOfOptions={lineStyleArray}
             />
             <DropDownMenu
               idString="Line Width"
-              onChange={handleLineWidthChange}
+              onChange={onLineWidthChange}
               arrayOfOptions={lineWidthArray}
             />
             <StyledInputTypeSubmit
@@ -63,7 +57,7 @@ export default function LineProperties({ clickedChartType, titleLabel }) {
               disabled={
                 lineColor.length === 0 ||
                 lineStyle.length === 0 ||
-                lineWidth.toString().length === 0
+                Number(lineWidth) === 0
               }
             />
           </Container>

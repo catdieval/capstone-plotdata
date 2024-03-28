@@ -38,6 +38,11 @@ export default function App({ Component, pageProps }) {
   //Step 5: Add a title to the graph
   const [titleLabel, setTitleLabel] = useState("");
 
+  //Line Properties
+  const [lineColor, setLineColor] = useState("");
+  const [lineStyle, setLineStyle] = useState("");
+  const [lineWidth, setLineWidth] = useState(0);
+
   const handleUploadFile = (file) => {
     setFileObj(file);
     setIsUploaded(true);
@@ -115,6 +120,18 @@ export default function App({ Component, pageProps }) {
     setTitleLabel(event.target.value);
   }
 
+  function handleLineColorChange(event) {
+    setLineColor(event.target.value);
+  }
+
+  function handleLineStyleChange(event) {
+    setLineStyle(event.target.value);
+  }
+
+  function handleLineWidthChange(event) {
+    setLineWidth(event.target.value);
+  }
+
   return (
     <>
       <Layout>
@@ -141,6 +158,12 @@ export default function App({ Component, pageProps }) {
           onYLabelChange={handleYLabelChange}
           titleLabel={titleLabel}
           onTitleChange={handleTitleChange}
+          onLineColorChange={handleLineColorChange}
+          onLineStyleChange={handleLineStyleChange}
+          onLineWidthChange={handleLineWidthChange}
+          lineColor={lineColor}
+          lineStyle={lineStyle}
+          lineWidth={lineWidth}
         />
       </Layout>
     </>
