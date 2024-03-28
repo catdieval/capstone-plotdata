@@ -25,8 +25,12 @@ export default function HomePage({
   onYLabelChange,
   xLabel,
   yLabel,
+  hasCompletedStep4,
+  onHasCompletedStep4,
   titleLabel,
   onTitleChange,
+  hasCompletedStep5,
+  onHasCompletedStep5,
 }) {
   return (
     <div>
@@ -59,16 +63,19 @@ export default function HomePage({
         onYLabelChange={onYLabelChange}
         xLabel={xLabel}
         yLabel={yLabel}
+        onHasCompletedStep4={onHasCompletedStep4}
       />
       <GraphTitle
         xLabel={xLabel}
         yLabel={yLabel}
         titleLabel={titleLabel}
         onTitleChange={onTitleChange}
+        hasCompletedStep4={hasCompletedStep4}
+        onHasCompletedStep5={onHasCompletedStep5}
       />
       <MarkerProperties
         clickedChartType={clickedChartType}
-        titleLabel={titleLabel}
+        hasCompletedStep5={hasCompletedStep5}
       />
       <Plotting
         clickedChartType={clickedChartType}
@@ -76,7 +83,9 @@ export default function HomePage({
         yVariable={yVariable}
         xLabel={xLabel}
         yLabel={yLabel}
+        hasCompletedStep4={hasCompletedStep4}
         titleLabel={titleLabel}
+        hasCompletedStep5={hasCompletedStep5}
       />
     </div>
   );
