@@ -13,15 +13,10 @@ export default function XandYLabelsGraph({
   onYLabelChange,
   xLabel,
   yLabel,
+  onHasCompletedStep4,
 }) {
   function handleSubmit(event) {
     event.preventDefault();
-  }
-
-  function handleAxesLabels() {
-    if (xLabel.length > 0 && yLabel.length > 0) {
-      alert("Labels for the x-axis and the y-axis of the graph are assigned");
-    }
   }
 
   function completedXAndYLabels() {
@@ -63,7 +58,7 @@ export default function XandYLabelsGraph({
               <br></br>
               <StyledInputTypeSubmit
                 value="Next"
-                onClick={handleAxesLabels}
+                onClick={onHasCompletedStep4}
                 disabled={completedXAndYLabels()}
               />
             </Container>

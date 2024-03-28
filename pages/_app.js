@@ -34,9 +34,11 @@ export default function App({ Component, pageProps }) {
   //Step 4: Labels to the axes:
   const [xLabel, setXLabel] = useState("");
   const [yLabel, setYLabel] = useState("");
+  const [hasCompletedStep4, setHasCompletedStep4] = useState(false);
 
   //Step 5: Add a title to the graph
   const [titleLabel, setTitleLabel] = useState("");
+  const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
   const handleUploadFile = (file) => {
     setFileObj(file);
@@ -111,8 +113,18 @@ export default function App({ Component, pageProps }) {
     setYLabel(event.target.value);
   }
 
+  function handleHasCompletedStep4() {
+    alert("Labels for the x-axis and the y-axis of the graph are assigned");
+    setHasCompletedStep4(true);
+  }
+
   function handleTitleChange(event) {
     setTitleLabel(event.target.value);
+  }
+
+  function handleHasCompletedStep5() {
+    alert("Title of the graph is assigned");
+    setHasCompletedStep5(true);
   }
 
   return (
@@ -139,8 +151,12 @@ export default function App({ Component, pageProps }) {
           yLabel={yLabel}
           onXLabelChange={handleXLabelChange}
           onYLabelChange={handleYLabelChange}
+          hasCompletedStep4={hasCompletedStep4}
+          onHasCompletedStep4={handleHasCompletedStep4}
           titleLabel={titleLabel}
           onTitleChange={handleTitleChange}
+          hasCompletedStep5={hasCompletedStep5}
+          onHasCompletedStep5={handleHasCompletedStep5}
         />
       </Layout>
     </>
