@@ -10,7 +10,9 @@ export default function Plotting({
   yVariable,
   xLabel,
   yLabel,
+  hasCompletedStep4,
   titleLabel,
+  hasCompletedStep5,
 }) {
   const match = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
@@ -26,9 +28,8 @@ export default function Plotting({
       {match != -1 &&
       xVariable.length > 0 &&
       yVariable.length > 0 &&
-      xLabel != "" &&
-      yLabel != "" &&
-      titleLabel != "" ? (
+      hasCompletedStep4 === true &&
+      hasCompletedStep5 === true ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
