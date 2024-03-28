@@ -46,8 +46,7 @@ export default function ChooseVariables({
                 onChange={onYChange}
                 arrayOfOptions={keynames}
               />
-              <br></br>
-              <br></br>
+
               <StyledInputTypeSubmit
                 value="Next"
                 onClick={onAssignVariables}

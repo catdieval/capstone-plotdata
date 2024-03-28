@@ -34,12 +34,12 @@ export default function XandYLabelsGraph({
         <>
           <Heading>Step 4: Give labels to axes</Heading>
           <Paragraph>
-            For the x variable you chose:<br></br>
-            {xKey}
+            For the x variable you chose:
+            <Paragraph $variant="bold">{xKey}</Paragraph>
           </Paragraph>
           <Paragraph>
-            For the y variable you chose:<br></br>
-            {yKey}
+            For the y variable you chose:
+            <Paragraph $variant="bold">{yKey}</Paragraph>
           </Paragraph>
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
@@ -51,7 +51,6 @@ export default function XandYLabelsGraph({
                 onChange={onXLabelChange}
               />
               <br></br>
-              <br></br>
               <InputTypeText
                 idString={"Label for the y-axis"}
                 placeholderString={
@@ -59,8 +58,7 @@ export default function XandYLabelsGraph({
                 }
                 onChange={onYLabelChange}
               />
-              <br></br>
-              <br></br>
+
               <StyledInputTypeSubmit
                 value="Next"
                 onClick={handleAxesLabels}
