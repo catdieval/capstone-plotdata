@@ -1,5 +1,4 @@
 import { StyledH3 } from "../Heading";
-import { useState } from "react";
 import { Container } from "../Container";
 import DropDownMenu from "../DropDownMenu";
 import {
@@ -23,7 +22,7 @@ export default function LineProperties({
   function handleSubmit(event) {
     event.preventDefault();
   }
-  console.log(lineColor);
+
   function handleLineProperties() {
     confirm(
       `You have applied for line-color: ${lineColor}, line-style: ${lineStyle} and line-width: ${lineWidth} `

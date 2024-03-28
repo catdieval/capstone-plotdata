@@ -89,6 +89,9 @@ export default function HomePage({
         xLabel={xLabel}
         yLabel={yLabel}
         titleLabel={titleLabel}
+        lineColor={lineColor}
+        lineStyle={lineStyle}
+        lineWidth={lineWidth}
       />
     </div>
   );

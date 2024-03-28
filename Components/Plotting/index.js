@@ -11,6 +11,9 @@ export default function Plotting({
   xLabel,
   yLabel,
   titleLabel,
+  lineColor,
+  lineStyle,
+  lineWidth,
 }) {
   const match = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
@@ -20,6 +23,17 @@ export default function Plotting({
     var selectedMode = chartArray[match].mode;
     var selectedType = chartArray[match].type;
   }
+
+  var dataOptions = {
+    x: xVariable,
+    y: yVariable,
+    mode: selectedMode,
+    type: selectedType,
+    line:
+      clickedChartType === "line-plot"
+        ? { color: lineColor, dash: lineStyle, width: Number(lineWidth) }
+        : "",
+  };
 
   return (
     <>
@@ -36,14 +50,7 @@ export default function Plotting({
           </Paragraph>
           <Card $variant="graph">
             <Plot
-              data={[
-                {
-                  x: xVariable,
-                  y: yVariable,
-                  mode: selectedMode,
-                  type: selectedType,
-                },
-              ]}
+              data={[dataOptions]}
               layout={{
                 title: { text: titleLabel },
                 xaxis: {
