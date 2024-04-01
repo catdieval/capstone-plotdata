@@ -24,15 +24,19 @@ export default function Plotting({
     var selectedType = chartArray[match].type;
   }
 
-  var dataOptions = {
-    x: xVariable,
-    y: yVariable,
-    mode: selectedMode,
-    type: selectedType,
-    line:
-      clickedChartType === "line-plot"
-        ? { color: lineColor, dash: lineStyle, width: Number(lineWidth) }
-        : "",
+  const dataOptions = {
+    data: [
+      {
+        x: xVariable,
+        y: yVariable,
+        mode: selectedMode,
+        type: selectedType,
+        line:
+          clickedChartType === "line-plot"
+            ? { color: lineColor, dash: lineStyle, width: Number(lineWidth) }
+            : "",
+      },
+    ],
   };
 
   return (
@@ -50,7 +54,7 @@ export default function Plotting({
           </Paragraph>
           <Card $variant="graph">
             <Plot
-              data={[dataOptions]}
+              data={dataOptions.data}
               layout={{
                 title: { text: titleLabel },
                 xaxis: {
