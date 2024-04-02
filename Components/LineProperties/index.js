@@ -6,7 +6,6 @@ import {
   lineStyleArray,
   lineWidthArray,
 } from "../../lib/listOfLineProperties";
-
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 import Paragraph from "../Paragraph";
 
@@ -25,9 +24,7 @@ export default function LineProperties({
   }
 
   function handleLineProperties() {
-    confirm(
-      `You have applied for line-color: ${lineColor}, line-style: ${lineStyle} and line-width: ${lineWidth} `
-    );
+    alert(`You have selected the line properties`);
   }
 
   return (
@@ -36,13 +33,11 @@ export default function LineProperties({
         <form onSubmit={handleSubmit}>
           <Container $centered="center" $gap>
             <StyledH3>Line Properties</StyledH3>
-
             <Paragraph>Line Color</Paragraph>
             <DropDownMenu
               onChange={onLineColorChange}
               arrayOfOptions={lineColorArray}
             />
-
             <Paragraph>Line Style</Paragraph>
             <DropDownMenu
               onChange={onLineStyleChange}
