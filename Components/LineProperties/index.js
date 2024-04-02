@@ -27,6 +27,14 @@ export default function LineProperties({
     alert(`You have selected the line properties`);
   }
 
+  function completedLineProperties() {
+    return (
+      lineColor.length === 0 ||
+      lineStyle.length === 0 ||
+      Number(lineWidth) === 0
+    );
+  }
+
   return (
     <>
       {clickedChartType === "line-plot" && titleLabel.length > 0 && (
@@ -51,11 +59,7 @@ export default function LineProperties({
             <StyledInputTypeSubmit
               value="Next"
               onClick={handleLineProperties}
-              disabled={
-                lineColor.length === 0 ||
-                lineStyle.length === 0 ||
-                Number(lineWidth) === 0
-              }
+              disabled={completedLineProperties()}
             />
           </Container>
         </form>
