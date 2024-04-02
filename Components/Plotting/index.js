@@ -44,7 +44,7 @@ export default function Plotting({
       titleLabel != "" &&
       lineColor != "" &&
       lineStyle != "" &&
-      lineWidth.length > 0 ? (
+      lineWidth > 0 ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
