@@ -24,20 +24,15 @@ export default function Plotting({
     var selectedType = chartArray[match].type;
   }
 
-  const dataOptions = {
-    data: [
-      {
-        x: xVariable,
-        y: yVariable,
-        mode: selectedMode,
-        type: selectedType,
-        line:
-          clickedChartType === "line-plot"
-            ? { color: lineColor, dash: lineStyle, width: Number(lineWidth) }
-            : "",
-      },
-    ],
-  };
+  if (clickedChartType === "line-plot") {
+    var dataOptions = {
+      x: xVariable,
+      y: yVariable,
+      mode: selectedMode,
+      type: selectedType,
+      line: { color: lineColor, dash: lineStyle, width: Number(lineWidth) },
+    };
+  }
 
   return (
     <>
@@ -46,7 +41,10 @@ export default function Plotting({
       yVariable.length > 0 &&
       xLabel != "" &&
       yLabel != "" &&
-      titleLabel != "" ? (
+      titleLabel != "" &&
+      lineColor != "" &&
+      lineStyle != "" &&
+      lineWidth.length > 0 ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
@@ -54,7 +52,7 @@ export default function Plotting({
           </Paragraph>
           <Card $variant="graph">
             <Plot
-              data={dataOptions.data}
+              data={[dataOptions]}
               layout={{
                 title: { text: titleLabel },
                 xaxis: {
