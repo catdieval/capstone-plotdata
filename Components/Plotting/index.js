@@ -30,7 +30,7 @@ export default function Plotting({
       y: yVariable,
       mode: selectedMode,
       type: selectedType,
-      line: { color: lineColor, dash: lineStyle, width: Number(lineWidth) },
+      line: { color: lineColor, dash: lineStyle, width: lineWidth },
     };
   }
 
@@ -51,27 +51,58 @@ export default function Plotting({
             the graph.
           </Paragraph>
           <Card $variant="graph">
-            <Plot
-              data={[dataOptions]}
-              layout={{
-                title: { text: titleLabel },
-                xaxis: {
-                  title: { text: xLabel },
-                  showline: true,
-                  ticks: "outside",
-                },
-                yaxis: {
-                  title: { text: yLabel },
-                  ticks: "outside",
-                },
-                width: 600,
-                height: 500,
-              }}
-              config={{
-                displayModeBar: true,
-                modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
-              }}
-            />
+            {clickedChartType === "line-plot" ? (
+              <Plot
+                data={[dataOptions]}
+                layout={{
+                  title: { text: titleLabel },
+                  xaxis: {
+                    title: { text: xLabel },
+                    showline: true,
+                    ticks: "outside",
+                  },
+                  yaxis: {
+                    title: { text: yLabel },
+                    ticks: "outside",
+                  },
+                  width: 600,
+                  height: 500,
+                }}
+                config={{
+                  displayModeBar: true,
+                  modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
+                }}
+              />
+            ) : (
+              <Plot
+                data={[
+                  {
+                    x: xVariable,
+                    y: yVariable,
+                    mode: selectedMode,
+                    type: selectedType,
+                  },
+                ]}
+                layout={{
+                  title: { text: titleLabel },
+                  xaxis: {
+                    title: { text: xLabel },
+                    showline: true,
+                    ticks: "outside",
+                  },
+                  yaxis: {
+                    title: { text: yLabel },
+                    ticks: "outside",
+                  },
+                  width: 600,
+                  height: 500,
+                }}
+                config={{
+                  displayModeBar: true,
+                  modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
+                }}
+              />
+            )}
           </Card>
         </>
       ) : null}
