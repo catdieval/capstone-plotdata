@@ -8,6 +8,7 @@ import {
 } from "../../lib/listOfLineProperties";
 
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
+import Paragraph from "../Paragraph";
 
 export default function LineProperties({
   clickedChartType,
@@ -35,18 +36,20 @@ export default function LineProperties({
         <form onSubmit={handleSubmit}>
           <Container $centered="center" $gap>
             <StyledH3>Line Properties</StyledH3>
+
+            <Paragraph>Line Color</Paragraph>
             <DropDownMenu
-              idString="Line Color"
               onChange={onLineColorChange}
               arrayOfOptions={lineColorArray}
             />
+
+            <Paragraph>Line Style</Paragraph>
             <DropDownMenu
-              idString="Line Style"
               onChange={onLineStyleChange}
               arrayOfOptions={lineStyleArray}
             />
+            <Paragraph>Line Width</Paragraph>
             <DropDownMenu
-              idString="Line Width"
               onChange={onLineWidthChange}
               arrayOfOptions={lineWidthArray}
             />
