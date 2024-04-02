@@ -10,7 +10,6 @@ export default function DropDownMenu({ idString, onChange, arrayOfOptions }) {
   return (
     <>
       <Container $direction="column" $center>
-        {" "}
         <StyledLabel htmlFor={idString}>{idString}</StyledLabel>
         <select required name={idString} id={idString} onChange={onChange}>
           <option value="">Select</option>
