@@ -133,39 +133,37 @@ export default function App({ Component, pageProps }) {
   }
 
   return (
-    <>
-      <Layout>
-        <GlobalStyle />
-        <Component
-          {...pageProps}
-          keynames={keynames}
-          fileObj={fileObj}
-          isUploaded={isUploaded}
-          onUploadFile={handleUploadFile}
-          onConversion={handleConversion}
-          clickedChartType={clickedChartType}
-          onSelectChartType={handleSelectChartType}
-          xKey={xKey}
-          yKey={yKey}
-          xVariable={xVariable}
-          yVariable={yVariable}
-          onXChange={handleXChange}
-          onYChange={handleYChange}
-          onAssignVariables={handleAssignVariables}
-          xLabel={xLabel}
-          yLabel={yLabel}
-          onXLabelChange={handleXLabelChange}
-          onYLabelChange={handleYLabelChange}
-          titleLabel={titleLabel}
-          onTitleChange={handleTitleChange}
-          onLineColorChange={handleLineColorChange}
-          onLineStyleChange={handleLineStyleChange}
-          onLineWidthChange={handleLineWidthChange}
-          lineColor={lineColor}
-          lineStyle={lineStyle}
-          lineWidth={lineWidth}
-        />
-      </Layout>
-    </>
+    <Layout>
+      <GlobalStyle />
+      <Component
+        {...pageProps}
+        keynames={keynames}
+        fileObj={fileObj}
+        isUploaded={isUploaded}
+        onUploadFile={handleUploadFile}
+        onConversion={handleConversion}
+        clickedChartType={clickedChartType}
+        onSelectChartType={handleSelectChartType}
+        xKey={xKey}
+        yKey={yKey}
+        xVariable={xVariable}
+        yVariable={yVariable}
+        onXChange={handleXChange}
+        onYChange={handleYChange}
+        onAssignVariables={handleAssignVariables}
+        xLabel={xLabel}
+        yLabel={yLabel}
+        onXLabelChange={handleXLabelChange}
+        onYLabelChange={handleYLabelChange}
+        titleLabel={titleLabel}
+        onTitleChange={handleTitleChange}
+        onLineColorChange={handleLineColorChange}
+        onLineStyleChange={handleLineStyleChange}
+        onLineWidthChange={handleLineWidthChange}
+        lineColor={lineColor}
+        lineStyle={lineStyle}
+        lineWidth={lineWidth}
+      />
+    </Layout>
   );
 }
