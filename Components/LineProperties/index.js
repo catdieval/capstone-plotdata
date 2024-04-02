@@ -47,7 +47,7 @@ export default function LineProperties({
               onChange={onLineStyleChange}
               arrayOfOptions={lineStyleArray}
             />
-            <Paragraph>Line Width</Paragraph>
+            <Paragraph>Line Width (in pixels)</Paragraph>
             <DropDownMenu
               onChange={onLineWidthChange}
               arrayOfOptions={lineWidthArray}
