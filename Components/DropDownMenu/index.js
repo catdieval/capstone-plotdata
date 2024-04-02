@@ -8,18 +8,16 @@ const StyledLabel = styled.label`
 
 export default function DropDownMenu({ idString, onChange, arrayOfOptions }) {
   return (
-    <>
-      <Container $direction="column" $center>
-        <StyledLabel htmlFor={idString}>{idString}</StyledLabel>
-        <select required name={idString} id={idString} onChange={onChange}>
-          <option value="">Select</option>
-          {arrayOfOptions.map((optionName) => (
-            <option key={optionName} value={optionName}>
-              {optionName}
-            </option>
-          ))}
-        </select>
-      </Container>
-    </>
+    <Container $direction="column" $center>
+      <StyledLabel htmlFor={idString}>{idString}</StyledLabel>
+      <select required name={idString} id={idString} onChange={onChange}>
+        <option value="">Select</option>
+        {arrayOfOptions.map((optionName) => (
+          <option key={optionName} value={optionName}>
+            {optionName}
+          </option>
+        ))}
+      </select>
+    </Container>
   );
 }
