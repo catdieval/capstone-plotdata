@@ -28,11 +28,7 @@ export default function LineProperties({
   }
 
   function completedLineProperties() {
-    return (
-      lineColor.length === 0 ||
-      lineStyle.length === 0 ||
-      Number(lineWidth) === 0
-    );
+    return lineColor.length === 0 || lineStyle.length === 0 || lineWidth === 0;
   }
 
   return (
