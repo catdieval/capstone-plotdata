@@ -43,7 +43,6 @@ export default function Plotting({
       line: { color: lineColor, dash: lineStyle, width: lineWidth },
     };
   }
-
   return (
     <>
       {match != -1 &&
@@ -52,10 +51,8 @@ export default function Plotting({
       xLabel != "" &&
       yLabel != "" &&
       titleLabel != "" &&
-      barColor != "" &&
-      lineColor != "" &&
-      lineStyle != "" &&
-      lineWidth > 0 ? (
+      (barColor != "" ||
+        (lineColor != "" && lineStyle != "" && lineWidth > 0)) ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
