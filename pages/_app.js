@@ -40,6 +40,11 @@ export default function App({ Component, pageProps }) {
   const [titleLabel, setTitleLabel] = useState("");
   const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
+  // Marker Properties
+  const [markerColor, setMarkerColor] = useState("");
+  const [markerSymbol, setMarkerSymbol] = useState("");
+  const [markerSize, setMarkerSize] = useState(0);
+
   const handleUploadFile = (file) => {
     setFileObj(file);
     setIsUploaded(true);
@@ -69,13 +74,11 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleXChange(event) {
-    const choice = event.target.value;
-    setXKey(choice);
+    setXKey(event.target.value);
   }
 
   function handleYChange(event) {
-    const choice = event.target.value;
-    setYKey(choice);
+    setYKey(event.target.value);
   }
 
   function handleAssignVariables() {
@@ -127,6 +130,18 @@ export default function App({ Component, pageProps }) {
     setHasCompletedStep5(true);
   }
 
+  function handleMarkerColorChange(event) {
+    setMarkerColor(event.target.value);
+  }
+
+  function handleMarkerSymbolChange(event) {
+    setMarkerSymbol(event.target.value);
+  }
+
+  function handleMarkerSizeChange(event) {
+    setMarkerSize(event.target.value);
+  }
+
   return (
     <>
       <Layout>
@@ -157,6 +172,12 @@ export default function App({ Component, pageProps }) {
           onTitleChange={handleTitleChange}
           hasCompletedStep5={hasCompletedStep5}
           onHasCompletedStep5={handleHasCompletedStep5}
+          markerColor={markerColor}
+          markerSymbol={markerSymbol}
+          markerSize={markerSize}
+          onMarkerColorChange={handleMarkerColorChange}
+          onMarkerSymbolChange={handleMarkerSymbolChange}
+          onMarkerSizeChange={handleMarkerSizeChange}
         />
       </Layout>
     </>
