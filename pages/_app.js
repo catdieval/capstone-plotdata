@@ -123,6 +123,23 @@ export default function App({ Component, pageProps }) {
     setTitleLabel(event.target.value);
   }
 
+  function handleLineColorChange(event) {
+    setLineColor(event.target.value);
+  }
+
+  function handleLineStyleChange(event) {
+    setLineStyle(event.target.value);
+  }
+
+  function handleLineWidthChange(event) {
+    setLineWidth(event.target.value);
+  }
+
+  function handleBarColorChange(event) {
+    const choice = event.target.value;
+    setBarColor(choice);
+  }
+
   return (
     <>
       <Layout>
@@ -149,6 +166,14 @@ export default function App({ Component, pageProps }) {
           onYLabelChange={handleYLabelChange}
           titleLabel={titleLabel}
           onTitleChange={handleTitleChange}
+          barColor={barColor}
+          onBarColorChange={handleBarColorChange}
+          onLineColorChange={handleLineColorChange}
+          onLineStyleChange={handleLineStyleChange}
+          onLineWidthChange={handleLineWidthChange}
+          lineColor={lineColor}
+          lineStyle={lineStyle}
+          lineWidth={lineWidth}
         />
       </Layout>
     </>
