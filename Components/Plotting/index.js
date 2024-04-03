@@ -11,6 +11,7 @@ export default function Plotting({
   xLabel,
   yLabel,
   titleLabel,
+  barColor,
   lineColor,
   lineStyle,
   lineWidth,
@@ -24,6 +25,15 @@ export default function Plotting({
     var selectedType = chartArray[match].type;
   }
 
+  if (clickedChartType === "bar-plot") {
+    var dataOptions = {
+      x: xVariable,
+      y: yVariable,
+      mode: selectedMode,
+      type: selectedType,
+      marker: { color: barColor },
+    };
+  }
   if (clickedChartType === "line-plot") {
     var dataOptions = {
       x: xVariable,
@@ -42,6 +52,7 @@ export default function Plotting({
       xLabel != "" &&
       yLabel != "" &&
       titleLabel != "" &&
+      barColor != "" &&
       lineColor != "" &&
       lineStyle != "" &&
       lineWidth > 0 ? (
@@ -51,7 +62,8 @@ export default function Plotting({
             the graph.
           </Paragraph>
           <Card $variant="graph">
-            {clickedChartType === "line-plot" ? (
+            {clickedChartType === "bar-plot" ||
+            clickedChartType === "line-plot" ? (
               <Plot
                 data={[dataOptions]}
                 layout={{

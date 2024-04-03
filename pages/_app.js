@@ -38,6 +38,9 @@ export default function App({ Component, pageProps }) {
   //Step 5: Add a title to the graph
   const [titleLabel, setTitleLabel] = useState("");
 
+  //Step 6: Properties
+  const [barColor, setBarColor] = useState("");
+
   //Line Properties
   const [lineColor, setLineColor] = useState("");
   const [lineStyle, setLineStyle] = useState("");
@@ -120,50 +123,34 @@ export default function App({ Component, pageProps }) {
     setTitleLabel(event.target.value);
   }
 
-  function handleLineColorChange(event) {
-    setLineColor(event.target.value);
-  }
-
-  function handleLineStyleChange(event) {
-    setLineStyle(event.target.value);
-  }
-
-  function handleLineWidthChange(event) {
-    setLineWidth(event.target.value);
-  }
-
   return (
-    <Layout>
-      <GlobalStyle />
-      <Component
-        {...pageProps}
-        keynames={keynames}
-        fileObj={fileObj}
-        isUploaded={isUploaded}
-        onUploadFile={handleUploadFile}
-        onConversion={handleConversion}
-        clickedChartType={clickedChartType}
-        onSelectChartType={handleSelectChartType}
-        xKey={xKey}
-        yKey={yKey}
-        xVariable={xVariable}
-        yVariable={yVariable}
-        onXChange={handleXChange}
-        onYChange={handleYChange}
-        onAssignVariables={handleAssignVariables}
-        xLabel={xLabel}
-        yLabel={yLabel}
-        onXLabelChange={handleXLabelChange}
-        onYLabelChange={handleYLabelChange}
-        titleLabel={titleLabel}
-        onTitleChange={handleTitleChange}
-        onLineColorChange={handleLineColorChange}
-        onLineStyleChange={handleLineStyleChange}
-        onLineWidthChange={handleLineWidthChange}
-        lineColor={lineColor}
-        lineStyle={lineStyle}
-        lineWidth={lineWidth}
-      />
-    </Layout>
+    <>
+      <Layout>
+        <GlobalStyle />
+        <Component
+          {...pageProps}
+          keynames={keynames}
+          fileObj={fileObj}
+          isUploaded={isUploaded}
+          onUploadFile={handleUploadFile}
+          onConversion={handleConversion}
+          clickedChartType={clickedChartType}
+          onSelectChartType={handleSelectChartType}
+          xKey={xKey}
+          yKey={yKey}
+          xVariable={xVariable}
+          yVariable={yVariable}
+          onXChange={handleXChange}
+          onYChange={handleYChange}
+          onAssignVariables={handleAssignVariables}
+          xLabel={xLabel}
+          yLabel={yLabel}
+          onXLabelChange={handleXLabelChange}
+          onYLabelChange={handleYLabelChange}
+          titleLabel={titleLabel}
+          onTitleChange={handleTitleChange}
+        />
+      </Layout>
+    </>
   );
 }
