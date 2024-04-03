@@ -41,6 +41,11 @@ export default function App({ Component, pageProps }) {
   //Step 6: Properties
   const [barColor, setBarColor] = useState("");
 
+  //Line Properties
+  const [lineColor, setLineColor] = useState("");
+  const [lineStyle, setLineStyle] = useState("");
+  const [lineWidth, setLineWidth] = useState(0);
+
   const handleUploadFile = (file) => {
     setFileObj(file);
     setIsUploaded(true);
@@ -118,6 +123,18 @@ export default function App({ Component, pageProps }) {
     setTitleLabel(event.target.value);
   }
 
+  function handleLineColorChange(event) {
+    setLineColor(event.target.value);
+  }
+
+  function handleLineStyleChange(event) {
+    setLineStyle(event.target.value);
+  }
+
+  function handleLineWidthChange(event) {
+    setLineWidth(event.target.value);
+  }
+
   function handleBarColorChange(event) {
     const choice = event.target.value;
     setBarColor(choice);
@@ -151,6 +168,12 @@ export default function App({ Component, pageProps }) {
           onTitleChange={handleTitleChange}
           barColor={barColor}
           onBarColorChange={handleBarColorChange}
+          onLineColorChange={handleLineColorChange}
+          onLineStyleChange={handleLineStyleChange}
+          onLineWidthChange={handleLineWidthChange}
+          lineColor={lineColor}
+          lineStyle={lineStyle}
+          lineWidth={lineWidth}
         />
       </Layout>
     </>

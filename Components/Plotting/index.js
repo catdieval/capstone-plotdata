@@ -12,6 +12,9 @@ export default function Plotting({
   yLabel,
   titleLabel,
   barColor,
+  lineColor,
+  lineStyle,
+  lineWidth,
 }) {
   const match = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
@@ -31,7 +34,15 @@ export default function Plotting({
       marker: { color: barColor },
     };
   }
-
+  if (clickedChartType === "line-plot") {
+    var dataOptions = {
+      x: xVariable,
+      y: yVariable,
+      mode: selectedMode,
+      type: selectedType,
+      line: { color: lineColor, dash: lineStyle, width: lineWidth },
+    };
+  }
   return (
     <>
       {match != -1 &&
@@ -40,14 +51,16 @@ export default function Plotting({
       xLabel != "" &&
       yLabel != "" &&
       titleLabel != "" &&
-      barColor != "" ? (
+      (barColor != "" ||
+        (lineColor != "" && lineStyle != "" && lineWidth > 0)) ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
             the graph.
           </Paragraph>
           <Card $variant="graph">
-            {clickedChartType === "bar-plot" ? (
+            {clickedChartType === "bar-plot" ||
+            clickedChartType === "line-plot" ? (
               <Plot
                 data={[dataOptions]}
                 layout={{
