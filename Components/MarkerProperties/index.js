@@ -13,29 +13,18 @@ import {
 export default function MarkerProperties({
   clickedChartType,
   hasCompletedStep5,
+  markerColor,
+  markerSymbol,
+  markerSize,
+  onMarkerColorChange,
+  onMarkerSymbolChange,
+  onMarkerSizeChange,
 }) {
-  const [markerColor, setMarkerColor] = useState("");
-  const [markerSymbol, setMarkerSymbol] = useState("");
-  const [markerSize, setMarkerSize] = useState(0);
-
-  function handleMarkerColorChange(event) {
-    const choice = event.target.value;
-    setMarkerColor(choice);
-  }
-
-  function handleMarkerSymbolChange(event) {
-    const choice = event.target.value;
-    setMarkerSymbol(choice);
-  }
-
-  function handleMarkerSizeChange(event) {
-    const choice = event.target.value;
-    setMarkerSize(choice);
-  }
-
   function completedMarkerProperties() {
     return (
-      markerColor.length === 0 || markerSymbol.length === 0 || markerSize === 0
+      markerColor.length === 0 ||
+      markerSymbol.length === 0 ||
+      Number(markerSize) === 0
     );
   }
 
@@ -58,17 +47,17 @@ export default function MarkerProperties({
               <Container $centered="center">
                 <Paragraph>Marker color:</Paragraph>
                 <DropDownMenu
-                  onChange={handleMarkerColorChange}
+                  onChange={onMarkerColorChange}
                   arrayOfOptions={markerColorArray}
                 />
                 <Paragraph>Marker symbol:</Paragraph>
                 <DropDownMenu
-                  onChange={handleMarkerSymbolChange}
+                  onChange={onMarkerSymbolChange}
                   arrayOfOptions={markerSymbolArray}
                 />
-                <Paragraph>Marker size:</Paragraph>
+                <Paragraph>Marker size (in pixels):</Paragraph>
                 <DropDownMenu
-                  onChange={handleMarkerSizeChange}
+                  onChange={onMarkerSizeChange}
                   arrayOfOptions={markerSizeArray}
                 />
                 <br></br>
