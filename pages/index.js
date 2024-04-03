@@ -31,6 +31,12 @@ export default function HomePage({
   onTitleChange,
   hasCompletedStep5,
   onHasCompletedStep5,
+  markerColor,
+  markerSymbol,
+  markerSize,
+  onMarkerColorChange,
+  onMarkerSymbolChange,
+  onMarkerSizeChange,
 }) {
   return (
     <div>
@@ -76,6 +82,12 @@ export default function HomePage({
       <MarkerProperties
         clickedChartType={clickedChartType}
         hasCompletedStep5={hasCompletedStep5}
+        markerColor={markerColor}
+        markerSymbol={markerSymbol}
+        markerSize={markerSize}
+        onMarkerColorChange={onMarkerColorChange}
+        onMarkerSymbolChange={onMarkerSymbolChange}
+        onMarkerSizeChange={onMarkerSizeChange}
       />
       <Plotting
         clickedChartType={clickedChartType}
@@ -86,6 +98,9 @@ export default function HomePage({
         hasCompletedStep4={hasCompletedStep4}
         titleLabel={titleLabel}
         hasCompletedStep5={hasCompletedStep5}
+        markerColor={markerColor}
+        markerSymbol={markerSymbol}
+        markerSize={markerSize}
       />
     </div>
   );
