@@ -9,7 +9,6 @@ import MarkerProperties from "../Components/MarkerProperties";
 export default function HomePage({
   keynames,
   fileObj,
-  isUploaded,
   onUploadFile,
   onConversion,
   clickedChartType,
@@ -42,7 +41,6 @@ export default function HomePage({
     <div>
       <UploadData
         fileObj={fileObj}
-        isUploaded={isUploaded}
         onUploadFile={onUploadFile}
         onConversion={onConversion}
       />
