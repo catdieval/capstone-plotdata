@@ -41,7 +41,8 @@ export default function Plotting({
             symbol: markerSymbol,
             size: markerSize,
           }
-        : null,
+        : { color: "blue" },
+    line: { color: "blue" },
   };
 
   return (
@@ -51,68 +52,36 @@ export default function Plotting({
       yVariable.length > 0 &&
       hasCompletedStep4 === true &&
       hasCompletedStep5 === true &&
-      markerColor !== "" &&
-      markerSymbol !== "" &&
-      markerSize !== 0 ? (
+      ((markerColor !== "" && markerSymbol !== "" && markerSize !== 0) ||
+        clickedChartType === "line-plot" ||
+        clickedChartType === "bar-plot") ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
             the graph.
           </Paragraph>
           <Card $variant="graph">
-            {clickedChartType === "scatter-plot" ||
-            clickedChartType === "line-markers-plot" ? (
-              <Plot
-                data={[dataOptions]}
-                layout={{
-                  title: { text: titleLabel },
-                  xaxis: {
-                    title: { text: xLabel },
-                    showline: true,
-                    ticks: "outside",
-                  },
-                  yaxis: {
-                    title: { text: yLabel },
-                    ticks: "outside",
-                  },
-                  width: 600,
-                  height: 500,
-                }}
-                config={{
-                  displayModeBar: true,
-                  modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
-                }}
-              />
-            ) : (
-              <Plot
-                data={[
-                  {
-                    x: xVariable,
-                    y: yVariable,
-                    mode: selectedMode,
-                    type: selectedType,
-                  },
-                ]}
-                layout={{
-                  title: { text: titleLabel },
-                  xaxis: {
-                    title: { text: xLabel },
-                    showline: true,
-                    ticks: "outside",
-                  },
-                  yaxis: {
-                    title: { text: yLabel },
-                    ticks: "outside",
-                  },
-                  width: 600,
-                  height: 500,
-                }}
-                config={{
-                  displayModeBar: true,
-                  modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
-                }}
-              />
-            )}
+            <Plot
+              data={[dataOptions]}
+              layout={{
+                title: { text: titleLabel },
+                xaxis: {
+                  title: { text: xLabel },
+                  showline: true,
+                  ticks: "outside",
+                },
+                yaxis: {
+                  title: { text: yLabel },
+                  ticks: "outside",
+                },
+                width: 600,
+                height: 500,
+              }}
+              config={{
+                displayModeBar: true,
+                modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
+              }}
+            />
           </Card>
         </>
       ) : null}
