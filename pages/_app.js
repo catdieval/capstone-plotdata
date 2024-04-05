@@ -13,10 +13,8 @@ export default function App({ Component, pageProps }) {
   const [vals, setVals] = useState([]);
 
   // State to store the file object
-  const [fileObj, setFileObj] = useState({});
-
-  // State to store the isUploaded status
-  const [isUploaded, setIsUploaded] = useState(false);
+  //const [fileObj, setFileObj] = useState({});
+  const [fileObj, setFileObj] = useState(null);
 
   // Step 2: Choose chart type
   // State to store the selected chart type
@@ -47,7 +45,6 @@ export default function App({ Component, pageProps }) {
 
   function handleUploadFile(file) {
     setFileObj(file);
-    setIsUploaded(true);
   }
 
   function handleConversion() {
@@ -150,7 +147,6 @@ export default function App({ Component, pageProps }) {
           {...pageProps}
           keynames={keynames}
           fileObj={fileObj}
-          isUploaded={isUploaded}
           onUploadFile={handleUploadFile}
           onConversion={handleConversion}
           clickedChartType={clickedChartType}
