@@ -21,11 +21,19 @@ export default function Plotting({
     (chart) => chart.name === clickedChartType
   );
 
+  let selectedMode, selectedType;
+
+  if (match != -1) {
+    selectedMode = chartArray[match].mode;
+    selectedType = chartArray[match].type;
+  }
+
+  /*
   if (match != -1) {
     var selectedMode = chartArray[match].mode;
     var selectedType = chartArray[match].type;
   }
-
+*/
   const dataOptions = {
     x: xVariable,
     y: yVariable,
