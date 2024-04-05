@@ -17,23 +17,17 @@ export default function Plotting({
   markerSymbol,
   markerSize,
 }) {
-  const match = chartArray.findIndex(
+  const chartIndex = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
   );
 
   let selectedMode, selectedType;
 
-  if (match != -1) {
-    selectedMode = chartArray[match].mode;
-    selectedType = chartArray[match].type;
+  if (chartIndex != -1) {
+    selectedMode = chartArray[chartIndex].mode;
+    selectedType = chartArray[chartIndex].type;
   }
 
-  /*
-  if (match != -1) {
-    var selectedMode = chartArray[match].mode;
-    var selectedType = chartArray[match].type;
-  }
-*/
   const dataOptions = {
     x: xVariable,
     y: yVariable,
@@ -52,7 +46,7 @@ export default function Plotting({
 
   return (
     <>
-      {match != -1 &&
+      {chartIndex != -1 &&
       xVariable.length > 0 &&
       yVariable.length > 0 &&
       hasCompletedStep4 === true &&
