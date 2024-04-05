@@ -26,22 +26,21 @@ export default function Plotting({
     var selectedType = chartArray[match].type;
   }
 
-  if (
-    clickedChartType === "line-markers-plot" ||
-    clickedChartType === "scatter-plot"
-  ) {
-    var dataOptions = {
-      x: xVariable,
-      y: yVariable,
-      mode: selectedMode,
-      type: selectedType,
-      marker: {
-        color: markerColor,
-        symbol: markerSymbol,
-        size: markerSize,
-      },
-    };
-  }
+  const dataOptions = {
+    x: xVariable,
+    y: yVariable,
+    mode: selectedMode,
+    type: selectedType,
+    marker:
+      clickedChartType === "line-markers-plot" ||
+      clickedChartType === "scatter-plot"
+        ? {
+            color: markerColor,
+            symbol: markerSymbol,
+            size: markerSize,
+          }
+        : null,
+  };
 
   return (
     <>
