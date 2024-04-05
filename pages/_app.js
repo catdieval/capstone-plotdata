@@ -45,12 +45,12 @@ export default function App({ Component, pageProps }) {
   const [markerSymbol, setMarkerSymbol] = useState("");
   const [markerSize, setMarkerSize] = useState(0);
 
-  const handleUploadFile = (file) => {
+  function handleUploadFile(file) {
     setFileObj(file);
     setIsUploaded(true);
-  };
+  }
 
-  const handleConversion = () => {
+  function handleConversion() {
     const reader = new FileReader();
 
     reader.onload = function (event) {
@@ -67,7 +67,7 @@ export default function App({ Component, pageProps }) {
     };
 
     reader.readAsText(fileObj);
-  };
+  }
 
   function handleSelectChartType(name) {
     setClickedChartType(name);
