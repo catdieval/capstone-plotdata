@@ -16,7 +16,7 @@ export default function GraphTitle({
     event.preventDefault();
   }
 
-  function completedTitle() {
+  function notCompletedTitle() {
     return titleLabel.length === 0;
   }
 
@@ -39,7 +39,7 @@ export default function GraphTitle({
               <StyledInputTypeSubmit
                 value="Next"
                 onClick={onHasCompletedStep5}
-                disabled={completedTitle()}
+                disabled={notCompletedTitle()}
               />
             </Container>
           </form>
