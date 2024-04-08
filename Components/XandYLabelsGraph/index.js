@@ -19,7 +19,7 @@ export default function XandYLabelsGraph({
     event.preventDefault();
   }
 
-  function completedXAndYLabels() {
+  function notCompletedXAndYLabels() {
     return xLabel.length === 0 || yLabel.length === 0;
   }
 
@@ -59,7 +59,7 @@ export default function XandYLabelsGraph({
               <StyledInputTypeSubmit
                 value="Next"
                 onClick={onHasCompletedStep4}
-                disabled={completedXAndYLabels()}
+                disabled={notCompletedXAndYLabels()}
               />
             </Container>
           </form>
