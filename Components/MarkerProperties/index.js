@@ -20,7 +20,7 @@ export default function MarkerProperties({
   onMarkerSymbolChange,
   onMarkerSizeChange,
 }) {
-  function completedMarkerProperties() {
+  function notCompletedMarkerProperties() {
     return (
       markerColor.length === 0 ||
       markerSymbol.length === 0 ||
@@ -65,7 +65,7 @@ export default function MarkerProperties({
                 <StyledInputTypeSubmit
                   value="Next"
                   onClick={handleMarkerProperties}
-                  disabled={completedMarkerProperties()}
+                  disabled={notCompletedMarkerProperties()}
                 />
               </Container>
             </form>
