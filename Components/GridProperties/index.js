@@ -48,7 +48,6 @@ export default function GridProperties({ grid, onGridChange }) {
           </Container>
         </Container>
       </Container>
-      {console.log(grid)}
       {(grid.gridXAxis === "true" || grid.gridYAxis === "true") && (
         <Paragraph>Grid Linestyle:</Paragraph>
       )}
