@@ -30,16 +30,16 @@ export default function HomePage({
   onHasCompletedStep4,
   titleLabel,
   onTitleChange,
-  onLineColorChange,
-  onLineStyleChange,
-  onLineWidthChange,
+  hasCompletedStep5,
+  onHasCompletedStep5,
   lineColor,
   lineStyle,
   lineWidth,
+  onLineColorChange,
+  onLineStyleChange,
+  onLineWidthChange,
   barColor,
   onBarColorChange,
-  hasCompletedStep5,
-  onHasCompletedStep5,
   markerColor,
   markerSymbol,
   markerSize,
@@ -113,22 +113,6 @@ export default function HomePage({
         clickedChartType={clickedChartType}
         titleLabel={titleLabel}
       />
-      <LineProperties
-        clickedChartType={clickedChartType}
-        titleLabel={titleLabel}
-        onLineColorChange={onLineColorChange}
-        onLineStyleChange={onLineStyleChange}
-        onLineWidthChange={onLineWidthChange}
-        lineColor={lineColor}
-        lineStyle={lineStyle}
-        lineWidth={lineWidth}
-      />
-      <BarProperties
-        barColor={barColor}
-        onBarColorChange={onBarColorChange}
-        clickedChartType={clickedChartType}
-        titleLabel={titleLabel}
-      />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}
@@ -137,11 +121,11 @@ export default function HomePage({
         yLabel={yLabel}
         hasCompletedStep4={hasCompletedStep4}
         titleLabel={titleLabel}
+        hasCompletedStep5={hasCompletedStep5}
         lineColor={lineColor}
         lineStyle={lineStyle}
         lineWidth={lineWidth}
         barColor={barColor}
-        hasCompletedStep5={hasCompletedStep5}
         markerColor={markerColor}
         markerSymbol={markerSymbol}
         markerSize={markerSize}
