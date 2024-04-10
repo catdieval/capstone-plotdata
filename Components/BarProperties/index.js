@@ -2,7 +2,7 @@ import { barColorArray } from "../../lib/listOfBarProperties.js";
 import DropDownMenu from "../DropDownMenu";
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
 import { Container } from "../Container";
-import Heading from "../Heading";
+import { StyledH3 } from "../Heading";
 
 export default function BarProperties({
   barColor,
@@ -25,7 +25,7 @@ export default function BarProperties({
     <>
       {clickedChartType === "bar-plot" && titleLabel.length > 0 && (
         <>
-          <Heading> Bar Properties</Heading>
+          <StyledH3> Bar properties</StyledH3>
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
               <DropDownMenu
