@@ -13,10 +13,8 @@ export default function App({ Component, pageProps }) {
   const [vals, setVals] = useState([]);
 
   // State to store the file object
-  const [fileObj, setFileObj] = useState({});
-
-  // State to store the isUploaded status
-  const [isUploaded, setIsUploaded] = useState(false);
+  //const [fileObj, setFileObj] = useState({});
+  const [fileObj, setFileObj] = useState(null);
 
   // Step 2: Choose chart type
   // State to store the selected chart type
@@ -34,24 +32,32 @@ export default function App({ Component, pageProps }) {
   //Step 4: Labels to the axes:
   const [xLabel, setXLabel] = useState("");
   const [yLabel, setYLabel] = useState("");
+  const [hasCompletedStep4, setHasCompletedStep4] = useState(false);
 
   //Step 5: Add a title to the graph
   const [titleLabel, setTitleLabel] = useState("");
+  const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
-  //Step 6: Properties
+  //Step 6: Plotting properties
+
+  // Bar properties
   const [barColor, setBarColor] = useState("");
 
-  //Line Properties
+  //Line properties
   const [lineColor, setLineColor] = useState("");
   const [lineStyle, setLineStyle] = useState("");
   const [lineWidth, setLineWidth] = useState(0);
 
-  const handleUploadFile = (file) => {
-    setFileObj(file);
-    setIsUploaded(true);
-  };
+  // Marker Properties
+  const [markerColor, setMarkerColor] = useState("");
+  const [markerSymbol, setMarkerSymbol] = useState("");
+  const [markerSize, setMarkerSize] = useState(0);
 
-  const handleConversion = () => {
+  function handleUploadFile(file) {
+    setFileObj(file);
+  }
+
+  function handleConversion() {
     const reader = new FileReader();
 
     reader.onload = function (event) {
@@ -68,20 +74,18 @@ export default function App({ Component, pageProps }) {
     };
 
     reader.readAsText(fileObj);
-  };
+  }
 
   function handleSelectChartType(name) {
     setClickedChartType(name);
   }
 
   function handleXChange(event) {
-    const choice = event.target.value;
-    setXKey(choice);
+    setXKey(event.target.value);
   }
 
   function handleYChange(event) {
-    const choice = event.target.value;
-    setYKey(choice);
+    setYKey(event.target.value);
   }
 
   function handleAssignVariables() {
@@ -119,8 +123,18 @@ export default function App({ Component, pageProps }) {
     setYLabel(event.target.value);
   }
 
+  function handleHasCompletedStep4() {
+    alert("Labels for the x-axis and the y-axis of the graph are assigned");
+    setHasCompletedStep4(true);
+  }
+
   function handleTitleChange(event) {
     setTitleLabel(event.target.value);
+  }
+
+  function handleHasCompletedStep5() {
+    alert("Title of the graph is assigned");
+    setHasCompletedStep5(true);
   }
 
   function handleLineColorChange(event) {
@@ -140,6 +154,18 @@ export default function App({ Component, pageProps }) {
     setBarColor(choice);
   }
 
+  function handleMarkerColorChange(event) {
+    setMarkerColor(event.target.value);
+  }
+
+  function handleMarkerSymbolChange(event) {
+    setMarkerSymbol(event.target.value);
+  }
+
+  function handleMarkerSizeChange(event) {
+    setMarkerSize(event.target.value);
+  }
+
   return (
     <>
       <Layout>
@@ -148,7 +174,6 @@ export default function App({ Component, pageProps }) {
           {...pageProps}
           keynames={keynames}
           fileObj={fileObj}
-          isUploaded={isUploaded}
           onUploadFile={handleUploadFile}
           onConversion={handleConversion}
           clickedChartType={clickedChartType}
@@ -164,16 +189,26 @@ export default function App({ Component, pageProps }) {
           yLabel={yLabel}
           onXLabelChange={handleXLabelChange}
           onYLabelChange={handleYLabelChange}
+          hasCompletedStep4={hasCompletedStep4}
+          onHasCompletedStep4={handleHasCompletedStep4}
           titleLabel={titleLabel}
           onTitleChange={handleTitleChange}
+          hasCompletedStep5={hasCompletedStep5}
+          onHasCompletedStep5={handleHasCompletedStep5}
           barColor={barColor}
           onBarColorChange={handleBarColorChange}
-          onLineColorChange={handleLineColorChange}
-          onLineStyleChange={handleLineStyleChange}
-          onLineWidthChange={handleLineWidthChange}
           lineColor={lineColor}
           lineStyle={lineStyle}
           lineWidth={lineWidth}
+          onLineColorChange={handleLineColorChange}
+          onLineStyleChange={handleLineStyleChange}
+          onLineWidthChange={handleLineWidthChange}
+          markerColor={markerColor}
+          markerSymbol={markerSymbol}
+          markerSize={markerSize}
+          onMarkerColorChange={handleMarkerColorChange}
+          onMarkerSymbolChange={handleMarkerSymbolChange}
+          onMarkerSizeChange={handleMarkerSizeChange}
         />
       </Layout>
     </>

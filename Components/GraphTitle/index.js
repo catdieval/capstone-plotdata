@@ -9,26 +9,22 @@ export default function GraphTitle({
   yLabel,
   titleLabel,
   onTitleChange,
+  hasCompletedStep4,
+  onHasCompletedStep5,
 }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
 
-  function handleTitle() {
-    if (titleLabel.length > 0) {
-      alert("Title of the graph is assigned");
-    }
-  }
-
-  function completedTitle() {
+  function notCompletedTitle() {
     return titleLabel.length === 0;
   }
 
   return (
     <>
-      {xLabel.length > 0 && yLabel.length > 0 && (
+      {hasCompletedStep4 === true && (
         <>
-          <Heading> Step 5: Give a title to the Graph </Heading>
+          <Heading> Step 5: Give a title to the graph </Heading>
           <Paragraph>Label for the x-axis: {xLabel}</Paragraph>
           <Paragraph>Label for the y-axis: {yLabel}</Paragraph>
           <form onSubmit={handleSubmit}>
@@ -41,8 +37,8 @@ export default function GraphTitle({
 
               <StyledInputTypeSubmit
                 value="Next"
-                onClick={handleTitle}
-                disabled={completedTitle()}
+                onClick={onHasCompletedStep5}
+                disabled={notCompletedTitle()}
               />
             </Container>
           </form>

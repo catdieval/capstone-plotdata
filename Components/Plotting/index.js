@@ -10,108 +10,90 @@ export default function Plotting({
   yVariable,
   xLabel,
   yLabel,
+  hasCompletedStep4,
   titleLabel,
+  hasCompletedStep5,
   barColor,
   lineColor,
   lineStyle,
   lineWidth,
+  markerColor,
+  markerSymbol,
+  markerSize,
 }) {
-  const match = chartArray.findIndex(
+  const chartIndex = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
   );
 
-  if (match != -1) {
-    var selectedMode = chartArray[match].mode;
-    var selectedType = chartArray[match].type;
+  let selectedMode, selectedType;
+
+  if (chartIndex != -1) {
+    selectedMode = chartArray[chartIndex].mode;
+    selectedType = chartArray[chartIndex].type;
   }
 
-  if (clickedChartType === "bar-plot") {
-    var dataOptions = {
-      x: xVariable,
-      y: yVariable,
-      mode: selectedMode,
-      type: selectedType,
-      marker: { color: barColor },
-    };
-  }
-  if (clickedChartType === "line-plot") {
-    var dataOptions = {
-      x: xVariable,
-      y: yVariable,
-      mode: selectedMode,
-      type: selectedType,
-      line: { color: lineColor, dash: lineStyle, width: lineWidth },
-    };
-  }
+  const dataOptions = {
+    x: xVariable,
+    y: yVariable,
+    mode: selectedMode,
+    type: selectedType,
+    marker:
+      clickedChartType === "line-markers-plot" ||
+      clickedChartType === "scatter-plot"
+        ? {
+            color: markerColor,
+            symbol: markerSymbol,
+            size: markerSize,
+          }
+        : { color: barColor },
+    line:
+      clickedChartType === "line-plot"
+        ? {
+            color: lineColor,
+            dash: lineStyle,
+            width: lineWidth,
+          }
+        : //{ color: "green" },
+          "",
+  };
+
   return (
     <>
-      {match != -1 &&
+      {chartIndex != -1 &&
       xVariable.length > 0 &&
       yVariable.length > 0 &&
-      xLabel != "" &&
-      yLabel != "" &&
-      titleLabel != "" &&
+      hasCompletedStep4 === true &&
+      hasCompletedStep5 === true &&
       (barColor != "" ||
-        (lineColor != "" && lineStyle != "" && lineWidth > 0)) ? (
+        (lineColor != "" && lineStyle != "" && lineWidth !== 0) ||
+        (markerColor !== "" && markerSymbol !== "" && markerSize !== 0)) ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
             the graph.
           </Paragraph>
           <Card $variant="graph">
-            {clickedChartType === "bar-plot" ||
-            clickedChartType === "line-plot" ? (
-              <Plot
-                data={[dataOptions]}
-                layout={{
-                  title: { text: titleLabel },
-                  xaxis: {
-                    title: { text: xLabel },
-                    showline: true,
-                    ticks: "outside",
-                  },
-                  yaxis: {
-                    title: { text: yLabel },
-                    ticks: "outside",
-                  },
-                  width: 600,
-                  height: 500,
-                }}
-                config={{
-                  displayModeBar: true,
-                  modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
-                }}
-              />
-            ) : (
-              <Plot
-                data={[
-                  {
-                    x: xVariable,
-                    y: yVariable,
-                    mode: selectedMode,
-                    type: selectedType,
-                  },
-                ]}
-                layout={{
-                  title: { text: titleLabel },
-                  xaxis: {
-                    title: { text: xLabel },
-                    showline: true,
-                    ticks: "outside",
-                  },
-                  yaxis: {
-                    title: { text: yLabel },
-                    ticks: "outside",
-                  },
-                  width: 600,
-                  height: 500,
-                }}
-                config={{
-                  displayModeBar: true,
-                  modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
-                }}
-              />
-            )}
+            <Plot
+              data={[dataOptions]}
+              layout={{
+                title: { text: titleLabel },
+                xaxis: {
+                  title: { text: xLabel },
+                  showline: true,
+                  ticks: "outside",
+                },
+                yaxis: {
+                  title: { text: yLabel },
+                  ticks: "outside",
+                },
+                width: 600,
+                height: 500,
+              }}
+              config={{
+                displayModeBar: true,
+                modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
+              }}
+            />
           </Card>
         </>
       ) : null}

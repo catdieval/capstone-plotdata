@@ -40,18 +40,18 @@ export default function LineProperties({
       {clickedChartType === "line-plot" && titleLabel.length > 0 && (
         <form onSubmit={handleSubmit}>
           <Container $centered="center" $gap>
-            <StyledH3>Line Properties</StyledH3>
-            <Paragraph>Line Color</Paragraph>
+            <StyledH3>Line properties</StyledH3>
+            <Paragraph>Line color</Paragraph>
             <DropDownMenu
               onChange={onLineColorChange}
               arrayOfOptions={lineColorArray}
             />
-            <Paragraph>Line Style</Paragraph>
+            <Paragraph>Line style</Paragraph>
             <DropDownMenu
               onChange={onLineStyleChange}
               arrayOfOptions={lineStyleArray}
             />
-            <Paragraph>Line Width (in pixels)</Paragraph>
+            <Paragraph>Line width (in pixels)</Paragraph>
             <DropDownMenu
               onChange={onLineWidthChange}
               arrayOfOptions={lineWidthArray}

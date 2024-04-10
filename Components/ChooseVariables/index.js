@@ -23,7 +23,7 @@ export default function ChooseVariables({
     );
   }
 
-  function completedXAndYKeys() {
+  function notCompletedXAndYKeys() {
     return xKey.length === 0 || yKey.length === 0;
   }
 
@@ -50,7 +50,7 @@ export default function ChooseVariables({
               <StyledInputTypeSubmit
                 value="Next"
                 onClick={onAssignVariables}
-                disabled={completedXAndYKeys()}
+                disabled={notCompletedXAndYKeys()}
               />
             </Container>
           </form>
