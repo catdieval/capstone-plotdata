@@ -34,7 +34,7 @@ export const Container = styled.section`
     `};
 
   ${(props) =>
-    props.$row === "row" &&
+    props.$direction === "row" &&
     css`
       display: flex;
       flex-direction: row;
