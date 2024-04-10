@@ -36,6 +36,16 @@ export default function App({ Component, pageProps }) {
 
   //Step 5: Add a title to the graph
   const [titleLabel, setTitleLabel] = useState("");
+
+  //Step 6: Properties
+  const [barColor, setBarColor] = useState("");
+
+  //Line Properties
+  const [lineColor, setLineColor] = useState("");
+  const [lineStyle, setLineStyle] = useState("");
+  const [lineWidth, setLineWidth] = useState(0);
+
+  const handleUploadFile = (file) => {
   const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
   // Marker Properties
@@ -122,6 +132,23 @@ export default function App({ Component, pageProps }) {
     setTitleLabel(event.target.value);
   }
 
+  function handleLineColorChange(event) {
+    setLineColor(event.target.value);
+  }
+
+  function handleLineStyleChange(event) {
+    setLineStyle(event.target.value);
+  }
+
+  function handleLineWidthChange(event) {
+    setLineWidth(event.target.value);
+  }
+
+  function handleBarColorChange(event) {
+    const choice = event.target.value;
+    setBarColor(choice);
+  }
+
   function handleHasCompletedStep5() {
     alert("Title of the graph is assigned");
     setHasCompletedStep5(true);
@@ -166,6 +193,14 @@ export default function App({ Component, pageProps }) {
           onHasCompletedStep4={handleHasCompletedStep4}
           titleLabel={titleLabel}
           onTitleChange={handleTitleChange}
+          barColor={barColor}
+          onBarColorChange={handleBarColorChange}
+          onLineColorChange={handleLineColorChange}
+          onLineStyleChange={handleLineStyleChange}
+          onLineWidthChange={handleLineWidthChange}
+          lineColor={lineColor}
+          lineStyle={lineStyle}
+          lineWidth={lineWidth}
           hasCompletedStep5={hasCompletedStep5}
           onHasCompletedStep5={handleHasCompletedStep5}
           markerColor={markerColor}

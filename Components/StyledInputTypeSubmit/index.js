@@ -10,6 +10,7 @@ export const StyledInputTypeSubmit = styled.input.attrs({
   cursor: pointer;
   font-size: 1rem;
   font-weight: 700;
+  margin: ${(props) => (props.$nomargin ? "" : "40px")};
 
   &:hover {
     background-color: #00ace6;

@@ -12,6 +12,10 @@ export default function Plotting({
   yLabel,
   hasCompletedStep4,
   titleLabel,
+  barColor,
+  lineColor,
+  lineStyle,
+  lineWidth,
   hasCompletedStep5,
   markerColor,
   markerSymbol,
@@ -45,11 +49,26 @@ export default function Plotting({
     line: { color: "blue" },
   };
 
+  if (clickedChartType === "bar-plot") {
+    var dataOptions = {
+      x: xVariable,
+      y: yVariable,
+      mode: selectedMode,
+      type: selectedType,
+      marker: { color: barColor },
+    };
+  }
+
   return (
     <>
       {chartIndex != -1 &&
       xVariable.length > 0 &&
       yVariable.length > 0 &&
+      xLabel != "" &&
+      yLabel != "" &&
+      titleLabel != "" &&
+      (barColor != "" ||
+        (lineColor != "" && lineStyle != "" && lineWidth > 0)) ? (
       hasCompletedStep4 === true &&
       hasCompletedStep5 === true &&
       ((markerColor !== "" && markerSymbol !== "" && markerSize !== 0) ||

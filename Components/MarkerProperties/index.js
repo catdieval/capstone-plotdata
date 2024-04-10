@@ -1,5 +1,4 @@
-import { useState } from "react";
-import Heading from "../Heading";
+import { StyledH3 } from "../Heading";
 import { Container } from "../Container";
 import Paragraph from "../Paragraph";
 import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
@@ -42,9 +41,9 @@ export default function MarkerProperties({
         (clickedChartType === "scatter-plot" ||
           clickedChartType === "line-markers-plot") && (
           <>
-            <Heading>Marker properties</Heading>
+            <StyledH3>Marker properties</StyledH3>
             <form onSubmit={handleSubmit}>
-              <Container $centered="center">
+              <Container $centered="center" $gap>
                 <Paragraph>Marker color:</Paragraph>
                 <DropDownMenu
                   onChange={onMarkerColorChange}
@@ -60,8 +59,6 @@ export default function MarkerProperties({
                   onChange={onMarkerSizeChange}
                   arrayOfOptions={markerSizeArray}
                 />
-                <br></br>
-                <br></br>
                 <StyledInputTypeSubmit
                   value="Next"
                   onClick={handleMarkerProperties}
