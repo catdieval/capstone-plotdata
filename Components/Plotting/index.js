@@ -12,11 +12,11 @@ export default function Plotting({
   yLabel,
   hasCompletedStep4,
   titleLabel,
+  hasCompletedStep5,
   barColor,
   lineColor,
   lineStyle,
   lineWidth,
-  hasCompletedStep5,
   markerColor,
   markerSymbol,
   markerSize,
@@ -45,35 +45,28 @@ export default function Plotting({
             symbol: markerSymbol,
             size: markerSize,
           }
-        : { color: "blue" },
-    line: { color: "blue" },
+        : { color: barColor },
+    line:
+      clickedChartType === "line-plot"
+        ? {
+            color: lineColor,
+            dash: lineStyle,
+            width: lineWidth,
+          }
+        : //{ color: "green" },
+          "",
   };
-
-  if (clickedChartType === "bar-plot") {
-    var dataOptions = {
-      x: xVariable,
-      y: yVariable,
-      mode: selectedMode,
-      type: selectedType,
-      marker: { color: barColor },
-    };
-  }
 
   return (
     <>
       {chartIndex != -1 &&
       xVariable.length > 0 &&
       yVariable.length > 0 &&
-      xLabel != "" &&
-      yLabel != "" &&
-      titleLabel != "" &&
-      (barColor != "" ||
-        (lineColor != "" && lineStyle != "" && lineWidth > 0)) ? (
       hasCompletedStep4 === true &&
       hasCompletedStep5 === true &&
-      ((markerColor !== "" && markerSymbol !== "" && markerSize !== 0) ||
-        clickedChartType === "line-plot" ||
-        clickedChartType === "bar-plot") ? (
+      (barColor != "" ||
+        (lineColor != "" && lineStyle != "" && lineWidth !== 0) ||
+        (markerColor !== "" && markerSymbol !== "" && markerSize !== 0)) ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
