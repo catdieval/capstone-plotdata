@@ -11,7 +11,7 @@ export default function GridProperties({ grid, onGridChange }) {
       <Container $wrap="wrap">
         <Container $centered="center">
           <Paragraph>For x-Axis:</Paragraph>
-          <Container $row="row">
+          <Container $direction="row">
             <InputTypeRadio
               name="gridXAxis"
               value="true"
@@ -30,7 +30,7 @@ export default function GridProperties({ grid, onGridChange }) {
         </Container>
         <Container $centered="center">
           <Paragraph>For y-Axis:</Paragraph>
-          <Container $row="row">
+          <Container $direction="row">
             <InputTypeRadio
               name="gridYAxis"
               value="true"
