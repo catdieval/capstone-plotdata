@@ -36,17 +36,17 @@ export default function App({ Component, pageProps }) {
 
   //Step 5: Add a title to the graph
   const [titleLabel, setTitleLabel] = useState("");
+  const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
-  //Step 6: Properties
+  //Step 6: Plotting properties
+
+  // Bar properties
   const [barColor, setBarColor] = useState("");
 
-  //Line Properties
+  //Line properties
   const [lineColor, setLineColor] = useState("");
   const [lineStyle, setLineStyle] = useState("");
   const [lineWidth, setLineWidth] = useState(0);
-
-  const handleUploadFile = (file) => {
-  const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
   // Marker Properties
   const [markerColor, setMarkerColor] = useState("");
@@ -132,6 +132,11 @@ export default function App({ Component, pageProps }) {
     setTitleLabel(event.target.value);
   }
 
+  function handleHasCompletedStep5() {
+    alert("Title of the graph is assigned");
+    setHasCompletedStep5(true);
+  }
+
   function handleLineColorChange(event) {
     setLineColor(event.target.value);
   }
@@ -147,11 +152,6 @@ export default function App({ Component, pageProps }) {
   function handleBarColorChange(event) {
     const choice = event.target.value;
     setBarColor(choice);
-  }
-
-  function handleHasCompletedStep5() {
-    alert("Title of the graph is assigned");
-    setHasCompletedStep5(true);
   }
 
   function handleMarkerColorChange(event) {
@@ -193,16 +193,16 @@ export default function App({ Component, pageProps }) {
           onHasCompletedStep4={handleHasCompletedStep4}
           titleLabel={titleLabel}
           onTitleChange={handleTitleChange}
+          hasCompletedStep5={hasCompletedStep5}
+          onHasCompletedStep5={handleHasCompletedStep5}
           barColor={barColor}
           onBarColorChange={handleBarColorChange}
-          onLineColorChange={handleLineColorChange}
-          onLineStyleChange={handleLineStyleChange}
-          onLineWidthChange={handleLineWidthChange}
           lineColor={lineColor}
           lineStyle={lineStyle}
           lineWidth={lineWidth}
-          hasCompletedStep5={hasCompletedStep5}
-          onHasCompletedStep5={handleHasCompletedStep5}
+          onLineColorChange={handleLineColorChange}
+          onLineStyleChange={handleLineStyleChange}
+          onLineWidthChange={handleLineWidthChange}
           markerColor={markerColor}
           markerSymbol={markerSymbol}
           markerSize={markerSize}
