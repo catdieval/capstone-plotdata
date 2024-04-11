@@ -11,6 +11,7 @@ const StyledP = styled.p`
     css`
       text-align: start;
       padding: 10px;
+      text-align: justify;
     `};
 
   ${(props) =>
