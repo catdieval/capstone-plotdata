@@ -62,7 +62,6 @@ export default function GridProperties({ grid, onGridChange }) {
             />
           </>
         )}
-
         {grid.gridYAxis === "true" && (
           <>
             <DropDownMenu
