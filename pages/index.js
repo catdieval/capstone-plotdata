@@ -5,6 +5,7 @@ import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
 import GraphTitle from "../Components/GraphTitle";
 import LineProperties from "../Components/LineProperties";
+import LogRangeProperties from "../Components/LogRangeProperties";
 import BarProperties from "../Components/BarProperties";
 import MarkerProperties from "../Components/MarkerProperties";
 
@@ -113,6 +114,7 @@ export default function HomePage({
         clickedChartType={clickedChartType}
         titleLabel={titleLabel}
       />
+      <LogRangeProperties />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}
