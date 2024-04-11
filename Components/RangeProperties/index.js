@@ -9,7 +9,7 @@ export default function RangeProperties({ range, onRangeChange }) {
       <Paragraph>Range of values for axes:</Paragraph>
       <Container $wrap="wrap">
         <Container $centered="center">
-          <Paragraph>Autorange for x-axes:</Paragraph>
+          <Paragraph>Autorange for x-axis:</Paragraph>
           <Container $direction="column">
             <InputTypeRadio
               nameString="rangeXAxis"
@@ -35,7 +35,7 @@ export default function RangeProperties({ range, onRangeChange }) {
           </Container>
         </Container>
         <Container $centered="center">
-          <Paragraph>Autorange for y-axes:</Paragraph>
+          <Paragraph>Autorange for y-axis:</Paragraph>
           <Container $direction="column">
             <InputTypeRadio
               nameString="rangeYAxis"
