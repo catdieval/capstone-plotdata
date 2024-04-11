@@ -7,6 +7,7 @@ import GraphTitle from "../Components/GraphTitle";
 import LineProperties from "../Components/LineProperties";
 import BarProperties from "../Components/BarProperties";
 import MarkerProperties from "../Components/MarkerProperties";
+import RangeProperties from "../Components/RangeProperties";
 
 export default function HomePage({
   keynames,
@@ -46,6 +47,8 @@ export default function HomePage({
   onMarkerColorChange,
   onMarkerSymbolChange,
   onMarkerSizeChange,
+  range,
+  onRangeChange,
 }) {
   return (
     <div>
@@ -113,6 +116,7 @@ export default function HomePage({
         clickedChartType={clickedChartType}
         titleLabel={titleLabel}
       />
+      <RangeProperties range={range} onRangeChange={onRangeChange} />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}
