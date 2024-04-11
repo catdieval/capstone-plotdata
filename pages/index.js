@@ -7,7 +7,7 @@ import GraphTitle from "../Components/GraphTitle";
 import LineProperties from "../Components/LineProperties";
 import BarProperties from "../Components/BarProperties";
 import MarkerProperties from "../Components/MarkerProperties";
-import GridProperties from "@/Components/GridProperties";
+import GridProperties from "../Components/GridProperties";
 
 export default function HomePage({
   keynames,
