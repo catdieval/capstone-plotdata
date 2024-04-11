@@ -60,6 +60,7 @@ export default function App({ Component, pageProps }) {
     gridLineStyleXAxis: "",
     gridLineStyleYAxis: "",
   };
+
   const [grid, setGrid] = useState(initialGridProperties);
 
   function handleUploadFile(file) {
