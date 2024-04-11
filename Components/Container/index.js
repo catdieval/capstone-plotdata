@@ -32,4 +32,14 @@ export const Container = styled.section`
       gap: ${(props) => (props.$gap ? "10px" : "")};
       margin: ${(props) => (props.$margin ? "60px 30px" : "")};
     `};
+
+  ${(props) =>
+    props.$direction === "row" &&
+    css`
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    `};
 `;

@@ -16,9 +16,9 @@ const StyledButton = styled.button`
     css`
       background-color: var(--info-color);
       opacity: 0.8;
-      border-radius: 10px;
+      border-radius: 50%;
       border: none;
-      padding: 8px;
+      padding: 4px;
       cursor: pointer;
 
       &:hover {
