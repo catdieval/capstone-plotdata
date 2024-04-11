@@ -15,14 +15,14 @@ export default function GridProperties({ grid, onGridChange }) {
             <InputTypeRadio
               nameString="gridXAxis"
               valueString="true"
-              idString={"yes"}
+              idString="yes"
               onChange={onGridChange}
               labelString="Yes"
             />
             <InputTypeRadio
               nameString="gridXAxis"
               valueString="false"
-              idString={"no"}
+              idString="no"
               onChange={onGridChange}
               labelString="No"
             />
@@ -34,14 +34,14 @@ export default function GridProperties({ grid, onGridChange }) {
             <InputTypeRadio
               nameString="gridYAxis"
               valueString="true"
-              idString={"yes"}
+              idString="yes"
               onChange={onGridChange}
               labelString="Yes"
             />
             <InputTypeRadio
               nameString="gridYAxis"
               valueString="false"
-              idString={"no"}
+              idString="no"
               onChange={onGridChange}
               labelString="No"
             />
