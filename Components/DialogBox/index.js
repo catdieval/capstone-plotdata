@@ -22,6 +22,12 @@ const DialogContainer = styled.section`
   max-width: 500px;
 `;
 
+const InfoCircleWrapper = styled.section`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+`;
+
 export default function DialogBox() {
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -34,8 +40,10 @@ export default function DialogBox() {
   }
   return (
     <>
-      <Button onClick={handleOpenDialog} aria-label="info">
-        <InfoCircle />
+      <Button $variant="info" onClick={handleOpenDialog} aria-label="info">
+        <InfoCircleWrapper>
+          <InfoCircle />
+        </InfoCircleWrapper>
       </Button>
 
       <Dialog onClose={handleCloseDialog} open={openDialog}>
