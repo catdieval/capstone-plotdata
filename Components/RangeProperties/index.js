@@ -10,7 +10,7 @@ export default function RangeProperties({ range, onRangeChange }) {
       <Container $wrap="wrap">
         <Container $centered="center">
           <Paragraph>Autorange for x-axis:</Paragraph>
-          <Container $direction="column">
+          <Container $direction="column" $gap>
             <InputTypeRadio
               nameString="rangeXAxis"
               valueString="true"
@@ -36,7 +36,7 @@ export default function RangeProperties({ range, onRangeChange }) {
         </Container>
         <Container $centered="center">
           <Paragraph>Autorange for y-axis:</Paragraph>
-          <Container $direction="column">
+          <Container $direction="column" $gap>
             <InputTypeRadio
               nameString="rangeYAxis"
               valueString="true"
