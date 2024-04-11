@@ -81,6 +81,7 @@ export default function RangeProperties({ range, onRangeChange }) {
                 idString="maxXAxis"
                 onChange={onRangeChange}
                 labelString="max:"
+                placeholderString="Number (e.g. 10, 0.1, -1)"
               />
             </>
           )}
@@ -94,18 +95,19 @@ export default function RangeProperties({ range, onRangeChange }) {
                 idString="minYAxis"
                 onChange={onRangeChange}
                 labelString="min:"
+                placeholderString="Number (e.g. 10, 0.1, -1)"
               />
               <InputTypeNumber
                 nameString="maxYAxis"
                 idString="maxYAxis"
                 onChange={onRangeChange}
                 labelString="max:"
+                placeholderString="Number (e.g. 10, 0.1, -1)"
               />
             </>
           )}
         </Container>
       </Container>
-      {console.log(range)};
     </>
   );
 }
