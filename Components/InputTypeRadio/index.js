@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export default function InputTypeRadio({
-  name,
-  value,
+  nameString,
+  valueString,
   onChange,
   idString,
-  label,
+  labelString,
 }) {
   function checked() {
-    name === value;
+    nameString === valueString;
   }
 
   return (
@@ -16,13 +16,13 @@ export default function InputTypeRadio({
       <RadioButton>
         <input
           type="radio"
-          name={name}
-          value={value}
+          name={nameString}
+          value={valueString}
           id={idString}
           onChange={onChange}
           checked={checked()}
         />
-        <Label htmlFor={idString}>{label}</Label>
+        <Label htmlFor={idString}>{labelString}</Label>
       </RadioButton>
     </>
   );
