@@ -35,7 +35,7 @@ export default function RangeProperties({ range, onRangeChange }) {
           </Container>
         </Container>
         <Container $centered="center">
-          <Paragraph>Autorange for y-axis:</Paragraph>
+          <Paragraph>Autorange for y-axes:</Paragraph>
           <Container $direction="column">
             <InputTypeRadio
               nameString="rangeYAxis"
@@ -73,13 +73,14 @@ export default function RangeProperties({ range, onRangeChange }) {
                 nameString="minXAxis"
                 idString="minXAxis"
                 onChange={onRangeChange}
-                labelString="min"
+                labelString="min:"
+                placeholderString="Number (e.g. 10, 0.1, -1)"
               />
               <InputTypeNumber
                 nameString="maxXAxis"
                 idString="maxXAxis"
                 onChange={onRangeChange}
-                labelString="max"
+                labelString="max:"
               />
             </>
           )}
@@ -92,13 +93,13 @@ export default function RangeProperties({ range, onRangeChange }) {
                 nameString="minYAxis"
                 idString="minYAxis"
                 onChange={onRangeChange}
-                labelString="min"
+                labelString="min:"
               />
               <InputTypeNumber
                 nameString="maxYAxis"
                 idString="maxYAxis"
                 onChange={onRangeChange}
-                labelString="max"
+                labelString="max:"
               />
             </>
           )}
