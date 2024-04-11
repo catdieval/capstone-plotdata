@@ -12,7 +12,7 @@ export default function InfoCircle() {
       <g id="information-circle--information-frame-info-more-help-point-circle">
         <path
           id="Ellipse 7"
-          stroke="#000000"
+          stroke=""
           d="M1 12c0 2.9174 1.15893 5.7153 3.22183 7.7782S9.08262 23 12 23c2.9174 0 5.7153 -1.1589 7.7782 -3.2218S23 14.9174 23 12c0 -2.91738 -1.1589 -5.71527 -3.2218 -7.77817S14.9174 1 12 1C9.08262 1 6.28473 2.15893 4.22183 4.22183S1 9.08262 1 12Z"
           stroke-width="2"
         ></path>
