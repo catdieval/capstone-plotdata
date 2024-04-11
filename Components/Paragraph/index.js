@@ -19,6 +19,14 @@ const StyledP = styled.p`
     css`
       font-weight: 600;
     `};
+
+  ${(props) =>
+    props.$variant === "border" &&
+    css`
+      border: solid 2px var(--primary-color);
+      border-radius: 8px;
+      padding: 10px;
+    `};
 `;
 
 export default function Paragraph({ children, $variant }) {
