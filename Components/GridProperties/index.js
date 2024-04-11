@@ -53,24 +53,20 @@ export default function GridProperties({ grid, onGridChange }) {
       )}
       <Container $wrap="wrap">
         {grid.gridXAxis === "true" && (
-          <>
-            <DropDownMenu
-              idString="x-axis"
-              nameString="gridLineStyleXAxis"
-              arrayOfOptions={lineStyleArray}
-              onChange={onGridChange}
-            />
-          </>
+          <DropDownMenu
+            idString="x-axis"
+            nameString="gridLineStyleXAxis"
+            arrayOfOptions={lineStyleArray}
+            onChange={onGridChange}
+          />
         )}
         {grid.gridYAxis === "true" && (
-          <>
-            <DropDownMenu
-              idString="y-axis"
-              nameString="gridLineStyleYAxis"
-              arrayOfOptions={lineStyleArray}
-              onChange={onGridChange}
-            />
-          </>
+          <DropDownMenu
+            idString="y-axis"
+            nameString="gridLineStyleYAxis"
+            arrayOfOptions={lineStyleArray}
+            onChange={onGridChange}
+          />
         )}
       </Container>
     </>
