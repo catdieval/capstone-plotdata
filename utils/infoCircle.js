@@ -2,7 +2,7 @@ export default function InfoCircle() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill=""
+      fill="#f9e154"
       viewBox="0 0 24 24"
       height="30"
       width="30"

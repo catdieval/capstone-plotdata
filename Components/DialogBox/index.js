@@ -4,6 +4,7 @@ import Button from "../Button";
 import Paragraph from "../Paragraph";
 import { useState } from "react";
 import styled from "styled-components";
+import InfoCircle from "../../utils/infoCircle";
 
 const StyledIconButton = styled(IconButton)`
   position: absolute;
@@ -34,7 +35,7 @@ export default function DialogBox() {
   return (
     <>
       <Button onClick={handleOpenDialog} aria-label="info">
-        info
+        <InfoCircle />
       </Button>
 
       <Dialog onClose={handleCloseDialog} open={openDialog}>
