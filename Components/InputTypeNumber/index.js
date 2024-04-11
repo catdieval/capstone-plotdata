@@ -6,25 +6,27 @@ export default function InputTypeNumber({
   onChange,
   labelString,
   nameString,
+  placeholderString,
 }) {
   return (
     <>
       <NumberInput>
+        <Label htmlFor={idString}>{labelString}</Label>
         <Input
           type="number"
           id={idString}
           value={valueString}
           onChange={onChange}
           name={nameString}
+          placeholder={placeholderString}
         />
-        <Label htmlFor={idString}>{labelString}</Label>
       </NumberInput>
     </>
   );
 }
 
 const Input = styled.input`
-  width: 150px;
+  width: 180px;
   margin: 10px;
 `;
 
