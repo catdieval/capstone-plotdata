@@ -1,6 +1,6 @@
 import DialogBox from "../DialogBox";
 
-export default function LogRangeProperties() {
+export default function LogScaleProperties() {
   return (
     <>
       <DialogBox />
