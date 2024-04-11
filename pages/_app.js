@@ -53,6 +53,18 @@ export default function App({ Component, pageProps }) {
   const [markerSymbol, setMarkerSymbol] = useState("");
   const [markerSize, setMarkerSize] = useState(0);
 
+  //Layout Properties
+  const initialRange = {
+    rangeXAxis: "",
+    rangeYAxis: "",
+    minXAxis: "",
+    maxXAxis: "",
+    minYAxis: "",
+    maxYAxis: "",
+  };
+
+  const [range, setRange] = useState(initialRange);
+
   function handleUploadFile(file) {
     setFileObj(file);
   }
@@ -166,6 +178,10 @@ export default function App({ Component, pageProps }) {
     setMarkerSize(event.target.value);
   }
 
+  function handleRange(event) {
+    setRange({ ...range, [event.target.name]: event.target.value });
+  }
+
   return (
     <>
       <Layout>
@@ -209,6 +225,8 @@ export default function App({ Component, pageProps }) {
           onMarkerColorChange={handleMarkerColorChange}
           onMarkerSymbolChange={handleMarkerSymbolChange}
           onMarkerSizeChange={handleMarkerSizeChange}
+          range={range}
+          onRangeChange={handleRange}
         />
       </Layout>
     </>
