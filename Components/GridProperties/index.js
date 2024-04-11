@@ -7,10 +7,10 @@ import { lineStyleArray } from "../../lib/listOfLineProperties";
 export default function GridProperties({ grid, onGridChange }) {
   return (
     <>
-      <Paragraph>Show grid (helper lines) for axis: </Paragraph>
+      <Paragraph>Show grid (helper lines) for axes: </Paragraph>
       <Container $wrap="wrap">
         <Container $centered="center">
-          <Paragraph>For x-Axis:</Paragraph>
+          <Paragraph>For x-axis:</Paragraph>
           <Container $direction="row">
             <InputTypeRadio
               nameString="gridXAxis"
@@ -29,7 +29,7 @@ export default function GridProperties({ grid, onGridChange }) {
           </Container>
         </Container>
         <Container $centered="center">
-          <Paragraph>For y-Axis:</Paragraph>
+          <Paragraph>For y-axis:</Paragraph>
           <Container $direction="row">
             <InputTypeRadio
               nameString="gridYAxis"
