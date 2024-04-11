@@ -9,6 +9,7 @@ export const Container = styled.section`
       flex-wrap: wrap;
       align-items: ${(props) => (props.$center ? "center" : "")};
       justify-content: space-around;
+      gap: ${(props) => (props.$gap ? "4px" : "")};
     `};
 
   ${(props) =>
