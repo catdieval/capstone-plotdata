@@ -9,7 +9,14 @@ export default function LogScaleProperties() {
     logYAxis: "",
   };
 
-  const [logScaleAxis, setLogScaleAxis] = useState(initialLogScaleStates);
+  const [logScaleAxes, setLogScaleAxes] = useState(initialLogScaleStates);
+
+  function handleLogAxes(event) {
+    setLogScaleAxes({
+      ...logScaleAxes,
+      [event.target.name]: event.target.value,
+    });
+  }
   return (
     <>
       <Container $direction="row">
