@@ -49,7 +49,7 @@ export default function GridProperties({ grid, onGridChange }) {
         </Container>
       </Container>
       {(grid.gridXAxis === "true" || grid.gridYAxis === "true") && (
-        <Paragraph>Grid Linestyle:</Paragraph>
+        <Paragraph>Grid linestyle:</Paragraph>
       )}
       <Container $wrap="wrap">
         {grid.gridXAxis === "true" && (
