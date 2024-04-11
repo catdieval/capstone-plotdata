@@ -13,18 +13,18 @@ export default function GridProperties({ grid, onGridChange }) {
           <Paragraph>For x-Axis:</Paragraph>
           <Container $direction="row">
             <InputTypeRadio
-              name="gridXAxis"
-              value="true"
+              nameString="gridXAxis"
+              valueString="true"
               idString={"yes"}
               onChange={onGridChange}
-              label="Yes"
+              labelString="Yes"
             />
             <InputTypeRadio
-              name="gridXAxis"
-              value="false"
+              nameString="gridXAxis"
+              valueString="false"
               idString={"no"}
               onChange={onGridChange}
-              label="No"
+              labelString="No"
             />
           </Container>
         </Container>
@@ -32,18 +32,18 @@ export default function GridProperties({ grid, onGridChange }) {
           <Paragraph>For y-Axis:</Paragraph>
           <Container $direction="row">
             <InputTypeRadio
-              name="gridYAxis"
-              value="true"
+              nameString="gridYAxis"
+              valueString="true"
               idString={"yes"}
               onChange={onGridChange}
-              label="Yes"
+              labelString="Yes"
             />
             <InputTypeRadio
-              name="gridYAxis"
-              value="false"
+              nameString="gridYAxis"
+              valueString="false"
               idString={"no"}
               onChange={onGridChange}
-              label="No"
+              labelString="No"
             />
           </Container>
         </Container>
