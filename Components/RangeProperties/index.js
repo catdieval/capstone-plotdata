@@ -13,7 +13,7 @@ export default function RangeProperties({ range, onRangeChange }) {
           <Container $direction="column">
             <InputTypeRadio
               nameString="rangeXAxis"
-              valueString="false"
+              valueString="true"
               idString="normal range"
               onChange={onRangeChange}
               labelString="yes, normal range"
@@ -39,7 +39,7 @@ export default function RangeProperties({ range, onRangeChange }) {
           <Container $direction="column">
             <InputTypeRadio
               nameString="rangeYAxis"
-              valueString="false"
+              valueString="true"
               idString="normal range"
               onChange={onRangeChange}
               labelString="yes, normal range"
