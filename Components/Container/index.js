@@ -7,9 +7,9 @@ const Container = styled.section`
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      align-items: ${(props) => (props.$center ? "center" : "")};
+      align-items: ${(props) => (props.$center ? "center" : "start")};
       justify-content: space-around;
-      gap: ${(props) => (props.$gap ? "4px" : "")};
+      gap: ${(props) => (props.$gap ? "4px" : "0px")};
     `};
 
   ${(props) =>
