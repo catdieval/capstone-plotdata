@@ -1,6 +1,6 @@
 import { barColorArray } from "../../lib/listOfBarProperties.js";
 import DropDownMenu from "../DropDownMenu";
-import InputTypeSubmit from "../InputTypeSubmit/index.js";
+import InputTypeSubmit from "../InputTypeSubmit";
 import Container from "../Container";
 import { StyledH3 } from "../Heading";
 
