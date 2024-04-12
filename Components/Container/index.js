@@ -7,7 +7,7 @@ export const Container = styled.section`
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      align-items: ${(props) => (props.$center ? "center" : "")};
+      align-items: ${(props) => (props.$center ? "center" : "start")};
       justify-content: space-around;
     `};
 
@@ -29,17 +29,7 @@ export const Container = styled.section`
       flex-direction: column;
       align-items: center;
       padding: 0;
-      gap: ${(props) => (props.$gap ? "10px" : "")};
-      margin: ${(props) => (props.$margin ? "60px 30px" : "")};
-    `};
-
-  ${(props) =>
-    props.$direction === "row" &&
-    css`
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
+      gap: ${(props) => (props.$gap ? "10px" : "0")};
+      margin: ${(props) => (props.$margin ? "60px 30px" : "0")};
     `};
 `;
