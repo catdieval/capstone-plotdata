@@ -99,7 +99,7 @@ export default function HomePage({
       />
       <LineProperties
         clickedChartType={clickedChartType}
-        titleLabel={titleLabel}
+        hasCompletedStep5={hasCompletedStep5}
         onLineColorChange={onLineColorChange}
         onLineStyleChange={onLineStyleChange}
         onLineWidthChange={onLineWidthChange}
@@ -111,7 +111,7 @@ export default function HomePage({
         barColor={barColor}
         onBarColorChange={onBarColorChange}
         clickedChartType={clickedChartType}
-        titleLabel={titleLabel}
+        hasCompletedStep5={hasCompletedStep5}
       />
       <Plotting
         clickedChartType={clickedChartType}
