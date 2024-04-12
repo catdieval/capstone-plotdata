@@ -1,8 +1,8 @@
 import Paragraph from "../Paragraph";
 import InputTypeText from "../InputTypeText";
 import Heading from "../Heading";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
-import { Container } from "../Container";
+import InputTypeSubmit from "../InputTypeSubmit";
+import Container from "../Container";
 
 export default function XandYLabelsGraph({
   xKey,
@@ -50,7 +50,7 @@ export default function XandYLabelsGraph({
                 onChange={onYLabelChange}
               />
 
-              <StyledInputTypeSubmit
+              <InputTypeSubmit
                 value="Next"
                 onClick={onHasCompletedStep4}
                 disabled={notCompletedXAndYLabels()}

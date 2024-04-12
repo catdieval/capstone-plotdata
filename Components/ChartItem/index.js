@@ -1,6 +1,6 @@
 import Button from "../Button";
 import Image from "next/image";
-import { Container } from "../Container";
+import Container from "../Container";
 import styled from "styled-components";
 
 const ImageContainer = styled.div`

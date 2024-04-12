@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.section`
+const Container = styled.section`
   ${(props) =>
     props.$direction === "column" &&
     css`
@@ -34,3 +34,5 @@ export const Container = styled.section`
       margin: ${(props) => (props.$margin ? "60px 30px" : "")};
     `};
 `;
+
+export default Container;

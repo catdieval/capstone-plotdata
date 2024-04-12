@@ -1,6 +1,6 @@
 import Paragraph from "../Paragraph";
 import InputTypeRadio from "../InputTypeRadio";
-import { Container } from "../Container";
+import Container from "../Container";
 import InputTypeNumber from "../InputTypeNumber";
 
 export default function RangeProperties({ range, onRangeChange }) {
@@ -64,6 +64,7 @@ export default function RangeProperties({ range, onRangeChange }) {
       {(range.rangeXAxis === "min max" || range.rangeYAxis === "min max") && (
         <Paragraph>Minimum and maximum values for axis:</Paragraph>
       )}
+      {console.log(range)};
       <Container $wrap="wrap">
         <Container $centered="center">
           {range.rangeXAxis === "min max" && (

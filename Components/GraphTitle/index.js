@@ -1,8 +1,8 @@
 import Heading from "../Heading";
 import Paragraph from "../Paragraph";
-import { Container } from "../Container";
+import Container from "../Container";
 import InputTypeText from "../InputTypeText";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
+import InputTypeSubmit from "../InputTypeSubmit";
 
 export default function GraphTitle({
   xLabel,
@@ -35,7 +35,7 @@ export default function GraphTitle({
                 onChange={onTitleChange}
               />
 
-              <StyledInputTypeSubmit
+              <InputTypeSubmit
                 value="Next"
                 onClick={onHasCompletedStep5}
                 disabled={notCompletedTitle()}

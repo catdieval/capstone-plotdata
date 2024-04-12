@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledInputTypeSubmit = styled.input.attrs({
+const InputTypeSubmit = styled.input.attrs({
   type: "submit",
 })`
   background-color: var(--secondary-color);
@@ -16,3 +16,5 @@ export const StyledInputTypeSubmit = styled.input.attrs({
     background-color: #00ace6;
   }
 `;
+
+export default InputTypeSubmit;
