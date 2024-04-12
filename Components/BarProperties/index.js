@@ -8,7 +8,7 @@ export default function BarProperties({
   barColor,
   onBarColorChange,
   clickedChartType,
-  titleLabel,
+  hasCompletedStep5,
 }) {
   function handleBarProperties() {
     alert("You chose the bar properties.");
@@ -23,7 +23,7 @@ export default function BarProperties({
 
   return (
     <>
-      {clickedChartType === "bar-plot" && titleLabel.length > 0 && (
+      {hasCompletedStep5 === true && clickedChartType === "bar-plot" && (
         <>
           <StyledH3> Bar properties</StyledH3>
           <form onSubmit={handleSubmit}>
