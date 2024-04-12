@@ -3,8 +3,9 @@ import { useState } from "react";
 import Paragraph from "../Paragraph";
 import { Container } from "../Container";
 import styled from "styled-components";
+import InputTypeRadio from "../InputTypeRadio";
 
-const MainWrapper = styled.div`
+const TitleWrapper = styled.div`
   position: relative;
 `;
 
@@ -31,7 +32,7 @@ export default function LogScaleProperties() {
   }
   return (
     <>
-      <MainWrapper>
+      <TitleWrapper>
         <Container $centered="center">
           <Paragraph $variant="border">
             Logarithmic scale for the axes
@@ -40,7 +41,23 @@ export default function LogScaleProperties() {
             <DialogBox />
           </InfoButtonWrapper>
         </Container>
-      </MainWrapper>
+      </TitleWrapper>
+      <Container $wrap="wrap">
+        <Container $direction="column" $center>
+          <Paragraph>For x-axis</Paragraph>
+          <Container $direction="column">
+            <InputTypeRadio labelString="yes" />
+            <InputTypeRadio labelString="no, use a linear scale" />
+          </Container>
+        </Container>
+        <Container $direction="column" $center>
+          <Paragraph>For y-axis</Paragraph>
+          <Container $direction="column">
+            <InputTypeRadio labelString="yes" />
+            <InputTypeRadio labelString="no, use a linear scale" />
+          </Container>
+        </Container>
+      </Container>
     </>
   );
 }
