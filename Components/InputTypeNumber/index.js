@@ -9,19 +9,17 @@ export default function InputTypeNumber({
   placeholderString,
 }) {
   return (
-    <>
-      <NumberInput>
-        <Label htmlFor={idString}>{labelString}</Label>
-        <Input
-          type="number"
-          id={idString}
-          value={valueString}
-          onChange={onChange}
-          name={nameString}
-          placeholder={placeholderString}
-        />
-      </NumberInput>
-    </>
+    <NumberInput>
+      <Label htmlFor={idString}>{labelString}</Label>
+      <Input
+        type="number"
+        id={idString}
+        value={valueString}
+        onChange={onChange}
+        name={nameString}
+        placeholder={placeholderString}
+      />
+    </NumberInput>
   );
 }
 
