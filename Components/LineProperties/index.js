@@ -11,7 +11,7 @@ import Paragraph from "../Paragraph";
 
 export default function LineProperties({
   clickedChartType,
-  titleLabel,
+  hasCompletedStep5,
   onLineColorChange,
   onLineStyleChange,
   onLineWidthChange,
@@ -37,7 +37,7 @@ export default function LineProperties({
   console.log(lineWidth);
   return (
     <>
-      {clickedChartType === "line-plot" && titleLabel.length > 0 && (
+      {hasCompletedStep5 === true && clickedChartType === "line-plot" && (
         <form onSubmit={handleSubmit}>
           <Container $centered="center" $gap>
             <StyledH3>Line properties</StyledH3>
