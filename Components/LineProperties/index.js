@@ -34,7 +34,7 @@ export default function LineProperties({
       Number(lineWidth) === 0
     );
   }
-  console.log(lineWidth);
+
   return (
     <>
       {clickedChartType === "line-plot" && titleLabel.length > 0 && (
