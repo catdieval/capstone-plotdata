@@ -47,6 +47,8 @@ export default function HomePage({
   onMarkerColorChange,
   onMarkerSymbolChange,
   onMarkerSizeChange,
+  onLogScaleChange,
+  logScaleAxes,
 }) {
   return (
     <div>
@@ -114,7 +116,7 @@ export default function HomePage({
         clickedChartType={clickedChartType}
         titleLabel={titleLabel}
       />
-      <LogScaleProperties />
+      <LogScaleProperties onLogScaleChange={onLogScaleChange} />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}
@@ -131,6 +133,7 @@ export default function HomePage({
         markerColor={markerColor}
         markerSymbol={markerSymbol}
         markerSize={markerSize}
+        logScaleAxes={logScaleAxes}
       />
     </div>
   );

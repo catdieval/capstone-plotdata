@@ -52,6 +52,13 @@ export default function App({ Component, pageProps }) {
   const [markerColor, setMarkerColor] = useState("");
   const [markerSymbol, setMarkerSymbol] = useState("");
   const [markerSize, setMarkerSize] = useState(0);
+  // Log Scale Properties
+
+  const initialLogScaleStates = {
+    logXAxis: "",
+    logYAxis: "",
+  };
+  const [logScaleAxes, setLogScaleAxes] = useState(initialLogScaleStates);
 
   function handleUploadFile(file) {
     setFileObj(file);
@@ -165,7 +172,13 @@ export default function App({ Component, pageProps }) {
   function handleMarkerSizeChange(event) {
     setMarkerSize(event.target.value);
   }
-
+  function handleLogAxes(event) {
+    setLogScaleAxes({
+      ...logScaleAxes,
+      [event.target.name]: event.target.value,
+    });
+  }
+  console.log(logScaleAxes);
   return (
     <>
       <Layout>
@@ -209,6 +222,8 @@ export default function App({ Component, pageProps }) {
           onMarkerColorChange={handleMarkerColorChange}
           onMarkerSymbolChange={handleMarkerSymbolChange}
           onMarkerSizeChange={handleMarkerSizeChange}
+          onLogScaleChange={handleLogAxes}
+          logScaleAxes={logScaleAxes}
         />
       </Layout>
     </>

@@ -16,20 +16,7 @@ const InfoButtonWrapper = styled.div`
   transform: translate(370%, -50%);
 `;
 
-export default function LogScaleProperties() {
-  const initialLogScaleStates = {
-    logXAxis: "",
-    logYAxis: "",
-  };
-
-  const [logScaleAxes, setLogScaleAxes] = useState(initialLogScaleStates);
-
-  function handleLogAxes(event) {
-    setLogScaleAxes({
-      ...logScaleAxes,
-      [event.target.name]: event.target.value,
-    });
-  }
+export default function LogScaleProperties({ onLogScaleChange }) {
   return (
     <>
       <TitleWrapper>
@@ -49,16 +36,16 @@ export default function LogScaleProperties() {
             <InputTypeRadio
               labelString="yes"
               idString="yes"
-              valueString="true"
-              onChange={handleLogAxes}
-              nameString="logXAxes"
+              valueString="false"
+              onChange={onLogScaleChange}
+              nameString="logXAxis"
             />
             <InputTypeRadio
               labelString="no, use a linear scale"
               idString="no"
-              valueString="false"
-              onChange={handleLogAxes}
-              nameString="logXAxes"
+              valueString="true"
+              onChange={onLogScaleChange}
+              nameString="logXAxis"
             />
           </Container>
         </Container>
@@ -69,15 +56,15 @@ export default function LogScaleProperties() {
               labelString="yes"
               idString="yes"
               valueString="true"
-              onChange={handleLogAxes}
-              nameString="logYAxes"
+              onChange={onLogScaleChange}
+              nameString="logYAxis"
             />
             <InputTypeRadio
               labelString="no, use a linear scale"
               idString="no"
               valueString="false"
-              onChange={handleLogAxes}
-              nameString="logYAxes"
+              onChange={onLogScaleChange}
+              nameString="logYAxis"
             />
           </Container>
         </Container>
