@@ -7,8 +7,8 @@ export const Container = styled.section`
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      align-items: ${(props) => (props.$center ? "center" : "start")};
-      justify-content: space-around;
+      align-items: ${(props) => (props.$center ? "center" : "")};
+      justify-content: space-between;
     `};
 
   ${(props) =>
