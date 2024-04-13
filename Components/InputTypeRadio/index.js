@@ -14,7 +14,7 @@ export default function InputTypeRadio({
   return (
     <>
       <RadioButton>
-        <input
+        <StyledInputRadio
           type="radio"
           name={nameString}
           value={valueString}
@@ -22,7 +22,7 @@ export default function InputTypeRadio({
           onChange={onChange}
           checked={checked()}
         />
-        <label htmlFor={idString}>{labelString}</label>
+        <StyledLabel htmlFor={idString}>{labelString}</StyledLabel>
       </RadioButton>
     </>
   );
@@ -32,4 +32,14 @@ const RadioButton = styled.div`
   display: flex;
   gap: 4px;
   flex-direction: row;
+`;
+
+const StyledInputRadio = styled.input.attrs({
+  type: "radio",
+})`
+  transform: scale(1.4);
+  margin: 8px;
+`;
+const StyledLabel = styled.label`
+  font-size: 1.1rem;
 `;
