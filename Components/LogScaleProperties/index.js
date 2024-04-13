@@ -44,17 +44,41 @@ export default function LogScaleProperties() {
       </TitleWrapper>
       <Container $wrap="wrap">
         <Container $direction="column" $center>
-          <Paragraph>For x-axis</Paragraph>
+          <Paragraph $variant="bold">For x-axis</Paragraph>
           <Container $direction="column">
-            <InputTypeRadio labelString="yes" />
-            <InputTypeRadio labelString="no, use a linear scale" />
+            <InputTypeRadio
+              labelString="yes"
+              idString="yes"
+              valueString="true"
+              onChange={handleLogAxes}
+              nameString="logXAxes"
+            />
+            <InputTypeRadio
+              labelString="no, use a linear scale"
+              idString="no"
+              valueString="false"
+              onChange={handleLogAxes}
+              nameString="logXAxes"
+            />
           </Container>
         </Container>
         <Container $direction="column" $center>
-          <Paragraph>For y-axis</Paragraph>
+          <Paragraph $variant="bold">For y-axis</Paragraph>
           <Container $direction="column">
-            <InputTypeRadio labelString="yes" />
-            <InputTypeRadio labelString="no, use a linear scale" />
+            <InputTypeRadio
+              labelString="yes"
+              idString="yes"
+              valueString="true"
+              onChange={handleLogAxes}
+              nameString="logYAxes"
+            />
+            <InputTypeRadio
+              labelString="no, use a linear scale"
+              idString="no"
+              valueString="false"
+              onChange={handleLogAxes}
+              nameString="logYAxes"
+            />
           </Container>
         </Container>
       </Container>
