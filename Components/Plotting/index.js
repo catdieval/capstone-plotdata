@@ -20,12 +20,15 @@ export default function Plotting({
   markerColor,
   markerSymbol,
   markerSize,
+  logScaleAxes,
 }) {
   const chartIndex = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
   );
-
   let selectedMode, selectedType;
+
+  const logScaleXAxis = logScaleAxes.logXAxis === "true";
+  const logScaleYAxis = logScaleAxes.logYAxis === "true";
 
   if (chartIndex != -1) {
     selectedMode = chartArray[chartIndex].mode;
@@ -53,8 +56,7 @@ export default function Plotting({
             dash: lineStyle,
             width: lineWidth,
           }
-        : //{ color: "green" },
-          "",
+        : "",
   };
 
   return (
@@ -81,10 +83,14 @@ export default function Plotting({
                   title: { text: xLabel },
                   showline: true,
                   ticks: "outside",
+                  type: "log",
+                  autorange: logScaleXAxis,
                 },
                 yaxis: {
                   title: { text: yLabel },
                   ticks: "outside",
+                  type: "log",
+                  autorange: logScaleYAxis,
                 },
                 width: 600,
                 height: 500,
