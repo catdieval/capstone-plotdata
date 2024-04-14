@@ -178,7 +178,7 @@ export default function App({ Component, pageProps }) {
       [event.target.name]: event.target.value,
     });
   }
-  console.log(logScaleAxes);
+
   return (
     <>
       <Layout>
