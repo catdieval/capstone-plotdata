@@ -12,19 +12,17 @@ export default function InputTypeRadio({
   }
 
   return (
-    <>
-      <RadioButton>
-        <StyledInputRadio
-          type="radio"
-          name={nameString}
-          value={valueString}
-          id={idString}
-          onChange={onChange}
-          checked={checked()}
-        />
-        <StyledLabel htmlFor={idString}>{labelString}</StyledLabel>
-      </RadioButton>
-    </>
+    <RadioButton>
+      <StyledInputRadio
+        type="radio"
+        name={nameString}
+        value={valueString}
+        id={idString}
+        onChange={onChange}
+        checked={checked()}
+      />
+      <StyledLabel htmlFor={idString}>{labelString}</StyledLabel>
+    </RadioButton>
   );
 }
 
