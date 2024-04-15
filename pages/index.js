@@ -133,7 +133,6 @@ export default function HomePage({
         markerColor={markerColor}
         markerSymbol={markerSymbol}
         markerSize={markerSize}
-        logScaleAxes={logScaleAxes}
       />
     </div>
   );
