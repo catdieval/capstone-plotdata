@@ -24,6 +24,7 @@ export default function Plotting({
   const chartIndex = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
   );
+
   let selectedMode, selectedType;
 
   if (chartIndex != -1) {
