@@ -53,6 +53,16 @@ export default function App({ Component, pageProps }) {
   const [markerSymbol, setMarkerSymbol] = useState("");
   const [markerSize, setMarkerSize] = useState(0);
 
+  //Layout Properties
+  const initialGridProperties = {
+    gridXAxis: "",
+    gridYAxis: "",
+    gridLineStyleXAxis: "",
+    gridLineStyleYAxis: "",
+  };
+
+  const [grid, setGrid] = useState(initialGridProperties);
+
   function handleUploadFile(file) {
     setFileObj(file);
   }
@@ -166,6 +176,10 @@ export default function App({ Component, pageProps }) {
     setMarkerSize(event.target.value);
   }
 
+  function handleGridProperties(event) {
+    setGrid({ ...grid, [event.target.name]: event.target.value });
+  }
+
   return (
     <>
       <Layout>
@@ -209,6 +223,8 @@ export default function App({ Component, pageProps }) {
           onMarkerColorChange={handleMarkerColorChange}
           onMarkerSymbolChange={handleMarkerSymbolChange}
           onMarkerSizeChange={handleMarkerSizeChange}
+          grid={grid}
+          onGridChange={handleGridProperties}
         />
       </Layout>
     </>
