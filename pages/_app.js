@@ -52,8 +52,8 @@ export default function App({ Component, pageProps }) {
   const [markerColor, setMarkerColor] = useState("");
   const [markerSymbol, setMarkerSymbol] = useState("");
   const [markerSize, setMarkerSize] = useState(0);
-  // Log Scale Properties
 
+  // Log Scale Properties
   const initialLogScaleStates = {
     logXAxis: "",
     logYAxis: "",
@@ -178,7 +178,6 @@ export default function App({ Component, pageProps }) {
       [event.target.name]: event.target.value,
     });
   }
-
   return (
     <>
       <Layout>
