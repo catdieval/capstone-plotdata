@@ -1,12 +1,12 @@
 import { StyledH3 } from "../Heading";
-import { Container } from "../Container";
+import Container from "../Container";
 import DropDownMenu from "../DropDownMenu";
 import {
   lineColorArray,
   lineStyleArray,
   lineWidthArray,
 } from "../../lib/listOfLineProperties";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
+import InputTypeSubmit from "../InputTypeSubmit";
 import Paragraph from "../Paragraph";
 
 export default function LineProperties({
@@ -56,7 +56,7 @@ export default function LineProperties({
               onChange={onLineWidthChange}
               arrayOfOptions={lineWidthArray}
             />
-            <StyledInputTypeSubmit
+            <InputTypeSubmit
               value="Next"
               onClick={handleLineProperties}
               disabled={completedLineProperties()}

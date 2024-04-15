@@ -1,7 +1,7 @@
 import { barColorArray } from "../../lib/listOfBarProperties.js";
 import DropDownMenu from "../DropDownMenu";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
-import { Container } from "../Container";
+import InputTypeSubmit from "../InputTypeSubmit";
+import Container from "../Container";
 import { StyledH3 } from "../Heading";
 
 export default function BarProperties({
@@ -33,7 +33,7 @@ export default function BarProperties({
                 onChange={onBarColorChange}
                 arrayOfOptions={barColorArray}
               />
-              <StyledInputTypeSubmit
+              <InputTypeSubmit
                 value="Next"
                 onClick={handleBarProperties}
                 disabled={completedBarProperties()}

@@ -63,6 +63,17 @@ export default function App({ Component, pageProps }) {
 
   const [grid, setGrid] = useState(initialGridProperties);
 
+  const initialRange = {
+    rangeXAxis: "",
+    rangeYAxis: "",
+    minXAxis: "",
+    maxXAxis: "",
+    minYAxis: "",
+    maxYAxis: "",
+  };
+
+  const [range, setRange] = useState(initialRange);
+
   function handleUploadFile(file) {
     setFileObj(file);
   }
@@ -180,6 +191,10 @@ export default function App({ Component, pageProps }) {
     setGrid({ ...grid, [event.target.name]: event.target.value });
   }
 
+  function handleRange(event) {
+    setRange({ ...range, [event.target.name]: event.target.value });
+  }
+
   return (
     <>
       <Layout>
@@ -228,5 +243,50 @@ export default function App({ Component, pageProps }) {
         />
       </Layout>
     </>
+    <Layout>
+      <GlobalStyle />
+      <Component
+        {...pageProps}
+        keynames={keynames}
+        fileObj={fileObj}
+        onUploadFile={handleUploadFile}
+        onConversion={handleConversion}
+        clickedChartType={clickedChartType}
+        onSelectChartType={handleSelectChartType}
+        xKey={xKey}
+        yKey={yKey}
+        xVariable={xVariable}
+        yVariable={yVariable}
+        onXChange={handleXChange}
+        onYChange={handleYChange}
+        onAssignVariables={handleAssignVariables}
+        xLabel={xLabel}
+        yLabel={yLabel}
+        onXLabelChange={handleXLabelChange}
+        onYLabelChange={handleYLabelChange}
+        hasCompletedStep4={hasCompletedStep4}
+        onHasCompletedStep4={handleHasCompletedStep4}
+        titleLabel={titleLabel}
+        onTitleChange={handleTitleChange}
+        hasCompletedStep5={hasCompletedStep5}
+        onHasCompletedStep5={handleHasCompletedStep5}
+        barColor={barColor}
+        onBarColorChange={handleBarColorChange}
+        lineColor={lineColor}
+        lineStyle={lineStyle}
+        lineWidth={lineWidth}
+        onLineColorChange={handleLineColorChange}
+        onLineStyleChange={handleLineStyleChange}
+        onLineWidthChange={handleLineWidthChange}
+        markerColor={markerColor}
+        markerSymbol={markerSymbol}
+        markerSize={markerSize}
+        onMarkerColorChange={handleMarkerColorChange}
+        onMarkerSymbolChange={handleMarkerSymbolChange}
+        onMarkerSizeChange={handleMarkerSizeChange}
+        range={range}
+        onRangeChange={handleRange}
+      />
+    </Layout>
   );
 }

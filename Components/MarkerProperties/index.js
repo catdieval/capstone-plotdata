@@ -1,7 +1,7 @@
 import { StyledH3 } from "../Heading";
-import { Container } from "../Container";
+import Container from "../Container";
 import Paragraph from "../Paragraph";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
+import InputTypeSubmit from "../InputTypeSubmit";
 import DropDownMenu from "../DropDownMenu";
 import {
   markerColorArray,
@@ -59,7 +59,7 @@ export default function MarkerProperties({
                   onChange={onMarkerSizeChange}
                   arrayOfOptions={markerSizeArray}
                 />
-                <StyledInputTypeSubmit
+                <InputTypeSubmit
                   value="Next"
                   onClick={handleMarkerProperties}
                   disabled={notCompletedMarkerProperties()}

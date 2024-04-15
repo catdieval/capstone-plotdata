@@ -8,6 +8,7 @@ import LineProperties from "../Components/LineProperties";
 import BarProperties from "../Components/BarProperties";
 import MarkerProperties from "../Components/MarkerProperties";
 import GridProperties from "../Components/GridProperties";
+import RangeProperties from "../Components/RangeProperties";
 
 export default function HomePage({
   keynames,
@@ -49,6 +50,8 @@ export default function HomePage({
   onMarkerSizeChange,
   grid,
   onGridChange,
+  range,
+  onRangeChange,
 }) {
   return (
     <div>
@@ -117,6 +120,7 @@ export default function HomePage({
         titleLabel={titleLabel}
       />
       <GridProperties grid={grid} onGridChange={onGridChange} />
+      <RangeProperties range={range} onRangeChange={onRangeChange} />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}

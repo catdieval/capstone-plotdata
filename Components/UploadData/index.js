@@ -1,9 +1,9 @@
 import Heading from "../Heading";
 import { Card } from "../Card/card.styled";
 import Paragraph from "../Paragraph";
-import { Container } from "../Container";
+import Container from "../Container";
 import FileUploader from "../FileUploader";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
+import InputTypeSubmit from "../InputTypeSubmit";
 
 export default function UploadData({ fileObj, onUploadFile, onConversion }) {
   // Name of file
@@ -35,7 +35,7 @@ export default function UploadData({ fileObj, onUploadFile, onConversion }) {
         <Container $centered="center" $margin>
           <FileUploader onUploadFile={onUploadFile} />
           {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
-          <StyledInputTypeSubmit
+          <InputTypeSubmit
             $nomargin
             value="Next"
             onClick={onConversion}

@@ -1,14 +1,15 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.section`
+const Container = styled.section`
   ${(props) =>
     props.$direction === "column" &&
     css`
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      align-items: ${(props) => (props.$center ? "center" : "")};
+      align-items: ${(props) => (props.$center ? "center" : "start")};
       justify-content: space-around;
+      gap: ${(props) => (props.$gap ? "4px" : "0px")};
     `};
 
   ${(props) =>
@@ -42,3 +43,5 @@ export const Container = styled.section`
       gap: 1rem;
     `};
 `;
+
+export default Container;
