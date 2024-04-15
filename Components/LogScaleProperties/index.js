@@ -1,5 +1,4 @@
 import DialogBox from "../DialogBox";
-import { useState } from "react";
 import Paragraph from "../Paragraph";
 import { Container } from "../Container";
 import styled from "styled-components";
@@ -36,14 +35,14 @@ export default function LogScaleProperties({ onLogScaleChange }) {
             <InputTypeRadio
               labelString="yes"
               idString="yes"
-              valueString="false"
+              valueString="log"
               onChange={onLogScaleChange}
               nameString="logXAxis"
             />
             <InputTypeRadio
               labelString="no, use a linear scale"
               idString="no"
-              valueString="true"
+              valueString="linear"
               onChange={onLogScaleChange}
               nameString="logXAxis"
             />
@@ -55,14 +54,14 @@ export default function LogScaleProperties({ onLogScaleChange }) {
             <InputTypeRadio
               labelString="yes"
               idString="yes"
-              valueString="false"
+              valueString="log"
               onChange={onLogScaleChange}
               nameString="logYAxis"
             />
             <InputTypeRadio
               labelString="no, use a linear scale"
               idString="no"
-              valueString="true"
+              valueString="linear"
               onChange={onLogScaleChange}
               nameString="logYAxis"
             />
