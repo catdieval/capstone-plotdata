@@ -21,7 +21,7 @@ export default function LogScaleProperties({ onLogScaleChange }) {
       <TitleWrapper>
         <Container $centered="center">
           <Paragraph $variant="border">
-            Logarithmic scale for the axes
+            Logarithmic scale for the axes:
           </Paragraph>
           <InfoButtonWrapper>
             <DialogBox />
@@ -30,7 +30,7 @@ export default function LogScaleProperties({ onLogScaleChange }) {
       </TitleWrapper>
       <Container $wrap="wrap">
         <Container $direction="column" $center>
-          <Paragraph $variant="bold">For x-axis</Paragraph>
+          <Paragraph $variant="bold">For x-axis:</Paragraph>
           <Container $direction="column">
             <InputTypeRadio
               labelString="yes"
@@ -49,7 +49,7 @@ export default function LogScaleProperties({ onLogScaleChange }) {
           </Container>
         </Container>
         <Container $direction="column" $center>
-          <Paragraph $variant="bold">For y-axis</Paragraph>
+          <Paragraph $variant="bold">For y-axis:</Paragraph>
           <Container $direction="column">
             <InputTypeRadio
               labelString="yes"
