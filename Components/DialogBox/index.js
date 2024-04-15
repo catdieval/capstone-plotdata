@@ -32,11 +32,11 @@ export default function DialogBox() {
   const [openDialog, setOpenDialog] = useState(false);
 
   function handleOpenDialog() {
-    setOpenDialog(!openDialog);
+    setOpenDialog(true);
   }
 
   function handleCloseDialog() {
-    setOpenDialog();
+    setOpenDialog(false);
   }
   return (
     <>
@@ -45,17 +45,16 @@ export default function DialogBox() {
           <InfoCircle />
         </InfoCircleWrapper>
       </Button>
-
       <Dialog onClose={handleCloseDialog} open={openDialog}>
         <DialogContainer>
           <StyledIconButton aria-label="close" onClick={handleCloseDialog}>
             <CloseIcon />
           </StyledIconButton>
           <StyledDialogTitle>Information</StyledDialogTitle>
-
           <Paragraph $variant="start">
             A logarithmic scale (or log scale) is a way of displaying numerical
-            data over a very wide range of values in a compact way.
+            data over a very wide range of values in a compact way. This is
+            useful when the values are either very small or very large.
           </Paragraph>
           <Paragraph $variant="start">
             As opposed to a linear scale in which every unit of distance
