@@ -26,7 +26,7 @@ export default function LineProperties({
     return (
       settings.lineColor.length === 0 ||
       settings.lineStyle.length === 0 ||
-      Number(lineWidth) === 0
+      Number(settings.lineWidth) === 0
     );
   }
 
@@ -38,16 +38,19 @@ export default function LineProperties({
             <StyledH3>Line properties</StyledH3>
             <Paragraph>Line color</Paragraph>
             <DropDownMenu
+              nameString="lineColor"
               onChange={onSettingsChange}
               arrayOfOptions={lineColorArray}
             />
             <Paragraph>Line style</Paragraph>
             <DropDownMenu
+              nameString="lineStyle"
               onChange={onSettingsChange}
               arrayOfOptions={lineStyleArray}
             />
             <Paragraph>Line width (in pixels)</Paragraph>
             <DropDownMenu
+              nameString="lineWidth"
               onChange={onSettingsChange}
               arrayOfOptions={lineWidthArray}
             />

@@ -42,16 +42,19 @@ export default function MarkerProperties({
               <Container $centered="center" $gap>
                 <Paragraph>Marker color:</Paragraph>
                 <DropDownMenu
+                  nameString="markerColor"
                   onChange={onSettingsChange}
                   arrayOfOptions={markerColorArray}
                 />
                 <Paragraph>Marker symbol:</Paragraph>
                 <DropDownMenu
+                  nameString="markerSymbol"
                   onChange={onSettingsChange}
                   arrayOfOptions={markerSymbolArray}
                 />
                 <Paragraph>Marker size (in pixels):</Paragraph>
                 <DropDownMenu
+                  nameString="markerSize"
                   onChange={onSettingsChange}
                   arrayOfOptions={markerSizeArray}
                 />
