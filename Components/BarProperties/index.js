@@ -5,10 +5,9 @@ import Container from "../Container";
 import { StyledH3 } from "../Heading";
 
 export default function BarProperties({
-  barColor,
-  onBarColorChange,
   clickedChartType,
-  titleLabel,
+  settings,
+  onSettingsChange,
 }) {
   function handleBarProperties() {
     alert("You chose the bar properties.");
@@ -18,7 +17,7 @@ export default function BarProperties({
   }
 
   function completedBarProperties() {
-    return barColor.length === 0;
+    return settings.barColor.length === 0;
   }
 
   return (
@@ -30,7 +29,7 @@ export default function BarProperties({
             <Container $centered="center">
               <DropDownMenu
                 idString="Bar color"
-                onChange={onBarColorChange}
+                onChange={onSettingsChange}
                 arrayOfOptions={barColorArray}
               />
               <InputTypeSubmit
