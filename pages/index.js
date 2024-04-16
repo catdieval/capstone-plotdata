@@ -54,7 +54,6 @@ export default function HomePage({
   range,
   onRangeChange,
   onLogScaleChange,
-  logScaleAxes,
 }) {
   return (
     <div>
