@@ -18,6 +18,7 @@ const InputTypeSubmit = styled.input.attrs({
       background-color: #00ace6;
     }
   }
+
   &:disabled {
     opacity: 0.5;
   }
