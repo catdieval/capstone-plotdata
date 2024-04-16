@@ -29,6 +29,7 @@ export default function GraphTitle({
             <Container $centered="center">
               <InputTypeText
                 idString={"Title"}
+                nameString="titleLabel"
                 placeholderString={"Fill me with a title"}
                 onChange={onSettingsChange}
               />

@@ -34,6 +34,7 @@ export default function XandYLabelsGraph({
             <Container $centered="center">
               <InputTypeText
                 idString={"Label for the x-axis"}
+                nameString="xLabel"
                 placeholderString={
                   "Fill me with name and unit, e.g. Age (years)"
                 }
@@ -42,6 +43,7 @@ export default function XandYLabelsGraph({
               <br></br>
               <InputTypeText
                 idString={"Label for the y-axis"}
+                nameString="yLabel"
                 placeholderString={
                   "Fill me with name and unit, e.g. Height (inches)"
                 }
