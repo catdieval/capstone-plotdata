@@ -10,21 +10,20 @@ export default function ChooseVariables({
   onAssignVariables,
   onXChange,
   onYChange,
-  xKey,
-  yKey,
+  settings,
 }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
 
-  if (xKey === yKey && xKey !== "") {
+  if (settings.xKey === settings.yKey && settings.xKey !== "") {
     alert(
       "Are you sure you want to use the same variable for x as for y? It would give a meaningless plot."
     );
   }
 
   function notCompletedXAndYKeys() {
-    return xKey.length === 0 || yKey.length === 0;
+    return settings.xKey.length === 0 || settings.yKey.length === 0;
   }
 
   return (
