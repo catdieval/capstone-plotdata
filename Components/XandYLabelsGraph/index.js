@@ -5,6 +5,8 @@ import InputTypeSubmit from "../InputTypeSubmit";
 import Container from "../Container";
 
 export default function XandYLabelsGraph({
+  xKey,
+  yKey,
   xVariable,
   yVariable,
   onHasCompletedStep4,
@@ -25,9 +27,9 @@ export default function XandYLabelsGraph({
         <>
           <Heading>Step 4: Give labels to axes</Heading>
           <Paragraph>For the x variable you chose:</Paragraph>
-          <Paragraph $variant="bold">{settings.xKey}</Paragraph>
+          <Paragraph $variant="bold">{xKey}</Paragraph>
           <Paragraph>For the y variable you chose:</Paragraph>
-          <Paragraph $variant="bold">{settings.yKey}</Paragraph>
+          <Paragraph $variant="bold">{yKey}</Paragraph>
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
               <InputTypeText

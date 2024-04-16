@@ -22,7 +22,7 @@ export default function BarProperties({
 
   return (
     <>
-      {clickedChartType === "bar-plot" && titleLabel.length > 0 && (
+      {clickedChartType === "bar-plot" && settings.titleLabel.length > 0 && (
         <>
           <StyledH3> Bar properties</StyledH3>
           <form onSubmit={handleSubmit}>

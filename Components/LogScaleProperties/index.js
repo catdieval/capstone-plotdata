@@ -55,14 +55,14 @@ export default function LogScaleProperties({ settings, onSettingsChange }) {
               labelString="yes"
               idString="yes"
               valueString="log"
-              onChange={onLogScaleChange}
+              onChange={onSettingsChange}
               nameString="logYAxis"
             />
             <InputTypeRadio
               labelString="no, use a linear scale"
               idString="no"
               valueString="linear"
-              onChange={onLogScaleChange}
+              onChange={onSettingsChange}
               nameString="logYAxis"
             />
           </Container>
