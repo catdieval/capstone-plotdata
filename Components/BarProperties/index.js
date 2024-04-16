@@ -29,6 +29,7 @@ export default function BarProperties({
             <Container $centered="center">
               <DropDownMenu
                 idString="Bar color"
+                nameString="barColor"
                 onChange={onSettingsChange}
                 arrayOfOptions={barColorArray}
               />
