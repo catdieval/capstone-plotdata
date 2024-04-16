@@ -10,6 +10,8 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
     "convert-csv-to-array": "^1.0.3",
     "convert-string-to-number": "^1.0.3",
     "eslint": "8.44.0",

@@ -5,6 +5,7 @@ const InputTypeSubmit = styled.input.attrs({
 })`
   background-color: var(--secondary-color);
   padding: 10px 20px;
+  color: white;
   border-radius: 12px;
   border: none;
   cursor: pointer;
@@ -13,7 +14,12 @@ const InputTypeSubmit = styled.input.attrs({
   margin: ${(props) => (props.$nomargin ? "" : "40px")};
 
   &:hover {
-    background-color: #00ace6;
+    &:not([disabled]) {
+      background-color: #00ace6;
+    }
+  }
+  &:disabled {
+    opacity: 0.5;
   }
 `;
 

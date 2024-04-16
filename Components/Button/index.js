@@ -10,6 +10,21 @@ const StyledButton = styled.button`
   font-size: 1rem;
   color: white;
   font-weight: 700;
+
+  ${(props) =>
+    props.$variant === "info" &&
+    css`
+      background-color: var(--info-color);
+      opacity: 0.8;
+      border-radius: 50%;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    `};
 `;
 
 export default function Button({ children, onClick, $variant, isActive }) {

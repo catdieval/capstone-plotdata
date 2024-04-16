@@ -5,6 +5,7 @@ import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
 import GraphTitle from "../Components/GraphTitle";
 import LineProperties from "../Components/LineProperties";
+import LogScaleProperties from "../Components/LogScaleProperties";
 import BarProperties from "../Components/BarProperties";
 import MarkerProperties from "../Components/MarkerProperties";
 import GridProperties from "../Components/GridProperties";
@@ -52,6 +53,8 @@ export default function HomePage({
   onGridChange,
   range,
   onRangeChange,
+  onLogScaleChange,
+  logScaleAxes,
 }) {
   return (
     <div>
@@ -121,6 +124,7 @@ export default function HomePage({
       />
       <GridProperties grid={grid} onGridChange={onGridChange} />
       <RangeProperties range={range} onRangeChange={onRangeChange} />
+      <LogScaleProperties onLogScaleChange={onLogScaleChange} />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}

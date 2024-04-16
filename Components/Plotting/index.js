@@ -53,8 +53,7 @@ export default function Plotting({
             dash: lineStyle,
             width: lineWidth,
           }
-        : //{ color: "green" },
-          "",
+        : "",
   };
 
   return (
