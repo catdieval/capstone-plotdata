@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }) {
   const [xKey, setXKey] = useState("");
   const [yKey, setYKey] = useState("");
 
-  //Step 4, 5 and 6:
+  //Step 4 (Label), 5 (Title) and 6 (Properties):
   const initialSettings = {
     xLabel: "",
     yLabel: "",
