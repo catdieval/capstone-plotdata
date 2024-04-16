@@ -12,18 +12,14 @@ import {
 export default function MarkerProperties({
   clickedChartType,
   hasCompletedStep5,
-  markerColor,
-  markerSymbol,
-  markerSize,
-  onMarkerColorChange,
-  onMarkerSymbolChange,
-  onMarkerSizeChange,
+  settings,
+  onSettingsChange,
 }) {
   function notCompletedMarkerProperties() {
     return (
-      markerColor.length === 0 ||
-      markerSymbol.length === 0 ||
-      Number(markerSize) === 0
+      settings.markerColor.length === 0 ||
+      settings.markerSymbol.length === 0 ||
+      Number(settings.markerSize) === 0
     );
   }
 
@@ -46,17 +42,17 @@ export default function MarkerProperties({
               <Container $centered="center" $gap>
                 <Paragraph>Marker color:</Paragraph>
                 <DropDownMenu
-                  onChange={onMarkerColorChange}
+                  onChange={onSettingsChange}
                   arrayOfOptions={markerColorArray}
                 />
                 <Paragraph>Marker symbol:</Paragraph>
                 <DropDownMenu
-                  onChange={onMarkerSymbolChange}
+                  onChange={onSettingsChange}
                   arrayOfOptions={markerSymbolArray}
                 />
                 <Paragraph>Marker size (in pixels):</Paragraph>
                 <DropDownMenu
-                  onChange={onMarkerSizeChange}
+                  onChange={onSettingsChange}
                   arrayOfOptions={markerSizeArray}
                 />
                 <InputTypeSubmit
