@@ -22,6 +22,8 @@ export default function HomePage({
   yVariable,
   onXChange,
   onYChange,
+  xKey,
+  yKey,
   onAssignVariables,
   hasCompletedStep4,
   onHasCompletedStep4,
@@ -48,9 +50,12 @@ export default function HomePage({
         onAssignVariables={onAssignVariables}
         onXChange={onXChange}
         onYChange={onYChange}
-        settings={settings}
+        xKey={xKey}
+        yKey={yKey}
       />
       <XandYLabelsGraph
+        xKey={xKey}
+        yKey={yKey}
         xVariable={xVariable}
         yVariable={yVariable}
         settings={settings}

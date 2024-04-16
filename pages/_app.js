@@ -25,10 +25,12 @@ export default function App({ Component, pageProps }) {
   const [xVariable, setXVariable] = useState([]);
   const [yVariable, setYVariable] = useState([]);
 
+  //States to store the values selected by the user in the dropdown menus for the x and y variables
+  const [xKey, setXKey] = useState("");
+  const [yKey, setYKey] = useState("");
+
   //Step 4, 5 and 6:
   const initialSettings = {
-    xKey: "",
-    yKey: "",
     xLabel: "",
     yLabel: "",
     titleLabel: "",
@@ -53,9 +55,10 @@ export default function App({ Component, pageProps }) {
   };
 
   const [settings, setSettings] = useState(initialSettings);
-  function handleSettings(event) {
-    setSettings({ ...settings, [event.target.name]: event.target.value });
-  }
+
+  const [hasCompletedStep4, setHasCompletedStep4] = useState(false);
+
+  const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
   function handleUploadFile(file) {
     setFileObj(file);
@@ -82,6 +85,16 @@ export default function App({ Component, pageProps }) {
 
   function handleSelectChartType(name) {
     setClickedChartType(name);
+  }
+
+  function handleXChange(event) {
+    const choice = event.target.value;
+    setXKey(choice);
+  }
+
+  function handleYChange(event) {
+    const choice = event.target.value;
+    setYKey(choice);
   }
 
   function handleAssignVariables() {
@@ -111,6 +124,10 @@ export default function App({ Component, pageProps }) {
     }
   }
 
+  function handleSettings(event) {
+    setSettings({ ...settings, [event.target.name]: event.target.value });
+  }
+
   function handleHasCompletedStep4() {
     alert("Labels for the x-axis and the y-axis of the graph are assigned");
     setHasCompletedStep4(true);
@@ -137,12 +154,12 @@ export default function App({ Component, pageProps }) {
         onXChange={handleXChange}
         onYChange={handleYChange}
         onAssignVariables={handleAssignVariables}
+        settings={settings}
+        onSettingsChange={handleSettings}
         hasCompletedStep4={hasCompletedStep4}
         onHasCompletedStep4={handleHasCompletedStep4}
         hasCompletedStep5={hasCompletedStep5}
         onHasCompletedStep5={handleHasCompletedStep5}
-        settings={settings}
-        onSettingsChange={handleSettings}
       />
     </Layout>
   );
