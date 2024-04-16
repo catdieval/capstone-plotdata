@@ -138,6 +138,7 @@ export default function App({ Component, pageProps }) {
     setHasCompletedStep5(true);
   }
 
+  console.log(settings);
   return (
     <Layout>
       <GlobalStyle />
@@ -149,6 +150,8 @@ export default function App({ Component, pageProps }) {
         onConversion={handleConversion}
         clickedChartType={clickedChartType}
         onSelectChartType={handleSelectChartType}
+        xKey={xKey}
+        yKey={yKey}
         xVariable={xVariable}
         yVariable={yVariable}
         onXChange={handleXChange}
