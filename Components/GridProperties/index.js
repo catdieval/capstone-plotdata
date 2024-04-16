@@ -4,7 +4,7 @@ import Container from "../Container";
 import DropDownMenu from "../DropDownMenu";
 import { lineStyleArray } from "../../lib/listOfLineProperties";
 
-export default function GridProperties({ grid, onGridChange }) {
+export default function GridProperties({ settings, onSettingsChange }) {
   return (
     <>
       <Paragraph>Show grid (helper lines) for axes: </Paragraph>
@@ -16,14 +16,14 @@ export default function GridProperties({ grid, onGridChange }) {
               nameString="gridXAxis"
               valueString="true"
               idString="yes"
-              onChange={onGridChange}
+              onChange={onSettingsChange}
               labelString="Yes"
             />
             <InputTypeRadio
               nameString="gridXAxis"
               valueString="false"
               idString="no"
-              onChange={onGridChange}
+              onChange={onSettingsChange}
               labelString="No"
             />
           </Container>
@@ -35,37 +35,37 @@ export default function GridProperties({ grid, onGridChange }) {
               nameString="gridYAxis"
               valueString="true"
               idString="yes"
-              onChange={onGridChange}
+              onChange={onSettingsChange}
               labelString="Yes"
             />
             <InputTypeRadio
               nameString="gridYAxis"
               valueString="false"
               idString="no"
-              onChange={onGridChange}
+              onChange={onSettingsChange}
               labelString="No"
             />
           </Container>
         </Container>
       </Container>
-      {(grid.gridXAxis === "true" || grid.gridYAxis === "true") && (
+      {(settings.gridXAxis === "true" || settings.gridYAxis === "true") && (
         <Paragraph>Grid linestyle:</Paragraph>
       )}
       <Container $wrap="wrap">
-        {grid.gridXAxis === "true" && (
+        {settings.gridXAxis === "true" && (
           <DropDownMenu
             idString="x-axis"
             nameString="gridLineStyleXAxis"
             arrayOfOptions={lineStyleArray}
-            onChange={onGridChange}
+            onChange={onSettingsChange}
           />
         )}
-        {grid.gridYAxis === "true" && (
+        {settings.gridYAxis === "true" && (
           <DropDownMenu
             idString="y-axis"
             nameString="gridLineStyleYAxis"
             arrayOfOptions={lineStyleArray}
-            onChange={onGridChange}
+            onChange={onSettingsChange}
           />
         )}
       </Container>
