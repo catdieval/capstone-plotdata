@@ -1,6 +1,6 @@
 import InputTypeRadio from "../InputTypeRadio";
 import Paragraph from "../Paragraph";
-import { Container } from "../Container";
+import Container from "../Container";
 import DropDownMenu from "../DropDownMenu";
 import { lineStyleArray } from "../../lib/listOfLineProperties";
 
