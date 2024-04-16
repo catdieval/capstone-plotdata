@@ -5,22 +5,18 @@ import InputTypeSubmit from "../InputTypeSubmit";
 import Container from "../Container";
 
 export default function XandYLabelsGraph({
-  xKey,
-  yKey,
   xVariable,
   yVariable,
-  onXLabelChange,
-  onYLabelChange,
-  xLabel,
-  yLabel,
   onHasCompletedStep4,
+  settings,
+  onSettingsChange,
 }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
 
   function notCompletedXAndYLabels() {
-    return xLabel.length === 0 || yLabel.length === 0;
+    return settings.xLabel.length === 0 || settings.yLabel.length === 0;
   }
 
   return (
@@ -29,9 +25,9 @@ export default function XandYLabelsGraph({
         <>
           <Heading>Step 4: Give labels to axes</Heading>
           <Paragraph>For the x variable you chose:</Paragraph>
-          <Paragraph $variant="bold">{xKey}</Paragraph>
+          <Paragraph $variant="bold">{settings.xKey}</Paragraph>
           <Paragraph>For the y variable you chose:</Paragraph>
-          <Paragraph $variant="bold">{yKey}</Paragraph>
+          <Paragraph $variant="bold">{settings.yKey}</Paragraph>
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
               <InputTypeText
@@ -39,7 +35,7 @@ export default function XandYLabelsGraph({
                 placeholderString={
                   "Fill me with name and unit, e.g. Age (years)"
                 }
-                onChange={onXLabelChange}
+                onChange={onSettingsChange}
               />
               <br></br>
               <InputTypeText
@@ -47,7 +43,7 @@ export default function XandYLabelsGraph({
                 placeholderString={
                   "Fill me with name and unit, e.g. Height (inches)"
                 }
-                onChange={onYLabelChange}
+                onChange={onSettingsChange}
               />
 
               <InputTypeSubmit
