@@ -1,6 +1,6 @@
 import DialogBox from "../DialogBox";
 import Paragraph from "../Paragraph";
-import { Container } from "../Container";
+import Container from "../Container";
 import styled from "styled-components";
 import InputTypeRadio from "../InputTypeRadio";
 
