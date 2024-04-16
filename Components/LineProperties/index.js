@@ -11,13 +11,8 @@ import Paragraph from "../Paragraph";
 
 export default function LineProperties({
   clickedChartType,
-  titleLabel,
-  onLineColorChange,
-  onLineStyleChange,
-  onLineWidthChange,
-  lineColor,
-  lineStyle,
-  lineWidth,
+  settings,
+  onSettingsChange,
 }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -29,31 +24,31 @@ export default function LineProperties({
 
   function completedLineProperties() {
     return (
-      lineColor.length === 0 ||
-      lineStyle.length === 0 ||
+      settings.lineColor.length === 0 ||
+      settings.lineStyle.length === 0 ||
       Number(lineWidth) === 0
     );
   }
 
   return (
     <>
-      {clickedChartType === "line-plot" && titleLabel.length > 0 && (
+      {clickedChartType === "line-plot" && settings.titleLabel.length > 0 && (
         <form onSubmit={handleSubmit}>
           <Container $centered="center" $gap>
             <StyledH3>Line properties</StyledH3>
             <Paragraph>Line color</Paragraph>
             <DropDownMenu
-              onChange={onLineColorChange}
+              onChange={onSettingsChange}
               arrayOfOptions={lineColorArray}
             />
             <Paragraph>Line style</Paragraph>
             <DropDownMenu
-              onChange={onLineStyleChange}
+              onChange={onSettingsChange}
               arrayOfOptions={lineStyleArray}
             />
             <Paragraph>Line width (in pixels)</Paragraph>
             <DropDownMenu
-              onChange={onLineWidthChange}
+              onChange={onSettingsChange}
               arrayOfOptions={lineWidthArray}
             />
             <InputTypeSubmit
