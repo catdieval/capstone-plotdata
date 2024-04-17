@@ -10,6 +10,8 @@ import BarProperties from "../Components/BarProperties";
 import MarkerProperties from "../Components/MarkerProperties";
 
 export default function HomePage({
+  hasClickedGetStarted,
+  onGetStarted,
   keynames,
   fileObj,
   onUploadFile,
@@ -50,11 +52,12 @@ export default function HomePage({
 }) {
   return (
     <div>
-      <StartPage />
+      <StartPage onGetStarted={onGetStarted} />
       <UploadData
         fileObj={fileObj}
         onUploadFile={onUploadFile}
         onConversion={onConversion}
+        hasClickedGetStarted={hasClickedGetStarted}
       />
       <ListOfCharts
         onSelectChartType={onSelectChartType}
