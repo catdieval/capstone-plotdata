@@ -16,7 +16,7 @@ export default function BarProperties({
     event.preventDefault();
   }
 
-  function completedBarProperties() {
+  function notCompletedBarProperties() {
     return settings.barColor.length === 0;
   }
 
@@ -36,7 +36,7 @@ export default function BarProperties({
               <InputTypeSubmit
                 value="Next"
                 onClick={handleBarProperties}
-                disabled={completedBarProperties()}
+                disabled={notCompletedBarProperties()}
               />
             </Container>
           </form>

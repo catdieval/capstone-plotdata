@@ -22,7 +22,7 @@ export default function LineProperties({
     alert(`You have selected the line properties`);
   }
 
-  function completedLineProperties() {
+  function notCompletedLineProperties() {
     return (
       settings.lineColor.length === 0 ||
       settings.lineStyle.length === 0 ||
@@ -57,7 +57,7 @@ export default function LineProperties({
             <InputTypeSubmit
               value="Next"
               onClick={handleLineProperties}
-              disabled={completedLineProperties()}
+              disabled={notCompletedLineProperties()}
             />
           </Container>
         </form>
