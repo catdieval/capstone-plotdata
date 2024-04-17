@@ -4,17 +4,13 @@ import Paragraph from "../Paragraph";
 import { StyledH3 } from "../Heading";
 import UnorderedList from "../UnorderedList";
 import Button from "../Button";
+import ImageContainer from "../ImageContainer";
 import Image from "next/image";
 import { arrayOfSteps, arrayOfActions } from "../../lib/listOfBulletPoints";
 import { examplePlotsArray } from "../../lib/examplePlotsArray";
 
 export default function StartPage() {
   const [hasClickedGetStarted, setHasClickedGetStarted] = useState(false);
-
-  const ImageContainer = styled.div`
-    display: flex;
-    justify-content: center;
-  `;
 
   function handleGetStarted() {
     setHasClickedGetStarted(true);
@@ -30,7 +26,7 @@ export default function StartPage() {
         {examplePlotsArray.map((item) => {
           return (
             <ImageContainer key={item.name}>
-              <Image src={item.path} height={200} width={200} alt={item.name} />
+              <Image src={item.path} height={400} width={500} alt={item.name} />
             </ImageContainer>
           );
         })}
