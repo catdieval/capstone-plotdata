@@ -88,13 +88,11 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleXChange(event) {
-    const choice = event.target.value;
-    setXKey(choice);
+    setXKey(event.target.value);
   }
 
   function handleYChange(event) {
-    const choice = event.target.value;
-    setYKey(choice);
+    setYKey(event.target.value);
   }
 
   function handleAssignVariables() {
