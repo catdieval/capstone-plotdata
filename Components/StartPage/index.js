@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Container } from "../Container";
 import Paragraph from "../Paragraph";
 import { StyledH3 } from "../Heading";
@@ -9,13 +8,7 @@ import Image from "next/image";
 import { arrayOfSteps, arrayOfActions } from "../../lib/listOfBulletPoints";
 import { examplePlotsArray } from "../../lib/examplePlotsArray";
 
-export default function StartPage() {
-  const [hasClickedGetStarted, setHasClickedGetStarted] = useState(false);
-
-  function handleGetStarted() {
-    setHasClickedGetStarted(true);
-  }
-
+export default function StartPage({ onGetStarted }) {
   return (
     <>
       <Paragraph>
@@ -44,7 +37,7 @@ export default function StartPage() {
       </Paragraph>
       <Container $centered="center">
         <UnorderedList $arrayOfBulletPoints={arrayOfActions} />
-        <Button onClick={handleGetStarted}>Get started</Button>
+        {<Button onClick={onGetStarted}>Get started</Button>}
       </Container>
     </>
   );
