@@ -1,9 +1,13 @@
-export default function UnorderedList($arrayOfBulletPoints) {
+import { Container } from "../Container";
+
+export default function UnorderedList({ $arrayOfBulletPoints }) {
   return (
     <ul>
-      {$arrayOfBulletPoints.map((bulletPoint) => (
-        <li key={bulletPoint}>{bulletPoint}</li>
-      ))}
+      <Container $direction="column" $gap>
+        {$arrayOfBulletPoints.map((bulletPoint) => {
+          return <li key={bulletPoint}>{bulletPoint}</li>;
+        })}
+      </Container>
     </ul>
   );
 }
