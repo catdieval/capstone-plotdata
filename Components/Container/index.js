@@ -7,8 +7,9 @@ export const Container = styled.section`
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
+      gap: ${(props) => (props.$gap ? "4px" : "0px")};
       align-items: ${(props) => (props.$center ? "center" : "")};
-      justify-content: space-around;
+      justify-content: space-between;
     `};
 
   ${(props) =>
