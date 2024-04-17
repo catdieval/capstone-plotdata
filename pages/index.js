@@ -1,3 +1,4 @@
+import StartPage from "../Components/StartPage";
 import UploadData from "../Components/UploadData";
 import ListOfCharts from "../Components/ListOfCharts";
 import Plotting from "../Components/Plotting";
@@ -49,6 +50,7 @@ export default function HomePage({
 }) {
   return (
     <div>
+      <StartPage />
       <UploadData
         fileObj={fileObj}
         onUploadFile={onUploadFile}
