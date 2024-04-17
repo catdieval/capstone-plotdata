@@ -138,7 +138,6 @@ export default function App({ Component, pageProps }) {
     setHasCompletedStep5(true);
   }
 
-  console.log(settings);
   return (
     <Layout>
       <GlobalStyle />

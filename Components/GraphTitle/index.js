@@ -33,7 +33,6 @@ export default function GraphTitle({
                 placeholderString={"Fill me with a title"}
                 onChange={onSettingsChange}
               />
-
               <InputTypeSubmit
                 value="Next"
                 onClick={onHasCompletedStep5}
