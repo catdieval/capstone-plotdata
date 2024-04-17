@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
   const [xVariable, setXVariable] = useState([]);
   const [yVariable, setYVariable] = useState([]);
 
-  //States to store the values selected by the user in the dropdown menus for the x and y variables
+  // States to store the values selected by the user in the dropdown menus for the x and y variables
   const [xKey, setXKey] = useState("");
   const [yKey, setYKey] = useState("");
 
