@@ -5,15 +5,17 @@ import CorrectArrays from "../Components/CorrectArrays";
 import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
 export default function App({ Component, pageProps }) {
-  //Step 1: Upload CSV-file
-  //State to store keys from the CSV file
+  // State to store the status about if the user has clicked on the "Get started button"
+  const [hasClickedGetStarted, setHasClickedGetStarted] = useState(false);
+
+  // Step 1: Upload CSV-file
+  // State to store keys from the CSV file
   const [keynames, setKeynames] = useState([]);
 
-  //State to store the values
+  // State to store the values
   const [vals, setVals] = useState([]);
 
   // State to store the file object
-  //const [fileObj, setFileObj] = useState({});
   const [fileObj, setFileObj] = useState(null);
 
   // Step 2: Choose chart type
@@ -52,6 +54,10 @@ export default function App({ Component, pageProps }) {
   const [markerColor, setMarkerColor] = useState("");
   const [markerSymbol, setMarkerSymbol] = useState("");
   const [markerSize, setMarkerSize] = useState(0);
+
+  function handleGetStarted() {
+    setHasClickedGetStarted(true);
+  }
 
   function handleUploadFile(file) {
     setFileObj(file);
@@ -172,6 +178,8 @@ export default function App({ Component, pageProps }) {
         <GlobalStyle />
         <Component
           {...pageProps}
+          hasClickedGetStarted={hasClickedGetStarted}
+          onGetStarted={handleGetStarted}
           keynames={keynames}
           fileObj={fileObj}
           onUploadFile={handleUploadFile}
