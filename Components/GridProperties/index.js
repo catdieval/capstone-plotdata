@@ -7,7 +7,11 @@ import { lineStyleArray } from "../../lib/listOfLineProperties";
 export default function GridProperties({ settings, onSettingsChange }) {
   return (
     <>
-      <Paragraph>Show grid (helper lines) for axes: </Paragraph>
+      <Container $centered="center">
+        <Paragraph $variant="border">
+          Show grid (helper lines) for axes:
+        </Paragraph>
+      </Container>
       <Container $wrap="wrap">
         <Container $centered="center">
           <Paragraph>For x-axis:</Paragraph>
