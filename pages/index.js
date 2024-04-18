@@ -7,9 +7,7 @@ import GraphTitle from "../Components/GraphTitle";
 import LineProperties from "../Components/LineProperties";
 import BarProperties from "../Components/BarProperties";
 import MarkerProperties from "../Components/MarkerProperties";
-import GridProperties from "../Components/GridProperties";
-import RangeProperties from "../Components/RangeProperties";
-import LogScaleProperties from "../Components/LogScaleProperties";
+import LayoutProperties from "../Components/LayoutProperties";
 
 export default function HomePage({
   keynames,
@@ -84,12 +82,7 @@ export default function HomePage({
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
-      <GridProperties settings={settings} onSettingsChange={onSettingsChange} />
-      <RangeProperties
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-      />
-      <LogScaleProperties
+      <LayoutProperties
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
