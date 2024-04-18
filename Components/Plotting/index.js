@@ -8,18 +8,9 @@ export default function Plotting({
   clickedChartType,
   xVariable,
   yVariable,
-  xLabel,
-  yLabel,
   hasCompletedStep4,
-  titleLabel,
   hasCompletedStep5,
-  barColor,
-  lineColor,
-  lineStyle,
-  lineWidth,
-  markerColor,
-  markerSymbol,
-  markerSize,
+  settings,
 }) {
   const chartIndex = chartArray.findIndex(
     (chart) => chart.name === clickedChartType
@@ -41,17 +32,17 @@ export default function Plotting({
       clickedChartType === "line-markers-plot" ||
       clickedChartType === "scatter-plot"
         ? {
-            color: markerColor,
-            symbol: markerSymbol,
-            size: markerSize,
+            color: settings.markerColor,
+            symbol: settings.markerSymbol,
+            size: settings.markerSize,
           }
-        : { color: barColor },
+        : { color: settings.barColor },
     line:
       clickedChartType === "line-plot"
         ? {
-            color: lineColor,
-            dash: lineStyle,
-            width: lineWidth,
+            color: settings.lineColor,
+            dash: settings.lineStyle,
+            width: settings.lineWidth,
           }
         : "",
   };
@@ -63,9 +54,13 @@ export default function Plotting({
       yVariable.length > 0 &&
       hasCompletedStep4 === true &&
       hasCompletedStep5 === true &&
-      (barColor != "" ||
-        (lineColor != "" && lineStyle != "" && lineWidth !== 0) ||
-        (markerColor !== "" && markerSymbol !== "" && markerSize !== 0)) ? (
+      (settings.barColor != "" ||
+        (settings.lineColor != "" &&
+          settings.lineStyle != "" &&
+          settings.lineWidth !== 0) ||
+        (settings.markerColor !== "" &&
+          settings.markerSymbol !== "" &&
+          settings.markerSize !== 0)) ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
@@ -75,14 +70,14 @@ export default function Plotting({
             <Plot
               data={[dataOptions]}
               layout={{
-                title: { text: titleLabel },
+                title: { text: settings.titleLabel },
                 xaxis: {
-                  title: { text: xLabel },
+                  title: { text: settings.xLabel },
                   showline: true,
                   ticks: "outside",
                 },
                 yaxis: {
-                  title: { text: yLabel },
+                  title: { text: settings.yLabel },
                   ticks: "outside",
                 },
                 width: 600,

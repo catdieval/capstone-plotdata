@@ -3,7 +3,7 @@ import InputTypeRadio from "../InputTypeRadio";
 import Container from "../Container";
 import InputTypeNumber from "../InputTypeNumber";
 
-export default function RangeProperties({ range, onRangeChange }) {
+export default function RangeProperties({ settings, onSettingsChange }) {
   return (
     <>
       <Paragraph>Range of values for axes:</Paragraph>
@@ -15,21 +15,21 @@ export default function RangeProperties({ range, onRangeChange }) {
               nameString="rangeXAxis"
               valueString="true"
               idString="normal range"
-              onChange={onRangeChange}
+              onChange={onSettingsChange}
               labelString="yes, normal range"
             />
             <InputTypeRadio
               nameString="rangeXAxis"
               valueString="reversed"
               idString="reversed range"
-              onChange={onRangeChange}
+              onChange={onSettingsChange}
               labelString="yes, reversed range"
             />
             <InputTypeRadio
               nameString="rangeXAxis"
               valueString="min max"
               idString="min max"
-              onChange={onRangeChange}
+              onChange={onSettingsChange}
               labelString="no, set minimum and maximum"
             />
           </Container>
@@ -41,45 +41,46 @@ export default function RangeProperties({ range, onRangeChange }) {
               nameString="rangeYAxis"
               valueString="true"
               idString="normal range"
-              onChange={onRangeChange}
+              onChange={onSettingsChange}
               labelString="yes, normal range"
             />
             <InputTypeRadio
               nameString="rangeYAxis"
               valueString="reversed"
               idString="reversed range"
-              onChange={onRangeChange}
+              onChange={onSettingsChange}
               labelString="yes, reversed range"
             />
             <InputTypeRadio
               nameString="rangeYAxis"
               valueString="min max"
               idString="min max"
-              onChange={onRangeChange}
+              onChange={onSettingsChange}
               labelString="no, set minimum and maximum"
             />
           </Container>
         </Container>
       </Container>
-      {(range.rangeXAxis === "min max" || range.rangeYAxis === "min max") && (
+      {(settings.rangeXAxis === "min max" ||
+        settings.rangeYAxis === "min max") && (
         <Paragraph>Minimum and maximum values for axis:</Paragraph>
       )}
       <Container $wrap="wrap">
         <Container $centered="center">
-          {range.rangeXAxis === "min max" && (
+          {settings.rangeXAxis === "min max" && (
             <>
               <Paragraph>x-axis:</Paragraph>
               <InputTypeNumber
                 nameString="minXAxis"
                 idString="minXAxis"
-                onChange={onRangeChange}
+                onChange={onSettingsChange}
                 labelString="min:"
                 placeholderString="Number (e.g. 10, 0.1, -1)"
               />
               <InputTypeNumber
                 nameString="maxXAxis"
                 idString="maxXAxis"
-                onChange={onRangeChange}
+                onChange={onSettingsChange}
                 labelString="max:"
                 placeholderString="Number (e.g. 10, 0.1, -1)"
               />
@@ -87,20 +88,20 @@ export default function RangeProperties({ range, onRangeChange }) {
           )}
         </Container>
         <Container $centered="center">
-          {range.rangeYAxis === "min max" && (
+          {settings.rangeYAxis === "min max" && (
             <>
               <Paragraph>y-axis:</Paragraph>
               <InputTypeNumber
                 nameString="minYAxis"
                 idString="minYAxis"
-                onChange={onRangeChange}
+                onChange={onSettingsChange}
                 labelString="min:"
                 placeholderString="Number (e.g. 10, 0.1, -1)"
               />
               <InputTypeNumber
                 nameString="maxYAxis"
                 idString="maxYAxis"
-                onChange={onRangeChange}
+                onChange={onSettingsChange}
                 labelString="max:"
                 placeholderString="Number (e.g. 10, 0.1, -1)"
               />

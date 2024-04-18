@@ -5,10 +5,8 @@ import InputTypeText from "../InputTypeText";
 import InputTypeSubmit from "../InputTypeSubmit";
 
 export default function GraphTitle({
-  xLabel,
-  yLabel,
-  titleLabel,
-  onTitleChange,
+  settings,
+  onSettingsChange,
   hasCompletedStep4,
   onHasCompletedStep5,
 }) {
@@ -17,7 +15,7 @@ export default function GraphTitle({
   }
 
   function notCompletedTitle() {
-    return titleLabel.length === 0;
+    return settings.titleLabel.length === 0;
   }
 
   return (
@@ -25,16 +23,16 @@ export default function GraphTitle({
       {hasCompletedStep4 === true && (
         <>
           <Heading> Step 5: Give a title to the graph </Heading>
-          <Paragraph>Label for the x-axis: {xLabel}</Paragraph>
-          <Paragraph>Label for the y-axis: {yLabel}</Paragraph>
+          <Paragraph>Label for the x-axis: {settings.xLabel}</Paragraph>
+          <Paragraph>Label for the y-axis: {settings.yLabel}</Paragraph>
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
               <InputTypeText
                 idString={"Title"}
+                nameString="titleLabel"
                 placeholderString={"Fill me with a title"}
-                onChange={onTitleChange}
+                onChange={onSettingsChange}
               />
-
               <InputTypeSubmit
                 value="Next"
                 onClick={onHasCompletedStep5}

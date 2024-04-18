@@ -9,18 +9,16 @@ export default function XandYLabelsGraph({
   yKey,
   xVariable,
   yVariable,
-  onXLabelChange,
-  onYLabelChange,
-  xLabel,
-  yLabel,
   onHasCompletedStep4,
+  settings,
+  onSettingsChange,
 }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
 
   function notCompletedXAndYLabels() {
-    return xLabel.length === 0 || yLabel.length === 0;
+    return settings.xLabel.length === 0 || settings.yLabel.length === 0;
   }
 
   return (
@@ -36,18 +34,20 @@ export default function XandYLabelsGraph({
             <Container $centered="center">
               <InputTypeText
                 idString={"Label for the x-axis"}
+                nameString="xLabel"
                 placeholderString={
                   "Fill me with name and unit, e.g. Age (years)"
                 }
-                onChange={onXLabelChange}
+                onChange={onSettingsChange}
               />
               <br></br>
               <InputTypeText
                 idString={"Label for the y-axis"}
+                nameString="yLabel"
                 placeholderString={
                   "Fill me with name and unit, e.g. Height (inches)"
                 }
-                onChange={onYLabelChange}
+                onChange={onSettingsChange}
               />
 
               <InputTypeSubmit

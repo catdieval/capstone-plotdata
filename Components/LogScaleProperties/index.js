@@ -15,7 +15,7 @@ const InfoButtonWrapper = styled.div`
   transform: translate(370%, -50%);
 `;
 
-export default function LogScaleProperties({ onLogScaleChange }) {
+export default function LogScaleProperties({ settings, onSettingsChange }) {
   return (
     <>
       <TitleWrapper>
@@ -36,14 +36,14 @@ export default function LogScaleProperties({ onLogScaleChange }) {
               labelString="yes"
               idString="yes"
               valueString="log"
-              onChange={onLogScaleChange}
+              onChange={onSettingsChange}
               nameString="logXAxis"
             />
             <InputTypeRadio
               labelString="no, use a linear scale"
               idString="no"
               valueString="linear"
-              onChange={onLogScaleChange}
+              onChange={onSettingsChange}
               nameString="logXAxis"
             />
           </Container>
@@ -55,14 +55,14 @@ export default function LogScaleProperties({ onLogScaleChange }) {
               labelString="yes"
               idString="yes"
               valueString="log"
-              onChange={onLogScaleChange}
+              onChange={onSettingsChange}
               nameString="logYAxis"
             />
             <InputTypeRadio
               labelString="no, use a linear scale"
               idString="no"
               valueString="linear"
-              onChange={onLogScaleChange}
+              onChange={onSettingsChange}
               nameString="logYAxis"
             />
           </Container>

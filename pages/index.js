@@ -5,11 +5,11 @@ import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
 import GraphTitle from "../Components/GraphTitle";
 import LineProperties from "../Components/LineProperties";
-import LogScaleProperties from "../Components/LogScaleProperties";
 import BarProperties from "../Components/BarProperties";
 import MarkerProperties from "../Components/MarkerProperties";
 import GridProperties from "../Components/GridProperties";
 import RangeProperties from "../Components/RangeProperties";
+import LogScaleProperties from "../Components/LogScaleProperties";
 
 export default function HomePage({
   keynames,
@@ -18,42 +18,19 @@ export default function HomePage({
   onConversion,
   clickedChartType,
   onSelectChartType,
-  xKey,
-  yKey,
   xVariable,
   yVariable,
   onXChange,
   onYChange,
+  xKey,
+  yKey,
   onAssignVariables,
-  onXLabelChange,
-  onYLabelChange,
-  xLabel,
-  yLabel,
   hasCompletedStep4,
   onHasCompletedStep4,
-  titleLabel,
-  onTitleChange,
   hasCompletedStep5,
   onHasCompletedStep5,
-  lineColor,
-  lineStyle,
-  lineWidth,
-  onLineColorChange,
-  onLineStyleChange,
-  onLineWidthChange,
-  barColor,
-  onBarColorChange,
-  markerColor,
-  markerSymbol,
-  markerSize,
-  onMarkerColorChange,
-  onMarkerSymbolChange,
-  onMarkerSizeChange,
-  grid,
-  onGridChange,
-  range,
-  onRangeChange,
-  onLogScaleChange,
+  settings,
+  onSettingsChange,
 }) {
   return (
     <div>
@@ -81,65 +58,49 @@ export default function HomePage({
         yKey={yKey}
         xVariable={xVariable}
         yVariable={yVariable}
-        onXLabelChange={onXLabelChange}
-        onYLabelChange={onYLabelChange}
-        xLabel={xLabel}
-        yLabel={yLabel}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
         onHasCompletedStep4={onHasCompletedStep4}
       />
       <GraphTitle
-        xLabel={xLabel}
-        yLabel={yLabel}
-        titleLabel={titleLabel}
-        onTitleChange={onTitleChange}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
         hasCompletedStep4={hasCompletedStep4}
         onHasCompletedStep5={onHasCompletedStep5}
       />
       <MarkerProperties
         clickedChartType={clickedChartType}
         hasCompletedStep5={hasCompletedStep5}
-        markerColor={markerColor}
-        markerSymbol={markerSymbol}
-        markerSize={markerSize}
-        onMarkerColorChange={onMarkerColorChange}
-        onMarkerSymbolChange={onMarkerSymbolChange}
-        onMarkerSizeChange={onMarkerSizeChange}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
       />
       <LineProperties
         clickedChartType={clickedChartType}
-        titleLabel={titleLabel}
-        onLineColorChange={onLineColorChange}
-        onLineStyleChange={onLineStyleChange}
-        onLineWidthChange={onLineWidthChange}
-        lineColor={lineColor}
-        lineStyle={lineStyle}
-        lineWidth={lineWidth}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
       />
       <BarProperties
-        barColor={barColor}
-        onBarColorChange={onBarColorChange}
         clickedChartType={clickedChartType}
-        titleLabel={titleLabel}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
       />
-      <GridProperties grid={grid} onGridChange={onGridChange} />
-      <RangeProperties range={range} onRangeChange={onRangeChange} />
-      <LogScaleProperties onLogScaleChange={onLogScaleChange} />
+      <GridProperties settings={settings} onSettingsChange={onSettingsChange} />
+      <RangeProperties
+        settings={settings}
+        onSettingsChange={onSettingsChange}
+      />
+      <LogScaleProperties
+        settings={settings}
+        onSettingsChange={onSettingsChange}
+      />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}
         yVariable={yVariable}
-        xLabel={xLabel}
-        yLabel={yLabel}
         hasCompletedStep4={hasCompletedStep4}
-        titleLabel={titleLabel}
         hasCompletedStep5={hasCompletedStep5}
-        lineColor={lineColor}
-        lineStyle={lineStyle}
-        lineWidth={lineWidth}
-        barColor={barColor}
-        markerColor={markerColor}
-        markerSymbol={markerSymbol}
-        markerSize={markerSize}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
       />
     </div>
   );

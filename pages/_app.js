@@ -29,57 +29,37 @@ export default function App({ Component, pageProps }) {
   const [xKey, setXKey] = useState("");
   const [yKey, setYKey] = useState("");
 
-  //Step 4: Labels to the axes:
-  const [xLabel, setXLabel] = useState("");
-  const [yLabel, setYLabel] = useState("");
-  const [hasCompletedStep4, setHasCompletedStep4] = useState(false);
-
-  //Step 5: Add a title to the graph
-  const [titleLabel, setTitleLabel] = useState("");
-  const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
-
-  //Step 6: Plotting properties
-
-  // Bar properties
-  const [barColor, setBarColor] = useState("");
-
-  //Line properties
-  const [lineColor, setLineColor] = useState("");
-  const [lineStyle, setLineStyle] = useState("");
-  const [lineWidth, setLineWidth] = useState(0);
-
-  // Marker Properties
-  const [markerColor, setMarkerColor] = useState("");
-  const [markerSymbol, setMarkerSymbol] = useState("");
-  const [markerSize, setMarkerSize] = useState(0);
-
-  // Log Scale Properties
-  const initialLogScaleStates = {
-    logXAxis: "",
-    logYAxis: "",
-  };
-  const [logScaleAxes, setLogScaleAxes] = useState(initialLogScaleStates);
-
-  //Layout Properties
-  const initialGridProperties = {
+  // Step 4 (Axes labels), 5 (Title) and 6 (Properties):
+  const initialSettings = {
+    xLabel: "",
+    yLabel: "",
+    titleLabel: "",
+    barColor: "",
+    lineColor: "",
+    lineStyle: "",
+    lineWidth: 0,
+    markerColor: "",
+    markerSymbol: "",
+    markerSize: 0,
     gridXAxis: "",
     gridYAxis: "",
     gridLineStyleXAxis: "",
     gridLineStyleYAxis: "",
-  };
-
-  const [grid, setGrid] = useState(initialGridProperties);
-
-  const initialRange = {
     rangeXAxis: "",
     rangeYAxis: "",
     minXAxis: "",
     maxXAxis: "",
     minYAxis: "",
     maxYAxis: "",
+    logXAxis: "",
+    logYAxis: "",
   };
 
-  const [range, setRange] = useState(initialRange);
+  const [settings, setSettings] = useState(initialSettings);
+
+  const [hasCompletedStep4, setHasCompletedStep4] = useState(false);
+
+  const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
   function handleUploadFile(file) {
     setFileObj(file);
@@ -143,12 +123,8 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  function handleXLabelChange(event) {
-    setXLabel(event.target.value);
-  }
-
-  function handleYLabelChange(event) {
-    setYLabel(event.target.value);
+  function handleSettingsChange(event) {
+    setSettings({ ...settings, [event.target.name]: event.target.value });
   }
 
   function handleHasCompletedStep4() {
@@ -156,57 +132,9 @@ export default function App({ Component, pageProps }) {
     setHasCompletedStep4(true);
   }
 
-  function handleTitleChange(event) {
-    setTitleLabel(event.target.value);
-  }
-
   function handleHasCompletedStep5() {
     alert("Title of the graph is assigned");
     setHasCompletedStep5(true);
-  }
-
-  function handleLineColorChange(event) {
-    setLineColor(event.target.value);
-  }
-
-  function handleLineStyleChange(event) {
-    setLineStyle(event.target.value);
-  }
-
-  function handleLineWidthChange(event) {
-    setLineWidth(event.target.value);
-  }
-
-  function handleBarColorChange(event) {
-    const choice = event.target.value;
-    setBarColor(choice);
-  }
-
-  function handleMarkerColorChange(event) {
-    setMarkerColor(event.target.value);
-  }
-
-  function handleMarkerSymbolChange(event) {
-    setMarkerSymbol(event.target.value);
-  }
-
-  function handleMarkerSizeChange(event) {
-    setMarkerSize(event.target.value);
-  }
-
-  function handleGridProperties(event) {
-    setGrid({ ...grid, [event.target.name]: event.target.value });
-  }
-
-  function handleRange(event) {
-    setRange({ ...range, [event.target.name]: event.target.value });
-  }
-
-  function handleLogAxes(event) {
-    setLogScaleAxes({
-      ...logScaleAxes,
-      [event.target.name]: event.target.value,
-    });
   }
 
   return (
@@ -227,36 +155,12 @@ export default function App({ Component, pageProps }) {
         onXChange={handleXChange}
         onYChange={handleYChange}
         onAssignVariables={handleAssignVariables}
-        xLabel={xLabel}
-        yLabel={yLabel}
-        onXLabelChange={handleXLabelChange}
-        onYLabelChange={handleYLabelChange}
+        settings={settings}
+        onSettingsChange={handleSettingsChange}
         hasCompletedStep4={hasCompletedStep4}
         onHasCompletedStep4={handleHasCompletedStep4}
-        titleLabel={titleLabel}
-        onTitleChange={handleTitleChange}
         hasCompletedStep5={hasCompletedStep5}
         onHasCompletedStep5={handleHasCompletedStep5}
-        barColor={barColor}
-        onBarColorChange={handleBarColorChange}
-        lineColor={lineColor}
-        lineStyle={lineStyle}
-        lineWidth={lineWidth}
-        onLineColorChange={handleLineColorChange}
-        onLineStyleChange={handleLineStyleChange}
-        onLineWidthChange={handleLineWidthChange}
-        markerColor={markerColor}
-        markerSymbol={markerSymbol}
-        markerSize={markerSize}
-        onMarkerColorChange={handleMarkerColorChange}
-        onMarkerSymbolChange={handleMarkerSymbolChange}
-        onMarkerSizeChange={handleMarkerSizeChange}
-        grid={grid}
-        onGridChange={handleGridProperties}
-        range={range}
-        onRangeChange={handleRange}
-        onLogScaleChange={handleLogAxes}
-        logScaleAxes={logScaleAxes}
       />
     </Layout>
   );
