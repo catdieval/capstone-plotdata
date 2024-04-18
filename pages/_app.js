@@ -123,7 +123,7 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  function handleSettings(event) {
+  function handleSettingsChange(event) {
     setSettings({ ...settings, [event.target.name]: event.target.value });
   }
 
@@ -156,7 +156,7 @@ export default function App({ Component, pageProps }) {
         onYChange={handleYChange}
         onAssignVariables={handleAssignVariables}
         settings={settings}
-        onSettingsChange={handleSettings}
+        onSettingsChange={handleSettingsChange}
         hasCompletedStep4={hasCompletedStep4}
         onHasCompletedStep4={handleHasCompletedStep4}
         hasCompletedStep5={hasCompletedStep5}
