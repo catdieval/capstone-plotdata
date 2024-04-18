@@ -6,7 +6,9 @@ import InputTypeNumber from "../InputTypeNumber";
 export default function RangeProperties({ settings, onSettingsChange }) {
   return (
     <>
-      <Paragraph>Range of values for axes:</Paragraph>
+      <Container $centered="center">
+        <Paragraph $variant="border">Range of values for axes:</Paragraph>
+      </Container>
       <Container $wrap="wrap">
         <Container $centered="center">
           <Paragraph>Autorange for x-axis:</Paragraph>
