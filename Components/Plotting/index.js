@@ -79,6 +79,8 @@ export default function Plotting({
                 title: { text: settings.titleLabel },
                 xaxis: {
                   title: { text: settings.xLabel },
+                  showline: true,
+                  ticks: "outside",
                   showgrid: settings.gridXAxis,
                   griddash: settings.gridLineStyleXAxis,
                   autorange: settings.rangeXAxis,
@@ -88,6 +90,8 @@ export default function Plotting({
                 yaxis: {
                   title: { text: settings.yLabel },
                   title: { text: settings.yLabel },
+                  showline: true,
+                  ticks: "outside",
                   showgrid: settings.gridYAxis,
                   griddash: settings.gridLineStyleYAxis,
                   autorange: settings.rangeYAxis,
