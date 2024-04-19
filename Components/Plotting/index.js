@@ -47,6 +47,90 @@ export default function Plotting({
         : "",
   };
 
+  // function rangeOptionsX() {
+  //   if (settings.gridXAxis === "true") {
+  //     const rangeOptionsX = { autorange: true };
+  //     return rangeOptionsX;
+  //   } else if (settings.rangeXAxis === "reversed") {
+  //     const rangeOptionsX = { autorange: "reversed" };
+  //     return rangeOptionsX;
+  //   } else if (settings.rangeXAxis === "min max") {
+  //     const rangeOptionsX = {
+  //       autorange: false,
+  //       range: [settings.minXAxis, settings.maxXAxis],
+  //     };
+  //     return rangeOptionsX;
+  //   }
+  // }
+  // function rangeOptionsY() {
+  //   if (settings.gridYAxis === "true") {
+  //     const rangeOptionsY = { autorange: true };
+  //     return rangeOptionsY;
+  //   } else if (settings.rangeYAxis === "reversed") {
+  //     const rangeOptionsY = { autorange: "reversed" };
+  //     return rangeOptionsY;
+  //   } else if (settings.rangeYAxis === "min max") {
+  //     const rangeOptionsY = {
+  //       autorange: false,
+  //       range: [settings.minYAxis, settings.maxYAxis],
+  //     };
+  //     return rangeOptionsY;
+  //   }
+  // }
+
+  const rangeOptionsX =
+    settings.rangeXAxis === "true"
+      ? { autorange: true }
+      : settings.rangeXAxis === "reversed"
+      ? { autorange: "reversed" }
+      : settings.rangeXAxis === "min max"
+      ? { autorange: false, range: [settings.minXAxis, settings.maxXAxis] }
+      : "";
+
+  const rangeOptionsY =
+    settings.rangeYAxis === "true"
+      ? { autorange: true }
+      : settings.rangeYAxis === "reversed"
+      ? { autorange: "reversed" }
+      : settings.rangeYAxis === "min max"
+      ? { autorange: false, range: [settings.minYAxis, settings.maxYAxis] }
+      : "";
+
+  // console.log(rangeOptionsX, rangeOptionsY);
+
+  // const layoutOptionsY = {
+  //   autorange: settings.rangeYAxis === "true" ? true : false,
+  //   range:
+  //     [settings.minYAxis, settings.maxYAxis] ||
+  //     settings.rangeYAxis === "reversed"
+  //       ? "reversed"
+  //       : "",
+  // };
+
+  // function rangeX() {
+  //   if (settings.rangeXAxis === "true") {
+  //     rangeXAxis === true;
+  //   } else if (settings.rangeXAxis === "reversed") {
+  //     rangeXAxis === "reversed";
+  //   } else if (settings.rangeXAxis === "min max") {
+  //     rangeXAxis === false;
+  //   }
+  //   return rangeXAxis;
+  // }
+
+  // rangeXAxis();
+
+  // if (settings.rangeYAxis === "true") {
+  //   rangeYAxis === true;
+  // } else if (settings.rangeYAxis === "reversed") {
+  //   rangeYAxis === "reversed";
+  // } else if (settings.rangeYAxis === "min max") {
+  //   rangeYAxis === false;
+  // }
+
+  // console.log(rangeXAxis, rangeYAxis);
+  console.log(settings);
+
   return (
     <>
       {chartIndex != -1 &&
@@ -81,20 +165,32 @@ export default function Plotting({
                   title: { text: settings.xLabel },
                   showline: true,
                   ticks: "outside",
-                  showgrid: settings.gridXAxis,
+                  showgrid: settings.gridXAxis === "true",
                   griddash: settings.gridLineStyleXAxis,
-                  autorange: settings.rangeXAxis,
+                  autorange:
+                    settings.rangeXAxis === "true"
+                      ? true
+                      : settings.rangeXAxis === "reversed"
+                      ? "reversed"
+                      : settings.rangeXAxis === "min max"
+                      ? false
+                      : "",
                   range: [settings.minXAxis, settings.maxXAxis],
                   type: settings.logXAxis,
                 },
                 yaxis: {
                   title: { text: settings.yLabel },
-                  title: { text: settings.yLabel },
-                  showline: true,
                   ticks: "outside",
-                  showgrid: settings.gridYAxis,
+                  showgrid: settings.gridYAxis === "true",
                   griddash: settings.gridLineStyleYAxis,
-                  autorange: settings.rangeYAxis,
+                  autorange:
+                    settings.rangeYAxis === "true"
+                      ? true
+                      : settings.rangeYAxis === "reversed"
+                      ? "reversed"
+                      : settings.rangeYAxis === "min max"
+                      ? false
+                      : "",
                   range: [settings.minYAxis, settings.maxYAxis],
                   type: settings.logYAxis,
                 },
