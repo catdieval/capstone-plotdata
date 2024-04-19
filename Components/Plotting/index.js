@@ -83,14 +83,7 @@ export default function Plotting({
                   ticks: "outside",
                   showgrid: settings.gridXAxis === "true",
                   griddash: settings.gridLineStyleXAxis,
-                  autorange:
-                    settings.rangeXAxis === "true"
-                      ? true
-                      : settings.rangeXAxis === "reversed"
-                      ? "reversed"
-                      : settings.rangeXAxis === "min max"
-                      ? false
-                      : "",
+                  autorange: settings.rangeXAxis,
                   range: [settings.minXAxis, settings.maxXAxis],
                   type: settings.logXAxis,
                 },
@@ -99,14 +92,7 @@ export default function Plotting({
                   ticks: "outside",
                   showgrid: settings.gridYAxis === "true",
                   griddash: settings.gridLineStyleYAxis,
-                  autorange:
-                    settings.rangeYAxis === "true"
-                      ? true
-                      : settings.rangeYAxis === "reversed"
-                      ? "reversed"
-                      : settings.rangeYAxis === "min max"
-                      ? false
-                      : "",
+                  autorange: settings.rangeYAxis,
                   range: [settings.minYAxis, settings.maxYAxis],
                   type: settings.logYAxis,
                 },
