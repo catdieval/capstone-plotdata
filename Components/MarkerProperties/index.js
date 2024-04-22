@@ -10,8 +10,7 @@ import {
 } from "../../lib/listOfMarkerProperties";
 
 export default function MarkerProperties({
-  clickedChartType,
-  hasCompletedStep5,
+  onHasCompletedStep6,
   settings,
   onSettingsChange,
 }) {
@@ -23,50 +22,40 @@ export default function MarkerProperties({
     );
   }
 
-  function handleMarkerProperties() {
-    alert("You chose the marker properties.");
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
   }
 
   return (
     <>
-      {hasCompletedStep5 === true &&
-        (clickedChartType === "scatter-plot" ||
-          clickedChartType === "line-markers-plot") && (
-          <>
-            <StyledH3>Marker properties</StyledH3>
-            <form onSubmit={handleSubmit}>
-              <Container $centered="center" $gap>
-                <Paragraph>Marker color:</Paragraph>
-                <DropDownMenu
-                  nameString="markerColor"
-                  onChange={onSettingsChange}
-                  arrayOfOptions={markerColorArray}
-                />
-                <Paragraph>Marker symbol:</Paragraph>
-                <DropDownMenu
-                  nameString="markerSymbol"
-                  onChange={onSettingsChange}
-                  arrayOfOptions={markerSymbolArray}
-                />
-                <Paragraph>Marker size (in pixels):</Paragraph>
-                <DropDownMenu
-                  nameString="markerSize"
-                  onChange={onSettingsChange}
-                  arrayOfOptions={markerSizeArray}
-                />
-                <InputTypeSubmit
-                  value="Next"
-                  onClick={handleMarkerProperties}
-                  disabled={notCompletedMarkerProperties()}
-                />
-              </Container>
-            </form>
-          </>
-        )}
+      <StyledH3>Marker properties</StyledH3>
+      <form onSubmit={handleSubmit}>
+        <Container $centered="center" $gap>
+          <Paragraph>Marker color:</Paragraph>
+          <DropDownMenu
+            nameString="markerColor"
+            onChange={onSettingsChange}
+            arrayOfOptions={markerColorArray}
+          />
+          <Paragraph>Marker symbol:</Paragraph>
+          <DropDownMenu
+            nameString="markerSymbol"
+            onChange={onSettingsChange}
+            arrayOfOptions={markerSymbolArray}
+          />
+          <Paragraph>Marker size (in pixels):</Paragraph>
+          <DropDownMenu
+            nameString="markerSize"
+            onChange={onSettingsChange}
+            arrayOfOptions={markerSizeArray}
+          />
+          <InputTypeSubmit
+            value="Next"
+            onClick={onHasCompletedStep6}
+            disabled={notCompletedMarkerProperties()}
+          />
+        </Container>
+      </form>
     </>
   );
 }
