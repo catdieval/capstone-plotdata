@@ -61,6 +61,8 @@ export default function App({ Component, pageProps }) {
 
   const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
+  const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
+
   function handleUploadFile(file) {
     setFileObj(file);
   }
@@ -137,6 +139,11 @@ export default function App({ Component, pageProps }) {
     setHasCompletedStep5(true);
   }
 
+  function handleHasCompletedStep6() {
+    alert("Distribution Properties are assigned");
+    setHasCompletedStep6(true);
+  }
+
   return (
     <Layout>
       <GlobalStyle />
@@ -161,6 +168,8 @@ export default function App({ Component, pageProps }) {
         onHasCompletedStep4={handleHasCompletedStep4}
         hasCompletedStep5={hasCompletedStep5}
         onHasCompletedStep5={handleHasCompletedStep5}
+        hasCompletedStep6={hasCompletedStep6}
+        onHasCompletedStep6={handleHasCompletedStep6}
       />
     </Layout>
   );
