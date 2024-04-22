@@ -10,7 +10,7 @@ const Main = styled.main`
   flex-wrap: wrap;
   justify-content: center;
   min-height: 100vh;
-  max-width: 640px;
+  max-width: 700px;
 `;
 export default function Layout({ children }) {
   return (
