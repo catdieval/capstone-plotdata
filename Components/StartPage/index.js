@@ -16,11 +16,11 @@ export default function StartPage({ onGetStarted }) {
         With PlotData you can easily make customisable publication-quality
         charts, all without programming skills.
       </Paragraph>
-      <Container $wrap="wrap">
+      <Container $wrap="wrap" $gap>
         {examplePlotsArray.map((item) => {
           return (
             <ImageContainer key={item.name}>
-              <Image src={item.path} height={200} width={250} alt={item.name} />
+              <Image src={item.path} height={250} width={300} alt={item.name} />
             </ImageContainer>
           );
         })}
