@@ -65,7 +65,11 @@ export default function RangeProperties({ settings, onSettingsChange }) {
       </Container>
       {(settings.rangeXAxis === "min max" ||
         settings.rangeYAxis === "min max") && (
-        <Paragraph>Minimum and maximum values for axis:</Paragraph>
+        <Container $centered="center">
+          <Paragraph $variant="border">
+            Minimum and maximum values for axis:
+          </Paragraph>
+        </Container>
       )}
       <Container $wrap="wrap">
         <Container $centered="center">
