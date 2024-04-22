@@ -4,10 +4,7 @@ import Plotting from "../Components/Plotting";
 import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
 import GraphTitle from "../Components/GraphTitle";
-import LineProperties from "../Components/LineProperties";
-import BarProperties from "../Components/BarProperties";
-import MarkerProperties from "../Components/MarkerProperties";
-import LayoutProperties from "../Components/LayoutProperties";
+import PlottingProperties from "../Components/PlottingProperties";
 
 export default function HomePage({
   keynames,
@@ -27,6 +24,8 @@ export default function HomePage({
   onHasCompletedStep4,
   hasCompletedStep5,
   onHasCompletedStep5,
+  onHasCompletedStep6,
+  hasCompletedStep6,
   settings,
   onSettingsChange,
 }) {
@@ -66,23 +65,11 @@ export default function HomePage({
         hasCompletedStep4={hasCompletedStep4}
         onHasCompletedStep5={onHasCompletedStep5}
       />
-      <MarkerProperties
+      <PlottingProperties
         clickedChartType={clickedChartType}
         hasCompletedStep5={hasCompletedStep5}
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-      />
-      <LineProperties
-        clickedChartType={clickedChartType}
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-      />
-      <BarProperties
-        clickedChartType={clickedChartType}
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-      />
-      <LayoutProperties
+        onHasCompletedStep6={onHasCompletedStep6}
+        hasCompletedStep6={hasCompletedStep6}
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
