@@ -60,7 +60,13 @@ export default function Plotting({
           settings.lineWidth !== 0) ||
         (settings.markerColor !== "" &&
           settings.markerSymbol !== "" &&
-          settings.markerSize !== 0)) ? (
+          settings.markerSize !== 0)) &&
+      settings.gridXAxis != "" &&
+      settings.gridYAxis != "" &&
+      settings.rangeXAxis != "" &&
+      settings.rangeYAxis != "" &&
+      settings.logXAxis != "" &&
+      settings.logYAxis != "" ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
@@ -75,10 +81,20 @@ export default function Plotting({
                   title: { text: settings.xLabel },
                   showline: true,
                   ticks: "outside",
+                  showgrid: settings.gridXAxis === "true",
+                  griddash: settings.gridLineStyleXAxis,
+                  autorange: settings.rangeXAxis,
+                  range: [settings.minXAxis, settings.maxXAxis],
+                  type: settings.logXAxis,
                 },
                 yaxis: {
                   title: { text: settings.yLabel },
                   ticks: "outside",
+                  showgrid: settings.gridYAxis === "true",
+                  griddash: settings.gridLineStyleYAxis,
+                  autorange: settings.rangeYAxis,
+                  range: [settings.minYAxis, settings.maxYAxis],
+                  type: settings.logYAxis,
                 },
                 width: 600,
                 height: 500,

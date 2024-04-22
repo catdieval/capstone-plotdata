@@ -6,55 +6,57 @@ import InputTypeNumber from "../InputTypeNumber";
 export default function RangeProperties({ settings, onSettingsChange }) {
   return (
     <>
-      <Paragraph>Range of values for axes:</Paragraph>
+      <Container $centered="center">
+        <Paragraph $variant="border">Range of values for axes:</Paragraph>
+      </Container>
       <Container $wrap="wrap">
         <Container $centered="center">
-          <Paragraph>Autorange for x-axis:</Paragraph>
+          <Paragraph $variant="bold">Autorange for x-axis:</Paragraph>
           <Container $direction="column" $gap>
             <InputTypeRadio
               nameString="rangeXAxis"
               valueString="true"
-              idString="normal range"
+              idString="normal range X"
               onChange={onSettingsChange}
               labelString="yes, normal range"
             />
             <InputTypeRadio
               nameString="rangeXAxis"
               valueString="reversed"
-              idString="reversed range"
+              idString="reversed range X"
               onChange={onSettingsChange}
               labelString="yes, reversed range"
             />
             <InputTypeRadio
               nameString="rangeXAxis"
               valueString="min max"
-              idString="min max"
+              idString="min max X"
               onChange={onSettingsChange}
               labelString="no, set minimum and maximum"
             />
           </Container>
         </Container>
         <Container $centered="center">
-          <Paragraph>Autorange for y-axis:</Paragraph>
+          <Paragraph $variant="bold">Autorange for y-axis:</Paragraph>
           <Container $direction="column" $gap>
             <InputTypeRadio
               nameString="rangeYAxis"
               valueString="true"
-              idString="normal range"
+              idString="normal range Y"
               onChange={onSettingsChange}
               labelString="yes, normal range"
             />
             <InputTypeRadio
               nameString="rangeYAxis"
               valueString="reversed"
-              idString="reversed range"
+              idString="reversed range Y"
               onChange={onSettingsChange}
               labelString="yes, reversed range"
             />
             <InputTypeRadio
               nameString="rangeYAxis"
               valueString="min max"
-              idString="min max"
+              idString="min max Y"
               onChange={onSettingsChange}
               labelString="no, set minimum and maximum"
             />
