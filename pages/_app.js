@@ -61,6 +61,8 @@ export default function App({ Component, pageProps }) {
 
   const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
+  const [hasCompletedDistProp, setHasCompletedDistProp] = useState(false);
+
   const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
 
   function handleUploadFile(file) {
@@ -139,8 +141,13 @@ export default function App({ Component, pageProps }) {
     setHasCompletedStep5(true);
   }
 
-  function handleHasCompletedStep6() {
+  function handleHasCompletedDistProp() {
     alert("Distribution Properties are assigned");
+    setHasCompletedDistProp(true);
+  }
+
+  function handleHasCompletedStep6() {
+    alert("The Plotting Properties are assigned");
     setHasCompletedStep6(true);
   }
 
@@ -168,6 +175,8 @@ export default function App({ Component, pageProps }) {
         onHasCompletedStep4={handleHasCompletedStep4}
         hasCompletedStep5={hasCompletedStep5}
         onHasCompletedStep5={handleHasCompletedStep5}
+        hasCompletedDistProp={hasCompletedDistProp}
+        onHasCompletedDistProp={handleHasCompletedDistProp}
         hasCompletedStep6={hasCompletedStep6}
         onHasCompletedStep6={handleHasCompletedStep6}
       />

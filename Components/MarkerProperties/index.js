@@ -10,7 +10,7 @@ import {
 } from "../../lib/listOfMarkerProperties";
 
 export default function MarkerProperties({
-  onHasCompletedStep6,
+  onHasCompletedDistProp,
   settings,
   onSettingsChange,
 }) {
@@ -51,7 +51,7 @@ export default function MarkerProperties({
           />
           <InputTypeSubmit
             value="Next"
-            onClick={onHasCompletedStep6}
+            onClick={onHasCompletedDistProp}
             disabled={notCompletedMarkerProperties()}
           />
         </Container>

@@ -7,8 +7,9 @@ import LayoutProperties from "../LayoutProperties";
 export default function PlottingProperties({
   clickedChartType,
   hasCompletedStep5,
+  hasCompletedDistProp,
+  onHasCompletedDistProp,
   onHasCompletedStep6,
-  hasCompletedStep6,
   settings,
   onSettingsChange,
 }) {
@@ -21,14 +22,14 @@ export default function PlottingProperties({
             <BarProperties
               settings={settings}
               onSettingsChange={onSettingsChange}
-              onHasCompletedStep6={onHasCompletedStep6}
+              onHasCompletedDistProp={onHasCompletedDistProp}
             />
           )}
           {clickedChartType === "line-plot" && (
             <LineProperties
               settings={settings}
               onSettingsChange={onSettingsChange}
-              onHasCompletedStep6={onHasCompletedStep6}
+              onHasCompletedDistProp={onHasCompletedDistProp}
             />
           )}
           {(clickedChartType === "scatter-plot" ||
@@ -36,13 +37,14 @@ export default function PlottingProperties({
             <MarkerProperties
               settings={settings}
               onSettingsChange={onSettingsChange}
-              onHasCompletedStep6={onHasCompletedStep6}
+              onHasCompletedDistProp={onHasCompletedDistProp}
             />
           )}
-          {hasCompletedStep6 === true && (
+          {hasCompletedDistProp === true && (
             <LayoutProperties
               settings={settings}
               onSettingsChange={onSettingsChange}
+              onHasCompletedStep6={onHasCompletedStep6}
             />
           )}
         </>

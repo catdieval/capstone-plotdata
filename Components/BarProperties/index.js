@@ -6,7 +6,7 @@ import { StyledH3 } from "../Heading";
 import Paragraph from "../Paragraph";
 
 export default function BarProperties({
-  onHasCompletedStep6,
+  onHasCompletedDistProp,
   settings,
   onSettingsChange,
 }) {
@@ -31,7 +31,7 @@ export default function BarProperties({
           />
           <InputTypeSubmit
             value="Next"
-            onClick={onHasCompletedStep6}
+            onClick={onHasCompletedDistProp}
             disabled={notCompletedBarProperties()}
           />
         </Container>

@@ -10,6 +10,7 @@ export default function Plotting({
   yVariable,
   hasCompletedStep4,
   hasCompletedStep5,
+  hasCompletedStep6,
   settings,
 }) {
   const chartIndex = chartArray.findIndex(
@@ -54,19 +55,7 @@ export default function Plotting({
       yVariable.length > 0 &&
       hasCompletedStep4 === true &&
       hasCompletedStep5 === true &&
-      (settings.barColor != "" ||
-        (settings.lineColor != "" &&
-          settings.lineStyle != "" &&
-          settings.lineWidth !== 0) ||
-        (settings.markerColor !== "" &&
-          settings.markerSymbol !== "" &&
-          settings.markerSize !== 0)) &&
-      settings.gridXAxis != "" &&
-      settings.gridYAxis != "" &&
-      settings.rangeXAxis != "" &&
-      settings.rangeYAxis != "" &&
-      settings.logXAxis != "" &&
-      settings.logYAxis != "" ? (
+      hasCompletedStep6 === true ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of

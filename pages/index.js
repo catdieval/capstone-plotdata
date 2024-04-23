@@ -22,8 +22,10 @@ export default function HomePage({
   onAssignVariables,
   hasCompletedStep4,
   onHasCompletedStep4,
-  hasCompletedStep5,
   onHasCompletedStep5,
+  hasCompletedStep5,
+  onHasCompletedDistProp,
+  hasCompletedDistProp,
   onHasCompletedStep6,
   hasCompletedStep6,
   settings,
@@ -68,6 +70,8 @@ export default function HomePage({
       <PlottingProperties
         clickedChartType={clickedChartType}
         hasCompletedStep5={hasCompletedStep5}
+        onHasCompletedDistProp={onHasCompletedDistProp}
+        hasCompletedDistProp={hasCompletedDistProp}
         onHasCompletedStep6={onHasCompletedStep6}
         hasCompletedStep6={hasCompletedStep6}
         settings={settings}
@@ -79,6 +83,7 @@ export default function HomePage({
         yVariable={yVariable}
         hasCompletedStep4={hasCompletedStep4}
         hasCompletedStep5={hasCompletedStep5}
+        hasCompletedStep6={hasCompletedStep6}
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
