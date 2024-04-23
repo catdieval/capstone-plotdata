@@ -25,7 +25,7 @@ export default function BarProperties({
     <>
       {hasCompletedStep5 === true && clickedChartType === "bar-plot" && (
         <>
-          <StyledH3> Bar properties</StyledH3>
+          <StyledH3>Bar properties</StyledH3>
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
               <DropDownMenu
