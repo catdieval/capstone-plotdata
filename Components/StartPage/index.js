@@ -1,10 +1,9 @@
-import { Container } from "../Container";
 import Paragraph from "../Paragraph";
-import { StyledH3 } from "../Heading";
 import UnorderedList from "../UnorderedList";
 import Button from "../Button";
 import ImageContainer from "../ImageContainer";
 import Heading from "../Heading";
+import Container from "../Container";
 import Image from "next/image";
 import { arrayOfSteps, arrayOfActions } from "../../lib/listOfBulletPoints";
 import { examplePlotsArray } from "../../lib/examplePlotsArray";
