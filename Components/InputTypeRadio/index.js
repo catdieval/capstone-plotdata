@@ -35,9 +35,9 @@ const RadioButton = styled.div`
 const StyledInputRadio = styled.input.attrs({
   type: "radio",
 })`
-  transform: scale(1.3);
-  margin: 6px;
+  transform: scale(1.4);
+  margin: 8px;
 `;
 const StyledLabel = styled.label`
-  font-size: 1.1rem;
+  font-size: 1rem;
 `;
