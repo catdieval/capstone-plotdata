@@ -46,7 +46,6 @@ export default function ChooseVariables({
                 onChange={onYChange}
                 arrayOfOptions={keynames}
               />
-
               <InputTypeSubmit
                 value="Next"
                 onClick={onAssignVariables}
