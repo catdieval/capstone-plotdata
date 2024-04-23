@@ -1,14 +1,12 @@
 import Heading from "../Heading";
 import Paragraph from "../Paragraph";
-import { Container } from "../Container";
+import Container from "../Container";
 import InputTypeText from "../InputTypeText";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
+import InputTypeSubmit from "../InputTypeSubmit";
 
 export default function GraphTitle({
-  xLabel,
-  yLabel,
-  titleLabel,
-  onTitleChange,
+  settings,
+  onSettingsChange,
   hasCompletedStep4,
   onHasCompletedStep5,
 }) {
@@ -17,7 +15,7 @@ export default function GraphTitle({
   }
 
   function notCompletedTitle() {
-    return titleLabel.length === 0;
+    return settings.titleLabel.length === 0;
   }
 
   return (
@@ -33,11 +31,11 @@ export default function GraphTitle({
             <Container $centered="center">
               <InputTypeText
                 idString={"Title"}
+                nameString="titleLabel"
                 placeholderString={"Fill me with a title"}
-                onChange={onTitleChange}
+                onChange={onSettingsChange}
               />
-
-              <StyledInputTypeSubmit
+              <InputTypeSubmit
                 value="Next"
                 onClick={onHasCompletedStep5}
                 disabled={notCompletedTitle()}

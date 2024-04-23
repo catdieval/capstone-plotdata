@@ -1,9 +1,9 @@
 import Heading from "../Heading";
 import { Card } from "../Card/card.styled";
 import Paragraph from "../Paragraph";
-import { Container } from "../Container";
+import Container from "../Container";
 import FileUploader from "../FileUploader";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
+import InputTypeSubmit from "../InputTypeSubmit";
 
 export default function UploadData({
   fileObj,

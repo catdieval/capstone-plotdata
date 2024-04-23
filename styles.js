@@ -19,6 +19,7 @@ export default createGlobalStyle`
     --primary-color-shade:#1c6ba2;
     --secondary-color:#00bfff;
     --neutral-color:#F8F8F8;
+    --info-color: #f9e154; 
   }
 
   body {

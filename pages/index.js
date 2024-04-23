@@ -8,6 +8,7 @@ import GraphTitle from "../Components/GraphTitle";
 import LineProperties from "../Components/LineProperties";
 import BarProperties from "../Components/BarProperties";
 import MarkerProperties from "../Components/MarkerProperties";
+import LayoutProperties from "../Components/LayoutProperties";
 
 export default function HomePage({
   hasClickedGetStarted,
@@ -18,37 +19,19 @@ export default function HomePage({
   onConversion,
   clickedChartType,
   onSelectChartType,
-  xKey,
-  yKey,
   xVariable,
   yVariable,
   onXChange,
   onYChange,
+  xKey,
+  yKey,
   onAssignVariables,
-  onXLabelChange,
-  onYLabelChange,
-  xLabel,
-  yLabel,
   hasCompletedStep4,
   onHasCompletedStep4,
-  titleLabel,
-  onTitleChange,
   hasCompletedStep5,
   onHasCompletedStep5,
-  lineColor,
-  lineStyle,
-  lineWidth,
-  onLineColorChange,
-  onLineStyleChange,
-  onLineWidthChange,
-  barColor,
-  onBarColorChange,
-  markerColor,
-  markerSymbol,
-  markerSize,
-  onMarkerColorChange,
-  onMarkerSymbolChange,
-  onMarkerSizeChange,
+  settings,
+  onSettingsChange,
 }) {
   return (
     <div>
@@ -78,62 +61,46 @@ export default function HomePage({
         yKey={yKey}
         xVariable={xVariable}
         yVariable={yVariable}
-        onXLabelChange={onXLabelChange}
-        onYLabelChange={onYLabelChange}
-        xLabel={xLabel}
-        yLabel={yLabel}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
         onHasCompletedStep4={onHasCompletedStep4}
       />
       <GraphTitle
-        xLabel={xLabel}
-        yLabel={yLabel}
-        titleLabel={titleLabel}
-        onTitleChange={onTitleChange}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
         hasCompletedStep4={hasCompletedStep4}
         onHasCompletedStep5={onHasCompletedStep5}
       />
       <MarkerProperties
         clickedChartType={clickedChartType}
         hasCompletedStep5={hasCompletedStep5}
-        markerColor={markerColor}
-        markerSymbol={markerSymbol}
-        markerSize={markerSize}
-        onMarkerColorChange={onMarkerColorChange}
-        onMarkerSymbolChange={onMarkerSymbolChange}
-        onMarkerSizeChange={onMarkerSizeChange}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
       />
       <LineProperties
         clickedChartType={clickedChartType}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
         hasCompletedStep5={hasCompletedStep5}
-        onLineColorChange={onLineColorChange}
-        onLineStyleChange={onLineStyleChange}
-        onLineWidthChange={onLineWidthChange}
-        lineColor={lineColor}
-        lineStyle={lineStyle}
-        lineWidth={lineWidth}
       />
       <BarProperties
-        barColor={barColor}
-        onBarColorChange={onBarColorChange}
         clickedChartType={clickedChartType}
         hasCompletedStep5={hasCompletedStep5}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
+      />
+      <LayoutProperties
+        settings={settings}
+        onSettingsChange={onSettingsChange}
       />
       <Plotting
         clickedChartType={clickedChartType}
         xVariable={xVariable}
         yVariable={yVariable}
-        xLabel={xLabel}
-        yLabel={yLabel}
         hasCompletedStep4={hasCompletedStep4}
-        titleLabel={titleLabel}
         hasCompletedStep5={hasCompletedStep5}
-        lineColor={lineColor}
-        lineStyle={lineStyle}
-        lineWidth={lineWidth}
-        barColor={barColor}
-        markerColor={markerColor}
-        markerSymbol={markerSymbol}
-        markerSize={markerSize}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
       />
     </div>
   );

@@ -31,13 +31,36 @@ export default function App({ Component, pageProps }) {
   const [xKey, setXKey] = useState("");
   const [yKey, setYKey] = useState("");
 
-  //Step 4: Labels to the axes:
-  const [xLabel, setXLabel] = useState("");
-  const [yLabel, setYLabel] = useState("");
+  // Step 4 (Axes labels), 5 (Title) and 6 (Properties):
+  const initialSettings = {
+    xLabel: "",
+    yLabel: "",
+    titleLabel: "",
+    barColor: "",
+    lineColor: "",
+    lineStyle: "",
+    lineWidth: 0,
+    markerColor: "",
+    markerSymbol: "",
+    markerSize: 0,
+    gridXAxis: "false",
+    gridYAxis: "false",
+    gridLineStyleXAxis: "",
+    gridLineStyleYAxis: "",
+    rangeXAxis: "",
+    rangeYAxis: "",
+    minXAxis: "",
+    maxXAxis: "",
+    minYAxis: "",
+    maxYAxis: "",
+    logXAxis: "",
+    logYAxis: "",
+  };
+
+  const [settings, setSettings] = useState(initialSettings);
+
   const [hasCompletedStep4, setHasCompletedStep4] = useState(false);
 
-  //Step 5: Add a title to the graph
-  const [titleLabel, setTitleLabel] = useState("");
   const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
   //Step 6: Plotting properties
@@ -121,12 +144,8 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  function handleXLabelChange(event) {
-    setXLabel(event.target.value);
-  }
-
-  function handleYLabelChange(event) {
-    setYLabel(event.target.value);
+  function handleSettingsChange(event) {
+    setSettings({ ...settings, [event.target.name]: event.target.value });
   }
 
   function handleHasCompletedStep4() {
@@ -134,45 +153,37 @@ export default function App({ Component, pageProps }) {
     setHasCompletedStep4(true);
   }
 
-  function handleTitleChange(event) {
-    setTitleLabel(event.target.value);
-  }
-
   function handleHasCompletedStep5() {
     alert("Title of the graph is assigned");
     setHasCompletedStep5(true);
   }
 
-  function handleLineColorChange(event) {
-    setLineColor(event.target.value);
-  }
-
-  function handleLineStyleChange(event) {
-    setLineStyle(event.target.value);
-  }
-
-  function handleLineWidthChange(event) {
-    setLineWidth(event.target.value);
-  }
-
-  function handleBarColorChange(event) {
-    const choice = event.target.value;
-    setBarColor(choice);
-  }
-
-  function handleMarkerColorChange(event) {
-    setMarkerColor(event.target.value);
-  }
-
-  function handleMarkerSymbolChange(event) {
-    setMarkerSymbol(event.target.value);
-  }
-
-  function handleMarkerSizeChange(event) {
-    setMarkerSize(event.target.value);
-  }
-
   return (
+    <Layout>
+      <GlobalStyle />
+      <Component
+        {...pageProps}
+        keynames={keynames}
+        fileObj={fileObj}
+        onUploadFile={handleUploadFile}
+        onConversion={handleConversion}
+        clickedChartType={clickedChartType}
+        onSelectChartType={handleSelectChartType}
+        xKey={xKey}
+        yKey={yKey}
+        xVariable={xVariable}
+        yVariable={yVariable}
+        onXChange={handleXChange}
+        onYChange={handleYChange}
+        onAssignVariables={handleAssignVariables}
+        settings={settings}
+        onSettingsChange={handleSettingsChange}
+        hasCompletedStep4={hasCompletedStep4}
+        onHasCompletedStep4={handleHasCompletedStep4}
+        hasCompletedStep5={hasCompletedStep5}
+        onHasCompletedStep5={handleHasCompletedStep5}
+      />
+    </Layout>
     <>
       <Layout>
         <GlobalStyle />

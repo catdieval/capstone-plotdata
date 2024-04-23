@@ -11,12 +11,21 @@ const StyledP = styled.p`
     css`
       text-align: start;
       padding: 10px;
+      text-align: justify;
     `};
 
   ${(props) =>
     props.$variant === "bold" &&
     css`
       font-weight: 600;
+    `};
+
+  ${(props) =>
+    props.$variant === "border" &&
+    css`
+      border: solid 2px var(--primary-color);
+      border-radius: 8px;
+      padding: 10px;
     `};
 `;
 

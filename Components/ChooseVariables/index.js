@@ -1,7 +1,7 @@
 import Heading from "../Heading";
-import { Container } from "../Container";
+import Container from "../Container";
 import Paragraph from "../Paragraph";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
+import InputTypeSubmit from "../InputTypeSubmit";
 import DropDownMenu from "../DropDownMenu";
 
 export default function ChooseVariables({
@@ -47,7 +47,7 @@ export default function ChooseVariables({
                 arrayOfOptions={keynames}
               />
 
-              <StyledInputTypeSubmit
+              <InputTypeSubmit
                 value="Next"
                 onClick={onAssignVariables}
                 disabled={notCompletedXAndYKeys()}

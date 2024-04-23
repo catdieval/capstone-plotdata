@@ -1,12 +1,12 @@
 import { StyledH3 } from "../Heading";
-import { Container } from "../Container";
+import Container from "../Container";
 import DropDownMenu from "../DropDownMenu";
 import {
   lineColorArray,
   lineStyleArray,
   lineWidthArray,
 } from "../../lib/listOfLineProperties";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
+import InputTypeSubmit from "../InputTypeSubmit";
 import Paragraph from "../Paragraph";
 
 export default function LineProperties({
@@ -18,6 +18,8 @@ export default function LineProperties({
   lineColor,
   lineStyle,
   lineWidth,
+  settings,
+  onSettingsChange,
 }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -27,14 +29,14 @@ export default function LineProperties({
     alert(`You have selected the line properties`);
   }
 
-  function completedLineProperties() {
+  function notCompletedLineProperties() {
     return (
-      lineColor.length === 0 ||
-      lineStyle.length === 0 ||
-      Number(lineWidth) === 0
+      settings.lineColor.length === 0 ||
+      settings.lineStyle.length === 0 ||
+      Number(settings.lineWidth) === 0
     );
   }
-  console.log(lineWidth);
+
   return (
     <>
       {hasCompletedStep5 === true && clickedChartType === "line-plot" && (
@@ -43,23 +45,26 @@ export default function LineProperties({
             <StyledH3>Line properties</StyledH3>
             <Paragraph>Line color</Paragraph>
             <DropDownMenu
-              onChange={onLineColorChange}
+              nameString="lineColor"
+              onChange={onSettingsChange}
               arrayOfOptions={lineColorArray}
             />
             <Paragraph>Line style</Paragraph>
             <DropDownMenu
-              onChange={onLineStyleChange}
+              nameString="lineStyle"
+              onChange={onSettingsChange}
               arrayOfOptions={lineStyleArray}
             />
             <Paragraph>Line width (in pixels)</Paragraph>
             <DropDownMenu
-              onChange={onLineWidthChange}
+              nameString="lineWidth"
+              onChange={onSettingsChange}
               arrayOfOptions={lineWidthArray}
             />
-            <StyledInputTypeSubmit
+            <InputTypeSubmit
               value="Next"
               onClick={handleLineProperties}
-              disabled={completedLineProperties()}
+              disabled={notCompletedLineProperties()}
             />
           </Container>
         </form>

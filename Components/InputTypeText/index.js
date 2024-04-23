@@ -2,16 +2,17 @@ export default function InputTypeText({
   placeholderString,
   onChange,
   idString,
+  nameString,
 }) {
   return (
     <>
       <label htmlFor={idString}>{idString}:</label>
       <input
-        name={idString}
+        name={nameString}
         type="text"
         id={idString}
         placeholder={placeholderString}
-        size={50}
+        size={30}
         onChange={onChange}
         required
       />

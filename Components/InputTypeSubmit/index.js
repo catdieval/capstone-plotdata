@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export const StyledInputTypeSubmit = styled.input.attrs({
+const InputTypeSubmit = styled.input.attrs({
   type: "submit",
 })`
   background-color: var(--secondary-color);
   padding: 10px 20px;
+  color: white;
   border-radius: 12px;
   border: none;
   cursor: pointer;
@@ -13,6 +14,14 @@ export const StyledInputTypeSubmit = styled.input.attrs({
   margin: ${(props) => (props.$nomargin ? "" : "40px")};
 
   &:hover {
-    background-color: #00ace6;
+    &:not([disabled]) {
+      background-color: #00ace6;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 `;
+
+export default InputTypeSubmit;

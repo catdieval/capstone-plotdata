@@ -1,5 +1,5 @@
 import Heading from "../Heading";
-import { Container } from "../Container";
+import Container from "../Container";
 import ChartItem from "../ChartItem";
 import { chartArray } from "../../lib/listOfPlotTypes";
 

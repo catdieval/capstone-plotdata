@@ -1,14 +1,14 @@
 import { barColorArray } from "../../lib/listOfBarProperties.js";
 import DropDownMenu from "../DropDownMenu";
-import { StyledInputTypeSubmit } from "../StyledInputTypeSubmit";
-import { Container } from "../Container";
+import InputTypeSubmit from "../InputTypeSubmit";
+import Container from "../Container";
 import { StyledH3 } from "../Heading";
 
 export default function BarProperties({
-  barColor,
-  onBarColorChange,
   clickedChartType,
   hasCompletedStep5,
+  settings,
+  onSettingsChange,
 }) {
   function handleBarProperties() {
     alert("You chose the bar properties.");
@@ -17,8 +17,8 @@ export default function BarProperties({
     event.preventDefault();
   }
 
-  function completedBarProperties() {
-    return barColor.length === 0;
+  function notCompletedBarProperties() {
+    return settings.barColor.length === 0;
   }
 
   return (
@@ -30,13 +30,14 @@ export default function BarProperties({
             <Container $centered="center">
               <DropDownMenu
                 idString="Bar color"
-                onChange={onBarColorChange}
+                nameString="barColor"
+                onChange={onSettingsChange}
                 arrayOfOptions={barColorArray}
               />
-              <StyledInputTypeSubmit
+              <InputTypeSubmit
                 value="Next"
                 onClick={handleBarProperties}
-                disabled={completedBarProperties()}
+                disabled={notCompletedBarProperties()}
               />
             </Container>
           </form>

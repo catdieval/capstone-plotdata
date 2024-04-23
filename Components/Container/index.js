@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.section`
+const Container = styled.section`
   ${(props) =>
     props.$direction === "column" &&
     css`
@@ -30,7 +30,18 @@ export const Container = styled.section`
       flex-direction: column;
       align-items: center;
       padding: 0;
-      gap: ${(props) => (props.$gap ? "10px" : "")};
-      margin: ${(props) => (props.$margin ? "60px 30px" : "")};
+      gap: ${(props) => (props.$gap ? "10px" : "0")};
+      margin: ${(props) => (props.$margin ? "60px 30px" : "0")};
+    `};
+
+  ${(props) =>
+    props.$direction === "row" &&
+    css`
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 1rem;
     `};
 `;
+
+export default Container;
