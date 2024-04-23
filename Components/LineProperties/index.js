@@ -11,16 +11,13 @@ import Paragraph from "../Paragraph";
 
 export default function LineProperties({
   clickedChartType,
+  onHasCompletedDistProp,
   hasCompletedStep5,
   settings,
   onSettingsChange,
 }) {
   function handleSubmit(event) {
     event.preventDefault();
-  }
-
-  function handleLineProperties() {
-    alert(`You have selected the line properties`);
   }
 
   function notCompletedLineProperties() {
@@ -57,7 +54,7 @@ export default function LineProperties({
             />
             <InputTypeSubmit
               value="Next"
-              onClick={handleLineProperties}
+              onClick={onHasCompletedDistProp}
               disabled={notCompletedLineProperties()}
             />
           </Container>
