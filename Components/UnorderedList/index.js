@@ -1,4 +1,4 @@
-import { Container } from "../Container";
+import Container from "../Container";
 import styled from "styled-components";
 
 export default function UnorderedList({ $arrayOfBulletPoints }) {
