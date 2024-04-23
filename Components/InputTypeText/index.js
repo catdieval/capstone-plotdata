@@ -14,7 +14,6 @@ export default function InputTypeText({
         type="text"
         id={idString}
         placeholder={placeholderString}
-        size={30}
         onChange={onChange}
         required
       />
