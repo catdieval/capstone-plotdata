@@ -6,13 +6,11 @@ import { StyledH3 } from "../Heading";
 
 export default function BarProperties({
   clickedChartType,
+  onHasCompletedDistProp,
   hasCompletedStep5,
   settings,
   onSettingsChange,
 }) {
-  function handleBarProperties() {
-    alert("You chose the bar properties.");
-  }
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -36,7 +34,7 @@ export default function BarProperties({
               />
               <InputTypeSubmit
                 value="Next"
-                onClick={handleBarProperties}
+                onClick={onHasCompletedDistProp}
                 disabled={notCompletedBarProperties()}
               />
             </Container>
