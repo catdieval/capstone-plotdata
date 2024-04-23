@@ -20,7 +20,7 @@ export default function BarProperties({
 
   return (
     <>
-      <StyledH3> Bar properties</StyledH3>
+      <StyledH3>Bar properties</StyledH3>
       <form onSubmit={handleSubmit}>
         <Container $centered="center">
           <Paragraph>Bar color:</Paragraph>
