@@ -48,7 +48,7 @@ export default function UploadData({
               ) : (
                 <p>No file chosen</p>
               )}
-              <StyledInputTypeSubmit
+              <InputTypeSubmit
                 $nomargin
                 value="Next"
                 onClick={onConversion}
