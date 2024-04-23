@@ -30,19 +30,19 @@ export default function LineProperties({
     <form onSubmit={handleSubmit}>
       <Container $centered="center" $gap>
         <StyledH3>Line properties</StyledH3>
-        <Paragraph>Line color</Paragraph>
+        <Paragraph>Line color:</Paragraph>
         <DropDownMenu
           nameString="lineColor"
           onChange={onSettingsChange}
           arrayOfOptions={lineColorArray}
         />
-        <Paragraph>Line style</Paragraph>
+        <Paragraph>Line style:</Paragraph>
         <DropDownMenu
           nameString="lineStyle"
           onChange={onSettingsChange}
           arrayOfOptions={lineStyleArray}
         />
-        <Paragraph>Line width (in pixels)</Paragraph>
+        <Paragraph>Line width (in pixels):</Paragraph>
         <DropDownMenu
           nameString="lineWidth"
           onChange={onSettingsChange}

@@ -3,6 +3,7 @@ import DropDownMenu from "../DropDownMenu";
 import InputTypeSubmit from "../InputTypeSubmit";
 import Container from "../Container";
 import { StyledH3 } from "../Heading";
+import Paragraph from "../Paragraph";
 
 export default function BarProperties({
   onHasCompletedStep6,
@@ -22,8 +23,8 @@ export default function BarProperties({
       <StyledH3> Bar properties</StyledH3>
       <form onSubmit={handleSubmit}>
         <Container $centered="center">
+          <Paragraph>Bar color:</Paragraph>
           <DropDownMenu
-            idString="Bar color"
             nameString="barColor"
             onChange={onSettingsChange}
             arrayOfOptions={barColorArray}
