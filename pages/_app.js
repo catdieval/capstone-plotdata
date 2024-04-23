@@ -63,6 +63,8 @@ export default function App({ Component, pageProps }) {
 
   const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
+  const [hasCompletedDistProp, setHasCompletedDistProp] = useState(false);
+
   function handleGetStarted() {
     setHasClickedGetStarted(true);
   }
@@ -84,7 +86,7 @@ export default function App({ Component, pageProps }) {
 
       setKeynames(keys);
       setVals(correctValues);
-      alert("File processed successfully");
+      alert("File processed successfully.");
     };
 
     reader.readAsText(fileObj);
@@ -134,13 +136,18 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleHasCompletedStep4() {
-    alert("Labels for the x-axis and the y-axis of the graph are assigned");
+    alert("Labels for the x-axis and the y-axis of the chart are assigned.");
     setHasCompletedStep4(true);
   }
 
   function handleHasCompletedStep5() {
-    alert("Title of the graph is assigned");
+    alert("Title of the chart is assigned.");
     setHasCompletedStep5(true);
+  }
+
+  function handleHasCompletedDistProp() {
+    alert("Distribution properties are assigned.");
+    setHasCompletedDistProp(true);
   }
 
   return (
@@ -169,6 +176,8 @@ export default function App({ Component, pageProps }) {
         onHasCompletedStep4={handleHasCompletedStep4}
         hasCompletedStep5={hasCompletedStep5}
         onHasCompletedStep5={handleHasCompletedStep5}
+        hasCompletedDistProp={hasCompletedDistProp}
+        onHasCompletedDistProp={handleHasCompletedDistProp}
       />
     </Layout>
   );
