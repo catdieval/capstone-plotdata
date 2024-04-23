@@ -12,12 +12,6 @@ import Paragraph from "../Paragraph";
 export default function LineProperties({
   clickedChartType,
   hasCompletedStep5,
-  onLineColorChange,
-  onLineStyleChange,
-  onLineWidthChange,
-  lineColor,
-  lineStyle,
-  lineWidth,
   settings,
   onSettingsChange,
 }) {
