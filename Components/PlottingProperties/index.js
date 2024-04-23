@@ -16,7 +16,7 @@ export default function PlottingProperties({
     <>
       {hasCompletedStep5 === true && (
         <>
-          <Heading> Step 6: Assign properties to the chart </Heading>
+          <Heading> Step 6: Assign properties to the chart</Heading>
           {clickedChartType === "bar-plot" && (
             <BarProperties
               settings={settings}
