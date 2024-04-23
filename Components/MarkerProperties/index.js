@@ -11,6 +11,7 @@ import {
 
 export default function MarkerProperties({
   clickedChartType,
+  onHasCompletedDistProp,
   hasCompletedStep5,
   settings,
   onSettingsChange,
@@ -21,10 +22,6 @@ export default function MarkerProperties({
       settings.markerSymbol.length === 0 ||
       Number(settings.markerSize) === 0
     );
-  }
-
-  function handleMarkerProperties() {
-    alert("You chose the marker properties.");
   }
 
   function handleSubmit(event) {
@@ -60,7 +57,7 @@ export default function MarkerProperties({
                 />
                 <InputTypeSubmit
                   value="Next"
-                  onClick={handleMarkerProperties}
+                  onClick={onHasCompletedDistProp}
                   disabled={notCompletedMarkerProperties()}
                 />
               </Container>
