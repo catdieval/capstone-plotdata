@@ -63,21 +63,6 @@ export default function App({ Component, pageProps }) {
 
   const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
-  //Step 6: Plotting properties
-
-  // Bar properties
-  const [barColor, setBarColor] = useState("");
-
-  //Line properties
-  const [lineColor, setLineColor] = useState("");
-  const [lineStyle, setLineStyle] = useState("");
-  const [lineWidth, setLineWidth] = useState(0);
-
-  // Marker Properties
-  const [markerColor, setMarkerColor] = useState("");
-  const [markerSymbol, setMarkerSymbol] = useState("");
-  const [markerSize, setMarkerSize] = useState(0);
-
   function handleGetStarted() {
     setHasClickedGetStarted(true);
   }
@@ -163,6 +148,8 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Component
         {...pageProps}
+        hasClickedGetStarted={hasClickedGetStarted}
+        onGetStarted={handleGetStarted}
         keynames={keynames}
         fileObj={fileObj}
         onUploadFile={handleUploadFile}
@@ -184,52 +171,5 @@ export default function App({ Component, pageProps }) {
         onHasCompletedStep5={handleHasCompletedStep5}
       />
     </Layout>
-    <>
-      <Layout>
-        <GlobalStyle />
-        <Component
-          {...pageProps}
-          hasClickedGetStarted={hasClickedGetStarted}
-          onGetStarted={handleGetStarted}
-          keynames={keynames}
-          fileObj={fileObj}
-          onUploadFile={handleUploadFile}
-          onConversion={handleConversion}
-          clickedChartType={clickedChartType}
-          onSelectChartType={handleSelectChartType}
-          xKey={xKey}
-          yKey={yKey}
-          xVariable={xVariable}
-          yVariable={yVariable}
-          onXChange={handleXChange}
-          onYChange={handleYChange}
-          onAssignVariables={handleAssignVariables}
-          xLabel={xLabel}
-          yLabel={yLabel}
-          onXLabelChange={handleXLabelChange}
-          onYLabelChange={handleYLabelChange}
-          hasCompletedStep4={hasCompletedStep4}
-          onHasCompletedStep4={handleHasCompletedStep4}
-          titleLabel={titleLabel}
-          onTitleChange={handleTitleChange}
-          hasCompletedStep5={hasCompletedStep5}
-          onHasCompletedStep5={handleHasCompletedStep5}
-          barColor={barColor}
-          onBarColorChange={handleBarColorChange}
-          lineColor={lineColor}
-          lineStyle={lineStyle}
-          lineWidth={lineWidth}
-          onLineColorChange={handleLineColorChange}
-          onLineStyleChange={handleLineStyleChange}
-          onLineWidthChange={handleLineWidthChange}
-          markerColor={markerColor}
-          markerSymbol={markerSymbol}
-          markerSize={markerSize}
-          onMarkerColorChange={handleMarkerColorChange}
-          onMarkerSymbolChange={handleMarkerSymbolChange}
-          onMarkerSizeChange={handleMarkerSizeChange}
-        />
-      </Layout>
-    </>
   );
 }
