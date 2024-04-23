@@ -5,13 +5,17 @@ import RangeProperties from "../RangeProperties";
 import InputTypeSubmit from "../InputTypeSubmit";
 import Container from "../Container";
 
-export default function LayoutProperties({ settings, onSettingsChange }) {
+export default function LayoutProperties({
+  settings,
+  onSettingsChange,
+  hasCompletedDistProp,
+}) {
   function handleSubmit(event) {
     event.preventDefault();
   }
 
   function handleLayoutProperties() {
-    alert("You have selected the layout properties.");
+    alert("Layout properties are assigned.");
   }
 
   function notCompletedLayoutProperties() {
@@ -27,25 +31,29 @@ export default function LayoutProperties({ settings, onSettingsChange }) {
 
   return (
     <>
-      <StyledH3>Layout</StyledH3>
-      <form onSubmit={handleSubmit}>
-        <GridProperties
-          settings={settings}
-          onSettingsChange={onSettingsChange}
-        />
-        <RangeProperties
-          settings={settings}
-          onSettingsChange={onSettingsChange}
-        />
-        <LogScaleProperties onSettingsChange={onSettingsChange} />
-        <Container $centered="center">
-          <InputTypeSubmit
-            value="Finish"
-            onClick={handleLayoutProperties}
-            disabled={notCompletedLayoutProperties()}
-          />
-        </Container>
-      </form>
+      {hasCompletedDistProp === true && (
+        <>
+          <StyledH3>Layout</StyledH3>
+          <form onSubmit={handleSubmit}>
+            <GridProperties
+              settings={settings}
+              onSettingsChange={onSettingsChange}
+            />
+            <RangeProperties
+              settings={settings}
+              onSettingsChange={onSettingsChange}
+            />
+            <LogScaleProperties onSettingsChange={onSettingsChange} />
+            <Container $centered="center">
+              <InputTypeSubmit
+                value="Plot"
+                onClick={handleLayoutProperties}
+                disabled={notCompletedLayoutProperties()}
+              />
+            </Container>
+          </form>
+        </>
+      )}
     </>
   );
 }
