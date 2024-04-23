@@ -5,7 +5,7 @@ import CorrectArrays from "../Components/CorrectArrays";
 import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
 export default function App({ Component, pageProps }) {
-  // State to store the status about if the user has clicked on the "Get started button"
+  // State to store the status about if the user has clicked on the "Get started" button
   const [hasClickedGetStarted, setHasClickedGetStarted] = useState(false);
 
   // Step 1: Upload CSV-file
