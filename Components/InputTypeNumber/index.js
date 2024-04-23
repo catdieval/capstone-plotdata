@@ -18,6 +18,7 @@ export default function InputTypeNumber({
         onChange={onChange}
         name={nameString}
         placeholder={placeholderString}
+        step={0.01}
       />
     </NumberInput>
   );
