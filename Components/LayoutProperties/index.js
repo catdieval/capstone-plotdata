@@ -14,10 +14,6 @@ export default function LayoutProperties({
     event.preventDefault();
   }
 
-  function handleLayoutProperties() {
-    alert("You have selected the layout properties.");
-  }
-
   function notCompletedLayoutProperties() {
     return (
       settings.gridXAxis.length === 0 ||
