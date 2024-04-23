@@ -37,10 +37,7 @@ export default function LayoutProperties({ settings, onSettingsChange }) {
           settings={settings}
           onSettingsChange={onSettingsChange}
         />
-        <LogScaleProperties
-          settings={settings}
-          onSettingsChange={onSettingsChange}
-        />
+        <LogScaleProperties onSettingsChange={onSettingsChange} />
         <Container $centered="center">
           <InputTypeSubmit
             value="Finish"
