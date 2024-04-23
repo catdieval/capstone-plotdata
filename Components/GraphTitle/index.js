@@ -24,9 +24,9 @@ export default function GraphTitle({
         <>
           <Heading>Step 5: Give a title to the chart</Heading>
           <Paragraph>Label for the x-axis:</Paragraph>
-          <Paragraph $variant="bold">{xLabel}</Paragraph>
+          <Paragraph $variant="bold">{settings.xLabel}</Paragraph>
           <Paragraph>Label for the y-axis:</Paragraph>
-          <Paragraph $variant="bold">{yLabel}</Paragraph>
+          <Paragraph $variant="bold">{settings.yLabel}</Paragraph>
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
               <InputTypeText
