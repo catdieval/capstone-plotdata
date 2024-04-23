@@ -7,7 +7,12 @@ const StyledLabel = styled.label`
 `;
 
 const StyledSelect = styled.select`
-  width: 100px;
+  width: 160px;
+  padding: 0.4rem 0.4rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #ececec;
+  box-shadow: 0px 1px 4px -2px rgba(0, 0, 0, 0.1);
 `;
 
 export default function DropDownMenu({
