@@ -30,7 +30,7 @@ export default function MarkerProperties({
 
   return (
     <>
-      {hasCompletedStep5 === true &&
+      {hasCompletedStep5 &&
         (clickedChartType === "scatter-plot" ||
           clickedChartType === "line-markers-plot") && (
           <>
