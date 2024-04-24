@@ -30,7 +30,7 @@ export default function LineProperties({
 
   return (
     <>
-      {hasCompletedStep5 === true && clickedChartType === "line-plot" && (
+      {hasCompletedStep5 && clickedChartType === "line-plot" && (
         <form onSubmit={handleSubmit}>
           <Container $centered="center" $gap>
             <StyledH3>Line properties</StyledH3>
