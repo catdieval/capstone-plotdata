@@ -11,7 +11,7 @@ import {
 
 export default function MarkerProperties({
   clickedChartType,
-  onHasCompletedDistProp,
+  onHasCompletedDistributionProperties,
   hasCompletedStep5,
   settings,
   onSettingsChange,
@@ -57,7 +57,7 @@ export default function MarkerProperties({
                 />
                 <InputTypeSubmit
                   value="Next"
-                  onClick={onHasCompletedDistProp}
+                  onClick={onHasCompletedDistributionProperties}
                   disabled={notCompletedMarkerProperties()}
                 />
               </Container>
