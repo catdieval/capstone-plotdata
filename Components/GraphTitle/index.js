@@ -20,7 +20,7 @@ export default function GraphTitle({
 
   return (
     <>
-      {hasCompletedStep4 === true && (
+      {hasCompletedStep4 && (
         <>
           <Heading>Step 5: Give a title to the chart</Heading>
           <Paragraph>Label for the x-axis:</Paragraph>
