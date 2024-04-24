@@ -52,8 +52,8 @@ export default function Plotting({
       {chartIndex != -1 &&
       xVariable.length > 0 &&
       yVariable.length > 0 &&
-      hasCompletedStep4 === true &&
-      hasCompletedStep5 === true &&
+      hasCompletedStep4 &&
+      hasCompletedStep5 &&
       (settings.barColor != "" ||
         (settings.lineColor != "" &&
           settings.lineStyle != "" &&
