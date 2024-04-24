@@ -30,8 +30,8 @@ export default function HomePage({
   onHasCompletedStep4,
   hasCompletedStep5,
   onHasCompletedStep5,
-  hasCompletedDistProp,
-  onHasCompletedDistProp,
+  hasCompletedDistributionProperties,
+  onHasCompletedDistributionProperties,
   settings,
   onSettingsChange,
 }) {
@@ -75,27 +75,33 @@ export default function HomePage({
       />
       <MarkerProperties
         clickedChartType={clickedChartType}
-        onHasCompletedDistProp={onHasCompletedDistProp}
+        onHasCompletedDistributionProperties={
+          onHasCompletedDistributionProperties
+        }
         hasCompletedStep5={hasCompletedStep5}
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
       <LineProperties
         clickedChartType={clickedChartType}
-        onHasCompletedDistProp={onHasCompletedDistProp}
+        onHasCompletedDistributionProperties={
+          onHasCompletedDistributionProperties
+        }
         settings={settings}
         onSettingsChange={onSettingsChange}
         hasCompletedStep5={hasCompletedStep5}
       />
       <BarProperties
         clickedChartType={clickedChartType}
-        onHasCompletedDistProp={onHasCompletedDistProp}
+        onHasCompletedDistributionProperties={
+          onHasCompletedDistributionProperties
+        }
         hasCompletedStep5={hasCompletedStep5}
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
       <LayoutProperties
-        hasCompletedDistProp={hasCompletedDistProp}
+        hasCompletedDistributionProperties={hasCompletedDistributionProperties}
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
