@@ -63,6 +63,8 @@ export default function App({ Component, pageProps }) {
 
   const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
+  // State to check the status if the user has selected values for all properties for a given distribution
+  // (e.g. bar plot)
   const [hasCompletedDistProp, setHasCompletedDistProp] = useState(false);
 
   function handleGetStarted() {
