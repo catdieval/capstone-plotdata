@@ -73,7 +73,6 @@ export default function HomePage({
         onHasCompletedDistProp={onHasCompletedDistProp}
         hasCompletedDistProp={hasCompletedDistProp}
         onHasCompletedStep6={onHasCompletedStep6}
-        hasCompletedStep6={hasCompletedStep6}
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
