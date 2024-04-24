@@ -20,7 +20,7 @@ export default function UploadData({
 
   return (
     <>
-      {hasClickedGetStarted === true && (
+      {hasClickedGetStarted && (
         <>
           <Heading>Step 1: Upload a CSV file</Heading>
           <Card>
