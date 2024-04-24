@@ -31,7 +31,7 @@ export default function LayoutProperties({
 
   return (
     <>
-      {hasCompletedDistProp === true && (
+      {hasCompletedDistProp && (
         <>
           <StyledH3>Layout</StyledH3>
           <form onSubmit={handleSubmit}>
