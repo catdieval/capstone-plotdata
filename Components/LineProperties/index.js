@@ -11,7 +11,7 @@ import Paragraph from "../Paragraph";
 
 export default function LineProperties({
   clickedChartType,
-  onHasCompletedDistProp,
+  onHasCompletedDistributionProperties,
   hasCompletedStep5,
   settings,
   onSettingsChange,
@@ -54,7 +54,7 @@ export default function LineProperties({
             />
             <InputTypeSubmit
               value="Next"
-              onClick={onHasCompletedDistProp}
+              onClick={onHasCompletedDistributionProperties}
               disabled={notCompletedLineProperties()}
             />
           </Container>
