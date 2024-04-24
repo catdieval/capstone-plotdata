@@ -8,7 +8,7 @@ import Container from "../Container";
 export default function LayoutProperties({
   settings,
   onSettingsChange,
-  hasCompletedDistProp,
+  hasCompletedDistributionProperties,
 }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -31,7 +31,7 @@ export default function LayoutProperties({
 
   return (
     <>
-      {hasCompletedDistProp && (
+      {hasCompletedDistributionProperties && (
         <>
           <StyledH3>Layout</StyledH3>
           <form onSubmit={handleSubmit}>
