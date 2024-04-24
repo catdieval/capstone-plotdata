@@ -21,7 +21,7 @@ export default function BarProperties({
 
   return (
     <>
-      {hasCompletedStep5 === true && clickedChartType === "bar-plot" && (
+      {hasCompletedStep5 && clickedChartType === "bar-plot" && (
         <>
           <StyledH3>Bar properties</StyledH3>
           <form onSubmit={handleSubmit}>
