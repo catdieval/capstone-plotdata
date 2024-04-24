@@ -6,7 +6,7 @@ import { StyledH3 } from "../Heading";
 
 export default function BarProperties({
   clickedChartType,
-  onHasCompletedDistProp,
+  onHasCompletedDistributionProperties,
   hasCompletedStep5,
   settings,
   onSettingsChange,
@@ -34,7 +34,7 @@ export default function BarProperties({
               />
               <InputTypeSubmit
                 value="Next"
-                onClick={onHasCompletedDistProp}
+                onClick={onHasCompletedDistributionProperties}
                 disabled={notCompletedBarProperties()}
               />
             </Container>
