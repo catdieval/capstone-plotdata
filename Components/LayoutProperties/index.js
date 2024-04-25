@@ -5,13 +5,13 @@ import RangeProperties from "../RangeProperties";
 import InputTypeSubmit from "../InputTypeSubmit";
 import Container from "../Container";
 
-export default function LayoutProperties({ settings, onSettingsChange }) {
+export default function LayoutProperties({
+  settings,
+  onSettingsChange,
+  onHasCompletedStep6,
+}) {
   function handleSubmit(event) {
     event.preventDefault();
-  }
-
-  function handleLayoutProperties() {
-    alert("You have selected the layout properties.");
   }
 
   function notCompletedLayoutProperties() {
@@ -43,8 +43,8 @@ export default function LayoutProperties({ settings, onSettingsChange }) {
         />
         <Container $centered="center">
           <InputTypeSubmit
-            value="Finish"
-            onClick={handleLayoutProperties}
+            value="Plot"
+            onClick={onHasCompletedStep6}
             disabled={notCompletedLayoutProperties()}
           />
         </Container>

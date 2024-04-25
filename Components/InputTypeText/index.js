@@ -1,3 +1,5 @@
+import { StyledInput } from "./styledInputTypeText";
+
 export default function InputTypeText({
   placeholderString,
   onChange,
@@ -7,12 +9,11 @@ export default function InputTypeText({
   return (
     <>
       <label htmlFor={idString}>{idString}:</label>
-      <input
+      <StyledInput
         name={nameString}
         type="text"
         id={idString}
         placeholder={placeholderString}
-        size={30}
         onChange={onChange}
         required
       />

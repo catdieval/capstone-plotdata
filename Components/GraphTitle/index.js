@@ -22,7 +22,7 @@ export default function GraphTitle({
     <>
       {hasCompletedStep4 === true && (
         <>
-          <Heading> Step 5: Give a title to the graph </Heading>
+          <Heading> Step 5: Give a title to the chart </Heading>
           <Paragraph>Label for the x-axis: {settings.xLabel}</Paragraph>
           <Paragraph>Label for the y-axis: {settings.yLabel}</Paragraph>
           <form onSubmit={handleSubmit}>

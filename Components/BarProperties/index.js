@@ -3,15 +3,13 @@ import DropDownMenu from "../DropDownMenu";
 import InputTypeSubmit from "../InputTypeSubmit";
 import Container from "../Container";
 import { StyledH3 } from "../Heading";
+import Paragraph from "../Paragraph";
 
 export default function BarProperties({
-  clickedChartType,
+  onHasCompletedDistProp,
   settings,
   onSettingsChange,
 }) {
-  function handleBarProperties() {
-    alert("You chose the bar properties.");
-  }
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -22,26 +20,22 @@ export default function BarProperties({
 
   return (
     <>
-      {clickedChartType === "bar-plot" && settings.titleLabel.length > 0 && (
-        <>
-          <StyledH3> Bar properties</StyledH3>
-          <form onSubmit={handleSubmit}>
-            <Container $centered="center">
-              <DropDownMenu
-                idString="Bar color"
-                nameString="barColor"
-                onChange={onSettingsChange}
-                arrayOfOptions={barColorArray}
-              />
-              <InputTypeSubmit
-                value="Next"
-                onClick={handleBarProperties}
-                disabled={notCompletedBarProperties()}
-              />
-            </Container>
-          </form>
-        </>
-      )}
+      <StyledH3>Bar properties</StyledH3>
+      <form onSubmit={handleSubmit}>
+        <Container $centered="center">
+          <Paragraph>Bar color:</Paragraph>
+          <DropDownMenu
+            nameString="barColor"
+            onChange={onSettingsChange}
+            arrayOfOptions={barColorArray}
+          />
+          <InputTypeSubmit
+            value="Next"
+            onClick={onHasCompletedDistProp}
+            disabled={notCompletedBarProperties()}
+          />
+        </Container>
+      </form>
     </>
   );
 }
