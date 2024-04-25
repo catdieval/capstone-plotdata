@@ -2,7 +2,7 @@ import Container from "../Container";
 import styled from "styled-components";
 
 export default function UnorderedList({ $arrayOfBulletPoints }) {
-  const StyledLi = styled.li`
+  const StyledListItem = styled.li`
     font-size: 1.1rem;
   `;
 
@@ -10,7 +10,9 @@ export default function UnorderedList({ $arrayOfBulletPoints }) {
     <ul>
       <Container $direction="column" $gap>
         {$arrayOfBulletPoints.map((bulletPoint) => {
-          return <StyledLi key={bulletPoint}>{bulletPoint}</StyledLi>;
+          return (
+            <StyledListItem key={bulletPoint}>{bulletPoint}</StyledListItem>
+          );
         })}
       </Container>
     </ul>
