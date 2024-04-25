@@ -6,13 +6,13 @@ import FileUploader from "../FileUploader";
 import InputTypeSubmit from "../InputTypeSubmit";
 
 export default function UploadData({
-  fileObj,
+  fileObject,
   onUploadFile,
   onConversion,
   hasClickedGetStarted,
 }) {
   // Name of file
-  const fileName = fileObj?.name;
+  const fileName = fileObject?.name;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,7 +52,7 @@ export default function UploadData({
                 $nomargin
                 value="Next"
                 onClick={onConversion}
-                disabled={fileObj === null || fileObj === undefined}
+                disabled={fileObject === null || fileObject === undefined}
               />
             </Container>
           </form>
