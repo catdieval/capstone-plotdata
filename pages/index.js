@@ -14,7 +14,7 @@ export default function HomePage({
   hasClickedGetStarted,
   onGetStarted,
   keynames,
-  fileObj,
+  fileObject,
   onUploadFile,
   onConversion,
   clickedChartType,
@@ -39,7 +39,7 @@ export default function HomePage({
     <div>
       <StartPage onGetStarted={onGetStarted} />
       <UploadData
-        fileObj={fileObj}
+        fileObject={fileObject}
         onUploadFile={onUploadFile}
         onConversion={onConversion}
         hasClickedGetStarted={hasClickedGetStarted}
