@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
   const [vals, setVals] = useState([]);
 
   // State to store the file object
-  const [fileObj, setFileObj] = useState(null);
+  const [fileObject, setFileObject] = useState(null);
 
   // Step 2: Choose chart type
   // State to store the selected chart type
@@ -75,7 +75,7 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleUploadFile(file) {
-    setFileObj(file);
+    setFileObject(file);
   }
 
   function handleConversion() {
@@ -94,7 +94,7 @@ export default function App({ Component, pageProps }) {
       alert("File processed successfully.");
     };
 
-    reader.readAsText(fileObj);
+    reader.readAsText(fileObject);
   }
 
   function handleSelectChartType(name) {
@@ -163,7 +163,7 @@ export default function App({ Component, pageProps }) {
         hasClickedGetStarted={hasClickedGetStarted}
         onGetStarted={handleGetStarted}
         keynames={keynames}
-        fileObj={fileObj}
+        fileObject={fileObject}
         onUploadFile={handleUploadFile}
         onConversion={handleConversion}
         clickedChartType={clickedChartType}
