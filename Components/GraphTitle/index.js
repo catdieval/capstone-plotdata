@@ -20,11 +20,13 @@ export default function GraphTitle({
 
   return (
     <>
-      {hasCompletedStep4 === true && (
+      {hasCompletedStep4 && (
         <>
-          <Heading> Step 5: Give a title to the chart </Heading>
-          <Paragraph>Label for the x-axis: {settings.xLabel}</Paragraph>
-          <Paragraph>Label for the y-axis: {settings.yLabel}</Paragraph>
+          <Heading>Step 5: Give a title to the chart</Heading>
+          <Paragraph>Label for the x-axis:</Paragraph>
+          <Paragraph $variant="bold">{settings.xLabel}</Paragraph>
+          <Paragraph>Label for the y-axis:</Paragraph>
+          <Paragraph $variant="bold">{settings.yLabel}</Paragraph>
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
               <InputTypeText

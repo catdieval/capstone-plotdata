@@ -5,16 +5,18 @@ import CorrectArrays from "../Components/CorrectArrays";
 import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
 export default function App({ Component, pageProps }) {
-  //Step 1: Upload CSV-file
-  //State to store keys from the CSV file
+  // State to store the status about if the user has clicked on the "Get started" button
+  const [hasClickedGetStarted, setHasClickedGetStarted] = useState(false);
+
+  // Step 1: Upload CSV-file
+  // State to store keys from the CSV file
   const [keynames, setKeynames] = useState([]);
 
-  //State to store the values
+  // State to store the values
   const [vals, setVals] = useState([]);
 
   // State to store the file object
-  //const [fileObj, setFileObj] = useState({});
-  const [fileObj, setFileObj] = useState(null);
+  const [fileObject, setFileObject] = useState(null);
 
   // Step 2: Choose chart type
   // State to store the selected chart type
@@ -61,12 +63,21 @@ export default function App({ Component, pageProps }) {
 
   const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
-  const [hasCompletedDistProp, setHasCompletedDistProp] = useState(false);
+  // State to check the status if the user has selected values for all properties for a given distribution
+  // (e.g. bar plot)
+  const [
+    hasCompletedDistributionProperties,
+    setHasCompletedDistributionProperties,
+  ] = useState(false);
 
   const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
 
+  function handleGetStarted() {
+    setHasClickedGetStarted(true);
+  }
+
   function handleUploadFile(file) {
-    setFileObj(file);
+    setFileObject(file);
   }
 
   function handleConversion() {
@@ -82,10 +93,10 @@ export default function App({ Component, pageProps }) {
 
       setKeynames(keys);
       setVals(correctValues);
-      alert("File processed successfully");
+      alert("File processed successfully.");
     };
 
-    reader.readAsText(fileObj);
+    reader.readAsText(fileObject);
   }
 
   function handleSelectChartType(name) {
@@ -132,22 +143,22 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleHasCompletedStep4() {
-    alert("Labels for the x-axis and the y-axis of the graph are assigned");
+    alert("Labels for the x-axis and the y-axis of the chart are assigned.");
     setHasCompletedStep4(true);
   }
 
   function handleHasCompletedStep5() {
-    alert("Title of the graph is assigned");
+    alert("Title of the chart is assigned.");
     setHasCompletedStep5(true);
   }
 
-  function handleHasCompletedDistProp() {
-    alert("Distribution Properties are assigned");
-    setHasCompletedDistProp(true);
+  function handleHasCompletedDistributionProperties() {
+    alert("Distribution properties are assigned.");
+    setHasCompletedDistributionProperties(true);
   }
 
   function handleHasCompletedStep6() {
-    alert("The Plotting Properties are assigned");
+    alert("Plotting properties are assigned.");
     setHasCompletedStep6(true);
   }
 
@@ -156,8 +167,10 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Component
         {...pageProps}
+        hasClickedGetStarted={hasClickedGetStarted}
+        onGetStarted={handleGetStarted}
         keynames={keynames}
-        fileObj={fileObj}
+        fileObject={fileObject}
         onUploadFile={handleUploadFile}
         onConversion={handleConversion}
         clickedChartType={clickedChartType}
@@ -175,8 +188,10 @@ export default function App({ Component, pageProps }) {
         onHasCompletedStep4={handleHasCompletedStep4}
         hasCompletedStep5={hasCompletedStep5}
         onHasCompletedStep5={handleHasCompletedStep5}
-        hasCompletedDistProp={hasCompletedDistProp}
-        onHasCompletedDistProp={handleHasCompletedDistProp}
+        hasCompletedDistributionProperties={hasCompletedDistributionProperties}
+        onHasCompletedDistributionProperties={
+          handleHasCompletedDistributionProperties
+        }
         hasCompletedStep6={hasCompletedStep6}
         onHasCompletedStep6={handleHasCompletedStep6}
       />

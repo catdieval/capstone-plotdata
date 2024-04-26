@@ -1,3 +1,4 @@
+import StartPage from "../Components/StartPage";
 import UploadData from "../Components/UploadData";
 import ListOfCharts from "../Components/ListOfCharts";
 import Plotting from "../Components/Plotting";
@@ -7,8 +8,10 @@ import GraphTitle from "../Components/GraphTitle";
 import PlottingProperties from "../Components/PlottingProperties";
 
 export default function HomePage({
+  hasClickedGetStarted,
+  onGetStarted,
   keynames,
-  fileObj,
+  fileObject,
   onUploadFile,
   onConversion,
   clickedChartType,
@@ -20,23 +23,25 @@ export default function HomePage({
   xKey,
   yKey,
   onAssignVariables,
+  settings,
+  onSettingsChange,
   hasCompletedStep4,
   onHasCompletedStep4,
   onHasCompletedStep5,
   hasCompletedStep5,
-  onHasCompletedDistProp,
-  hasCompletedDistProp,
+  hasCompletedDistributionProperties,
+  onHasCompletedDistributionProperties,
   onHasCompletedStep6,
   hasCompletedStep6,
-  settings,
-  onSettingsChange,
 }) {
   return (
     <div>
+      <StartPage onGetStarted={onGetStarted} />
       <UploadData
-        fileObj={fileObj}
+        fileObject={fileObject}
         onUploadFile={onUploadFile}
         onConversion={onConversion}
+        hasClickedGetStarted={hasClickedGetStarted}
       />
       <ListOfCharts
         onSelectChartType={onSelectChartType}
@@ -70,8 +75,10 @@ export default function HomePage({
       <PlottingProperties
         clickedChartType={clickedChartType}
         hasCompletedStep5={hasCompletedStep5}
-        onHasCompletedDistProp={onHasCompletedDistProp}
-        hasCompletedDistProp={hasCompletedDistProp}
+        onHasCompletedDistributionProperties={
+          onHasCompletedDistributionProperties
+        }
+        hasCompletedDistributionProperties={hasCompletedDistributionProperties}
         onHasCompletedStep6={onHasCompletedStep6}
         settings={settings}
         onSettingsChange={onSettingsChange}

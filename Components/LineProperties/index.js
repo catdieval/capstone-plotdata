@@ -10,7 +10,7 @@ import InputTypeSubmit from "../InputTypeSubmit";
 import Paragraph from "../Paragraph";
 
 export default function LineProperties({
-  onHasCompletedDistProp,
+  onHasCompletedDistributionProperties,
   settings,
   onSettingsChange,
 }) {
@@ -50,7 +50,7 @@ export default function LineProperties({
         />
         <InputTypeSubmit
           value="Next"
-          onClick={onHasCompletedDistProp}
+          onClick={onHasCompletedDistributionProperties}
           disabled={notCompletedLineProperties()}
         />
       </Container>
