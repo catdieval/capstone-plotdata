@@ -12,6 +12,21 @@ const StyledButton = styled.button`
   font-weight: 700;
 
   ${(props) =>
+    props.$variant === "circle" &&
+    css`
+      background-color: ${(props) =>
+        props.$notActive ? "var(--disabled-color)" : "var(--secondary-color)"};
+      opacity: 0.8;
+      border-radius: 50%;
+      border: none;
+      padding: 0.4rem 0.7rem;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+    `};
+
+  ${(props) =>
     props.$variant === "info" &&
     css`
       background-color: var(--info-color);

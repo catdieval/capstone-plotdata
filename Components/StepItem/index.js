@@ -11,7 +11,7 @@ const ItemContainer = styled.section`
 export default function StepItem({ name, label }) {
   return (
     <ItemContainer>
-      <Button>{name}</Button>
+      <Button $variant="circle">{name}</Button>
       <Paragraph $variant="bold">{label}</Paragraph>
     </ItemContainer>
   );
