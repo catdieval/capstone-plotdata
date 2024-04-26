@@ -31,10 +31,6 @@ export default function HomePage({
   hasCompletedStep6,
   settings,
   onSettingsChange,
-  onBackChange,
-  onNextChange,
-  onStepChange,
-  currentStep,
 }) {
   return (
     <div>
@@ -90,12 +86,6 @@ export default function HomePage({
         hasCompletedStep6={hasCompletedStep6}
         settings={settings}
         onSettingsChange={onSettingsChange}
-      />
-      <Navigation
-        onNextChange={onNextChange}
-        onBackChange={onBackChange}
-        onStepChange={onStepChange}
-        currentStep={currentStep}
       />
     </div>
   );

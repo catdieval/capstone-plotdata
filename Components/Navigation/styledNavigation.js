@@ -15,5 +15,4 @@ export const StepperContainer = styled.section`
   align-items: center;
   justify-content: center;
   margin-left: 0.3rem;
-  position: relative;
 `;
