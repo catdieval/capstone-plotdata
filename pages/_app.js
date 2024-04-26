@@ -64,7 +64,7 @@ export default function App({ Component, pageProps }) {
   const [hasCompletedDistProp, setHasCompletedDistProp] = useState(false);
 
   const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(1);
 
   function handleUploadFile(file) {
     setFileObj(file);
