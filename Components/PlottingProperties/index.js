@@ -7,29 +7,33 @@ import LayoutProperties from "../LayoutProperties";
 export default function PlottingProperties({
   clickedChartType,
   hasCompletedStep5,
-  hasCompletedDistProp,
-  onHasCompletedDistProp,
+  hasCompletedDistributionProperties,
+  onHasCompletedDistributionProperties,
   onHasCompletedStep6,
   settings,
   onSettingsChange,
 }) {
   return (
     <>
-      {hasCompletedStep5 === true && (
+      {hasCompletedStep5 && (
         <>
           <Heading> Step 6: Assign properties to the chart</Heading>
           {clickedChartType === "bar-plot" && (
             <BarProperties
               settings={settings}
               onSettingsChange={onSettingsChange}
-              onHasCompletedDistProp={onHasCompletedDistProp}
+              onHasCompletedDistributionProperties={
+                onHasCompletedDistributionProperties
+              }
             />
           )}
           {clickedChartType === "line-plot" && (
             <LineProperties
               settings={settings}
               onSettingsChange={onSettingsChange}
-              onHasCompletedDistProp={onHasCompletedDistProp}
+              onHasCompletedDistributionProperties={
+                onHasCompletedDistributionProperties
+              }
             />
           )}
           {(clickedChartType === "scatter-plot" ||
@@ -37,10 +41,12 @@ export default function PlottingProperties({
             <MarkerProperties
               settings={settings}
               onSettingsChange={onSettingsChange}
-              onHasCompletedDistProp={onHasCompletedDistProp}
+              onHasCompletedDistributionProperties={
+                onHasCompletedDistributionProperties
+              }
             />
           )}
-          {hasCompletedDistProp === true && (
+          {hasCompletedDistributionProperties && (
             <LayoutProperties
               settings={settings}
               onSettingsChange={onSettingsChange}
