@@ -5,6 +5,7 @@ import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
 import GraphTitle from "../Components/GraphTitle";
 import PlottingProperties from "../Components/PlottingProperties";
+import Navigation from "../Components/Navigation";
 
 export default function HomePage({
   keynames,
@@ -86,6 +87,7 @@ export default function HomePage({
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
+      <Navigation />
     </div>
   );
 }
