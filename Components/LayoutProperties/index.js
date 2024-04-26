@@ -8,11 +8,6 @@ import Container from "../Container";
 export default function LayoutProperties({
   settings,
   onSettingsChange,
-  hasCompletedDistributionProperties,
-}) {
-export default function LayoutProperties({
-  settings,
-  onSettingsChange,
   onHasCompletedStep6,
 }) {
   function handleSubmit(event) {
