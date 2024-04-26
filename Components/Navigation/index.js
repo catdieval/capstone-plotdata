@@ -6,6 +6,7 @@ import { arrayOfSteps } from "../../lib/arrayOfSteps";
 export default function Navigation({
   onNextChange,
   onBackChange,
+  onStepChange,
   currentStep,
 }) {
   console.log(currentStep);
@@ -15,7 +16,12 @@ export default function Navigation({
         {arrayOfSteps.map(({ id, label }) => {
           return (
             <>
-              <StepItem key={id} label={label} name={id} />
+              <StepItem
+                key={id}
+                label={label}
+                name={id}
+                onStepChange={() => onStepChange(id)}
+              />
               <ButtonContainer>
                 {currentStep > 1 && currentStep === id ? (
                   <Button $variant="back" onClick={onBackChange}>

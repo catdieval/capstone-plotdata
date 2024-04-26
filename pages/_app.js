@@ -158,6 +158,9 @@ export default function App({ Component, pageProps }) {
   function handleBack() {
     setCurrentStep((currentStep) => currentStep - 1);
   }
+  function handleStepChange(step) {
+    setCurrentStep(step);
+  }
 
   return (
     <Layout>
@@ -189,6 +192,7 @@ export default function App({ Component, pageProps }) {
         onHasCompletedStep6={handleHasCompletedStep6}
         onNextChange={handleNext}
         onBackChange={handleBack}
+        onStepChange={handleStepChange}
         currentStep={currentStep}
       />
     </Layout>

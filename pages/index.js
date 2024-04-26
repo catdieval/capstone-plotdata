@@ -33,6 +33,7 @@ export default function HomePage({
   onSettingsChange,
   onBackChange,
   onNextChange,
+  onStepChange,
   currentStep,
 }) {
   return (
@@ -93,6 +94,7 @@ export default function HomePage({
       <Navigation
         onNextChange={onNextChange}
         onBackChange={onBackChange}
+        onStepChange={onStepChange}
         currentStep={currentStep}
       />
     </div>
