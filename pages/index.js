@@ -23,18 +23,16 @@ export default function HomePage({
   xKey,
   yKey,
   onAssignVariables,
+  settings,
+  onSettingsChange,
   hasCompletedStep4,
   onHasCompletedStep4,
   onHasCompletedStep5,
   hasCompletedStep5,
-  onHasCompletedDistProp,
-  hasCompletedDistProp,
-  onHasCompletedStep6,
-  hasCompletedStep6,
   hasCompletedDistributionProperties,
   onHasCompletedDistributionProperties,
-  settings,
-  onSettingsChange,
+  onHasCompletedStep6,
+  hasCompletedStep6,
 }) {
   return (
     <div>
@@ -76,12 +74,11 @@ export default function HomePage({
       />
       <PlottingProperties
         clickedChartType={clickedChartType}
+        hasCompletedStep5={hasCompletedStep5}
         onHasCompletedDistributionProperties={
           onHasCompletedDistributionProperties
         }
-        hasCompletedStep5={hasCompletedStep5}
-        onHasCompletedDistProp={onHasCompletedDistProp}
-        hasCompletedDistProp={hasCompletedDistProp}
+        hasCompletedDistributionProperties={hasCompletedDistributionProperties}
         onHasCompletedStep6={onHasCompletedStep6}
         settings={settings}
         onSettingsChange={onSettingsChange}
