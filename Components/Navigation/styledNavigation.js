@@ -8,3 +8,12 @@ export const ButtonContainer = styled.div`
   margin-bottom: 0.5rem;
   margin-top: 1rem;
 `;
+
+export const StepperContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.3rem;
+  position: relative;
+`;
