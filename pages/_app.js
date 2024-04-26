@@ -64,6 +64,7 @@ export default function App({ Component, pageProps }) {
   const [hasCompletedDistProp, setHasCompletedDistProp] = useState(false);
 
   const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
 
   function handleUploadFile(file) {
     setFileObj(file);
@@ -151,6 +152,13 @@ export default function App({ Component, pageProps }) {
     setHasCompletedStep6(true);
   }
 
+  function handleNext() {
+    setCurrentStep((currentStep) => currentStep + 1);
+  }
+  function handleBack() {
+    setCurrentStep((currentStep) => currentStep - 1);
+  }
+
   return (
     <Layout>
       <GlobalStyle />
@@ -179,6 +187,9 @@ export default function App({ Component, pageProps }) {
         onHasCompletedDistProp={handleHasCompletedDistProp}
         hasCompletedStep6={hasCompletedStep6}
         onHasCompletedStep6={handleHasCompletedStep6}
+        onNextChange={handleNext}
+        onBackChange={handleBack}
+        currentStep={currentStep}
       />
     </Layout>
   );
