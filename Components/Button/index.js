@@ -25,6 +25,35 @@ const StyledButton = styled.button`
         opacity: 1;
       }
     `};
+  ${(props) =>
+    props.$variant === "back" &&
+    css`
+      background-color: inherit;
+      border: solid 2px var(--primary-color);
+      color: var(--primary-color);
+      padding: 8px 18px;
+    `};
+
+  ${(props) =>
+    props.$variant === "next" &&
+    css`
+      background-color: var(--secondary-color);
+      padding: 10px 20px;
+      color: white;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      &:hover {
+        &:not([disabled]) {
+          background-color: #00ace6;
+        }
+      }
+      &:disabled {
+        opacity: 0.5;
+      }
+    `};
 
   ${(props) =>
     props.$variant === "info" &&

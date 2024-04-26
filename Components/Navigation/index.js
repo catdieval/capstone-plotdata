@@ -1,5 +1,6 @@
 import StepItem from "../StepItem";
 import Button from "../Button";
+import { ButtonContainer } from "./styledNavigation";
 import { arrayOfSteps } from "../../lib/arrayOfSteps";
 
 export default function Navigation({
@@ -15,9 +16,14 @@ export default function Navigation({
           return (
             <>
               <StepItem key={id} label={label} name={id} />
-              <Button onClick={onBackChange}>Back</Button>
-
-              <Button onClick={onNextChange}>Next</Button>
+              <ButtonContainer>
+                <Button $variant="back" onClick={onBackChange}>
+                  Back
+                </Button>
+                <Button $variant="next" onClick={onNextChange}>
+                  Next
+                </Button>
+              </ButtonContainer>
             </>
           );
         })}
