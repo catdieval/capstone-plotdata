@@ -8,10 +8,20 @@ const ItemContainer = styled.section`
   align-items: center;
   gap: 0.8rem;
 `;
-export default function StepItem({ name, label, onStepChange }) {
+export default function StepItem({
+  name,
+  label,
+  onStepChange,
+  currentStep,
+  id,
+}) {
   return (
     <ItemContainer>
-      <Button $variant="circle" onClick={onStepChange}>
+      <Button
+        $variant="circle"
+        onClick={onStepChange}
+        isDisabled={currentStep !== id && currentStep < id}
+      >
         {name}
       </Button>
       <Paragraph $variant="bold">{label}</Paragraph>

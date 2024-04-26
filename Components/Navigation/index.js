@@ -1,6 +1,6 @@
 import StepItem from "../StepItem";
 import Button from "../Button";
-import { ButtonContainer } from "./styledNavigation";
+import { ButtonContainer, StepperContainer } from "./styledNavigation";
 import { arrayOfSteps } from "../../lib/arrayOfSteps";
 
 export default function Navigation({
@@ -11,7 +11,7 @@ export default function Navigation({
 }) {
   console.log(currentStep);
   return (
-    <>
+    <StepperContainer>
       <nav>
         {arrayOfSteps.map(({ id, label }) => {
           return (
@@ -20,6 +20,8 @@ export default function Navigation({
                 key={id}
                 label={label}
                 name={id}
+                id={id}
+                currentStep={currentStep}
                 onStepChange={() => onStepChange(id)}
               />
               <ButtonContainer>
@@ -38,6 +40,6 @@ export default function Navigation({
           );
         })}
       </nav>
-    </>
+    </StepperContainer>
   );
 }

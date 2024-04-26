@@ -15,7 +15,7 @@ const StyledButton = styled.button`
     props.$variant === "circle" &&
     css`
       background-color: ${(props) =>
-        props.$notActive ? "var(--disabled-color)" : "var(--secondary-color)"};
+        props.$isDisabled ? "var(--disabled-color)" : "var(--secondary-color)"};
       opacity: 0.8;
       border-radius: 50%;
       border: none;
@@ -71,9 +71,20 @@ const StyledButton = styled.button`
     `};
 `;
 
-export default function Button({ children, onClick, $variant, isActive }) {
+export default function Button({
+  children,
+  onClick,
+  $variant,
+  isActive,
+  isDisabled,
+}) {
   return (
-    <StyledButton $variant={$variant} $isActive={isActive} onClick={onClick}>
+    <StyledButton
+      $variant={$variant}
+      $isActive={isActive}
+      $isDisabled={isDisabled}
+      onClick={onClick}
+    >
       {children}
     </StyledButton>
   );
