@@ -5,6 +5,7 @@ const StyledP = styled.p`
   font-weight: 400;
   line-height: 1.2rem;
   font-size: 1.1rem;
+  color: ${(props) => (props.$isDisabled ? "var(--disabled-color)" : "")};
 
   ${(props) =>
     props.$variant === "start" &&
@@ -29,6 +30,10 @@ const StyledP = styled.p`
     `};
 `;
 
-export default function Paragraph({ children, $variant }) {
-  return <StyledP $variant={$variant}>{children}</StyledP>;
+export default function Paragraph({ children, $variant, isDisabled }) {
+  return (
+    <StyledP $variant={$variant} $isDisabled={isDisabled}>
+      {children}
+    </StyledP>
+  );
 }

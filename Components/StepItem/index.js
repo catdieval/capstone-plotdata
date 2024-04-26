@@ -24,7 +24,12 @@ export default function StepItem({
       >
         {name}
       </Button>
-      <Paragraph $variant="bold">{label}</Paragraph>
+      <Paragraph
+        $variant="bold"
+        isDisabled={currentStep !== id && currentStep < id}
+      >
+        {label}
+      </Paragraph>
     </ItemContainer>
   );
 }
