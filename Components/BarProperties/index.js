@@ -3,6 +3,7 @@ import DropDownMenu from "../DropDownMenu";
 import InputTypeSubmit from "../InputTypeSubmit";
 import Container from "../Container";
 import { StyledH3 } from "../Heading";
+import Paragraph from "../Paragraph";
 
 export default function BarProperties({
   clickedChartType,
@@ -21,26 +22,22 @@ export default function BarProperties({
 
   return (
     <>
-      {hasCompletedStep5 && clickedChartType === "bar-plot" && (
-        <>
-          <StyledH3>Bar properties</StyledH3>
-          <form onSubmit={handleSubmit}>
-            <Container $centered="center">
-              <DropDownMenu
-                idString="Bar color"
-                nameString="barColor"
-                onChange={onSettingsChange}
-                arrayOfOptions={barColorArray}
-              />
-              <InputTypeSubmit
-                value="Next"
-                onClick={onHasCompletedDistributionProperties}
-                disabled={notCompletedBarProperties()}
-              />
-            </Container>
-          </form>
-        </>
-      )}
+      <StyledH3>Bar properties</StyledH3>
+      <form onSubmit={handleSubmit}>
+        <Container $centered="center">
+          <Paragraph>Bar color:</Paragraph>
+          <DropDownMenu
+            nameString="barColor"
+            onChange={onSettingsChange}
+            arrayOfOptions={barColorArray}
+          />
+          <InputTypeSubmit
+            value="Next"
+            onClick={onHasCompletedDistProp}
+            disabled={notCompletedBarProperties()}
+          />
+        </Container>
+      </form>
     </>
   );
 }

@@ -63,6 +63,10 @@ export default function App({ Component, pageProps }) {
 
   const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
 
+  const [hasCompletedDistProp, setHasCompletedDistProp] = useState(false);
+
+  const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
+
   // State to check the status if the user has selected values for all properties for a given distribution
   // (e.g. bar plot)
   const [
@@ -155,6 +159,16 @@ export default function App({ Component, pageProps }) {
     setHasCompletedDistributionProperties(true);
   }
 
+  function handleHasCompletedDistProp() {
+    alert("Distribution Properties are assigned");
+    setHasCompletedDistProp(true);
+  }
+
+  function handleHasCompletedStep6() {
+    alert("The Plotting Properties are assigned");
+    setHasCompletedStep6(true);
+  }
+
   return (
     <Layout>
       <GlobalStyle />
@@ -181,6 +195,10 @@ export default function App({ Component, pageProps }) {
         onHasCompletedStep4={handleHasCompletedStep4}
         hasCompletedStep5={hasCompletedStep5}
         onHasCompletedStep5={handleHasCompletedStep5}
+        hasCompletedDistProp={hasCompletedDistProp}
+        onHasCompletedDistProp={handleHasCompletedDistProp}
+        hasCompletedStep6={hasCompletedStep6}
+        onHasCompletedStep6={handleHasCompletedStep6}
         hasCompletedDistributionProperties={hasCompletedDistributionProperties}
         onHasCompletedDistributionProperties={
           handleHasCompletedDistributionProperties

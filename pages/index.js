@@ -5,10 +5,7 @@ import Plotting from "../Components/Plotting";
 import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
 import GraphTitle from "../Components/GraphTitle";
-import LineProperties from "../Components/LineProperties";
-import BarProperties from "../Components/BarProperties";
-import MarkerProperties from "../Components/MarkerProperties";
-import LayoutProperties from "../Components/LayoutProperties";
+import PlottingProperties from "../Components/PlottingProperties";
 
 export default function HomePage({
   hasClickedGetStarted,
@@ -28,8 +25,12 @@ export default function HomePage({
   onAssignVariables,
   hasCompletedStep4,
   onHasCompletedStep4,
-  hasCompletedStep5,
   onHasCompletedStep5,
+  hasCompletedStep5,
+  onHasCompletedDistProp,
+  hasCompletedDistProp,
+  onHasCompletedStep6,
+  hasCompletedStep6,
   hasCompletedDistributionProperties,
   onHasCompletedDistributionProperties,
   settings,
@@ -73,35 +74,15 @@ export default function HomePage({
         hasCompletedStep4={hasCompletedStep4}
         onHasCompletedStep5={onHasCompletedStep5}
       />
-      <MarkerProperties
+      <PlottingProperties
         clickedChartType={clickedChartType}
         onHasCompletedDistributionProperties={
           onHasCompletedDistributionProperties
         }
         hasCompletedStep5={hasCompletedStep5}
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-      />
-      <LineProperties
-        clickedChartType={clickedChartType}
-        onHasCompletedDistributionProperties={
-          onHasCompletedDistributionProperties
-        }
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-        hasCompletedStep5={hasCompletedStep5}
-      />
-      <BarProperties
-        clickedChartType={clickedChartType}
-        onHasCompletedDistributionProperties={
-          onHasCompletedDistributionProperties
-        }
-        hasCompletedStep5={hasCompletedStep5}
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-      />
-      <LayoutProperties
-        hasCompletedDistributionProperties={hasCompletedDistributionProperties}
+        onHasCompletedDistProp={onHasCompletedDistProp}
+        hasCompletedDistProp={hasCompletedDistProp}
+        onHasCompletedStep6={onHasCompletedStep6}
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
@@ -111,6 +92,7 @@ export default function HomePage({
         yVariable={yVariable}
         hasCompletedStep4={hasCompletedStep4}
         hasCompletedStep5={hasCompletedStep5}
+        hasCompletedStep6={hasCompletedStep6}
         settings={settings}
         onSettingsChange={onSettingsChange}
       />

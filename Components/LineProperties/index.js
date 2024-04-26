@@ -29,37 +29,33 @@ export default function LineProperties({
   }
 
   return (
-    <>
-      {hasCompletedStep5 && clickedChartType === "line-plot" && (
-        <form onSubmit={handleSubmit}>
-          <Container $centered="center" $gap>
-            <StyledH3>Line properties</StyledH3>
-            <Paragraph>Line color</Paragraph>
-            <DropDownMenu
-              nameString="lineColor"
-              onChange={onSettingsChange}
-              arrayOfOptions={lineColorArray}
-            />
-            <Paragraph>Line style</Paragraph>
-            <DropDownMenu
-              nameString="lineStyle"
-              onChange={onSettingsChange}
-              arrayOfOptions={lineStyleArray}
-            />
-            <Paragraph>Line width (in pixels)</Paragraph>
-            <DropDownMenu
-              nameString="lineWidth"
-              onChange={onSettingsChange}
-              arrayOfOptions={lineWidthArray}
-            />
-            <InputTypeSubmit
-              value="Next"
-              onClick={onHasCompletedDistributionProperties}
-              disabled={notCompletedLineProperties()}
-            />
-          </Container>
-        </form>
-      )}
-    </>
+    <form onSubmit={handleSubmit}>
+      <Container $centered="center" $gap>
+        <StyledH3>Line properties</StyledH3>
+        <Paragraph>Line color:</Paragraph>
+        <DropDownMenu
+          nameString="lineColor"
+          onChange={onSettingsChange}
+          arrayOfOptions={lineColorArray}
+        />
+        <Paragraph>Line style:</Paragraph>
+        <DropDownMenu
+          nameString="lineStyle"
+          onChange={onSettingsChange}
+          arrayOfOptions={lineStyleArray}
+        />
+        <Paragraph>Line width (in pixels):</Paragraph>
+        <DropDownMenu
+          nameString="lineWidth"
+          onChange={onSettingsChange}
+          arrayOfOptions={lineWidthArray}
+        />
+        <InputTypeSubmit
+          value="Next"
+          onClick={onHasCompletedDistProp}
+          disabled={notCompletedLineProperties()}
+        />
+      </Container>
+    </form>
   );
 }

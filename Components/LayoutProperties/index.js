@@ -10,12 +10,13 @@ export default function LayoutProperties({
   onSettingsChange,
   hasCompletedDistributionProperties,
 }) {
+export default function LayoutProperties({
+  settings,
+  onSettingsChange,
+  onHasCompletedStep6,
+}) {
   function handleSubmit(event) {
     event.preventDefault();
-  }
-
-  function handleLayoutProperties() {
-    alert("Layout properties are assigned.");
   }
 
   function notCompletedLayoutProperties() {
@@ -31,29 +32,28 @@ export default function LayoutProperties({
 
   return (
     <>
-      {hasCompletedDistributionProperties && (
-        <>
-          <StyledH3>Layout</StyledH3>
-          <form onSubmit={handleSubmit}>
-            <GridProperties
-              settings={settings}
-              onSettingsChange={onSettingsChange}
-            />
-            <RangeProperties
-              settings={settings}
-              onSettingsChange={onSettingsChange}
-            />
-            <LogScaleProperties onSettingsChange={onSettingsChange} />
-            <Container $centered="center">
-              <InputTypeSubmit
-                value="Plot"
-                onClick={handleLayoutProperties}
-                disabled={notCompletedLayoutProperties()}
-              />
-            </Container>
-          </form>
-        </>
-      )}
+      <StyledH3>Layout</StyledH3>
+      <form onSubmit={handleSubmit}>
+        <GridProperties
+          settings={settings}
+          onSettingsChange={onSettingsChange}
+        />
+        <RangeProperties
+          settings={settings}
+          onSettingsChange={onSettingsChange}
+        />
+        <LogScaleProperties
+          settings={settings}
+          onSettingsChange={onSettingsChange}
+        />
+        <Container $centered="center">
+          <InputTypeSubmit
+            value="Plot"
+            onClick={onHasCompletedStep6}
+            disabled={notCompletedLayoutProperties()}
+          />
+        </Container>
+      </form>
     </>
   );
 }

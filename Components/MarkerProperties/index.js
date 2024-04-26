@@ -30,40 +30,34 @@ export default function MarkerProperties({
 
   return (
     <>
-      {hasCompletedStep5 &&
-        (clickedChartType === "scatter-plot" ||
-          clickedChartType === "line-markers-plot") && (
-          <>
-            <StyledH3>Marker properties</StyledH3>
-            <form onSubmit={handleSubmit}>
-              <Container $centered="center" $gap>
-                <Paragraph>Marker color:</Paragraph>
-                <DropDownMenu
-                  nameString="markerColor"
-                  onChange={onSettingsChange}
-                  arrayOfOptions={markerColorArray}
-                />
-                <Paragraph>Marker symbol:</Paragraph>
-                <DropDownMenu
-                  nameString="markerSymbol"
-                  onChange={onSettingsChange}
-                  arrayOfOptions={markerSymbolArray}
-                />
-                <Paragraph>Marker size (in pixels):</Paragraph>
-                <DropDownMenu
-                  nameString="markerSize"
-                  onChange={onSettingsChange}
-                  arrayOfOptions={markerSizeArray}
-                />
-                <InputTypeSubmit
-                  value="Next"
-                  onClick={onHasCompletedDistributionProperties}
-                  disabled={notCompletedMarkerProperties()}
-                />
-              </Container>
-            </form>
-          </>
-        )}
+      <StyledH3>Marker properties</StyledH3>
+      <form onSubmit={handleSubmit}>
+        <Container $centered="center" $gap>
+          <Paragraph>Marker color:</Paragraph>
+          <DropDownMenu
+            nameString="markerColor"
+            onChange={onSettingsChange}
+            arrayOfOptions={markerColorArray}
+          />
+          <Paragraph>Marker symbol:</Paragraph>
+          <DropDownMenu
+            nameString="markerSymbol"
+            onChange={onSettingsChange}
+            arrayOfOptions={markerSymbolArray}
+          />
+          <Paragraph>Marker size (in pixels):</Paragraph>
+          <DropDownMenu
+            nameString="markerSize"
+            onChange={onSettingsChange}
+            arrayOfOptions={markerSizeArray}
+          />
+          <InputTypeSubmit
+            value="Next"
+            onClick={onHasCompletedDistProp}
+            disabled={notCompletedMarkerProperties()}
+          />
+        </Container>
+      </form>
     </>
   );
 }
