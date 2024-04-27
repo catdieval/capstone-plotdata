@@ -20,9 +20,9 @@ export default function StepItem({
       <Button
         $variant="circle"
         onClick={onStepChange}
-        isDisabled={currentStep !== id && currentStep < id}
+        isDisabled={currentStep !== id && currentStep < id + 1}
       >
-        {name}
+        {currentStep < id + 1 ? name : <span>✓</span>}
       </Button>
       <Paragraph
         $variant="bold"
