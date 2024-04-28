@@ -5,6 +5,12 @@ export default function AllSteps({
   onNextChange,
   onStepChange,
   currentStep,
+  fileObj,
+  onUploadFile,
+  onConversion,
+  keynames,
+  onSelectChartType,
+  clickedChartType,
 }) {
   return (
     <>
@@ -13,6 +19,12 @@ export default function AllSteps({
         onBackChange={onBackChange}
         onStepChange={onStepChange}
         currentStep={currentStep}
+        fileObj={fileObj}
+        onUploadFile={onUploadFile}
+        onConversion={onConversion}
+        onSelectChartType={onSelectChartType}
+        clickedChartType={clickedChartType}
+        keynames={keynames}
       />
     </>
   );
