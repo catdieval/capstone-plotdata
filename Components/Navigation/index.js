@@ -2,12 +2,19 @@ import StepItem from "../StepItem";
 import Button from "../Button";
 import { ButtonContainer, StepperContainer } from "./styledNavigation";
 import { arrayOfSteps } from "../../lib/arrayOfSteps";
+import AllSteps from "../AllSteps";
 
 export default function Navigation({
   onNextChange,
   onBackChange,
   onStepChange,
   currentStep,
+  fileObj,
+  onUploadFile,
+  onConversion,
+  keynames,
+  onSelectChartType,
+  clickedChartType,
 }) {
   console.log(currentStep);
   return (
@@ -23,6 +30,16 @@ export default function Navigation({
                 id={id}
                 currentStep={currentStep}
                 onStepChange={() => onStepChange(id)}
+              />
+              <AllSteps
+                fileObj={fileObj}
+                onUploadFile={onUploadFile}
+                onConversion={onConversion}
+                onSelectChartType={onSelectChartType}
+                clickedChartType={clickedChartType}
+                keynames={keynames}
+                currentStep={currentStep}
+                id={id}
               />
               <ButtonContainer>
                 {currentStep > 1 && currentStep === id ? (
