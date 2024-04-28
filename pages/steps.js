@@ -11,6 +11,22 @@ export default function AllSteps({
   keynames,
   onSelectChartType,
   clickedChartType,
+  onXChange,
+  onYChange,
+  xKey,
+  yKey,
+  onAssignVariables,
+  xVariable,
+  yVariable,
+  onHasCompletedStep4,
+  hasCompletedStep4,
+  onHasCompletedStep5,
+  hasCompletedStep5,
+  onHasCompletedDistProp,
+  hasCompletedDistProp,
+  onHasCompletedStep6,
+  settings,
+  onSettingsChange,
 }) {
   return (
     <>
@@ -24,6 +40,22 @@ export default function AllSteps({
         onConversion={onConversion}
         onSelectChartType={onSelectChartType}
         clickedChartType={clickedChartType}
+        onAssignVariables={onAssignVariables}
+        onXChange={onXChange}
+        onYChange={onYChange}
+        xKey={xKey}
+        yKey={yKey}
+        xVariable={xVariable}
+        yVariable={yVariable}
+        settings={settings}
+        onSettingsChange={onSettingsChange}
+        onHasCompletedStep4={onHasCompletedStep4}
+        hasCompletedStep4={hasCompletedStep4}
+        onHasCompletedStep5={onHasCompletedStep5}
+        hasCompletedStep5={hasCompletedStep5}
+        onHasCompletedDistProp={onHasCompletedDistProp}
+        hasCompletedDistProp={hasCompletedDistProp}
+        onHasCompletedStep6={onHasCompletedStep6}
         keynames={keynames}
       />
     </>
