@@ -8,19 +8,10 @@ import {
 } from "../../lib/listOfLineProperties";
 import Paragraph from "../Paragraph";
 
-export default function LineProperties({ settings, onSettingsChange }) {
+export default function LineProperties({ onSettingsChange }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
-
-  function notCompletedLineProperties() {
-    return (
-      settings.lineColor.length === 0 ||
-      settings.lineStyle.length === 0 ||
-      Number(settings.lineWidth) === 0
-    );
-  }
-
   return (
     <form onSubmit={handleSubmit}>
       <Container $centered="center" $gap $margin>
