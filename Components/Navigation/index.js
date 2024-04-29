@@ -27,9 +27,9 @@ export default function Navigation({
 }) {
   function handleDisabledButton() {
     if (currentStep === 1) {
-      return fileObj === null || fileObj === undefined;
+      return !fileObj;
     } else if (currentStep === 2) {
-      return clickedChartType === "";
+      return !clickedChartType;
     } else if (currentStep === 3) {
       return xKey.length === 0 || yKey.length === 0;
     } else if (currentStep === 4) {
@@ -37,16 +37,17 @@ export default function Navigation({
     } else if (currentStep === 5) {
       return settings.titleLabel.length === 0;
     } else if (currentStep === 6) {
-      return (
-        settings.gridXAxis.length === 0 ||
-        settings.gridYAxis.length === 0 ||
-        settings.rangeXAxis.length === 0 ||
-        settings.rangeYAxis.length === 0 ||
-        settings.logXAxis.length === 0 ||
-        settings.logYAxis.length === 0
+      return !(
+        settings.gridXAxis &&
+        settings.gridYAxis &&
+        settings.rangeXAxis &&
+        settings.rangeYAxis &&
+        settings.logXAxis &&
+        settings.logYAxis
       );
     }
   }
+
   return (
     <StepperContainer>
       <nav>
