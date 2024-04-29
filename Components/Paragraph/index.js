@@ -20,6 +20,12 @@ const StyledP = styled.p`
     css`
       font-weight: 600;
     `};
+  ${(props) =>
+    props.$variant === "step-label" &&
+    css`
+      font-weight: 600;
+      font-size: 1.2rem;
+    `};
 
   ${(props) =>
     props.$variant === "border" &&

@@ -25,7 +25,7 @@ export default function StepItem({
         {currentStep < id + 1 ? name : <span>✓</span>}
       </Button>
       <Paragraph
-        $variant="bold"
+        $variant="step-label"
         isDisabled={currentStep !== id && currentStep < id}
       >
         {label}
