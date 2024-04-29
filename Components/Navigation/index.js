@@ -22,12 +22,6 @@ export default function Navigation({
   onAssignVariables,
   xVariable,
   yVariable,
-  onHasCompletedStep4,
-  hasCompletedStep4,
-  onHasCompletedStep5,
-  hasCompletedStep5,
-  onHasCompletedDistProp,
-  hasCompletedDistProp,
   onHasCompletedStep6,
   settings,
   onSettingsChange,
@@ -37,13 +31,23 @@ export default function Navigation({
       return fileObj === null || fileObj === undefined;
     } else if (currentStep === 2) {
       return clickedChartType === "";
+    } else if (currentStep === 3) {
+      return xKey.length === 0 || yKey.length === 0;
     } else if (currentStep === 4) {
       return settings.xLabel.length === 0 || settings.yLabel.length === 0;
     } else if (currentStep === 5) {
       return settings.titleLabel.length === 0;
+    } else if (currentStep === 6) {
+      return (
+        settings.gridXAxis.length === 0 ||
+        settings.gridYAxis.length === 0 ||
+        settings.rangeXAxis.length === 0 ||
+        settings.rangeYAxis.length === 0 ||
+        settings.logXAxis.length === 0 ||
+        settings.logYAxis.length === 0
+      );
     }
   }
-  console.log(currentStep);
   return (
     <StepperContainer>
       <nav>
@@ -73,12 +77,6 @@ export default function Navigation({
                 yVariable={yVariable}
                 settings={settings}
                 onSettingsChange={onSettingsChange}
-                onHasCompletedStep4={onHasCompletedStep4}
-                hasCompletedStep4={hasCompletedStep4}
-                onHasCompletedStep5={onHasCompletedStep5}
-                hasCompletedStep5={hasCompletedStep5}
-                onHasCompletedDistProp={onHasCompletedDistProp}
-                hasCompletedDistProp={hasCompletedDistProp}
                 onHasCompletedStep6={onHasCompletedStep6}
                 keynames={keynames}
                 currentStep={currentStep}
@@ -96,7 +94,7 @@ export default function Navigation({
                     onClick={onNextChange}
                     disabled={handleDisabledButton()}
                   >
-                    {currentStep === arrayOfSteps.length ? "Finish" : "Next"}
+                    {currentStep === arrayOfSteps.length ? "Plot" : "Next"}
                   </Button>
                 )}
               </ButtonContainer>
