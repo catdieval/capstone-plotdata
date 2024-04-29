@@ -23,7 +23,7 @@ export default function LineProperties({ settings, onSettingsChange }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Container $centered="center" $gap>
+      <Container $centered="center" $gap $margin>
         <StyledH3>Line properties</StyledH3>
         <Paragraph>Line color:</Paragraph>
         <DropDownMenu

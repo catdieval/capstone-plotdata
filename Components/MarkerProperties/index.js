@@ -8,24 +8,16 @@ import {
   markerSizeArray,
 } from "../../lib/listOfMarkerProperties";
 
-export default function MarkerProperties({ settings, onSettingsChange }) {
-  function notCompletedMarkerProperties() {
-    return (
-      settings.markerColor.length === 0 ||
-      settings.markerSymbol.length === 0 ||
-      Number(settings.markerSize) === 0
-    );
-  }
-
+export default function MarkerProperties({ onSettingsChange }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
 
   return (
     <>
-      <StyledH3>Marker properties</StyledH3>
-      <form onSubmit={handleSubmit}>
-        <Container $centered="center" $gap>
+      <Container $centered="center" $gap $margin>
+        <StyledH3>Marker properties</StyledH3>
+        <form onSubmit={handleSubmit}>
           <Paragraph>Marker color:</Paragraph>
           <DropDownMenu
             nameString="markerColor"
@@ -44,8 +36,8 @@ export default function MarkerProperties({ settings, onSettingsChange }) {
             onChange={onSettingsChange}
             arrayOfOptions={markerSizeArray}
           />
-        </Container>
-      </form>
+        </form>
+      </Container>
     </>
   );
 }

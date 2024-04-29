@@ -32,7 +32,7 @@ const StyledP = styled.p`
     css`
       border: solid 2px var(--primary-color);
       border-radius: 8px;
-      padding: 10px;
+      padding: 8px;
     `};
 `;
 

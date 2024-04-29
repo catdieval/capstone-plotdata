@@ -4,24 +4,24 @@ import Container from "../Container";
 import { StyledH3 } from "../Heading";
 import Paragraph from "../Paragraph";
 
-export default function BarProperties({ settings, onSettingsChange }) {
+export default function BarProperties({ onSettingsChange }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
 
   return (
     <>
-      <StyledH3>Bar properties</StyledH3>
-      <form onSubmit={handleSubmit}>
-        <Container $centered="center">
+      <Container $centered="center" $margin>
+        <StyledH3>Bar properties</StyledH3>
+        <form onSubmit={handleSubmit}>
           <Paragraph>Bar color:</Paragraph>
           <DropDownMenu
             nameString="barColor"
             onChange={onSettingsChange}
             arrayOfOptions={barColorArray}
           />
-        </Container>
-      </form>
+        </form>
+      </Container>
     </>
   );
 }

@@ -11,21 +11,23 @@ export default function LayoutProperties({ settings, onSettingsChange }) {
 
   return (
     <>
-      <StyledH3>Layout</StyledH3>
-      <form onSubmit={handleSubmit}>
-        <GridProperties
-          settings={settings}
-          onSettingsChange={onSettingsChange}
-        />
-        <RangeProperties
-          settings={settings}
-          onSettingsChange={onSettingsChange}
-        />
-        <LogScaleProperties
-          settings={settings}
-          onSettingsChange={onSettingsChange}
-        />
-      </form>
+      <Container $centered="center" $margin>
+        <StyledH3>Layout</StyledH3>
+        <form onSubmit={handleSubmit}>
+          <GridProperties
+            settings={settings}
+            onSettingsChange={onSettingsChange}
+          />
+          <RangeProperties
+            settings={settings}
+            onSettingsChange={onSettingsChange}
+          />
+          <LogScaleProperties
+            settings={settings}
+            onSettingsChange={onSettingsChange}
+          />
+        </form>
+      </Container>
     </>
   );
 }
