@@ -123,7 +123,6 @@ export default function App({ Component, pageProps }) {
 
       setXVariable(tempXArray);
       setYVariable(tempYArray);
-      alert("Data for the x and y variables are assigned.");
     }
   }
 
@@ -154,6 +153,8 @@ export default function App({ Component, pageProps }) {
   function handleNext() {
     if (currentStep === 1) {
       handleConversion();
+    } else if (currentStep === 3) {
+      handleAssignVariables();
     }
     setCurrentStep((currentStep) => currentStep + 1);
   }

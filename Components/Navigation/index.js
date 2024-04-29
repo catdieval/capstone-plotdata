@@ -37,6 +37,8 @@ export default function Navigation({
       return fileObj === null || fileObj === undefined;
     } else if (currentStep === 2) {
       return clickedChartType === "";
+    } else if (currentStep === 3) {
+      return xKey.length === 0 || yKey.length === 0;
     }
   }
   console.log(currentStep);

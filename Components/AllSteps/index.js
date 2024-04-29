@@ -50,8 +50,7 @@ export default function AllSteps({
     return (
       <ChooseVariables
         keynames={keynames}
-        clickedChartType={clickedChartType}
-        onAssignVariables={onAssignVariables}
+        // onAssignVariables={onAssignVariables}
         onXChange={onXChange}
         onYChange={onYChange}
         xKey={xKey}
