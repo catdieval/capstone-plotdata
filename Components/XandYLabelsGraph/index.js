@@ -25,7 +25,7 @@ export default function XandYLabelsGraph({
     <>
       {xVariable.length > 0 && yVariable.length > 0 && (
         <>
-          <Heading>Step 4: Give labels to axes</Heading>
+          {/* <Heading>Step 4: Give labels to axes</Heading> */}
           <Paragraph>For the x variable you chose:</Paragraph>
           <Paragraph $variant="bold">{xKey}</Paragraph>
           <Paragraph>For the y variable you chose:</Paragraph>

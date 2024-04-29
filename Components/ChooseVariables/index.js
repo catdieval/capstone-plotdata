@@ -31,7 +31,7 @@ export default function ChooseVariables({
     <>
       {clickedChartType.length > 0 && (
         <>
-          <Heading>Step 3: Choose the variables you want to plot</Heading>
+          {/* <Heading>Step 3: Choose the variables you want to plot</Heading> */}
           <form onSubmit={handleSubmit}>
             <Container $centered="center">
               <Paragraph $variant="start">Variable for the x-axis:</Paragraph>

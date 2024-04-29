@@ -15,7 +15,7 @@ export default function UploadData({ fileObj, onUploadFile, onConversion }) {
 
   return (
     <>
-      <Heading>Step 1: Upload a CSV file</Heading>
+      {/* <Heading>Step 1: Upload a CSV file</Heading> */}
       <Card>
         <Paragraph $variant="bold">Requirements:</Paragraph>
         <Paragraph $variant="start">
@@ -35,12 +35,12 @@ export default function UploadData({ fileObj, onUploadFile, onConversion }) {
         <Container $centered="center" $margin>
           <FileUploader onUploadFile={onUploadFile} />
           {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
-          <InputTypeSubmit
+          {/* <InputTypeSubmit
             $nomargin
             value="Next"
             onClick={onConversion}
             disabled={fileObj === null || fileObj === undefined}
-          />
+          /> */}
         </Container>
       </form>
     </>
