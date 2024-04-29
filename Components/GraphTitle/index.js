@@ -21,7 +21,7 @@ export default function GraphTitle({ settings, onSettingsChange }) {
         <Paragraph>Label for the x-axis: {settings.xLabel}</Paragraph>
         <Paragraph>Label for the y-axis: {settings.yLabel}</Paragraph>
         <form onSubmit={handleSubmit}>
-          <Container $centered="center">
+          <Container $centered="center" $margin_bottom>
             <InputTypeText
               idString={"Title"}
               nameString="titleLabel"

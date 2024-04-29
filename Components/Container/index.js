@@ -32,6 +32,7 @@ const Container = styled.section`
       padding: 0;
       gap: ${(props) => (props.$gap ? "10px" : "0")};
       margin: ${(props) => (props.$margin ? "60px 30px" : "0")};
+      margin-bottom: ${(props) => (props.$margin_bottom ? "30px" : "0")};
     `};
 
   ${(props) =>
