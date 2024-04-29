@@ -32,6 +32,11 @@ export default function Navigation({
   settings,
   onSettingsChange,
 }) {
+  function handleDisabledButton() {
+    if (currentStep === 1) {
+      return fileObj === null || fileObj === undefined;
+    }
+  }
   console.log(currentStep);
   return (
     <StepperContainer>
@@ -80,7 +85,11 @@ export default function Navigation({
                   </Button>
                 ) : null}
                 {currentStep === id && (
-                  <Button $variant="next" onClick={onNextChange}>
+                  <Button
+                    $variant="next"
+                    onClick={onNextChange}
+                    disabled={handleDisabledButton()}
+                  >
                     {currentStep === arrayOfSteps.length ? "Finish" : "Next"}
                   </Button>
                 )}

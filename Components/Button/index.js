@@ -77,6 +77,7 @@ export default function Button({
   $variant,
   isActive,
   isDisabled,
+  disabled,
 }) {
   return (
     <StyledButton
@@ -84,6 +85,7 @@ export default function Button({
       $isActive={isActive}
       $isDisabled={isDisabled}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </StyledButton>
