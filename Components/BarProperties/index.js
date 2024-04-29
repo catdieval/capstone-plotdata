@@ -1,15 +1,10 @@
 import { barColorArray } from "../../lib/listOfBarProperties.js";
 import DropDownMenu from "../DropDownMenu";
-import InputTypeSubmit from "../InputTypeSubmit";
 import Container from "../Container";
 import { StyledH3 } from "../Heading";
 import Paragraph from "../Paragraph";
 
-export default function BarProperties({
-  onHasCompletedDistProp,
-  settings,
-  onSettingsChange,
-}) {
+export default function BarProperties({ settings, onSettingsChange }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -28,11 +23,6 @@ export default function BarProperties({
             nameString="barColor"
             onChange={onSettingsChange}
             arrayOfOptions={barColorArray}
-          />
-          <InputTypeSubmit
-            value="Next"
-            onClick={onHasCompletedDistProp}
-            disabled={notCompletedBarProperties()}
           />
         </Container>
       </form>
