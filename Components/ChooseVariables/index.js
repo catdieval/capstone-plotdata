@@ -1,13 +1,10 @@
 import Heading from "../Heading";
 import Container from "../Container";
 import Paragraph from "../Paragraph";
-import InputTypeSubmit from "../InputTypeSubmit";
 import DropDownMenu from "../DropDownMenu";
 
 export default function ChooseVariables({
   keynames,
-  clickedChartType,
-  onAssignVariables,
   onXChange,
   onYChange,
   xKey,
@@ -23,38 +20,24 @@ export default function ChooseVariables({
     );
   }
 
-  function notCompletedXAndYKeys() {
-    return xKey.length === 0 || yKey.length === 0;
-  }
-
   return (
     <>
-      {/* {clickedChartType.length > 0 && ( */}
-      <>
-        {/* <Heading>Step 3: Choose the variables you want to plot</Heading> */}
-        <form onSubmit={handleSubmit}>
-          <Container $centered="center">
-            <Paragraph $variant="start">Variable for the x-axis:</Paragraph>
-            <DropDownMenu
-              idString="x:"
-              onChange={onXChange}
-              arrayOfOptions={keynames}
-            />
-            <Paragraph $variant="start">Variable for the y-axis:</Paragraph>
-            <DropDownMenu
-              idString="y:"
-              onChange={onYChange}
-              arrayOfOptions={keynames}
-            />
-            {/* <InputTypeSubmit
-              value="Next"
-              onClick={onAssignVariables}
-              disabled={notCompletedXAndYKeys()}
-            /> */}
-          </Container>
-        </form>
-      </>
-      {/* )} */}
+      <form onSubmit={handleSubmit}>
+        <Container $centered="center">
+          <Paragraph $variant="start">Variable for the x-axis:</Paragraph>
+          <DropDownMenu
+            idString="x:"
+            onChange={onXChange}
+            arrayOfOptions={keynames}
+          />
+          <Paragraph $variant="start">Variable for the y-axis:</Paragraph>
+          <DropDownMenu
+            idString="y:"
+            onChange={onYChange}
+            arrayOfOptions={keynames}
+          />
+        </Container>
+      </form>
     </>
   );
 }
