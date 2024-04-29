@@ -44,7 +44,6 @@ export default function AllSteps({
       <ListOfCharts
         onSelectChartType={onSelectChartType}
         clickedChartType={clickedChartType}
-        keynames={keynames}
       />
     );
   } else if (currentStep === 3 && id === 3) {

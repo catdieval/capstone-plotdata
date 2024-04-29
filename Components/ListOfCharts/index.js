@@ -12,7 +12,7 @@ export default function ListOfCharts({
     <>
       {/* {keynames.length > 0 && ( */}
       <>
-        <Heading>Step 2: Select the type of chart</Heading>
+        {/* <Heading>Step 2: Select the type of chart</Heading> */}
         <Container $wrap="wrap">
           {chartArray.map(({ name, icon }) => {
             return (

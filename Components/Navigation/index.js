@@ -35,6 +35,8 @@ export default function Navigation({
   function handleDisabledButton() {
     if (currentStep === 1) {
       return fileObj === null || fileObj === undefined;
+    } else if (currentStep === 2) {
+      return clickedChartType === "";
     }
   }
   console.log(currentStep);
