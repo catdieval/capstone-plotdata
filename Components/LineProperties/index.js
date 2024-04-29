@@ -6,14 +6,9 @@ import {
   lineStyleArray,
   lineWidthArray,
 } from "../../lib/listOfLineProperties";
-import InputTypeSubmit from "../InputTypeSubmit";
 import Paragraph from "../Paragraph";
 
-export default function LineProperties({
-  onHasCompletedDistProp,
-  settings,
-  onSettingsChange,
-}) {
+export default function LineProperties({ settings, onSettingsChange }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -47,11 +42,6 @@ export default function LineProperties({
           nameString="lineWidth"
           onChange={onSettingsChange}
           arrayOfOptions={lineWidthArray}
-        />
-        <InputTypeSubmit
-          value="Next"
-          onClick={onHasCompletedDistProp}
-          disabled={notCompletedLineProperties()}
         />
       </Container>
     </form>
