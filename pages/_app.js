@@ -130,20 +130,6 @@ export default function App({ Component, pageProps }) {
     setSettings({ ...settings, [event.target.name]: event.target.value });
   }
 
-  function handleHasCompletedStep4() {
-    setHasCompletedStep4(true);
-  }
-
-  function handleHasCompletedStep5() {
-    alert("Title of the graph is assigned");
-    setHasCompletedStep5(true);
-  }
-
-  function handleHasCompletedDistProp() {
-    alert("Distribution Properties are assigned");
-    setHasCompletedDistProp(true);
-  }
-
   function handleHasCompletedStep6() {
     alert("The Plotting Properties are assigned");
     setHasCompletedStep6(true);
@@ -154,6 +140,8 @@ export default function App({ Component, pageProps }) {
       handleConversion();
     } else if (currentStep === 3) {
       handleAssignVariables();
+    } else if (currentStep === 6) {
+      handleHasCompletedStep6();
     }
     setCurrentStep((currentStep) => currentStep + 1);
   }
@@ -184,12 +172,6 @@ export default function App({ Component, pageProps }) {
         onAssignVariables={handleAssignVariables}
         settings={settings}
         onSettingsChange={handleSettingsChange}
-        hasCompletedStep4={hasCompletedStep4}
-        onHasCompletedStep4={handleHasCompletedStep4}
-        hasCompletedStep5={hasCompletedStep5}
-        onHasCompletedStep5={handleHasCompletedStep5}
-        hasCompletedDistProp={hasCompletedDistProp}
-        onHasCompletedDistProp={handleHasCompletedDistProp}
         hasCompletedStep6={hasCompletedStep6}
         onHasCompletedStep6={handleHasCompletedStep6}
         onNextChange={handleNext}
