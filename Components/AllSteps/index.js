@@ -20,10 +20,6 @@ export default function AllSteps({
   yKey,
   xVariable,
   yVariable,
-  hasCompletedStep5,
-  onHasCompletedDistProp,
-  hasCompletedDistProp,
-  onHasCompletedStep6,
   settings,
   onSettingsChange,
 }) {
@@ -71,10 +67,6 @@ export default function AllSteps({
     return (
       <PlottingProperties
         clickedChartType={clickedChartType}
-        hasCompletedStep5={hasCompletedStep5}
-        onHasCompletedDistProp={onHasCompletedDistProp}
-        hasCompletedDistProp={hasCompletedDistProp}
-        onHasCompletedStep6={onHasCompletedStep6}
         settings={settings}
         onSettingsChange={onSettingsChange}
       />

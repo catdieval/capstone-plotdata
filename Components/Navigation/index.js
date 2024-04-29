@@ -22,7 +22,6 @@ export default function Navigation({
   onAssignVariables,
   xVariable,
   yVariable,
-  onHasCompletedStep6,
   settings,
   onSettingsChange,
 }) {
@@ -77,7 +76,6 @@ export default function Navigation({
                 yVariable={yVariable}
                 settings={settings}
                 onSettingsChange={onSettingsChange}
-                onHasCompletedStep6={onHasCompletedStep6}
                 keynames={keynames}
                 currentStep={currentStep}
                 id={id}
