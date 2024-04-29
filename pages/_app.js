@@ -56,13 +56,6 @@ export default function App({ Component, pageProps }) {
   };
 
   const [settings, setSettings] = useState(initialSettings);
-
-  const [hasCompletedStep4, setHasCompletedStep4] = useState(false);
-
-  const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
-
-  const [hasCompletedDistProp, setHasCompletedDistProp] = useState(false);
-
   const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
 
