@@ -9,10 +9,6 @@ export default function BarProperties({ settings, onSettingsChange }) {
     event.preventDefault();
   }
 
-  function notCompletedBarProperties() {
-    return settings.barColor.length === 0;
-  }
-
   return (
     <>
       <StyledH3>Bar properties</StyledH3>
