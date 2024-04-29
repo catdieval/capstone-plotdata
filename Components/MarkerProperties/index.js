@@ -1,7 +1,6 @@
 import { StyledH3 } from "../Heading";
 import Container from "../Container";
 import Paragraph from "../Paragraph";
-import InputTypeSubmit from "../InputTypeSubmit";
 import DropDownMenu from "../DropDownMenu";
 import {
   markerColorArray,
@@ -9,11 +8,7 @@ import {
   markerSizeArray,
 } from "../../lib/listOfMarkerProperties";
 
-export default function MarkerProperties({
-  onHasCompletedDistProp,
-  settings,
-  onSettingsChange,
-}) {
+export default function MarkerProperties({ settings, onSettingsChange }) {
   function notCompletedMarkerProperties() {
     return (
       settings.markerColor.length === 0 ||
@@ -48,11 +43,6 @@ export default function MarkerProperties({
             nameString="markerSize"
             onChange={onSettingsChange}
             arrayOfOptions={markerSizeArray}
-          />
-          <InputTypeSubmit
-            value="Next"
-            onClick={onHasCompletedDistProp}
-            disabled={notCompletedMarkerProperties()}
           />
         </Container>
       </form>
