@@ -131,7 +131,6 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleHasCompletedStep4() {
-    alert("Labels for the x-axis and the y-axis of the graph are assigned");
     setHasCompletedStep4(true);
   }
 
