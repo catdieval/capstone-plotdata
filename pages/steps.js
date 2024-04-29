@@ -1,4 +1,5 @@
 import Navigation from "@/Components/Navigation";
+import Plotting from "@/Components/Plotting";
 
 export default function AllSteps({
   onBackChange,
@@ -18,9 +19,7 @@ export default function AllSteps({
   onAssignVariables,
   xVariable,
   yVariable,
-  onHasCompletedDistProp,
-  hasCompletedDistProp,
-  onHasCompletedStep6,
+  hasCompletedStep6,
   settings,
   onSettingsChange,
 }) {
@@ -45,10 +44,15 @@ export default function AllSteps({
         yVariable={yVariable}
         settings={settings}
         onSettingsChange={onSettingsChange}
-        onHasCompletedDistProp={onHasCompletedDistProp}
-        hasCompletedDistProp={hasCompletedDistProp}
-        onHasCompletedStep6={onHasCompletedStep6}
         keynames={keynames}
+      />
+      <Plotting
+        clickedChartType={clickedChartType}
+        xVariable={xVariable}
+        yVariable={yVariable}
+        settings={settings}
+        hasCompletedStep6={hasCompletedStep6}
+        onSettingsChange={onSettingsChange}
       />
     </>
   );
