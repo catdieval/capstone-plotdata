@@ -1,11 +1,9 @@
-import Heading from "../Heading";
 import { Card } from "../Card/card.styled";
 import Paragraph from "../Paragraph";
 import Container from "../Container";
 import FileUploader from "../FileUploader";
-import InputTypeSubmit from "../InputTypeSubmit";
 
-export default function UploadData({ fileObj, onUploadFile, onConversion }) {
+export default function UploadData({ fileObj, onUploadFile }) {
   // Name of file
   const fileName = fileObj?.name;
 
@@ -15,7 +13,6 @@ export default function UploadData({ fileObj, onUploadFile, onConversion }) {
 
   return (
     <>
-      {/* <Heading>Step 1: Upload a CSV file</Heading> */}
       <Card>
         <Paragraph $variant="bold">Requirements:</Paragraph>
         <Paragraph $variant="start">
@@ -32,15 +29,9 @@ export default function UploadData({ fileObj, onUploadFile, onConversion }) {
       </Card>
 
       <form onSubmit={handleSubmit}>
-        <Container $centered="center" $margin>
+        <Container $centered="center">
           <FileUploader onUploadFile={onUploadFile} />
           {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
-          {/* <InputTypeSubmit
-            $nomargin
-            value="Next"
-            onClick={onConversion}
-            disabled={fileObj === null || fileObj === undefined}
-          /> */}
         </Container>
       </form>
     </>
