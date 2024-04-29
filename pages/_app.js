@@ -83,7 +83,6 @@ export default function App({ Component, pageProps }) {
 
       setKeynames(keys);
       setVals(correctValues);
-      alert("File processed successfully");
     };
 
     reader.readAsText(fileObj);
@@ -153,6 +152,9 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleNext() {
+    if (currentStep === 1) {
+      handleConversion();
+    }
     setCurrentStep((currentStep) => currentStep + 1);
   }
   function handleBack() {
