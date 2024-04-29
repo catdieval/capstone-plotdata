@@ -18,10 +18,6 @@ export default function AllSteps({
   onAssignVariables,
   xVariable,
   yVariable,
-  onHasCompletedStep4,
-  hasCompletedStep4,
-  onHasCompletedStep5,
-  hasCompletedStep5,
   onHasCompletedDistProp,
   hasCompletedDistProp,
   onHasCompletedStep6,
@@ -49,10 +45,6 @@ export default function AllSteps({
         yVariable={yVariable}
         settings={settings}
         onSettingsChange={onSettingsChange}
-        onHasCompletedStep4={onHasCompletedStep4}
-        hasCompletedStep4={hasCompletedStep4}
-        onHasCompletedStep5={onHasCompletedStep5}
-        hasCompletedStep5={hasCompletedStep5}
         onHasCompletedDistProp={onHasCompletedDistProp}
         hasCompletedDistProp={hasCompletedDistProp}
         onHasCompletedStep6={onHasCompletedStep6}

@@ -39,6 +39,8 @@ export default function Navigation({
       return clickedChartType === "";
     } else if (currentStep === 4) {
       return settings.xLabel.length === 0 || settings.yLabel.length === 0;
+    } else if (currentStep === 5) {
+      return settings.titleLabel.length === 0;
     }
   }
   console.log(currentStep);

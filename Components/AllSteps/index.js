@@ -18,12 +18,8 @@ export default function AllSteps({
   onYChange,
   xKey,
   yKey,
-  onAssignVariables,
   xVariable,
   yVariable,
-  onHasCompletedStep4,
-  hasCompletedStep4,
-  onHasCompletedStep5,
   hasCompletedStep5,
   onHasCompletedDistProp,
   hasCompletedDistProp,
@@ -50,7 +46,6 @@ export default function AllSteps({
     return (
       <ChooseVariables
         keynames={keynames}
-        // onAssignVariables={onAssignVariables}
         onXChange={onXChange}
         onYChange={onYChange}
         xKey={xKey}
@@ -66,17 +61,11 @@ export default function AllSteps({
         yVariable={yVariable}
         settings={settings}
         onSettingsChange={onSettingsChange}
-        onHasCompletedStep4={onHasCompletedStep4}
       />
     );
   } else if (currentStep === 5 && id === 5) {
     return (
-      <GraphTitle
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-        hasCompletedStep4={hasCompletedStep4}
-        onHasCompletedStep5={onHasCompletedStep5}
-      />
+      <GraphTitle settings={settings} onSettingsChange={onSettingsChange} />
     );
   } else if (currentStep === 6 && id === 6) {
     return (
