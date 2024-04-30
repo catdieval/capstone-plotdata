@@ -18,6 +18,7 @@
     "convert-string-to-number": "^1.0.3",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.8",
+    "mongoose": "^8.3.3",
     "next": "13.4.8",
     "plotly.js": "^2.30.0",
     "react": "18.2.0",
