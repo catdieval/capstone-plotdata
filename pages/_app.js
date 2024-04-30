@@ -136,11 +136,12 @@ export default function App({ Component, pageProps }) {
     } else if (currentStep === 6) {
       handleHasCompletedStep6();
     }
-    setCurrentStep((currentStep) => currentStep + 1);
+    setCurrentStep((step) => step + 1);
   }
   function handleBack() {
-    setCurrentStep((currentStep) => currentStep - 1);
+    setCurrentStep((step) => step - 1);
   }
+
   function handleStepChange(step) {
     setCurrentStep(step);
   }
