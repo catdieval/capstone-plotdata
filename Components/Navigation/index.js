@@ -1,6 +1,10 @@
 import StepItem from "../StepItem";
 import Button from "../Button";
-import { ButtonContainer, StepperContainer } from "./styledNavigation";
+import {
+  ButtonContainer,
+  StepperContainer,
+  StyledList,
+} from "./styledNavigation";
 import { arrayOfSteps } from "../../lib/arrayOfSteps";
 import AllSteps from "../AllSteps";
 
@@ -53,7 +57,7 @@ export default function Navigation({
       <nav>
         {arrayOfSteps.map(({ id, label }) => {
           return (
-            <>
+            <StyledList key={id}>
               <StepItem
                 key={id}
                 label={label}
@@ -97,7 +101,7 @@ export default function Navigation({
                   </Button>
                 )}
               </ButtonContainer>
-            </>
+            </StyledList>
           );
         })}
       </nav>

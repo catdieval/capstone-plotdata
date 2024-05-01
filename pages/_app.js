@@ -141,7 +141,6 @@ export default function App({ Component, pageProps }) {
   function handleBack() {
     setCurrentStep((step) => step - 1);
   }
-
   function handleStepChange(step) {
     setCurrentStep(step);
   }

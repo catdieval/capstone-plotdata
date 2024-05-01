@@ -16,3 +16,7 @@ export const StepperContainer = styled.section`
   justify-content: center;
   margin-left: 0.3rem;
 `;
+
+export const StyledList = styled.li`
+  list-style-type: none;
+`;
