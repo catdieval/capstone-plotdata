@@ -17,6 +17,7 @@ export default function InputTypeNumber({
         name={nameString}
         placeholder={placeholderString}
         step={0.01}
+        required
       />
     </NumberInput>
   );
