@@ -54,7 +54,14 @@ export default function Plotting({
     ticks: "outside",
     showgrid: settings.gridXAxis === "true",
     griddash: settings.gridLineStyleXAxis,
-    autorange: settings.rangeXAxis,
+    autorange:
+      settings.rangeXAxis === "reversed"
+        ? "reversed"
+        : settings.rangeXAxis === "true"
+        ? true
+        : settings.rangeXAxis === "min max"
+        ? false
+        : null,
     range:
       settings.rangeXAxis === "min max"
         ? [settings.minXAxis, settings.maxXAxis]
@@ -67,7 +74,14 @@ export default function Plotting({
     ticks: "outside",
     showgrid: settings.gridYAxis === "true",
     griddash: settings.gridLineStyleYAxis,
-    autorange: settings.rangeYAxis,
+    autorange:
+      settings.rangeYAxis === "reversed"
+        ? "reversed"
+        : settings.rangeYAxis === "true"
+        ? true
+        : settings.rangeYAxis === "min max"
+        ? false
+        : null,
     range:
       settings.rangeYAxis === "min max"
         ? [settings.minYAxis, settings.maxYAxis]
@@ -93,28 +107,7 @@ export default function Plotting({
               data={[dataOptions]}
               layout={{
                 title: { text: settings.titleLabel },
-                /*
-                xaxis: {
-                  title: { text: settings.xLabel },
-                  showline: true,
-                  ticks: "outside",
-                  showgrid: settings.gridXAxis === "true",
-                  griddash: settings.gridLineStyleXAxis,
-                  autorange: settings.rangeXAxis,
-                  range: [settings.minXAxis, settings.maxXAxis],
-                  type: settings.logXAxis,
-                }, */
                 xaxis: xAxisOptions,
-                /*
-                yaxis: {
-                  title: { text: settings.yLabel },
-                  ticks: "outside",
-                  showgrid: settings.gridYAxis === "true",
-                  griddash: settings.gridLineStyleYAxis,
-                  autorange: settings.rangeYAxis,
-                  range: [settings.minYAxis, settings.maxYAxis],
-                  type: settings.logYAxis,
-                }, */
                 yaxis: yAxisOptions,
                 width: 600,
                 height: 500,
