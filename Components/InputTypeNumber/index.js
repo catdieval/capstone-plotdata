@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export default function InputTypeNumber({
   idString,
-  valueString,
   onChange,
   labelString,
   nameString,
@@ -14,7 +13,6 @@ export default function InputTypeNumber({
       <Input
         type="number"
         id={idString}
-        value={valueString}
         onChange={onChange}
         name={nameString}
         placeholder={placeholderString}
