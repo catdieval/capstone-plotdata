@@ -91,7 +91,6 @@ export default function HomePage({
         hasCompletedStep5={hasCompletedStep5}
         hasCompletedStep6={hasCompletedStep6}
         settings={settings}
-        onSettingsChange={onSettingsChange}
       />
     </div>
   );
