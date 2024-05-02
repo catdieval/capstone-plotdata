@@ -48,6 +48,33 @@ export default function Plotting({
         : "",
   };
 
+  const xAxisOptions = {
+    title: { text: settings.xLabel },
+    showline: true,
+    ticks: "outside",
+    showgrid: settings.gridXAxis === "true",
+    griddash: settings.gridLineStyleXAxis,
+    autorange: settings.rangeXAxis,
+    range:
+      settings.rangeXAxis === "min max"
+        ? [settings.minXAxis, settings.maxXAxis]
+        : null,
+    type: settings.logXAxis,
+  };
+
+  const yAxisOptions = {
+    title: { text: settings.yLabel },
+    ticks: "outside",
+    showgrid: settings.gridYAxis === "true",
+    griddash: settings.gridLineStyleYAxis,
+    autorange: settings.rangeYAxis,
+    range:
+      settings.rangeYAxis === "min max"
+        ? [settings.minYAxis, settings.maxYAxis]
+        : null,
+    type: settings.logYAxis,
+  };
+
   return (
     <>
       {chartIndex != -1 &&
@@ -66,6 +93,7 @@ export default function Plotting({
               data={[dataOptions]}
               layout={{
                 title: { text: settings.titleLabel },
+                /*
                 xaxis: {
                   title: { text: settings.xLabel },
                   showline: true,
@@ -75,7 +103,9 @@ export default function Plotting({
                   autorange: settings.rangeXAxis,
                   range: [settings.minXAxis, settings.maxXAxis],
                   type: settings.logXAxis,
-                },
+                }, */
+                xaxis: xAxisOptions,
+                /*
                 yaxis: {
                   title: { text: settings.yLabel },
                   ticks: "outside",
@@ -84,7 +114,8 @@ export default function Plotting({
                   autorange: settings.rangeYAxis,
                   range: [settings.minYAxis, settings.maxYAxis],
                   type: settings.logYAxis,
-                },
+                }, */
+                yaxis: yAxisOptions,
                 width: 600,
                 height: 500,
               }}
