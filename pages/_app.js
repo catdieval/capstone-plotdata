@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }) {
     barColor: "",
     lineColor: "",
     lineStyle: "",
-    lineWidth: 0,
+    lineWidth: 1,
     markerColor: "",
     markerSymbol: "",
     markerSize: 0,
