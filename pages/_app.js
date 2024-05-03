@@ -149,7 +149,6 @@ export default function App({ Component, pageProps }) {
   function trackSteps(step) {
     setClickedSteps([...clickedSteps, step]);
   }
-  console.log(clickedSteps);
   return (
     <Layout>
       <GlobalStyle />
