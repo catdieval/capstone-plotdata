@@ -14,18 +14,24 @@ export default function StepItem({
   onStepChange,
   id,
   clickedSteps,
+  currentStep,
 }) {
+  function disableStepperButton() {
+    if (currentStep === id) {
+      return;
+    } else return !clickedSteps.includes(id);
+  }
   return (
     <ItemContainer>
       <Button
         $variant="circle"
         onClick={onStepChange}
-        isDisabled={!clickedSteps.includes(id)}
-        disabled={!clickedSteps.includes(id)}
+        isDisabled={disableStepperButton()}
+        disabled={disableStepperButton()}
       >
         {!clickedSteps.includes(id) ? name : <span>✓</span>}
       </Button>
-      <Paragraph $variant="step-label" isDisabled={!clickedSteps.includes(id)}>
+      <Paragraph $variant="step-label" isDisabled={disableStepperButton()}>
         {label}
       </Paragraph>
     </ItemContainer>
