@@ -1,24 +1,10 @@
 import Paragraph from "../Paragraph";
 import InputTypeText from "../InputTypeText";
-import Heading from "../Heading";
-import InputTypeSubmit from "../InputTypeSubmit";
 import Container from "../Container";
 
-export default function XandYLabelsGraph({
-  xKey,
-  yKey,
-  xVariable,
-  yVariable,
-  onHasCompletedStep4,
-  settings,
-  onSettingsChange,
-}) {
+export default function XandYLabelsGraph({ xKey, yKey, onSettingsChange }) {
   function handleSubmit(event) {
     event.preventDefault();
-  }
-
-  function notCompletedXAndYLabels() {
-    return settings.xLabel.length === 0 || settings.yLabel.length === 0;
   }
 
   return (
