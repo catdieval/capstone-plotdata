@@ -4,6 +4,7 @@ import {
   ButtonContainer,
   StepperContainer,
   StyledList,
+  SingleStepContainer,
 } from "./styledNavigation";
 import { arrayOfSteps } from "../../lib/arrayOfSteps";
 import AllSteps from "../AllSteps";
@@ -58,14 +59,17 @@ export default function Navigation({
         {arrayOfSteps.map(({ id, label }) => {
           return (
             <StyledList key={id}>
-              <StepItem
-                key={id}
-                label={label}
-                name={id}
-                id={id}
-                currentStep={currentStep}
-                onStepChange={() => onStepChange(id)}
-              />
+              <SingleStepContainer>
+                <StepItem
+                  key={id}
+                  label={label}
+                  name={id}
+                  id={id}
+                  currentStep={currentStep}
+                  onStepChange={onStepChange}
+                />
+              </SingleStepContainer>
+
               <AllSteps
                 fileObj={fileObj}
                 onUploadFile={onUploadFile}
