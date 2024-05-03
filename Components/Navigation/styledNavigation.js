@@ -18,7 +18,6 @@ export const StepperContainer = styled.section`
 
 export const SingleStepContainer = styled.section`
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 `;

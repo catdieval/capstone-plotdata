@@ -5,7 +5,6 @@ import { useState } from "react";
 
 const ItemContainer = styled.section`
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 0.8rem;
 `;
