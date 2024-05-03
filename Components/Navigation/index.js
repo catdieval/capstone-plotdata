@@ -29,6 +29,7 @@ export default function Navigation({
   yVariable,
   settings,
   onSettingsChange,
+  clickedSteps,
 }) {
   function handleDisabledButton() {
     if (currentStep === 1) {
@@ -66,7 +67,8 @@ export default function Navigation({
                   name={id}
                   id={id}
                   currentStep={currentStep}
-                  onStepChange={onStepChange}
+                  onStepChange={() => onStepChange(id)}
+                  clickedSteps={clickedSteps}
                 />
               </SingleStepContainer>
 

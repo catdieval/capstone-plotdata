@@ -22,6 +22,7 @@ export default function AllSteps({
   hasCompletedStep6,
   settings,
   onSettingsChange,
+  clickedSteps,
 }) {
   return (
     <>
@@ -45,6 +46,7 @@ export default function AllSteps({
         settings={settings}
         onSettingsChange={onSettingsChange}
         keynames={keynames}
+        clickedSteps={clickedSteps}
       />
       <Plotting
         clickedChartType={clickedChartType}
