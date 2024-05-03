@@ -1,6 +1,7 @@
 import Button from "../Button";
 import styled from "styled-components";
 import Paragraph from "../Paragraph";
+import { useState } from "react";
 
 const ItemContainer = styled.section`
   display: flex;
@@ -8,6 +9,7 @@ const ItemContainer = styled.section`
   align-items: center;
   gap: 0.8rem;
 `;
+
 export default function StepItem({
   name,
   label,
@@ -15,18 +17,25 @@ export default function StepItem({
   currentStep,
   id,
 }) {
+  const [clicked, setClicked] = useState(false);
+
+  function handleClick() {
+    setClicked(true);
+    onStepChange(id);
+  }
   return (
     <ItemContainer>
       <Button
         $variant="circle"
-        onClick={onStepChange}
-        isDisabled={currentStep !== id && currentStep < id}
+        onClick={handleClick}
+        isDisabled={!clicked && currentStep !== id && currentStep < id}
+        disabled={!clicked && currentStep !== id && currentStep < id}
       >
         {currentStep < id + 1 ? name : <span>✓</span>}
       </Button>
       <Paragraph
         $variant="step-label"
-        isDisabled={currentStep !== id && currentStep < id}
+        isDisabled={!clicked && currentStep !== id && currentStep < id}
       >
         {label}
       </Paragraph>
