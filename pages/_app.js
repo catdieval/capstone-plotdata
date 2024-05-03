@@ -136,6 +136,7 @@ export default function App({ Component, pageProps }) {
     } else if (currentStep === 6) {
       handleHasCompletedStep6();
     }
+    trackSteps(currentStep);
     setCurrentStep((step) => step + 1);
   }
   function handleBack() {
@@ -144,7 +145,11 @@ export default function App({ Component, pageProps }) {
   function handleStepChange(step) {
     setCurrentStep(step);
   }
-
+  const [clickedSteps, setClickedSteps] = useState([]);
+  function trackSteps(step) {
+    setClickedSteps([...clickedSteps, step]);
+  }
+  console.log(clickedSteps);
   return (
     <Layout>
       <GlobalStyle />
@@ -171,6 +176,7 @@ export default function App({ Component, pageProps }) {
         onBackChange={handleBack}
         onStepChange={handleStepChange}
         currentStep={currentStep}
+        clickedSteps={clickedSteps}
       />
     </Layout>
   );
