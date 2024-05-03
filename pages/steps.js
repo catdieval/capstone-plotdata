@@ -1,5 +1,5 @@
-import Navigation from "@/Components/Navigation";
-import Plotting from "@/Components/Plotting";
+import Navigation from "../Components/Navigation";
+import Plotting from "../Components/Plotting";
 
 export default function AllSteps({
   onBackChange,
