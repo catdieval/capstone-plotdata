@@ -56,8 +56,12 @@ export default function App({ Component, pageProps }) {
   };
 
   const [settings, setSettings] = useState(initialSettings);
+
   const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
+
   const [currentStep, setCurrentStep] = useState(1);
+
+  const [clickedSteps, setClickedSteps] = useState([]);
 
   function handleUploadFile(file) {
     setFileObj(file);
@@ -139,13 +143,15 @@ export default function App({ Component, pageProps }) {
     trackSteps(currentStep);
     setCurrentStep((step) => step + 1);
   }
+
   function handleBack() {
     setCurrentStep((step) => step - 1);
   }
+
   function handleStepChange(step) {
     setCurrentStep(step);
   }
-  const [clickedSteps, setClickedSteps] = useState([]);
+
   function trackSteps(step) {
     setClickedSteps([...clickedSteps, step]);
   }
