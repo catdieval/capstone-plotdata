@@ -11,11 +11,10 @@ export default function PlotList() {
   if (!data) {
     return;
   }
-
   return (
     <>
       <Heading>Your Plots:</Heading>
-      <ul></ul>
+      <h2>{data.clickedChartType}</h2>
     </>
   );
 }
