@@ -46,6 +46,12 @@ export default function ChooseVariables({
                 onChange={onYChange}
                 arrayOfOptions={keyNames}
               />
+              {(xKey != "" || yKey != "") && (
+                <Paragraph $variant="red">
+                  Attention! if you change again the variable for an axis, then
+                  you must click on the button below to update the chart.
+                </Paragraph>
+              )}
               <InputTypeSubmit
                 value="Assign variables"
                 onClick={onAssignVariables}
