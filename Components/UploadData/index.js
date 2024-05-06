@@ -50,7 +50,7 @@ export default function UploadData({
               )}
               <InputTypeSubmit
                 $nomargin
-                value="Next"
+                value="Read and processa data"
                 onClick={onConversion}
                 disabled={fileObject === null || fileObject === undefined}
               />
