@@ -60,6 +60,7 @@ export default function App({ Component, pageProps }) {
   const [hasCompletedAllSteps, setHasCompletedAllSteps] = useState(false);
 
   const [currentStep, setCurrentStep] = useState(1);
+
   //State to store the clicked steps in an array when clicking on the next button
   const [clickedSteps, setClickedSteps] = useState([]);
 
