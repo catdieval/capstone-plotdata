@@ -91,7 +91,7 @@ export default function Navigation({
                 onSettingsChange={onSettingsChange}
               />
               <ButtonContainer>
-                {/* The currentStep > 1 && currentStep === id is used to show the "Back" button only when the user has reached Step 2 to Step 6 and when currentStep === id.
+                {/* The currentStep > 1 && currentStep === id condition is used to show the "Back" button only when the user has reached Step 2 to Step 6 and when currentStep === id.
                  */}
                 {currentStep > 1 && currentStep === id ? (
                   <Button $variant="back" onClick={onBack}>
