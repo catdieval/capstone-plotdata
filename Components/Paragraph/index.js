@@ -36,9 +36,9 @@ const StyledP = styled.p`
     `};
 `;
 
-export default function Paragraph({ children, $variant, isDisabled }) {
+export default function Paragraph({ children, $variant, $isDisabled }) {
   return (
-    <StyledP $variant={$variant} $isDisabled={isDisabled}>
+    <StyledP $variant={$variant} $isDisabled={$isDisabled}>
       {children}
     </StyledP>
   );

@@ -31,7 +31,7 @@ export default function StepItem({
       >
         {!clickedSteps.includes(id) ? name : <span>✓</span>}
       </Button>
-      <Paragraph $variant="step-label" isDisabled={disableStepperButton()}>
+      <Paragraph $variant="step-label" $isDisabled={disableStepperButton()}>
         {label}
       </Paragraph>
     </ItemContainer>
