@@ -51,7 +51,7 @@ export default function XandYLabelsGraph({
               />
 
               <InputTypeSubmit
-                value="Next"
+                value="Assign labels for x- and y-axes"
                 onClick={onHasCompletedStep4}
                 disabled={notCompletedXAndYLabels()}
               />
