@@ -84,13 +84,13 @@ export default function Button({
   children,
   onClick,
   $variant,
-  isActive,
+  $isActive,
   disabled,
 }) {
   return (
     <StyledButton
       $variant={$variant}
-      $isActive={isActive}
+      $isActive={$isActive}
       onClick={onClick}
       disabled={disabled}
     >

@@ -16,7 +16,7 @@ export default function ChartItem({
 }) {
   return (
     <Container $direction="column">
-      <Button isActive={clickedChartType === name} onClick={onSelectChartType}>
+      <Button $isActive={clickedChartType === name} onClick={onSelectChartType}>
         {name}
       </Button>
       <ImageContainer>
