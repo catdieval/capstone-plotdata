@@ -96,9 +96,8 @@ export default function Navigation({
                     Back
                   </Button>
                 ) : null}
-                {/* I have used currentStep === id condition to show the next button
-                 only on the current page.
-                */}
+                {/* "The currentStep === id condition is used to show the "Next" button only when the condition is true."
+                 */}
                 {currentStep === id && (
                   <Button
                     $variant="next"
