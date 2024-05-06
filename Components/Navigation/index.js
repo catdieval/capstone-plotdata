@@ -1,5 +1,6 @@
 import StepItem from "../StepItem";
 import Button from "../Button";
+import AllSteps from "../AllSteps";
 import {
   ButtonContainer,
   StepperContainer,
@@ -7,13 +8,13 @@ import {
   SingleStepContainer,
 } from "./styledNavigation";
 import { arrayOfSteps } from "../../lib/arrayOfSteps";
-import AllSteps from "../AllSteps";
 
 export default function Navigation({
   onNext,
   onBack,
   onStepChange,
   currentStep,
+  clickedSteps,
   fileObj,
   onUploadFile,
   onConversion,
@@ -29,8 +30,9 @@ export default function Navigation({
   yVariable,
   settings,
   onSettingsChange,
-  clickedSteps,
 }) {
+  console.log(currentStep);
+
   function handleDisabledButton() {
     if (currentStep === 1) {
       return !fileObj;
@@ -58,6 +60,7 @@ export default function Navigation({
     <StepperContainer>
       <nav>
         {arrayOfSteps.map(({ id, label }) => {
+          console.log("id", id);
           return (
             <StyledList key={id}>
               <SingleStepContainer>
@@ -71,8 +74,10 @@ export default function Navigation({
                   clickedSteps={clickedSteps}
                 />
               </SingleStepContainer>
-
               <AllSteps
+                keynames={keynames}
+                currentStep={currentStep}
+                id={id}
                 fileObj={fileObj}
                 onUploadFile={onUploadFile}
                 onConversion={onConversion}
@@ -87,9 +92,6 @@ export default function Navigation({
                 yVariable={yVariable}
                 settings={settings}
                 onSettingsChange={onSettingsChange}
-                keynames={keynames}
-                currentStep={currentStep}
-                id={id}
               />
               <ButtonContainer>
                 {currentStep > 1 && currentStep === id ? (
@@ -97,6 +99,9 @@ export default function Navigation({
                     Back
                   </Button>
                 ) : null}
+                {/* I have used currentStep === id condition to show the next button
+                 only on the current page.
+                */}
                 {currentStep === id && (
                   <Button
                     $variant="next"
