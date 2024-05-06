@@ -60,7 +60,7 @@ export default function App({ Component, pageProps }) {
   const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
 
   const [currentStep, setCurrentStep] = useState(1);
-
+  //State to store the clicked steps in an array when clicking on the next button
   const [clickedSteps, setClickedSteps] = useState([]);
 
   function handleUploadFile(file) {
@@ -128,7 +128,6 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleHasCompletedStep6() {
-    alert("The Plotting Properties are assigned");
     setHasCompletedStep6(true);
   }
 
@@ -177,8 +176,8 @@ export default function App({ Component, pageProps }) {
         onSettingsChange={handleSettingsChange}
         hasCompletedStep6={hasCompletedStep6}
         onHasCompletedStep6={handleHasCompletedStep6}
-        onNextChange={handleNext}
-        onBackChange={handleBack}
+        onNext={handleNext}
+        onBack={handleBack}
         onStepChange={handleStepChange}
         currentStep={currentStep}
         clickedSteps={clickedSteps}

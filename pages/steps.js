@@ -2,8 +2,8 @@ import Navigation from "../Components/Navigation";
 import Plotting from "../Components/Plotting";
 
 export default function AllSteps({
-  onBackChange,
-  onNextChange,
+  onBack,
+  onNext,
   onStepChange,
   currentStep,
   fileObj,
@@ -27,8 +27,8 @@ export default function AllSteps({
   return (
     <>
       <Navigation
-        onNextChange={onNextChange}
-        onBackChange={onBackChange}
+        onNext={onNext}
+        onBack={onBack}
         onStepChange={onStepChange}
         currentStep={currentStep}
         fileObj={fileObj}

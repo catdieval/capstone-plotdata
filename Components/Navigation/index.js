@@ -10,8 +10,8 @@ import { arrayOfSteps } from "../../lib/arrayOfSteps";
 import AllSteps from "../AllSteps";
 
 export default function Navigation({
-  onNextChange,
-  onBackChange,
+  onNext,
+  onBack,
   onStepChange,
   currentStep,
   fileObj,
@@ -93,14 +93,14 @@ export default function Navigation({
               />
               <ButtonContainer>
                 {currentStep > 1 && currentStep === id ? (
-                  <Button $variant="back" onClick={onBackChange}>
+                  <Button $variant="back" onClick={onBack}>
                     Back
                   </Button>
                 ) : null}
                 {currentStep === id && (
                   <Button
                     $variant="next"
-                    onClick={onNextChange}
+                    onClick={onNext}
                     disabled={handleDisabledButton()}
                   >
                     {currentStep === arrayOfSteps.length ? "Plot" : "Next"}
