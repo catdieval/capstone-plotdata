@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
 
   // Step 1: Upload CSV-file
   // State to store keys from the CSV file
-  const [keynames, setKeynames] = useState([]);
+  const [keyNames, setKeyNames] = useState([]);
 
   // State to store the values
   const [vals, setVals] = useState([]);
@@ -91,7 +91,7 @@ export default function App({ Component, pageProps }) {
       // The output of the convertCSVToArray function needs further processing
       const [keys, ...correctValues] = CorrectArrays(arrayOfObjects);
 
-      setKeynames(keys);
+      setKeyNames(keys);
       setVals(correctValues);
       alert("File processed successfully.");
     };
@@ -169,7 +169,7 @@ export default function App({ Component, pageProps }) {
         {...pageProps}
         hasClickedGetStarted={hasClickedGetStarted}
         onGetStarted={handleGetStarted}
-        keynames={keynames}
+        keyNames={keyNames}
         fileObject={fileObject}
         onUploadFile={handleUploadFile}
         onConversion={handleConversion}
