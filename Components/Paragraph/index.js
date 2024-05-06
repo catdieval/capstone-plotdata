@@ -27,6 +27,13 @@ const StyledP = styled.p`
       border-radius: 8px;
       padding: 10px;
     `};
+
+  ${(props) =>
+    props.$variant === "red" &&
+    css`
+      color: red;
+      margin-bottom: -20px;
+    `};
 `;
 
 export default function Paragraph({ children, $variant }) {
