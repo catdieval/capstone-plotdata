@@ -6,11 +6,11 @@ import GraphTitle from "../GraphTitle";
 import PlottingProperties from "../PlottingProperties";
 
 export default function AllSteps({
+  currentStep,
+  id,
   fileObj,
   onUploadFile,
   onConversion,
-  currentStep,
-  id,
   keynames,
   clickedChartType,
   onSelectChartType,
