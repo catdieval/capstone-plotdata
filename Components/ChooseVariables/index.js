@@ -5,7 +5,7 @@ import InputTypeSubmit from "../InputTypeSubmit";
 import DropDownMenu from "../DropDownMenu";
 
 export default function ChooseVariables({
-  keynames,
+  keyNames,
   clickedChartType,
   onAssignVariables,
   onXChange,
@@ -38,13 +38,13 @@ export default function ChooseVariables({
               <DropDownMenu
                 idString="x:"
                 onChange={onXChange}
-                arrayOfOptions={keynames}
+                arrayOfOptions={keyNames}
               />
               <Paragraph $variant="start">Variable for the y-axis:</Paragraph>
               <DropDownMenu
                 idString="y:"
                 onChange={onYChange}
-                arrayOfOptions={keynames}
+                arrayOfOptions={keyNames}
               />
               <InputTypeSubmit
                 value="Assign variables"
