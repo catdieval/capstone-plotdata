@@ -29,7 +29,6 @@ export default function PlottingProperties({
           onSettingsChange={onSettingsChange}
         />
       )}
-
       <LayoutProperties
         settings={settings}
         onSettingsChange={onSettingsChange}
