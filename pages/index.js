@@ -10,7 +10,7 @@ import PlottingProperties from "../Components/PlottingProperties";
 export default function HomePage({
   hasClickedGetStarted,
   onGetStarted,
-  keynames,
+  keyNames,
   fileObject,
   onUploadFile,
   onConversion,
@@ -45,11 +45,11 @@ export default function HomePage({
       />
       <ListOfCharts
         onSelectChartType={onSelectChartType}
-        keynames={keynames}
+        keyNames={keyNames}
         clickedChartType={clickedChartType}
       />
       <ChooseVariables
-        keynames={keynames}
+        keyNames={keyNames}
         clickedChartType={clickedChartType}
         onAssignVariables={onAssignVariables}
         onXChange={onXChange}
