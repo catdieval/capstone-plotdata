@@ -72,9 +72,9 @@ export default function Navigation({
                 />
               </SingleStepContainer>
               <AllSteps
-                keynames={keynames}
                 currentStep={currentStep}
                 id={id}
+                keynames={keynames}
                 fileObj={fileObj}
                 onUploadFile={onUploadFile}
                 onConversion={onConversion}
