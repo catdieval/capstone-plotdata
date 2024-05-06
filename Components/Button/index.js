@@ -26,6 +26,7 @@ const StyledButton = styled.button`
           opacity: 1;
         }
       }
+
       &:disabled {
         background-color: var(--disabled-color);
       }
@@ -51,6 +52,7 @@ const StyledButton = styled.button`
       cursor: pointer;
       font-size: 1rem;
       font-weight: 700;
+
       &:hover {
         &:not([disabled]) {
           background-color: #00ace6;
