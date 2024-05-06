@@ -47,7 +47,7 @@ export default function ChooseVariables({
                 arrayOfOptions={keynames}
               />
               <InputTypeSubmit
-                value="Next"
+                value="Assign variables"
                 onClick={onAssignVariables}
                 disabled={notCompletedXAndYKeys()}
               />
