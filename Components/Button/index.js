@@ -58,6 +58,7 @@ const StyledButton = styled.button`
           background-color: #00ace6;
         }
       }
+
       &:disabled {
         opacity: 0.5;
       }
