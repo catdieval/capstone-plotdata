@@ -1,7 +1,6 @@
 import Paragraph from "../Paragraph";
 import Container from "../Container";
 import InputTypeText from "../InputTypeText";
-import InputTypeSubmit from "../InputTypeSubmit";
 
 export default function GraphTitle({ settings, onSettingsChange }) {
   function handleSubmit(event) {

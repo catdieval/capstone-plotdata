@@ -1,4 +1,3 @@
-import Heading from "../Heading";
 import Container from "../Container";
 import Paragraph from "../Paragraph";
 import DropDownMenu from "../DropDownMenu";

@@ -30,6 +30,7 @@ const StyledButton = styled.button`
         background-color: var(--disabled-color);
       }
     `};
+
   ${(props) =>
     props.$variant === "back" &&
     css`
@@ -81,14 +82,12 @@ export default function Button({
   onClick,
   $variant,
   isActive,
-  isDisabled,
   disabled,
 }) {
   return (
     <StyledButton
       $variant={$variant}
       $isActive={isActive}
-      $isDisabled={isDisabled}
       onClick={onClick}
       disabled={disabled}
     >
