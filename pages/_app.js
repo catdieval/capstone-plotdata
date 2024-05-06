@@ -140,11 +140,11 @@ export default function App({ Component, pageProps }) {
       handleHasCompletedStep6();
     }
     trackSteps(currentStep);
-    setCurrentStep((step) => step + 1);
+    setCurrentStep(currentStep + 1);
   }
 
   function handleBack() {
-    setCurrentStep((step) => step - 1);
+    setCurrentStep(currentStep - 1);
   }
 
   function handleStepChange(step) {
