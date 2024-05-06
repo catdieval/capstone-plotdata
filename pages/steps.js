@@ -6,6 +6,7 @@ export default function AllSteps({
   onNext,
   onStepChange,
   currentStep,
+  clickedSteps,
   fileObj,
   onUploadFile,
   onConversion,
@@ -22,7 +23,6 @@ export default function AllSteps({
   hasCompletedStep6,
   settings,
   onSettingsChange,
-  clickedSteps,
 }) {
   return (
     <>
