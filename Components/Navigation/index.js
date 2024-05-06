@@ -31,8 +31,6 @@ export default function Navigation({
   settings,
   onSettingsChange,
 }) {
-  console.log(currentStep);
-
   function handleDisabledButton() {
     if (currentStep === 1) {
       return !fileObj;
