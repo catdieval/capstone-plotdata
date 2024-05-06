@@ -16,7 +16,7 @@ export default function StepItem({
   clickedSteps,
   currentStep,
 }) {
-  //In this function I have used an early return for the condition currentStep === id because the active step should be not disabled.
+  //This function has an early return for when the condition currentStep === id is true because the stepper button for the current step should be not disabled.
   function disableStepperButton() {
     if (currentStep === id) {
       return;
