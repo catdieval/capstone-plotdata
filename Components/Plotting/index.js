@@ -64,9 +64,12 @@ export default function Plotting({
         ? false
         : null,
     range:
-      settings.rangeXAxis === "min max"
+      settings.rangeXAxis === "min max" && settings.logXAxis === "linear"
         ? [settings.minXAxis, settings.maxXAxis]
+        : settings.rangeXAxis === "min max" && settings.logXAxis === "log"
+        ? [Math.log10(settings.minXAxis), Math.log10(settings.maxXAxis)]
         : null,
+
     type: settings.logXAxis,
   };
 
@@ -85,8 +88,10 @@ export default function Plotting({
         ? false
         : null,
     range:
-      settings.rangeYAxis === "min max"
+      settings.rangeYAxis === "min max" && settings.logYAxis === "linear"
         ? [settings.minYAxis, settings.maxYAxis]
+        : settings.rangeYAxis === "min max" && settings.logYAxis === "log"
+        ? [Math.log10(settings.minYAxis), Math.log10(settings.maxYAxis)]
         : null,
     type: settings.logYAxis,
   };
