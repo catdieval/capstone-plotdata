@@ -1,3 +1,5 @@
-export default function HomePage({}) {
-  return <div>Place for Homepage</div>;
+import StartPage from "../Components/StartPage";
+
+export default function HomePage() {
+  return <StartPage />;
 }

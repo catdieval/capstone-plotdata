@@ -15,7 +15,7 @@ export default function Navigation({
   onStepChange,
   currentStep,
   clickedSteps,
-  fileObj,
+  fileObject,
   onUploadFile,
   onConversion,
   keynames,
@@ -33,7 +33,7 @@ export default function Navigation({
 }) {
   function handleDisabledButton() {
     if (currentStep === 1) {
-      return !fileObj;
+      return !fileObject;
     } else if (currentStep === 2) {
       return !clickedChartType;
     } else if (currentStep === 3) {
@@ -75,7 +75,7 @@ export default function Navigation({
                 currentStep={currentStep}
                 id={id}
                 keynames={keynames}
-                fileObj={fileObj}
+                fileObject={fileObject}
                 onUploadFile={onUploadFile}
                 onConversion={onConversion}
                 onSelectChartType={onSelectChartType}

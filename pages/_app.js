@@ -5,16 +5,18 @@ import CorrectArrays from "../Components/CorrectArrays";
 import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
 export default function App({ Component, pageProps }) {
-  //Step 1: Upload CSV-file
-  //State to store keys from the CSV file
+  // State to store the status about if the user has clicked on the "Get started" button
+  const [hasClickedGetStarted, setHasClickedGetStarted] = useState(false);
+
+  // Step 1: Upload CSV-file
+  // State to store keys from the CSV file
   const [keynames, setKeynames] = useState([]);
 
-  //State to store the values
+  // State to store the values
   const [vals, setVals] = useState([]);
 
   // State to store the file object
-  //const [fileObj, setFileObj] = useState({});
-  const [fileObj, setFileObj] = useState(null);
+  const [fileObject, setFileObject] = useState(null);
 
   // Step 2: Choose chart type
   // State to store the selected chart type
@@ -65,7 +67,7 @@ export default function App({ Component, pageProps }) {
   const [clickedSteps, setClickedSteps] = useState([]);
 
   function handleUploadFile(file) {
-    setFileObj(file);
+    setFileObject(file);
   }
 
   function handleConversion() {
@@ -83,7 +85,7 @@ export default function App({ Component, pageProps }) {
       setVals(correctValues);
     };
 
-    reader.readAsText(fileObj);
+    reader.readAsText(fileObject);
   }
 
   function handleSelectChartType(name) {
@@ -161,7 +163,7 @@ export default function App({ Component, pageProps }) {
       <Component
         {...pageProps}
         keynames={keynames}
-        fileObj={fileObj}
+        fileObject={fileObject}
         onUploadFile={handleUploadFile}
         onConversion={handleConversion}
         clickedChartType={clickedChartType}

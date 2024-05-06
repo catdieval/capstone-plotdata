@@ -18,7 +18,7 @@ const Container = styled.section`
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 3rem;
+      gap: ${(props) => (props.$gap ? "1rem" : "3rem")};
       margin: 30px;
       padding: 0;
     `};

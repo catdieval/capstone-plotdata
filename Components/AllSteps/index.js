@@ -8,7 +8,7 @@ import PlottingProperties from "../PlottingProperties";
 export default function AllSteps({
   currentStep,
   id,
-  fileObj,
+  fileObject,
   onUploadFile,
   onConversion,
   keynames,
@@ -26,7 +26,7 @@ export default function AllSteps({
   if (currentStep === 1 && id === 1) {
     return (
       <UploadData
-        fileObj={fileObj}
+        fileObject={fileObject}
         onUploadFile={onUploadFile}
         onConversion={onConversion}
       />

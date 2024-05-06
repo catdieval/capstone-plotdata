@@ -15,7 +15,7 @@ const InfoButtonWrapper = styled.div`
   transform: translate(370%, -50%);
 `;
 
-export default function LogScaleProperties({ settings, onSettingsChange }) {
+export default function LogScaleProperties({ onSettingsChange }) {
   return (
     <>
       <TitleWrapper>

@@ -3,9 +3,9 @@ import Paragraph from "../Paragraph";
 import Container from "../Container";
 import FileUploader from "../FileUploader";
 
-export default function UploadData({ fileObj, onUploadFile }) {
+export default function UploadData({ fileObject, onUploadFile }) {
   // Name of file
-  const fileName = fileObj?.name;
+  const fileName = fileObject?.name;
 
   const handleSubmit = (event) => {
     event.preventDefault();

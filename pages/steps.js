@@ -7,7 +7,7 @@ export default function AllSteps({
   onStepChange,
   currentStep,
   clickedSteps,
-  fileObj,
+  fileObject,
   onUploadFile,
   onConversion,
   keynames,
@@ -31,7 +31,7 @@ export default function AllSteps({
         onBack={onBack}
         onStepChange={onStepChange}
         currentStep={currentStep}
-        fileObj={fileObj}
+        fileObject={fileObject}
         onUploadFile={onUploadFile}
         onConversion={onConversion}
         onSelectChartType={onSelectChartType}

@@ -55,7 +55,7 @@ export default function Plotting({
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of
-            the graph.
+            the chart.
           </Paragraph>
           <Card $variant="graph">
             <Plot
