@@ -20,8 +20,6 @@ const StyledSignIn = styled.div`
   display: block;
   float: right;
   text-align: center;
-  top: 5;
-  right: 10;
 `;
 
 export default function Title() {
