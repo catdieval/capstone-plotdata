@@ -44,9 +44,23 @@ export default function UploadData({
             <Container $centered="center" $margin>
               <FileUploader onUploadFile={onUploadFile} />
               {fileName ? (
-                <p>Uploaded file: {fileName}</p>
+                <Paragraph $variant="fileName">
+                  Uploaded file: {fileName}
+                </Paragraph>
               ) : (
-                <p>No file chosen</p>
+                <Paragraph $variant="fileName">No file chosen</Paragraph>
+              )}
+              {fileObject != null && (
+                <>
+                  <Paragraph $variant="red-step1">
+                    Attention! if you upload another file, then you must click
+                    on the button below to update the chart!
+                  </Paragraph>
+                  <Paragraph $variant="red-step1">
+                    In this case you must also change the variables in Step 3 to
+                    update the chart!
+                  </Paragraph>
+                </>
               )}
               <InputTypeSubmit
                 $nomargin
