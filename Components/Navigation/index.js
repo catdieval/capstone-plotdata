@@ -64,7 +64,7 @@ export default function Navigation({
                 <StepItem
                   key={id}
                   label={label}
-                  name={id}
+                  buttonNumber={id}
                   id={id}
                   currentStep={currentStep}
                   onStepChange={() => onStepChange(id)}

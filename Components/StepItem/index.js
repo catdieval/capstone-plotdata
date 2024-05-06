@@ -9,18 +9,20 @@ const ItemContainer = styled.section`
 `;
 
 export default function StepItem({
-  name,
+  buttonNumber,
   label,
   onStepChange,
   id,
   clickedSteps,
   currentStep,
 }) {
+  //In this function I have used an early return for the condition currentStep === id because the active step should be not disabled.
   function disableStepperButton() {
     if (currentStep === id) {
       return;
     } else return !clickedSteps.includes(id);
   }
+
   return (
     <ItemContainer>
       <Button
@@ -28,7 +30,7 @@ export default function StepItem({
         onClick={onStepChange}
         disabled={disableStepperButton()}
       >
-        {!clickedSteps.includes(id) ? name : <span>✓</span>}
+        {!clickedSteps.includes(id) ? buttonNumber : <span>✓</span>}
       </Button>
       <Paragraph $variant="step-label" $isDisabled={disableStepperButton()}>
         {label}
