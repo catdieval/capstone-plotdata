@@ -7,14 +7,13 @@ export default function SingInForm() {
   if (session) {
     return (
       <>
-        Signed in as {session.user.email}
+        Signed in as {session.user.name}
         <Button onClick={() => signOut()}>Sign out</Button>
       </>
     );
   } else {
     return (
       <>
-        Not signed in
         <Button onClick={() => signIn()}>Sign in</Button>
       </>
     );

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Image from "next/image";
 import logoImage from "../../assets/plotdata-logo.png";
+import SingInForm from "../SignInForm";
 
 const StyledTitle = styled.section`
   position: fixed;
@@ -14,10 +15,21 @@ const StyledTitle = styled.section`
   padding: 10px;
 `;
 
+const StyledSignIn = styled.div`
+  position: absolute;
+  top: 5;
+  right: 20;
+`;
+
 export default function Title() {
   return (
-    <StyledTitle>
-      <Image src={logoImage} alt={"plotdata-logo"} width={300} height={74} />
-    </StyledTitle>
+    <>
+      <StyledTitle>
+        <Image src={logoImage} alt={"plotdata-logo"} width={300} height={74} />
+      </StyledTitle>
+      <StyledSignIn>
+        <SingInForm />
+      </StyledSignIn>
+    </>
   );
 }

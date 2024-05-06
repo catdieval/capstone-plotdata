@@ -4,11 +4,11 @@ import GithubProvider from "next-auth/providers/github";
 
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 
-import clientPromise from "@/db/mongodb";
+import clientPromise from "../../../db/mongodb";
 
-import dbConnect from "@/db/dbConnect";
+import dbConnect from "../../../db/connect";
 
-import User from "@/db/models/User";
+import User from "../../..//db/models/User";
 
 export default NextAuth({
   // Configure one or more authentication providers

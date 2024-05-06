@@ -12,11 +12,14 @@ import SingInForm from "../SignInForm";
 export default function StartPage({ onGetStarted }) {
   return (
     <>
+      <Container $centered="center">
+        <SingInForm />
+      </Container>
       <Paragraph>
         With PlotData you can easily make customisable publication-quality
         charts, all without programming skills.
       </Paragraph>
-      <SingInForm />
+
       <Container $wrap="wrap" $gap>
         {examplePlotsArray.map((item) => {
           return (
