@@ -7,19 +7,14 @@ import Container from "../Container";
 import Image from "next/image";
 import { arrayOfSteps, arrayOfActions } from "../../lib/listOfBulletPoints";
 import { examplePlotsArray } from "../../lib/examplePlotsArray";
-import SingInForm from "../SignInForm";
 
 export default function StartPage({ onGetStarted }) {
   return (
     <>
-      <Container $centered="center">
-        <SingInForm />
-      </Container>
       <Paragraph>
         With PlotData you can easily make customisable publication-quality
         charts, all without programming skills.
       </Paragraph>
-
       <Container $wrap="wrap" $gap>
         {examplePlotsArray.map((item) => {
           return (

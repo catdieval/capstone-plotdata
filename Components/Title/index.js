@@ -16,9 +16,12 @@ const StyledTitle = styled.section`
 `;
 
 const StyledSignIn = styled.div`
-  position: absolute;
+  padding: 15px;
+  display: block;
+  float: right;
+  text-align: center;
   top: 5;
-  right: 20;
+  right: 10;
 `;
 
 export default function Title() {
@@ -26,10 +29,10 @@ export default function Title() {
     <>
       <StyledTitle>
         <Image src={logoImage} alt={"plotdata-logo"} width={300} height={74} />
+        <StyledSignIn>
+          <SingInForm />
+        </StyledSignIn>
       </StyledTitle>
-      <StyledSignIn>
-        <SingInForm />
-      </StyledSignIn>
     </>
   );
 }
