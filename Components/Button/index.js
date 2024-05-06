@@ -14,15 +14,20 @@ const StyledButton = styled.button`
   ${(props) =>
     props.$variant === "circle" &&
     css`
-      background-color: ${(props) =>
-        props.$isDisabled ? "var(--disabled-color)" : "var(--secondary-color)"};
+      background-color: var(--secondary-color);
       opacity: 0.8;
       border-radius: 50%;
       border: none;
       padding: 0.4rem 0.7rem;
       cursor: pointer;
+
       &:hover {
-        opacity: 1;
+        &:not([disabled]) {
+          opacity: 1;
+        }
+      }
+      &:disabled {
+        background-color: var(--disabled-color);
       }
     `};
   ${(props) =>

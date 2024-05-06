@@ -26,7 +26,6 @@ export default function StepItem({
       <Button
         $variant="circle"
         onClick={onStepChange}
-        isDisabled={disableStepperButton()}
         disabled={disableStepperButton()}
       >
         {!clickedSteps.includes(id) ? name : <span>✓</span>}
