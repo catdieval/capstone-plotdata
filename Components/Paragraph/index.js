@@ -29,10 +29,24 @@ const StyledP = styled.p`
     `};
 
   ${(props) =>
-    props.$variant === "red" &&
+    props.$variant === "red-step1" &&
+    css`
+      color: red;
+      margin-bottom: 20px;
+      margin-top: 0;
+    `};
+
+  ${(props) =>
+    props.$variant === "red-step3" &&
     css`
       color: red;
       margin-bottom: -20px;
+    `};
+
+  ${(props) =>
+    props.$variant === "fileName" &&
+    css`
+      margin-bottom: 15px;
     `};
 `;
 
