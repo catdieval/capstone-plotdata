@@ -58,7 +58,6 @@ export default function Navigation({
     <StepperContainer>
       <nav>
         {arrayOfSteps.map(({ id, label }) => {
-          console.log("id", id);
           return (
             <StyledList key={id}>
               <SingleStepContainer>
