@@ -57,7 +57,7 @@ export default function App({ Component, pageProps }) {
 
   const [settings, setSettings] = useState(initialSettings);
 
-  const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
+  const [hasCompletedAllSteps, setHasCompletedAllSteps] = useState(false);
 
   const [currentStep, setCurrentStep] = useState(1);
   //State to store the clicked steps in an array when clicking on the next button
@@ -127,8 +127,8 @@ export default function App({ Component, pageProps }) {
     setSettings({ ...settings, [event.target.name]: event.target.value });
   }
 
-  function handleHasCompletedStep6() {
-    setHasCompletedStep6(true);
+  function handleHasCompletedAllSteps() {
+    setHasCompletedAllSteps(true);
   }
 
   function handleNext() {
@@ -137,7 +137,7 @@ export default function App({ Component, pageProps }) {
     } else if (currentStep === 3) {
       handleAssignVariables();
     } else if (currentStep === 6) {
-      handleHasCompletedStep6();
+      handleHasCompletedAllSteps();
     }
     trackSteps(currentStep);
     setCurrentStep(currentStep + 1);
@@ -174,8 +174,8 @@ export default function App({ Component, pageProps }) {
         onAssignVariables={handleAssignVariables}
         settings={settings}
         onSettingsChange={handleSettingsChange}
-        hasCompletedStep6={hasCompletedStep6}
-        onHasCompletedStep6={handleHasCompletedStep6}
+        hasCompletedAllSteps={hasCompletedAllSteps}
+        onHasCompletedAllSteps={handleHasCompletedAllSteps}
         onNext={handleNext}
         onBack={handleBack}
         onStepChange={handleStepChange}

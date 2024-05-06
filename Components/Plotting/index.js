@@ -8,7 +8,7 @@ export default function Plotting({
   clickedChartType,
   xVariable,
   yVariable,
-  hasCompletedStep6,
+  hasCompletedAllSteps,
   settings,
 }) {
   const chartIndex = chartArray.findIndex(
@@ -51,7 +51,7 @@ export default function Plotting({
       {chartIndex != -1 &&
       xVariable.length > 0 &&
       yVariable.length > 0 &&
-      hasCompletedStep6 ? (
+      hasCompletedAllSteps ? (
         <>
           <Paragraph>
             You can interact with the graph by using the functions at the top of

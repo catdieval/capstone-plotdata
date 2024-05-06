@@ -20,7 +20,7 @@ export default function AllSteps({
   onAssignVariables,
   xVariable,
   yVariable,
-  hasCompletedStep6,
+  hasCompletedAllSteps,
   settings,
   onSettingsChange,
 }) {
@@ -53,7 +53,7 @@ export default function AllSteps({
         xVariable={xVariable}
         yVariable={yVariable}
         settings={settings}
-        hasCompletedStep6={hasCompletedStep6}
+        hasCompletedAllSteps={hasCompletedAllSteps}
         onSettingsChange={onSettingsChange}
       />
     </>
