@@ -54,6 +54,7 @@ export default function Plotting({
     ticks: "outside",
     showgrid: settings.gridXAxis === "true",
     griddash: settings.gridLineStyleXAxis,
+    gridcolor: "darkgrey",
     autorange:
       settings.rangeXAxis === "reversed"
         ? "reversed"
@@ -74,6 +75,7 @@ export default function Plotting({
     ticks: "outside",
     showgrid: settings.gridYAxis === "true",
     griddash: settings.gridLineStyleYAxis,
+    gridcolor: "darkgrey",
     autorange:
       settings.rangeYAxis === "reversed"
         ? "reversed"
