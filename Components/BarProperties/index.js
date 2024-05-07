@@ -30,7 +30,7 @@ export default function BarProperties({
             arrayOfOptions={barColorArray}
           />
           <InputTypeSubmit
-            value="Next"
+            value="Assign bar properties"
             onClick={onHasCompletedDistributionProperties}
             disabled={notCompletedBarProperties()}
           />

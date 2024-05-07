@@ -22,7 +22,7 @@ export default function LineProperties({
     return (
       settings.lineColor.length === 0 ||
       settings.lineStyle.length === 0 ||
-      Number(settings.lineWidth) === 0
+      Number(settings.lineWidth) === 1
     );
   }
 
@@ -49,7 +49,7 @@ export default function LineProperties({
           arrayOfOptions={lineWidthArray}
         />
         <InputTypeSubmit
-          value="Next"
+          value="Assign line properties"
           onClick={onHasCompletedDistributionProperties}
           disabled={notCompletedLineProperties()}
         />

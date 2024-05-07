@@ -50,7 +50,7 @@ export default function MarkerProperties({
             arrayOfOptions={markerSizeArray}
           />
           <InputTypeSubmit
-            value="Next"
+            value="Assign marker properties"
             onClick={onHasCompletedDistributionProperties}
             disabled={notCompletedMarkerProperties()}
           />

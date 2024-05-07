@@ -5,12 +5,12 @@ import { chartArray } from "../../lib/listOfPlotTypes";
 
 export default function ListOfCharts({
   onSelectChartType,
-  keynames,
+  keyNames,
   clickedChartType,
 }) {
   return (
     <>
-      {keynames.length > 0 && (
+      {keyNames.length > 0 && (
         <>
           <Heading>Step 2: Select the type of chart</Heading>
           <Container $wrap="wrap">

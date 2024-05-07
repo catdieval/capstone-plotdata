@@ -43,7 +43,7 @@ export default function LayoutProperties({
         />
         <Container $centered="center">
           <InputTypeSubmit
-            value="Plot"
+            value="Assign layout properties and plot"
             onClick={onHasCompletedStep6}
             disabled={notCompletedLayoutProperties()}
           />

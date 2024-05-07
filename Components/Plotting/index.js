@@ -48,6 +48,54 @@ export default function Plotting({
         : "",
   };
 
+  const xAxisOptions = {
+    title: { text: settings.xLabel },
+    showline: true,
+    ticks: "outside",
+    showgrid: settings.gridXAxis === "true",
+    griddash: settings.gridLineStyleXAxis,
+    gridcolor: "darkgrey",
+    autorange:
+      settings.rangeXAxis === "reversed"
+        ? "reversed"
+        : settings.rangeXAxis === "true"
+        ? true
+        : settings.rangeXAxis === "min max"
+        ? false
+        : null,
+    range:
+      settings.rangeXAxis === "min max" && settings.logXAxis === "linear"
+        ? [settings.minXAxis, settings.maxXAxis]
+        : settings.rangeXAxis === "min max" && settings.logXAxis === "log"
+        ? [Math.log10(settings.minXAxis), Math.log10(settings.maxXAxis)]
+        : null,
+
+    type: settings.logXAxis,
+  };
+
+  const yAxisOptions = {
+    title: { text: settings.yLabel },
+    ticks: "outside",
+    showgrid: settings.gridYAxis === "true",
+    griddash: settings.gridLineStyleYAxis,
+    gridcolor: "darkgrey",
+    autorange:
+      settings.rangeYAxis === "reversed"
+        ? "reversed"
+        : settings.rangeYAxis === "true"
+        ? true
+        : settings.rangeYAxis === "min max"
+        ? false
+        : null,
+    range:
+      settings.rangeYAxis === "min max" && settings.logYAxis === "linear"
+        ? [settings.minYAxis, settings.maxYAxis]
+        : settings.rangeYAxis === "min max" && settings.logYAxis === "log"
+        ? [Math.log10(settings.minYAxis), Math.log10(settings.maxYAxis)]
+        : null,
+    type: settings.logYAxis,
+  };
+
   return (
     <>
       {chartIndex != -1 &&
@@ -66,25 +114,8 @@ export default function Plotting({
               data={[dataOptions]}
               layout={{
                 title: { text: settings.titleLabel },
-                xaxis: {
-                  title: { text: settings.xLabel },
-                  showline: true,
-                  ticks: "outside",
-                  showgrid: settings.gridXAxis === "true",
-                  griddash: settings.gridLineStyleXAxis,
-                  autorange: settings.rangeXAxis,
-                  range: [settings.minXAxis, settings.maxXAxis],
-                  type: settings.logXAxis,
-                },
-                yaxis: {
-                  title: { text: settings.yLabel },
-                  ticks: "outside",
-                  showgrid: settings.gridYAxis === "true",
-                  griddash: settings.gridLineStyleYAxis,
-                  autorange: settings.rangeYAxis,
-                  range: [settings.minYAxis, settings.maxYAxis],
-                  type: settings.logYAxis,
-                },
+                xaxis: xAxisOptions,
+                yaxis: yAxisOptions,
                 width: 600,
                 height: 500,
               }}
