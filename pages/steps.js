@@ -1,7 +1,7 @@
 import Navigation from "../Components/Navigation";
 import Plotting from "../Components/Plotting";
 
-export default function AllSteps({
+export default function Steps({
   onBack,
   onNext,
   onStepChange,
