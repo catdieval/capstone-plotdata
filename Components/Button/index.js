@@ -25,11 +25,26 @@ const StyledButton = styled.button`
         opacity: 1;
       }
     `};
+
+  &:disabled {
+    opacity: 0.5;
+  }
 `;
 
-export default function Button({ children, onClick, $variant, isActive }) {
+export default function Button({
+  children,
+  onClick,
+  $variant,
+  isActive,
+  disabled,
+}) {
   return (
-    <StyledButton $variant={$variant} $isActive={isActive} onClick={onClick}>
+    <StyledButton
+      $variant={$variant}
+      $isActive={isActive}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </StyledButton>
   );
