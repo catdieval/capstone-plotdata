@@ -8,6 +8,9 @@ import GraphTitle from "../Components/GraphTitle";
 import PlottingProperties from "../Components/PlottingProperties";
 
 export default function HomePage({
+  typeOfScreen,
+  hasClickedScreenButton,
+  onClickScreenButton,
   hasClickedGetStarted,
   onGetStarted,
   keyNames,
@@ -36,7 +39,12 @@ export default function HomePage({
 }) {
   return (
     <div>
-      <StartPage onGetStarted={onGetStarted} />
+      <StartPage
+        typeOfScreen={typeOfScreen}
+        hasClickedScreenButton={hasClickedScreenButton}
+        onClickScreenButton={onClickScreenButton}
+        onGetStarted={onGetStarted}
+      />
       <UploadData
         fileObject={fileObject}
         onUploadFile={onUploadFile}
@@ -84,6 +92,7 @@ export default function HomePage({
         onSettingsChange={onSettingsChange}
       />
       <Plotting
+        typeOfScreen={typeOfScreen}
         clickedChartType={clickedChartType}
         xVariable={xVariable}
         yVariable={yVariable}
