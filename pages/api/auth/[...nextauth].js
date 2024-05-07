@@ -36,6 +36,7 @@ export const authOptions = {
 
   adapter: MongoDBAdapter(clientPromise),
   session: { strategy: "jwt" },
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async session({ token, user }) {
       // dbConnect();
