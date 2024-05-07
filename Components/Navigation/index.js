@@ -41,6 +41,10 @@ export default function Navigation({
     router.push("/plot");
   }
 
+  function handleBackStartPage() {
+    router.push("/");
+  }
+
   function handleDisabledButton() {
     if (currentStep === 1) {
       return !fileObject;
@@ -67,6 +71,12 @@ export default function Navigation({
   return (
     <StepperContainer>
       <nav>
+        <ButtonContainer>
+          <Button $variant="back" onClick={handleBackStartPage}>
+            Home
+          </Button>
+        </ButtonContainer>
+
         {arrayOfSteps.map(({ id, label }) => {
           return (
             <StyledList key={id}>
