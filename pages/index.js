@@ -45,7 +45,7 @@ export default function StartPage() {
       </Paragraph>
       <Container $centered="center">
         <UnorderedList $arrayOfBulletPoints={arrayOfActions} />
-        <Container $centered="center" $margin>
+        <Container $centered="center" $margin $margin_bottom>
           <Button onClick={handleGetStarted}>Get started</Button>
         </Container>
       </Container>
