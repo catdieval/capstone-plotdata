@@ -1,10 +1,12 @@
 import Paragraph from "../Paragraph";
 import { chartArray } from "../../lib/listOfPlotTypes";
 import dynamic from "next/dynamic";
-import { Card } from "../Card/card.styled";
+import Container from "../Container";
+//import { Card } from "../Card/card.styled";
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
 export default function Plotting({
+  typeOfScreen,
   clickedChartType,
   xVariable,
   yVariable,
@@ -33,15 +35,38 @@ export default function Plotting({
       clickedChartType === "line-markers-plot" ||
       clickedChartType === "scatter-plot"
         ? {
-            color: settings.markerColor,
+            color:
+              settings.markerColor === "lilac"
+                ? "#c8a2c8"
+                : settings.markerColor === "dark yellow"
+                ? "#EDED00"
+                : settings.markerColor === "light brown"
+                ? "#B5651D"
+                : settings.markerColor,
             symbol: settings.markerSymbol,
             size: settings.markerSize,
           }
-        : { color: settings.barColor },
+        : {
+            color:
+              settings.barColor === "lilac"
+                ? "#c8a2c8"
+                : settings.barColor === "dark yellow"
+                ? "#EDED00"
+                : settings.barColor === "light brown"
+                ? "#B5651D"
+                : settings.barColor,
+          },
     line:
       clickedChartType === "line-plot"
         ? {
-            color: settings.lineColor,
+            color:
+              settings.lineColor === "lilac"
+                ? "#c8a2c8"
+                : settings.lineColor === "dark yellow"
+                ? "#EDED00"
+                : settings.lineColor === "light brown"
+                ? "#B5651D"
+                : settings.lineColor,
             dash: settings.lineStyle,
             width: settings.lineWidth,
           }
@@ -109,22 +134,41 @@ export default function Plotting({
             You can interact with the graph by using the functions at the top of
             the chart.
           </Paragraph>
-          <Card $variant="graph">
+          <Container $centered="center" $marginTop $marginBottom>
             <Plot
               data={[dataOptions]}
               layout={{
-                title: { text: settings.titleLabel },
+                title: {
+                  text: settings.titleLabel,
+                  y: 0.85,
+                },
                 xaxis: xAxisOptions,
                 yaxis: yAxisOptions,
-                width: 600,
-                height: 500,
+                width:
+                  typeOfScreen === "Mobile"
+                    ? 350
+                    : typeOfScreen === "Desktop"
+                    ? 500
+                    : null,
+                height:
+                  typeOfScreen === "Mobile"
+                    ? 250
+                    : typeOfScreen === "Desktop"
+                    ? 400
+                    : null,
+                margin: {
+                  t: 50,
+                  b: 50,
+                  r: 50,
+                  l: 50,
+                },
               }}
               config={{
                 displayModeBar: true,
                 modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
               }}
             />
-          </Card>
+          </Container>
         </>
       ) : null}
     </>
