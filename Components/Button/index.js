@@ -25,6 +25,16 @@ const StyledButton = styled.button`
         opacity: 1;
       }
     `};
+
+  ${(props) =>
+    props.$variant === "login" &&
+    css`
+      font-size: 1rem;
+      background-color: inherit;
+      border: solid 2px var(--primary-color);
+      color: var(--primary-color);
+      padding: 6px 14px;
+    `};
 `;
 
 export default function Button({ children, onClick, $variant, isActive }) {

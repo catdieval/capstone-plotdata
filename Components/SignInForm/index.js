@@ -14,7 +14,9 @@ export default function SingInForm() {
   } else {
     return (
       <>
-        <Button onClick={() => signIn()}>Sign in</Button>
+        <Button $variant="login" onClick={() => signIn()}>
+          Sign in
+        </Button>
       </>
     );
   }
