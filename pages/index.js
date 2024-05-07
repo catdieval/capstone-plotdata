@@ -7,6 +7,7 @@ import Container from "../Components/Container";
 import Image from "next/image";
 import { arrayOfSteps, arrayOfActions } from "../lib/listOfBulletPoints";
 import { examplePlotsArray } from "../lib/examplePlotsArray";
+import { useRouter } from "next/router";
 
 export default function StartPage({ onGetStarted }) {
   return (
