@@ -1,5 +1,8 @@
 import Navigation from "../Components/Navigation";
 import Plotting from "../Components/Plotting";
+import { useRouter } from "next/router";
+import Container from "../Components/Container";
+import Button from "../Components/Button";
 
 export default function Steps({
   onBack,
@@ -24,8 +27,19 @@ export default function Steps({
   settings,
   onSettingsChange,
 }) {
+  const router = useRouter();
+  function handleBack() {
+    router.push("/");
+  }
+
   return (
     <>
+      <Container $centered="center" $margin_bottom>
+        <Button $variant="back" onClick={handleBack}>
+          Back Home
+        </Button>
+      </Container>
+
       <Navigation
         onNext={onNext}
         onBack={onBack}
