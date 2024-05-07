@@ -14,7 +14,14 @@ export default function SingInForm() {
   } else {
     return (
       <>
-        <Button $variant="login" onClick={() => signIn()}>
+        <Button
+          $variant="login"
+          onClick={() =>
+            signIn(null, {
+              callbackUrl: "/",
+            })
+          }
+        >
           Sign in
         </Button>
       </>
