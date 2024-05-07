@@ -16,6 +16,9 @@ export default function UploadData({ fileObject, onUploadFile }) {
       <Card>
         <Paragraph $variant="bold">Requirements:</Paragraph>
         <Paragraph $variant="start">
+          <span> ✔ </span> The file should have a maximum size of 4GB.
+        </Paragraph>
+        <Paragraph $variant="start">
           <span> ✔ </span> The file should have a header.
         </Paragraph>
         <Paragraph $variant="start">
