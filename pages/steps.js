@@ -1,5 +1,4 @@
 import Navigation from "../Components/Navigation";
-import Plotting from "../Components/Plotting";
 import { useRouter } from "next/router";
 import Container from "../Components/Container";
 import Button from "../Components/Button";
