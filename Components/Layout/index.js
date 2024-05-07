@@ -17,6 +17,7 @@ export default function Layout({ children }) {
     <div>
       <Head>
         <title>PlotData</title>
+        <link rel="icon" href="/PlotData.ico" />
       </Head>
       <Main>{children}</Main>
       <Title />
