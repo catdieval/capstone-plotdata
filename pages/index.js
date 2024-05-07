@@ -9,7 +9,13 @@ import { arrayOfSteps, arrayOfActions } from "../lib/listOfBulletPoints";
 import { examplePlotsArray } from "../lib/examplePlotsArray";
 import { useRouter } from "next/router";
 
-export default function StartPage({ onGetStarted }) {
+export default function StartPage() {
+  const router = useRouter();
+
+  function handleGetStarted() {
+    router.push("/steps");
+  }
+
   return (
     <>
       <Paragraph>
@@ -40,7 +46,7 @@ export default function StartPage({ onGetStarted }) {
       <Container $centered="center">
         <UnorderedList $arrayOfBulletPoints={arrayOfActions} />
         <Container $centered="center" $margin>
-          <Button onClick={onGetStarted}>Get started</Button>
+          <Button onClick={handleGetStarted}>Get started</Button>
         </Container>
       </Container>
     </>
