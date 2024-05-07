@@ -76,7 +76,6 @@ export default function Navigation({
             Home
           </Button>
         </ButtonContainer>
-
         {arrayOfSteps.map(({ id, label }) => {
           return (
             <StyledList key={id}>
