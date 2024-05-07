@@ -135,6 +135,8 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleNext() {
+    /* The condition for steps 1, 3 and 6 is needed to run the functions inside this condition, 
+    which are needed to feed data to the app for the following steps.*/
     if (currentStep === 1) {
       handleConversion();
     } else if (currentStep === 3) {
