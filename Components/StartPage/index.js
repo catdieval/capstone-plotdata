@@ -7,8 +7,14 @@ import Container from "../Container";
 import Image from "next/image";
 import { arrayOfSteps, arrayOfActions } from "../../lib/listOfBulletPoints";
 import { examplePlotsArray } from "../../lib/examplePlotsArray";
+import { arrayOfScreenTypes } from "../../lib/listOfScreenTypes";
 
-export default function StartPage({ onGetStarted }) {
+export default function StartPage({
+  typeOfScreen,
+  hasClickedScreenButton,
+  onClickScreenButton,
+  onGetStarted,
+}) {
   return (
     <>
       <Paragraph>
@@ -38,8 +44,29 @@ export default function StartPage({ onGetStarted }) {
       </Paragraph>
       <Container $centered="center">
         <UnorderedList $arrayOfBulletPoints={arrayOfActions} />
+        <Paragraph>
+          On what type of device are you? <br></br> Click one of the buttons
+          below corresponding to your situation.
+        </Paragraph>
+        <Container $wrap="wrap">
+          {arrayOfScreenTypes.map((name) => {
+            return (
+              <>
+                <Button
+                  key={name}
+                  isActive={typeOfScreen === name}
+                  onClick={() => onClickScreenButton(name)}
+                >
+                  {name}
+                </Button>
+              </>
+            );
+          })}
+        </Container>
         <Container $centered="center" $margin>
-          <Button onClick={onGetStarted}>Get started</Button>
+          <Button onClick={onGetStarted} disabled={!hasClickedScreenButton}>
+            Get started
+          </Button>
         </Container>
       </Container>
     </>
