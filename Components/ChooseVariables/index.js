@@ -53,7 +53,7 @@ export default function ChooseVariables({
                 </Paragraph>
               )}
               <InputTypeSubmit
-                value="Assign variables"
+                value="Next"
                 onClick={onAssignVariables}
                 disabled={notCompletedXAndYKeys()}
               />

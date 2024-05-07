@@ -36,7 +36,7 @@ export default function GraphTitle({
                 onChange={onSettingsChange}
               />
               <InputTypeSubmit
-                value="Assign title"
+                value="Next"
                 onClick={onHasCompletedStep5}
                 disabled={notCompletedTitle()}
               />

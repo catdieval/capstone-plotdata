@@ -49,7 +49,7 @@ export default function LineProperties({
           arrayOfOptions={lineWidthArray}
         />
         <InputTypeSubmit
-          value="Assign line properties"
+          value="Next"
           onClick={onHasCompletedDistributionProperties}
           disabled={notCompletedLineProperties()}
         />
