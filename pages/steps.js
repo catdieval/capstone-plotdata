@@ -1,5 +1,4 @@
 import Navigation from "../Components/Navigation";
-import Plotting from "../Components/Plotting";
 
 export default function Steps({
   onBack,
@@ -20,7 +19,6 @@ export default function Steps({
   onAssignVariables,
   xVariable,
   yVariable,
-  hasCompletedAllSteps,
   settings,
   onSettingsChange,
 }) {
@@ -47,14 +45,6 @@ export default function Steps({
         onSettingsChange={onSettingsChange}
         keynames={keynames}
         clickedSteps={clickedSteps}
-      />
-      <Plotting
-        clickedChartType={clickedChartType}
-        xVariable={xVariable}
-        yVariable={yVariable}
-        settings={settings}
-        hasCompletedAllSteps={hasCompletedAllSteps}
-        onSettingsChange={onSettingsChange}
       />
     </>
   );

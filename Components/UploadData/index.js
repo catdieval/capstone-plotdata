@@ -16,7 +16,8 @@ export default function UploadData({ fileObject, onUploadFile }) {
       <Card>
         <Paragraph $variant="bold">Requirements:</Paragraph>
         <Paragraph $variant="start">
-          <span> ✔ </span> The file should have a header.
+          <span> ✔ </span> The file should have a header and a maximum size of
+          4GB.
         </Paragraph>
         <Paragraph $variant="start">
           <span> ✔ </span>The file should be comma-delimited and the decimal

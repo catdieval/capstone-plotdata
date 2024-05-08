@@ -8,6 +8,7 @@ import {
   SingleStepContainer,
 } from "./styledNavigation";
 import { arrayOfSteps } from "../../lib/arrayOfSteps";
+import { useRouter } from "next/router";
 
 export default function Navigation({
   onNext,
@@ -31,6 +32,19 @@ export default function Navigation({
   settings,
   onSettingsChange,
 }) {
+  const router = useRouter();
+
+  //Destructuring id from arrayOfSteps corresponding to step 6.
+  const { id } = arrayOfSteps[5];
+
+  function handlePlotNavigation() {
+    router.push("/plot");
+  }
+
+  function handleBackStartPage() {
+    router.push("/");
+  }
+
   function handleDisabledButton() {
     if (currentStep === 1) {
       return !fileObject;
@@ -57,6 +71,11 @@ export default function Navigation({
   return (
     <StepperContainer>
       <nav>
+        <ButtonContainer>
+          <Button $variant="back" onClick={handleBackStartPage}>
+            Home
+          </Button>
+        </ButtonContainer>
         {arrayOfSteps.map(({ id, label }) => {
           return (
             <StyledList key={id}>
@@ -108,13 +127,18 @@ export default function Navigation({
                     onClick={onNext}
                     disabled={handleDisabledButton()}
                   >
-                    {currentStep === arrayOfSteps.length ? "Plot" : "Next"}
+                    {currentStep === arrayOfSteps.length ? "Finish" : "Next"}
                   </Button>
                 )}
               </ButtonContainer>
             </StyledList>
           );
         })}
+        <ButtonContainer>
+          {clickedSteps.includes(id) && (
+            <Button onClick={handlePlotNavigation}>Plot</Button>
+          )}
+        </ButtonContainer>
       </nav>
     </StepperContainer>
   );

@@ -14,6 +14,7 @@ export const StepperContainer = styled.section`
   flex-direction: column;
   align-items: center;
   margin-left: 0.3rem;
+  margin-top: -20px;
 `;
 
 export const SingleStepContainer = styled.section`
