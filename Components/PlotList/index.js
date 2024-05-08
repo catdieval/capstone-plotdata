@@ -2,19 +2,21 @@ import useSWR from "swr";
 import Heading from "../Heading";
 
 export default function PlotList() {
-  const { data, isLoading } = useSWR("/api/Plot");
+  const { data: plot, isLoading } = useSWR("/api/Plot");
+
+  console.log(plot);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
 
-  if (!data) {
+  if (!plot) {
     return;
   }
   return (
     <>
       <Heading>Your Plots:</Heading>
-      <h2>{data.clickedChartType}</h2>
+      <h2>{plot.clickedChartType}</h2>
     </>
   );
 }

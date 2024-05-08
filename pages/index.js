@@ -40,7 +40,7 @@ export default function HomePage({
     <div>
       <StartPage onGetStarted={onGetStarted} />
       <PlotList />
-      <PlotCard />
+      {/* <PlotCard /> */}
       <UploadData
         fileObject={fileObject}
         onUploadFile={onUploadFile}
