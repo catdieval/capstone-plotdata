@@ -140,7 +140,11 @@ export default function Plotting({
               layout={{
                 title: {
                   text: settings.titleLabel,
-                  y: 0.85,
+                  y: typeOfScreen === "Mobile"
+                  ? 0.9
+                  : typeOfScreen === "Desktop"
+                  ? 0.95
+                  : null, 
                 },
                 xaxis: xAxisOptions,
                 yaxis: yAxisOptions,
