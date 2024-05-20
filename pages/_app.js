@@ -5,12 +5,6 @@ import CorrectArrays from "../Components/CorrectArrays";
 import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
 export default function App({ Component, pageProps }) {
-  // State to store the status about what type of screen the user has
-  const [typeOfScreen, setTypeOfScreen] = useState("");
-
-  // State to store the status about if the user has clicked on a button for the type of screen
-  const [hasClickedScreenButton, setHasClickedScreenButton] = useState(false);
-
   // State to store the status about if the user has clicked on the "Get started" button
   const [hasClickedGetStarted, setHasClickedGetStarted] = useState(false);
 
@@ -77,11 +71,6 @@ export default function App({ Component, pageProps }) {
   ] = useState(false);
 
   const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
-
-  function handleClickScreenButton(name) {
-    setTypeOfScreen(name);
-    setHasClickedScreenButton(true);
-  }
 
   function handleGetStarted() {
     setHasClickedGetStarted(true);
@@ -178,9 +167,6 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <Component
         {...pageProps}
-        typeOfScreen={typeOfScreen}
-        hasClickedScreenButton={hasClickedScreenButton}
-        onClickScreenButton={handleClickScreenButton}
         hasClickedGetStarted={hasClickedGetStarted}
         onGetStarted={handleGetStarted}
         keyNames={keyNames}
