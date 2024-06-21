@@ -17,4 +17,6 @@ export default function UnorderedList({ $arrayOfBulletPoints }) {
 
 const StyledListItem = styled.li`
   font-size: 1.1rem;
+  margin: 8px;
+
 `;
