@@ -1,19 +1,13 @@
-# New Next Project
+# PoltData - Web application for creating data visualizations
+> Capstone Project
 
-### Local Development
+## Technologies & Tools
 
-To work locally, please install the dependencies using `npm i` first.
 
-Run `npm run dev` to start a development server and open the displayed URL in a browser.
 
-Use `npm run test` to run the tests.
+## Project Setup
 
-### Scripts
+- Clone this repository on your local machine.
+- Install all dependencies needed with `npm install`.
+- Run the app in development mode with `npm run dev`.
 
-You can use the following commands:
-
-- `npm run dev` to start a development server
-- `npm run build` to build the project
-- `npm run start` to start a production server
-- `npm run test` to run the tests
-- `npm run lint` to run the linter
