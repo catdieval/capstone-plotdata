@@ -1,5 +1,6 @@
-# PoltData - Web application for creating data visualizations
+# PlotData - Web application for creating data visualizations
 > Capstone Project
+
 
 ## Technologies & Tools
 
