@@ -5,7 +5,23 @@ Capstone Project
 
 
 ## Technologies & Tools
+* React
+* JavaScript
+* Next.js
+* React-Plotly.js
+* Plotly.js
+* Styled Components
+* MongoDB
+* Mongoose
+* Git
+* GitHub
+* Vercel
 
+## Team
+
+* [Maria Adner](https://github.com/MariaAdner)
+* [Catherine Dieval](https://github.com/catdieval)
+* [Yavor Lalev](https://github.com/YavorLalev)
 
 
 ## Project Setup
