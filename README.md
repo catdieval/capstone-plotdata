@@ -1,5 +1,5 @@
 # PlotData - Web application for creating data visualizations
-> Capstone Project
+Capstone Project
 
 ![PlotData Home](assets/PlotData-Home.png)
 
