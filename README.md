@@ -1,7 +1,8 @@
 # PlotData - Web application for creating data visualizations
-Capstone Project
+With PlotData you can easily make customizable publication-quality charts, all without programming skills. You can upload a csv file and walk through the different steps to generate a chart. Then you can update the chart again with new values and you can export the chart as png for use in reports or presentations.
 
 ![PlotData Home](assets/PlotData-Home.png)
+
 
 
 ## Technologies & Tools
