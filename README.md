@@ -1,5 +1,5 @@
 # PlotData - Web application for creating data visualizations
-With PlotData you can easily make customizable publication-quality charts, all without programming skills. You can upload a csv file and walk through the different steps to generate a chart. Also you can update the chart with new values and export it as png file for use in reports or presentations.
+With PlotData you can easily make customizable publication-quality charts, all without programming skills. You can upload a csv file and walk through the different steps to generate a chart, with the help of the [JavaScript Plotly library](https://plotly.com/javascript/basic-charts/). Also you can update the chart with new values and export it as png file for use in reports or presentations.
 
 ![PlotData Home](assets/PlotData%20Banner_third%20variant.jpg)
 
