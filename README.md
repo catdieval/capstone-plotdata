@@ -11,12 +11,16 @@ With PlotData you can easily make customizable publication-quality charts, all w
 * Next.js
 * React-Plotly.js
 * Plotly.js
-* Styled Components
+* styled-components
+* NextAuth.js
 * MongoDB
 * Mongoose
 * Git
 * GitHub
 * Vercel
+* VS Code
+* Material UI
+* Adobe Photoshop
 
 ## Team
 
