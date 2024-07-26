@@ -74,6 +74,7 @@ export default function Plotting({
   const xAxisOptions = {
     title: { text: settings.xLabel },
     showline: true,
+    zeroline: false,
     ticks: "outside",
     showgrid: settings.gridXAxis === "true",
     griddash: settings.gridLineStyleXAxis,
@@ -98,6 +99,8 @@ export default function Plotting({
 
   const yAxisOptions = {
     title: { text: settings.yLabel },
+    showline: true,
+    zeroline: false,
     ticks: "outside",
     showgrid: settings.gridYAxis === "true",
     griddash: settings.gridLineStyleYAxis,
@@ -106,7 +109,7 @@ export default function Plotting({
       settings.rangeYAxis === "reversed"
         ? "reversed"
         : settings.rangeYAxis === "true"
-        ? true
+        ? true 
         : settings.rangeYAxis === "min max"
         ? false
         : null,
