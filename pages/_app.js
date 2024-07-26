@@ -140,6 +140,7 @@ export default function App({ Component, pageProps }) {
 
   function handleSettingsChange(event) {
     setSettings({ ...settings, [event.target.name]: event.target.value });
+    setHasCompletedStep6(false); // this is to cause a new rendering of the chart (by obliging the user to click on the "Plot" button) because of the bug in autorange 
   }
 
   function handleHasCompletedStep4() {
