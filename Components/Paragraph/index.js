@@ -20,7 +20,7 @@ const StyledP = styled.p`
     css`
       font-weight: 600;
     `};
-    
+
   ${(props) =>
     props.$variant === "step-label" &&
     css`
@@ -34,6 +34,12 @@ const StyledP = styled.p`
       border: solid 2px var(--primary-color);
       border-radius: 8px;
       padding: 8px;
+    `};
+  
+    ${(props) =>
+    props.$variant === "reduce_top_margin" &&
+    css`
+      margin-top: -220px;
     `};
 `;
 
