@@ -31,10 +31,9 @@ const Container = styled.section`
       align-items: center;
       padding: 0;
       gap: ${(props) => (props.$gap ? "10px" : "0")};
-      //margin-top: ${(props) => (props.$marginTop ? "30px" : "0")};
-      //margin-bottom: ${(props) => (props.$marginBottom ? "30px" : "0")};
       margin: ${(props) => (props.$margin ? "30px" : "0")};
       margin-bottom: ${(props) => (props.$margin_bottom ? "30px" : "0")};
+      margin-top: ${(props) => (props.$margin_top ? "30px" : "0")};
     `};
 
   ${(props) =>
