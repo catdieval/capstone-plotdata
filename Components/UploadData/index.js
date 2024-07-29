@@ -28,7 +28,6 @@ export default function UploadData({ fileObject, onUploadFile }) {
           these values in the file by null.
         </Paragraph>
       </Card>
-
       <form onSubmit={handleSubmit}>
         <Container $centered="center">
           <FileUploader onUploadFile={onUploadFile} />
