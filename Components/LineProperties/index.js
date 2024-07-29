@@ -6,29 +6,15 @@ import {
   lineStyleArray,
   lineWidthArray,
 } from "../../lib/listOfLineProperties";
-import InputTypeSubmit from "../InputTypeSubmit";
 import Paragraph from "../Paragraph";
 
-export default function LineProperties({
-  onHasCompletedDistributionProperties,
-  settings,
-  onSettingsChange,
-}) {
+export default function LineProperties({ onSettingsChange }) {
   function handleSubmit(event) {
     event.preventDefault();
   }
-
-  function notCompletedLineProperties() {
-    return (
-      settings.lineColor.length === 0 ||
-      settings.lineStyle.length === 0 ||
-      Number(settings.lineWidth) === 1
-    );
-  }
-
   return (
     <form onSubmit={handleSubmit}>
-      <Container $centered="center" $gap>
+      <Container $centered="center" $gap $margin>
         <StyledH3>Line properties</StyledH3>
         <Paragraph>Line color:</Paragraph>
         <DropDownMenu
@@ -47,11 +33,6 @@ export default function LineProperties({
           nameString="lineWidth"
           onChange={onSettingsChange}
           arrayOfOptions={lineWidthArray}
-        />
-        <InputTypeSubmit
-          value="Next"
-          onClick={onHasCompletedDistributionProperties}
-          disabled={notCompletedLineProperties()}
         />
       </Container>
     </form>

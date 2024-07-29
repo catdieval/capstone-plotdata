@@ -59,22 +59,12 @@ export default function App({ Component, pageProps }) {
 
   const [settings, setSettings] = useState(initialSettings);
 
-  const [hasCompletedStep4, setHasCompletedStep4] = useState(false);
+  const [hasCompletedAllSteps, setHasCompletedAllSteps] = useState(false);
 
-  const [hasCompletedStep5, setHasCompletedStep5] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
 
-  // State to check the status if the user has selected values for all properties for a given distribution
-  // (e.g. bar plot)
-  const [
-    hasCompletedDistributionProperties,
-    setHasCompletedDistributionProperties,
-  ] = useState(false);
-
-  const [hasCompletedStep6, setHasCompletedStep6] = useState(false);
-
-  function handleGetStarted() {
-    setHasClickedGetStarted(true);
-  }
+  //State to store the clicked steps in an array when clicking on the next button
+  const [clickedSteps, setClickedSteps] = useState([]);
 
   function handleUploadFile(file) {
     setFileObject(file);
@@ -93,7 +83,6 @@ export default function App({ Component, pageProps }) {
 
       setKeyNames(keys);
       setVals(correctValues);
-      alert("File processed successfully.");
     };
 
     reader.readAsText(fileObject);
@@ -134,43 +123,48 @@ export default function App({ Component, pageProps }) {
 
       setXVariable(tempXArray);
       setYVariable(tempYArray);
-      alert("Data for the x and y variables are assigned.");
     }
   }
 
   function handleSettingsChange(event) {
     setSettings({ ...settings, [event.target.name]: event.target.value });
-    setHasCompletedStep6(false); // this is to cause a new rendering of the chart (by obliging the user to click on the "Plot" button) because of the bug in autorange 
   }
 
-  function handleHasCompletedStep4() {
-    alert("Labels for the x-axis and the y-axis of the chart are assigned.");
-    setHasCompletedStep4(true);
+  function handleHasCompletedAllSteps() {
+    setHasCompletedAllSteps(true);
   }
 
-  function handleHasCompletedStep5() {
-    alert("Title of the chart is assigned.");
-    setHasCompletedStep5(true);
+  function handleNext() {
+    /* The condition for steps 1, 3 and 6 is needed to run the functions inside this condition, 
+    which are needed to feed data to the app for the following steps.*/
+    if (currentStep === 1) {
+      handleConversion();
+    } else if (currentStep === 3) {
+      handleAssignVariables();
+    } else if (currentStep === 6) {
+      handleHasCompletedAllSteps();
+    }
+    trackSteps(currentStep);
+    setCurrentStep(currentStep + 1);
   }
 
-  function handleHasCompletedDistributionProperties() {
-    alert("Distribution properties are assigned.");
-    setHasCompletedDistributionProperties(true);
+  function handleBack() {
+    setCurrentStep(currentStep - 1);
   }
 
-  function handleHasCompletedStep6() {
-    alert("Plotting properties are assigned.");
-    setHasCompletedStep6(true);
+  function handleStepChange(step) {
+    setCurrentStep(step);
   }
 
+  function trackSteps(step) {
+    setClickedSteps([...clickedSteps, step]);
+  }
   return (
     <Layout>
       <GlobalStyle />
       <Component
         {...pageProps}
-        hasClickedGetStarted={hasClickedGetStarted}
-        onGetStarted={handleGetStarted}
-        keyNames={keyNames}
+        keynames={keynames}
         fileObject={fileObject}
         onUploadFile={handleUploadFile}
         onConversion={handleConversion}
@@ -185,16 +179,13 @@ export default function App({ Component, pageProps }) {
         onAssignVariables={handleAssignVariables}
         settings={settings}
         onSettingsChange={handleSettingsChange}
-        hasCompletedStep4={hasCompletedStep4}
-        onHasCompletedStep4={handleHasCompletedStep4}
-        hasCompletedStep5={hasCompletedStep5}
-        onHasCompletedStep5={handleHasCompletedStep5}
-        hasCompletedDistributionProperties={hasCompletedDistributionProperties}
-        onHasCompletedDistributionProperties={
-          handleHasCompletedDistributionProperties
-        }
-        hasCompletedStep6={hasCompletedStep6}
-        onHasCompletedStep6={handleHasCompletedStep6}
+        hasCompletedAllSteps={hasCompletedAllSteps}
+        onHasCompletedAllSteps={handleHasCompletedAllSteps}
+        onNext={handleNext}
+        onBack={handleBack}
+        onStepChange={handleStepChange}
+        currentStep={currentStep}
+        clickedSteps={clickedSteps}
       />
     </Layout>
   );
