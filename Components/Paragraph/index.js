@@ -20,6 +20,7 @@ const StyledP = styled.p`
     css`
       font-weight: 600;
     `};
+    
   ${(props) =>
     props.$variant === "step-label" &&
     css`
