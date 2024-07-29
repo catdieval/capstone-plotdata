@@ -22,7 +22,7 @@ export default function ChooseVariables({
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <Container $centered="center" $margin_bottom>
+        <Container $centered="center" $margin_bottom> 
           <Paragraph $variant="start">Variable for the x-axis:</Paragraph>
           <DropDownMenu
             idString="x:"
