@@ -128,7 +128,7 @@ export default function Plotting({
       hasCompletedAllSteps ? (
         <>
           <Paragraph $variant="reduce_top_margin">
-            You can interact with the graph by using the functions at the top of
+            You can interact with the chart by using the functions at the top of
             the chart.
           </Paragraph>
           <Container $centered="center" $margin_top $margin_bottom>
@@ -141,8 +141,8 @@ export default function Plotting({
                 },
                 xaxis: xAxisOptions,
                 yaxis: yAxisOptions,
-                width: 350,
-                height: 250, 
+                width: 500,
+                height: 400, 
                 margin: {
                   t: 50,
                   b: 50,
