@@ -6,7 +6,7 @@ export const ButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 0.5rem;
-  margin-top: 1rem;
+  margin-top: ${(props) => (props.$margin_top ? "-2rem" : "1rem")}; 
 `;
 
 export const StepperContainer = styled.section`
