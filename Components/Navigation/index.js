@@ -1,6 +1,6 @@
 import StepItem from "../StepItem";
 import Button from "../Button";
-import AllSteps from "../AllSteps";
+import OneStepAtATime from "../OneStepAtATime";
 import {
   ButtonContainer,
   StepperContainer,
@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 export default function Navigation({
   onNext,
   onBack,
-  onStepChange,
+  onClickStepper,
   currentStep,
   clickedSteps,
   fileObject,
@@ -34,18 +34,23 @@ export default function Navigation({
 }) {
   const router = useRouter();
 
-  //Destructuring id from arrayOfSteps corresponding to step 6.
+  // Destructuring id from arrayOfSteps corresponding to step 6.
   const { id } = arrayOfSteps[5];
+  const idStep6 = id;
 
+  // This function redirects the user to the page with the chart
   function handlePlotNavigation() {
     router.push("/plot");
   }
 
+  // This function redirects the user to the startpage
   function handleBackStartPage() {
     router.push("/");
   }
 
-  function handleDisabledButton() {
+  /* This function serves to disable the "Next" button if the user has not made any input for the
+  current step */
+  function handleDisableNextButton() {
     if (currentStep === 1) {
       return !fileObject;
     } else if (currentStep === 2) {
@@ -86,11 +91,11 @@ export default function Navigation({
                   buttonNumber={id}
                   id={id}
                   currentStep={currentStep}
-                  onStepChange={() => onStepChange(id)}
+                  onClickStepper={() => onClickStepper(id)}
                   clickedSteps={clickedSteps}
                 />
               </SingleStepContainer>
-              <AllSteps
+              <OneStepAtATime
                 currentStep={currentStep}
                 id={id}
                 keynames={keynames}
@@ -111,7 +116,8 @@ export default function Navigation({
               />
               <ButtonContainer>
                 {
-                  // The currentStep > 1 && currentStep === id condition is used to show the "Back" button only when the user has reached Step 2 to Step 6 and when currentStep === id.
+                  /* This condition is used to display the "Back" button only for the current step and only 
+                  when this step is not step 1 */
                 }
                 {currentStep > 1 && currentStep === id ? (
                   <Button $variant="back" onClick={onBack}>
@@ -119,13 +125,13 @@ export default function Navigation({
                   </Button>
                 ) : null}
                 {
-                  // The currentStep === id condition is used to show the "Next" button only when the condition is true.
+                  // This condition is used to display the "Next" button only for the current step
                 }
                 {currentStep === id && (
                   <Button
                     $variant="next"
                     onClick={onNext}
-                    disabled={handleDisabledButton()}
+                    disabled={handleDisableNextButton()}
                   >
                     {currentStep === arrayOfSteps.length ? "Finish" : "Next"}
                   </Button>
@@ -135,7 +141,9 @@ export default function Navigation({
           );
         })}
         <ButtonContainer>
-          {clickedSteps.includes(id) && (
+          { /* The "Plot" button is displayed only if the user has clicked the "Next" button 
+            for step 6 */
+          clickedSteps.includes(idStep6) && (
             <Button onClick={handlePlotNavigation}>Plot</Button>
           )}
         </ButtonContainer>
