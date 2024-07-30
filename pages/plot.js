@@ -13,6 +13,7 @@ export default function Plot({
 }) {
   const router = useRouter();
 
+  // This function serves to redirect the user to the page with the steps
   function handleBackSteps() {
     router.push("/steps");
   }
