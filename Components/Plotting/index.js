@@ -127,7 +127,7 @@ export default function Plotting({
       yVariable.length > 0 &&
       hasCompletedAllSteps ? (
         <>
-          <Paragraph $variant="reduce_top_margin">
+          <Paragraph>
             You can interact with the chart by using the functions at the top of
             the chart.
           </Paragraph>

@@ -71,7 +71,7 @@ export default function Navigation({
   return (
     <StepperContainer>
       <nav>
-        <ButtonContainer $margin_top>
+        <ButtonContainer>
           <Button $variant="back" onClick={handleBackStartPage}>
             Home
           </Button>

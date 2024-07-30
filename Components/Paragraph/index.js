@@ -35,12 +35,6 @@ const StyledP = styled.p`
       border-radius: 8px;
       padding: 8px;
     `};
-  
-    ${(props) =>
-    props.$variant === "reduce_top_margin" &&
-    css`
-      margin-top: -150px; 
-    `};
 `;
 
 export default function Paragraph({ children, $variant, $isDisabled }) {
