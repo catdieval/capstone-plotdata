@@ -71,7 +71,7 @@ export default function Navigation({
   return (
     <StepperContainer>
       <nav>
-        <ButtonContainer>
+        <ButtonContainer $margin_top>
           <Button $variant="back" onClick={handleBackStartPage}>
             Home
           </Button>
@@ -111,7 +111,7 @@ export default function Navigation({
               />
               <ButtonContainer>
                 {
-                  //The currentStep > 1 && currentStep === id condition is used to show the "Back" button only when the user has reached Step 2 to Step 6 and when currentStep === id.
+                  // The currentStep > 1 && currentStep === id condition is used to show the "Back" button only when the user has reached Step 2 to Step 6 and when currentStep === id.
                 }
                 {currentStep > 1 && currentStep === id ? (
                   <Button $variant="back" onClick={onBack}>
