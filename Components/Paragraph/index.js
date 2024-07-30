@@ -39,7 +39,7 @@ const StyledP = styled.p`
     ${(props) =>
     props.$variant === "reduce_top_margin" &&
     css`
-      margin-top: -220px;
+      margin-top: -150px; 
     `};
 `;
 
