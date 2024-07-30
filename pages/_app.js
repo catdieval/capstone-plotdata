@@ -61,10 +61,12 @@ export default function App({ Component, pageProps }) {
   const [settings, setSettings] = useState(initialSettings);
 
   const [hasCompletedAllSteps, setHasCompletedAllSteps] = useState(false);
-
+  
+  /* State to store the current step, when the user clicks on the "Next", "Back" and stepper buttons.
+  Initially, the current step is step 1 */
   const [currentStep, setCurrentStep] = useState(1);
 
-  //State to store the clicked steps in an array when clicking on the next button
+  // State to store the current step in an array when the user clicks on the "Next" button
   const [clickedSteps, setClickedSteps] = useState([]);
 
   function handleUploadFile(file) {
@@ -135,9 +137,16 @@ export default function App({ Component, pageProps }) {
     setHasCompletedAllSteps(true);
   }
 
+  // This function tracks the current step when the user clicks on the "Next" button
+  function trackClickedSteps(step) {
+    setClickedSteps([...clickedSteps, step]);
+  }
+
+  /* When the user clicks on the "Next" button, this function first runs special functions for steps
+  1, 3 and 6 (to process the user input), then feeds the current step to the clickedSteps array, then
+  increments the current step by 1
+  */
   function handleNext() {
-    /* The condition for steps 1, 3 and 6 is needed to run the functions inside this condition, 
-    which are needed to feed data to the app for the following steps.*/
     if (currentStep === 1) {
       handleConversion();
     } else if (currentStep === 3) {
@@ -145,21 +154,21 @@ export default function App({ Component, pageProps }) {
     } else if (currentStep === 6) {
       handleHasCompletedAllSteps();
     }
-    trackSteps(currentStep);
+    trackClickedSteps(currentStep);
     setCurrentStep(currentStep + 1);
   }
 
+  // When the user clicks on the "Back" button, this function decrements the current step by 1
   function handleBack() {
     setCurrentStep(currentStep - 1);
   }
 
-  function handleStepChange(step) {
+  /* When the user clicks on the stepper button, this function assigns the corresponding id
+   to the current step */
+  function handleClickStepper(step) {
     setCurrentStep(step);
   }
 
-  function trackSteps(step) {
-    setClickedSteps([...clickedSteps, step]);
-  }
   return (
     <Layout>
       <GlobalStyle />
@@ -184,7 +193,7 @@ export default function App({ Component, pageProps }) {
         onHasCompletedAllSteps={handleHasCompletedAllSteps}
         onNext={handleNext}
         onBack={handleBack}
-        onStepChange={handleStepChange}
+        onClickStepper={handleClickStepper}
         currentStep={currentStep}
         clickedSteps={clickedSteps}
       />
