@@ -48,7 +48,7 @@ export default function Navigation({
     router.push("/");
   }
 
-  /* This function serves to disable the "Next" button if the user has not made any input for the
+  /* This function serves to disable the "Next" button if the user has not made all inputs for the
   current step */
   function handleDisableNextButton() {
     if (currentStep === 1) {
@@ -62,16 +62,16 @@ export default function Navigation({
     } else if (currentStep === 5) {
       return settings.titleLabel.length === 0;
     } else if (currentStep === 6) {
-      return !(
-        settings.gridXAxis &&
-        settings.gridYAxis &&
-        settings.rangeXAxis &&
-        settings.rangeYAxis &&
-        settings.logXAxis &&
-        settings.logYAxis
+      return (
+        (!settings.gridXAxis || (settings.gridXAxis === "true" && !settings.gridLineStyleXAxis)) || 
+        (!settings.gridYAxis || (settings.gridYAxis === "true" && !settings.gridLineStyleYAxis)) ||
+        (!settings.rangeXAxis || (settings.rangeXAxis === "min max" && (!settings.minXAxis || !settings.maxXAxis))) || 
+        (!settings.rangeYAxis || (settings.rangeYAxis === "min max" && (!settings.minYAxis || !settings.maxYAxis))) ||
+        !settings.logXAxis ||
+        !settings.logYAxis
       );
     }
-  }
+  } 
 
   return (
     <StepperContainer>
@@ -98,6 +98,9 @@ export default function Navigation({
               <OneStepAtATime
                 currentStep={currentStep}
                 id={id}
+                onDisableNextButton={handleDisableNextButton()}
+                onNext={onNext}
+                onBack={onBack}
                 keynames={keynames}
                 fileObject={fileObject}
                 onUploadFile={onUploadFile}
@@ -114,29 +117,6 @@ export default function Navigation({
                 settings={settings}
                 onSettingsChange={onSettingsChange}
               />
-              <ButtonContainer>
-                {
-                  /* This condition is used to display the "Back" button only for the current step and only 
-                  when this step is not step 1 */
-                }
-                {currentStep > 1 && currentStep === id ? (
-                  <Button $variant="back" onClick={onBack}>
-                    Back
-                  </Button>
-                ) : null}
-                {
-                  // This condition is used to display the "Next" button only for the current step
-                }
-                {currentStep === id && (
-                  <Button
-                    $variant="next"
-                    onClick={onNext}
-                    disabled={handleDisableNextButton()}
-                  >
-                    {currentStep === arrayOfSteps.length ? "Finish" : "Next"}
-                  </Button>
-                )}
-              </ButtonContainer>
             </StyledList>
           );
         })}
