@@ -1,8 +1,14 @@
 import Container from "../Container";
 import Paragraph from "../Paragraph";
 import DropDownMenu from "../DropDownMenu";
+import InputTypeSubmit from "../InputTypeSubmit";
+import {ButtonContainer} from "../Navigation/styledNavigation";
+import Button from "../Button";
 
 export default function ChooseVariables({
+  onDisableNextButton, 
+  onNext, 
+  onBack,
   keynames,
   onXChange,
   onYChange,
@@ -36,6 +42,16 @@ export default function ChooseVariables({
             arrayOfOptions={keynames}
           />
         </Container>
+        <ButtonContainer>
+          <Button $variant="back" onClick={onBack}>
+            Back
+          </Button>
+          <InputTypeSubmit
+            valueString="Next"
+            onClick={onNext}
+            disabled={onDisableNextButton}
+          />  
+        </ButtonContainer>
       </form>
     </>
   );

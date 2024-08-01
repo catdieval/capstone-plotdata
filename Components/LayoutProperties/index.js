@@ -3,8 +3,17 @@ import { StyledH3 } from "../Heading";
 import LogScaleProperties from "../LogScaleProperties";
 import RangeProperties from "../RangeProperties";
 import Container from "../Container";
+import InputTypeSubmit from "../InputTypeSubmit";
+import {ButtonContainer} from "../Navigation/styledNavigation";
+import Button from "../Button";
 
-export default function LayoutProperties({ settings, onSettingsChange }) {
+export default function LayoutProperties({ 
+  onDisableNextButton, 
+  onNext, 
+  onBack, 
+  settings, 
+  onSettingsChange, 
+}) {
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -26,6 +35,16 @@ export default function LayoutProperties({ settings, onSettingsChange }) {
             settings={settings}
             onSettingsChange={onSettingsChange}
           />
+          <ButtonContainer>
+            <Button $variant="back" onClick={onBack}>
+              Back
+            </Button>
+            <InputTypeSubmit
+              valueString="Finish"
+              onClick={onNext}
+              disabled={onDisableNextButton}
+            />  
+          </ButtonContainer>
         </form>
       </Container>
     </>
