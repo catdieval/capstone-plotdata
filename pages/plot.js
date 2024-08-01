@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 export default function Plot({
   xVariable,
   yVariable,
-  hasCompletedAllSteps,
   settings,
   onSettingsChange,
   clickedChartType,
@@ -25,7 +24,6 @@ export default function Plot({
         xVariable={xVariable}
         yVariable={yVariable}
         settings={settings}
-        hasCompletedAllSteps={hasCompletedAllSteps}
         onSettingsChange={onSettingsChange}
       />
       <Container $centered="center" $margin>
