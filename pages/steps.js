@@ -3,7 +3,7 @@ import Navigation from "../Components/Navigation";
 export default function Steps({
   onBack,
   onNext,
-  onStepChange,
+  onClickStepper,
   currentStep,
   clickedSteps,
   fileObject,
@@ -27,7 +27,7 @@ export default function Steps({
       <Navigation
         onNext={onNext}
         onBack={onBack}
-        onStepChange={onStepChange}
+        onClickStepper={onClickStepper}
         currentStep={currentStep}
         fileObject={fileObject}
         onUploadFile={onUploadFile}
