@@ -8,6 +8,9 @@ import PlottingProperties from "../PlottingProperties";
 export default function OneStepAtATime({
   currentStep,
   id,
+  onDisableNextButton,
+  onNext,
+  onBack,
   fileObject,
   onUploadFile,
   onConversion,
@@ -22,11 +25,13 @@ export default function OneStepAtATime({
   yVariable,
   settings,
   onSettingsChange,
-}) {
+}) {  
   // Displays UploadData only when the current step is step 1 and nothing for the other steps
   if (currentStep === 1 && id === 1) {
     return (
       <UploadData
+        onDisableNextButton={onDisableNextButton}
+        onNext={onNext}
         fileObject={fileObject}
         onUploadFile={onUploadFile}
         onConversion={onConversion}
@@ -35,6 +40,9 @@ export default function OneStepAtATime({
   } else if (currentStep === 2 && id === 2) {
     return (
       <ListOfCharts
+        onDisableNextButton={onDisableNextButton}
+        onNext={onNext}
+        onBack={onBack}
         onSelectChartType={onSelectChartType}
         clickedChartType={clickedChartType}
       />
@@ -42,6 +50,9 @@ export default function OneStepAtATime({
   } else if (currentStep === 3 && id === 3) {
     return (
       <ChooseVariables
+        onDisableNextButton={onDisableNextButton}
+        onNext={onNext}
+        onBack={onBack}
         keynames={keynames}
         onXChange={onXChange}
         onYChange={onYChange}
@@ -52,6 +63,9 @@ export default function OneStepAtATime({
   } else if (currentStep === 4 && id === 4) {
     return (
       <XandYLabelsGraph
+        onDisableNextButton={onDisableNextButton}
+        onNext={onNext}
+        onBack={onBack}
         xKey={xKey}
         yKey={yKey}
         xVariable={xVariable}
@@ -62,11 +76,18 @@ export default function OneStepAtATime({
     );
   } else if (currentStep === 5 && id === 5) {
     return (
-      <GraphTitle settings={settings} onSettingsChange={onSettingsChange} />
+      <GraphTitle 
+        onDisableNextButton={onDisableNextButton}
+        onNext={onNext}
+        onBack={onBack}
+        settings={settings} onSettingsChange={onSettingsChange} />
     );
   } else if (currentStep === 6 && id === 6) {
     return (
       <PlottingProperties
+        onDisableNextButton={onDisableNextButton}
+        onNext={onNext}
+        onBack={onBack}
         clickedChartType={clickedChartType}
         settings={settings}
         onSettingsChange={onSettingsChange}
