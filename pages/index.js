@@ -45,6 +45,9 @@ export default function StartPage() {
       </Paragraph>
       <Container $centered="center">
         <UnorderedList $arrayOfBulletPoints={arrayOfActions} />
+        <Paragraph>
+          You can find <a href="https://catdieval.github.io/" target="_blank">here</a> a CSV file for testing the process.
+        </Paragraph>
         <Container $centered="center" $margin $margin_bottom>
           <Button onClick={handleGetStarted}>Get started</Button>
         </Container>
