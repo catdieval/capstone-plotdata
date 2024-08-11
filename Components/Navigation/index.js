@@ -48,6 +48,22 @@ export default function Navigation({
     router.push("/");
   }
 
+  const hasNotEnteredInputsStep6 = (
+    (!settings.gridXAxis || (settings.gridXAxis === "true" && !settings.gridLineStyleXAxis)) || 
+    (!settings.gridYAxis || (settings.gridYAxis === "true" && !settings.gridLineStyleYAxis)) ||
+    (!settings.rangeXAxis || (settings.rangeXAxis === "min max" && (!settings.minXAxis || !settings.maxXAxis))) || 
+    (!settings.rangeYAxis || (settings.rangeYAxis === "min max" && (!settings.minYAxis || !settings.maxYAxis))) ||
+    !settings.logXAxis ||
+    !settings.logYAxis
+  );
+
+  const hasForgottenInputForReplotting = (
+    (settings.gridXAxis === "true" && !settings.gridLineStyleXAxis) || 
+    (settings.gridYAxis === "true" && !settings.gridLineStyleYAxis) ||
+    (settings.rangeXAxis === "min max" && (!settings.minXAxis || !settings.maxXAxis)) || 
+    (settings.rangeYAxis === "min max" && (!settings.minYAxis || !settings.maxYAxis)) 
+  );
+
   /* This function serves to disable the "Next" button if the user has not made all inputs for the
   current step */
   function handleDisableNextButton() {
@@ -62,16 +78,13 @@ export default function Navigation({
     } else if (currentStep === 5) {
       return settings.titleLabel.length === 0;
     } else if (currentStep === 6) {
-      return (
-        (!settings.gridXAxis || (settings.gridXAxis === "true" && !settings.gridLineStyleXAxis)) || 
-        (!settings.gridYAxis || (settings.gridYAxis === "true" && !settings.gridLineStyleYAxis)) ||
-        (!settings.rangeXAxis || (settings.rangeXAxis === "min max" && (!settings.minXAxis || !settings.maxXAxis))) || 
-        (!settings.rangeYAxis || (settings.rangeYAxis === "min max" && (!settings.minYAxis || !settings.maxYAxis))) ||
-        !settings.logXAxis ||
-        !settings.logYAxis
-      );
+      return hasNotEnteredInputsStep6;
     }
   } 
+
+  function handleDisablePlotButton() {
+    return hasForgottenInputForReplotting;
+  }
 
   return (
     <StepperContainer>
@@ -124,7 +137,7 @@ export default function Navigation({
           { /* The "Plot" button is displayed only if the user has clicked the "Next" button 
             for step 6 */
           clickedSteps.includes(idStep6) && (
-            <Button onClick={handlePlotNavigation}>Plot</Button>
+            <Button $variant="plot" onClick={handlePlotNavigation} disabled={handleDisablePlotButton()}>Plot</Button>
           )}
         </ButtonContainer>
       </nav>
