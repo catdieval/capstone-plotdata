@@ -4,6 +4,9 @@ import MarkerProperties from "../MarkerProperties";
 import LayoutProperties from "../LayoutProperties";
 
 export default function PlottingProperties({
+  onDisableNextButton,
+  onNext,
+  onBack,
   clickedChartType,
   settings,
   onSettingsChange,
@@ -30,6 +33,9 @@ export default function PlottingProperties({
         />
       )}
       <LayoutProperties
+        onDisableNextButton={onDisableNextButton}
+        onNext={onNext}
+        onBack={onBack}
         settings={settings}
         onSettingsChange={onSettingsChange}
       />

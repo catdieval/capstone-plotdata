@@ -1,8 +1,18 @@
 import Paragraph from "../Paragraph";
 import InputTypeText from "../InputTypeText";
 import Container from "../Container";
+import InputTypeSubmit from "../InputTypeSubmit";
+import {ButtonContainer} from "../Navigation/styledNavigation";
+import Button from "../Button";
 
-export default function XandYLabelsGraph({ xKey, yKey, onSettingsChange }) {
+export default function XandYLabelsGraph({ 
+  onDisableNextButton, 
+  onNext, 
+  onBack, 
+  xKey, 
+  yKey, 
+  onSettingsChange, 
+}) {
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -31,6 +41,16 @@ export default function XandYLabelsGraph({ xKey, yKey, onSettingsChange }) {
             onChange={onSettingsChange}
           />
         </Container>
+        <ButtonContainer>
+          <Button $variant="back" onClick={onBack}>
+            Back
+          </Button>
+          <InputTypeSubmit
+            valueString="Next"
+            onClick={onNext}
+            disabled={onDisableNextButton}
+          />  
+          </ButtonContainer>
       </form>
     </>
   );
