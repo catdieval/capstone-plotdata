@@ -2,6 +2,9 @@ import BarProperties from "../BarProperties";
 import LineProperties from "../LineProperties";
 import MarkerProperties from "../MarkerProperties";
 import LayoutProperties from "../LayoutProperties";
+import InputTypeSubmit from "../InputTypeSubmit";
+import {ButtonContainer} from "../Navigation/styledNavigation";
+import Button from "../Button";
 
 export default function PlottingProperties({
   onDisableNextButton,
@@ -11,8 +14,13 @@ export default function PlottingProperties({
   settings,
   onSettingsChange,
 }) {
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
   return (
     <>
+    <form onSubmit={handleSubmit}>
       {clickedChartType === "bar-plot" && (
         <BarProperties
           settings={settings}
@@ -39,6 +47,17 @@ export default function PlottingProperties({
         settings={settings}
         onSettingsChange={onSettingsChange}
       />
+      <ButtonContainer>
+        <Button $variant="back" onClick={onBack}>
+          Back
+        </Button>
+        <InputTypeSubmit
+          valueString="Finish"
+          onClick={onNext}
+          disabled={onDisableNextButton}
+        />  
+      </ButtonContainer>
+    </form>
     </>
   );
 }

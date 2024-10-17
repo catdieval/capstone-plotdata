@@ -9,11 +9,8 @@ import {
 } from "../../lib/listOfLineProperties";
 
 export default function LineProperties({ onSettingsChange }) {
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+  
   return (
-    <form onSubmit={handleSubmit}>
       <Container $centered="center" $gap $margin>
         <StyledH3>Line properties</StyledH3>
         <Paragraph>Line color:</Paragraph>
@@ -35,6 +32,5 @@ export default function LineProperties({ onSettingsChange }) {
           arrayOfOptions={lineWidthArray}
         />
       </Container>
-    </form>
   );
 }

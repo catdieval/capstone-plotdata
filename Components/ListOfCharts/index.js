@@ -12,8 +12,13 @@ export default function ListOfCharts({
   onSelectChartType, 
   clickedChartType, 
 }) {
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
   return (
     <>
+    <form onSubmit={handleSubmit}>
     <Container $wrap="wrap">
       {chartArray.map(({ name, icon }) => {
         return (
@@ -37,6 +42,7 @@ export default function ListOfCharts({
         disabled={onDisableNextButton}
       />  
     </ButtonContainer>
+    </form>
     </>
   );
 }
