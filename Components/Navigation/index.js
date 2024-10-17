@@ -48,7 +48,14 @@ export default function Navigation({
     router.push("/");
   }
 
+  const hasNotEnteredMarkerProperties = (!settings.markerColor || !settings.markerSymbol || !settings.markerSize);
+  const hasNotEnteredLineProperties = (!settings.lineColor || !settings.lineStyle || !settings.lineWidth);
+
   const hasNotEnteredInputsStep6 = (
+    ((clickedChartType === "bar-plot" && !settings.barColor) || 
+     (clickedChartType === "scatter-plot" && hasNotEnteredMarkerProperties) ||
+     (clickedChartType === "line-plot" && hasNotEnteredLineProperties) || 
+     (clickedChartType === "line-markers-plot" && (hasNotEnteredLineProperties || hasNotEnteredMarkerProperties))) ||
     (!settings.gridXAxis || (settings.gridXAxis === "true" && !settings.gridLineStyleXAxis)) || 
     (!settings.gridYAxis || (settings.gridYAxis === "true" && !settings.gridLineStyleYAxis)) ||
     (!settings.rangeXAxis || (settings.rangeXAxis === "min max" && (!settings.minXAxis || !settings.maxXAxis))) || 
@@ -58,6 +65,10 @@ export default function Navigation({
   );
 
   const hasForgottenInputForReplotting = (
+    ((clickedChartType === "bar-plot" && !settings.barColor) || 
+    (clickedChartType === "scatter-plot" && hasNotEnteredMarkerProperties) ||
+    (clickedChartType === "line-plot" && hasNotEnteredLineProperties) || 
+    (clickedChartType === "line-markers-plot" && (hasNotEnteredLineProperties || hasNotEnteredMarkerProperties))) ||
     (settings.gridXAxis === "true" && !settings.gridLineStyleXAxis) || 
     (settings.gridYAxis === "true" && !settings.gridLineStyleYAxis) ||
     (settings.rangeXAxis === "min max" && (!settings.minXAxis || !settings.maxXAxis)) || 
