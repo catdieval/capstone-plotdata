@@ -41,7 +41,8 @@ export default function Plotting({
             symbol: settings.markerSymbol,
             size: settings.markerSize,
           }
-        : {
+        : clickedChartType === "bar-plot" 
+        ? {
             color:
               settings.barColor === "lilac"
                 ? "#c8a2c8"
@@ -50,8 +51,12 @@ export default function Plotting({
                 : settings.barColor === "light brown"
                 ? "#B5651D"
                 : settings.barColor,
-          },
+          }
+        : {
+          color: "",
+        },
     line:
+      clickedChartType === "line-markers-plot" ||
       clickedChartType === "line-plot"
         ? {
             color:
