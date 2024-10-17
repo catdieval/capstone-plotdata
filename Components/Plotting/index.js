@@ -16,10 +16,8 @@ export default function Plotting({
 
   let selectedMode, selectedType;
 
-  if (chartIndex != -1) {
-    selectedMode = chartArray[chartIndex].mode;
-    selectedType = chartArray[chartIndex].type;
-  }
+  selectedMode = chartArray[chartIndex].mode;
+  selectedType = chartArray[chartIndex].type;
 
   const dataOptions = {
     x: xVariable,
@@ -126,8 +124,6 @@ export default function Plotting({
 
   return (
     <>
-      {chartIndex != -1 ? (
-        <>
           <Paragraph>
             You can interact with the chart by using the functions at the top of
             the chart.
@@ -157,8 +153,6 @@ export default function Plotting({
               }}
             />
           </Container>
-        </>
-      ) : null}
     </>
   );
 }
