@@ -80,7 +80,8 @@ export default function OneStepAtATime({
         onDisableNextButton={onDisableNextButton}
         onNext={onNext}
         onBack={onBack}
-        settings={settings} onSettingsChange={onSettingsChange} />
+        settings={settings} onSettingsChange={onSettingsChange} 
+      />
     );
   } else if (currentStep === 6 && id === 6) {
     return (

@@ -45,7 +45,7 @@ export default function UploadData({
             valueString="Next"
             onClick={onNext}
             disabled={onDisableNextButton}
-            />  
+          />  
         </ButtonContainer>
       </form>
     </>

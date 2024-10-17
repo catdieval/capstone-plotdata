@@ -50,7 +50,7 @@ export default function XandYLabelsGraph({
             onClick={onNext}
             disabled={onDisableNextButton}
           />  
-          </ButtonContainer>
+        </ButtonContainer>
       </form>
     </>
   );
