@@ -33,13 +33,26 @@ export default function PlottingProperties({
           onSettingsChange={onSettingsChange}
         />
       )}
-      {(clickedChartType === "scatter-plot" ||
-        clickedChartType === "line-markers-plot") && (
+      {clickedChartType === "scatter-plot" && (
         <MarkerProperties
           settings={settings}
           onSettingsChange={onSettingsChange}
         />
       )}
+      {clickedChartType === "line-markers-plot" && (
+        <>
+        <LineProperties
+        settings={settings}
+        onSettingsChange={onSettingsChange}
+        />
+        <br /><br /><br />
+        <MarkerProperties
+          settings={settings}
+          onSettingsChange={onSettingsChange}
+        />
+        </>
+      )}
+      <br /><br /><br />
       <LayoutProperties
         onDisableNextButton={onDisableNextButton}
         onNext={onNext}
