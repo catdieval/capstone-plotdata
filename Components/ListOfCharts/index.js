@@ -1,9 +1,24 @@
 import Container from "../Container";
 import ChartItem from "../ChartItem";
 import { chartArray } from "../../lib/listOfPlotTypes";
+import InputTypeSubmit from "../InputTypeSubmit";
+import {ButtonContainer} from "../Navigation/styledNavigation";
+import Button from "../Button";
 
-export default function ListOfCharts({ onSelectChartType, clickedChartType }) {
+export default function ListOfCharts({ 
+  onDisableNextButton, 
+  onNext, 
+  onBack, 
+  onSelectChartType, 
+  clickedChartType, 
+}) {
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
   return (
+    <>
+    <form onSubmit={handleSubmit}>
     <Container $wrap="wrap">
       {chartArray.map(({ name, icon }) => {
         return (
@@ -17,5 +32,17 @@ export default function ListOfCharts({ onSelectChartType, clickedChartType }) {
         );
       })}
     </Container>
+    <ButtonContainer>
+      <Button $variant="back" onClick={onBack}>
+        Back
+      </Button>
+      <InputTypeSubmit
+        valueString="Next"
+        onClick={onNext}
+        disabled={onDisableNextButton}
+      />  
+    </ButtonContainer>
+    </form>
+    </>
   );
 }

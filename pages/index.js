@@ -4,10 +4,10 @@ import Button from "../Components/Button";
 import ImageContainer from "../Components/ImageContainer";
 import Heading from "../Components/Heading";
 import Container from "../Components/Container";
-import Image from "next/image";
 import { arrayOfSteps, arrayOfActions } from "../lib/listOfBulletPoints";
 import { examplePlotsArray } from "../lib/examplePlotsArray";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function StartPage() {
   const router = useRouter();

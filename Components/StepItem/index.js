@@ -11,12 +11,16 @@ const ItemContainer = styled.section`
 export default function StepItem({
   buttonNumber,
   label,
-  onStepChange,
+  onClickStepper,
   id,
   clickedSteps,
   currentStep,
 }) {
-  //This function has an early return for when the condition currentStep === id is true because the stepper button for the current step should be not disabled.
+
+  /* This function has an early return for when currentStep === id is true (current step), such
+  the stepper button has the default value of disabled attribute (=false).
+  When currentStep === id is false (other steps than current step), the stepper button has disabled 
+  attribute being false / true if the user has / has not clicked the "Next" button for these steps */
   function disableStepperButton() {
     if (currentStep === id) {
       return;
@@ -27,7 +31,7 @@ export default function StepItem({
     <ItemContainer>
       <Button
         $variant="circle"
-        onClick={onStepChange}
+        onClick={onClickStepper}
         disabled={disableStepperButton()}
       >
         {!clickedSteps.includes(id) ? buttonNumber : <span>✓</span>}

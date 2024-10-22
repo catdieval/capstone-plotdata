@@ -5,9 +5,7 @@ import CorrectArrays from "../Components/CorrectArrays";
 import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
 export default function App({ Component, pageProps }) {
-  // State to store the status about if the user has clicked on the "Get started" button
-  const [hasClickedGetStarted, setHasClickedGetStarted] = useState(false);
-
+  
   // Step 1: Upload CSV-file
   // State to store keys from the CSV file
   const [keynames, setKeynames] = useState([]);
@@ -39,31 +37,31 @@ export default function App({ Component, pageProps }) {
     barColor: "",
     lineColor: "",
     lineStyle: "",
-    lineWidth: 0,
+    lineWidth: null, 
     markerColor: "",
     markerSymbol: "",
-    markerSize: 0,
-    gridXAxis: "false",
-    gridYAxis: "false",
+    markerSize: null, 
+    gridXAxis: "", 
+    gridYAxis: "", 
     gridLineStyleXAxis: "",
     gridLineStyleYAxis: "",
     rangeXAxis: "",
     rangeYAxis: "",
-    minXAxis: "",
-    maxXAxis: "",
-    minYAxis: "",
-    maxYAxis: "",
+    minXAxis: null,
+    maxXAxis: null,
+    minYAxis: null,
+    maxYAxis: null,
     logXAxis: "",
     logYAxis: "",
   };
 
   const [settings, setSettings] = useState(initialSettings);
-
-  const [hasCompletedAllSteps, setHasCompletedAllSteps] = useState(false);
-
+  
+  /* State to store the current step, when the user clicks on the "Next", "Back" and stepper buttons.
+  Initially, the current step is step 1 */
   const [currentStep, setCurrentStep] = useState(1);
 
-  //State to store the clicked steps in an array when clicking on the next button
+  // State to store the current step in an array when the user clicks on the "Next" button
   const [clickedSteps, setClickedSteps] = useState([]);
 
   function handleUploadFile(file) {
@@ -130,35 +128,36 @@ export default function App({ Component, pageProps }) {
     setSettings({ ...settings, [event.target.name]: event.target.value });
   }
 
-  function handleHasCompletedAllSteps() {
-    setHasCompletedAllSteps(true);
+  // This function tracks the current step when the user clicks on the "Next" button
+  function trackClickedSteps(step) {
+    setClickedSteps([...clickedSteps, step]);
   }
 
+  /* When the user clicks on the "Next" button, this function first runs special functions for steps
+  1, 3 and 6 (to process the user input), then feeds the current step to the clickedSteps array, then
+  increments the current step by 1
+  */
   function handleNext() {
-    /* The condition for steps 1, 3 and 6 is needed to run the functions inside this condition, 
-    which are needed to feed data to the app for the following steps.*/
     if (currentStep === 1) {
       handleConversion();
     } else if (currentStep === 3) {
       handleAssignVariables();
-    } else if (currentStep === 6) {
-      handleHasCompletedAllSteps();
-    }
-    trackSteps(currentStep);
+    } 
+    trackClickedSteps(currentStep);
     setCurrentStep(currentStep + 1);
   }
 
+  // When the user clicks on the "Back" button, this function decrements the current step by 1
   function handleBack() {
     setCurrentStep(currentStep - 1);
   }
 
-  function handleStepChange(step) {
+  /* When the user clicks on the stepper button, this function assigns the corresponding id
+   to the current step */
+  function handleClickStepper(step) {
     setCurrentStep(step);
   }
 
-  function trackSteps(step) {
-    setClickedSteps([...clickedSteps, step]);
-  }
   return (
     <Layout>
       <GlobalStyle />
@@ -179,11 +178,9 @@ export default function App({ Component, pageProps }) {
         onAssignVariables={handleAssignVariables}
         settings={settings}
         onSettingsChange={handleSettingsChange}
-        hasCompletedAllSteps={hasCompletedAllSteps}
-        onHasCompletedAllSteps={handleHasCompletedAllSteps}
         onNext={handleNext}
         onBack={handleBack}
-        onStepChange={handleStepChange}
+        onClickStepper={handleClickStepper}
         currentStep={currentStep}
         clickedSteps={clickedSteps}
       />

@@ -4,16 +4,15 @@ import LogScaleProperties from "../LogScaleProperties";
 import RangeProperties from "../RangeProperties";
 import Container from "../Container";
 
-export default function LayoutProperties({ settings, onSettingsChange }) {
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+export default function LayoutProperties({ 
+  settings, 
+  onSettingsChange, 
+}) {
 
   return (
     <>
       <Container $centered="center" $margin>
         <StyledH3>Layout</StyledH3>
-        <form onSubmit={handleSubmit}>
           <GridProperties
             settings={settings}
             onSettingsChange={onSettingsChange}
@@ -26,7 +25,6 @@ export default function LayoutProperties({ settings, onSettingsChange }) {
             settings={settings}
             onSettingsChange={onSettingsChange}
           />
-        </form>
       </Container>
     </>
   );

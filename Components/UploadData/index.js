@@ -2,8 +2,15 @@ import { Card } from "../Card/card.styled";
 import Paragraph from "../Paragraph";
 import Container from "../Container";
 import FileUploader from "../FileUploader";
+import InputTypeSubmit from "../InputTypeSubmit";
+import {ButtonContainer} from "../Navigation/styledNavigation";
 
-export default function UploadData({ fileObject, onUploadFile }) {
+export default function UploadData({ 
+  onDisableNextButton, 
+  onNext, 
+  fileObject, 
+  onUploadFile, 
+}) {
   // Name of file
   const fileName = fileObject?.name;
 
@@ -28,12 +35,18 @@ export default function UploadData({ fileObject, onUploadFile }) {
           these values in the file by null.
         </Paragraph>
       </Card>
-
       <form onSubmit={handleSubmit}>
         <Container $centered="center">
           <FileUploader onUploadFile={onUploadFile} />
           {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
         </Container>
+        <ButtonContainer>
+          <InputTypeSubmit
+            valueString="Next"
+            onClick={onNext}
+            disabled={onDisableNextButton}
+          />  
+        </ButtonContainer>
       </form>
     </>
   );

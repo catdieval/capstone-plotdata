@@ -1,14 +1,13 @@
 import Paragraph from "../Paragraph";
 import { chartArray } from "../../lib/listOfPlotTypes";
 import dynamic from "next/dynamic";
-import { Card } from "../Card/card.styled";
+import Container from "../Container";
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
 export default function Plotting({
   clickedChartType,
   xVariable,
   yVariable,
-  hasCompletedAllSteps,
   settings,
 }) {
   const chartIndex = chartArray.findIndex(
@@ -18,8 +17,8 @@ export default function Plotting({
   let selectedMode, selectedType;
 
   if (chartIndex != -1) {
-    selectedMode = chartArray[chartIndex].mode;
-    selectedType = chartArray[chartIndex].type;
+  selectedMode = chartArray[chartIndex].mode;
+  selectedType = chartArray[chartIndex].type;
   }
 
   const dataOptions = {
@@ -31,65 +30,134 @@ export default function Plotting({
       clickedChartType === "line-markers-plot" ||
       clickedChartType === "scatter-plot"
         ? {
-            color: settings.markerColor,
+            color:
+              settings.markerColor === "lilac"
+                ? "#c8a2c8"
+                : settings.markerColor === "dark yellow"
+                ? "#EDED00"
+                : settings.markerColor === "light brown"
+                ? "#B5651D"
+                : settings.markerColor,
             symbol: settings.markerSymbol,
             size: settings.markerSize,
           }
-        : { color: settings.barColor },
+        : clickedChartType === "bar-plot" 
+        ? {
+            color:
+              settings.barColor === "lilac"
+                ? "#c8a2c8"
+                : settings.barColor === "dark yellow"
+                ? "#EDED00"
+                : settings.barColor === "light brown"
+                ? "#B5651D"
+                : settings.barColor,
+          }
+        : {
+          color: "",
+        },
     line:
+      clickedChartType === "line-markers-plot" ||
       clickedChartType === "line-plot"
         ? {
-            color: settings.lineColor,
+            color:
+              settings.lineColor === "lilac"
+                ? "#c8a2c8"
+                : settings.lineColor === "dark yellow"
+                ? "#EDED00"
+                : settings.lineColor === "light brown"
+                ? "#B5651D"
+                : settings.lineColor,
             dash: settings.lineStyle,
             width: settings.lineWidth,
           }
         : "",
   };
 
+  const xAxisOptions = {
+    title: { text: settings.xLabel },
+    showline: true,
+    zeroline: false,
+    ticks: "outside",
+    showgrid: settings.gridXAxis === "true",
+    griddash: settings.gridLineStyleXAxis,
+    gridcolor: "darkgrey",
+    autorange:
+      settings.rangeXAxis === "reversed"
+        ? "reversed"
+        : settings.rangeXAxis === "true"
+        ? true
+        : settings.rangeXAxis === "min max"
+        ? false
+        : null,
+    range:
+      settings.rangeXAxis === "min max" && settings.logXAxis === "linear"
+        ? [settings.minXAxis, settings.maxXAxis]
+        : settings.rangeXAxis === "min max" && settings.logXAxis === "log"
+        ? [Math.log10(settings.minXAxis), Math.log10(settings.maxXAxis)]
+        : null,
+
+    type: settings.logXAxis,
+  };
+
+  const yAxisOptions = {
+    title: { text: settings.yLabel },
+    showline: true,
+    zeroline: false,
+    ticks: "outside",
+    showgrid: settings.gridYAxis === "true",
+    griddash: settings.gridLineStyleYAxis,
+    gridcolor: "darkgrey",
+    autorange:
+      settings.rangeYAxis === "reversed"
+        ? "reversed"
+        : settings.rangeYAxis === "true"
+        ? true 
+        : settings.rangeYAxis === "min max"
+        ? false
+        : null,
+    range:
+      settings.rangeYAxis === "min max" && settings.logYAxis === "linear"
+        ? [settings.minYAxis, settings.maxYAxis]
+        : settings.rangeYAxis === "min max" && settings.logYAxis === "log"
+        ? [Math.log10(settings.minYAxis), Math.log10(settings.maxYAxis)]
+        : null,
+    type: settings.logYAxis,
+  };
+
+
   return (
     <>
-      {chartIndex != -1 &&
-      xVariable.length > 0 &&
-      yVariable.length > 0 &&
-      hasCompletedAllSteps ? (
+      {chartIndex != -1 ? (
         <>
           <Paragraph>
-            You can interact with the graph by using the functions at the top of
+            You can interact with the chart by using the functions at the top of
             the chart.
           </Paragraph>
-          <Card $variant="graph">
+          <Container $centered="center" $margin_top $margin_bottom>
             <Plot
               data={[dataOptions]}
               layout={{
-                title: { text: settings.titleLabel },
-                xaxis: {
-                  title: { text: settings.xLabel },
-                  showline: true,
-                  ticks: "outside",
-                  showgrid: settings.gridXAxis === "true",
-                  griddash: settings.gridLineStyleXAxis,
-                  autorange: settings.rangeXAxis,
-                  range: [settings.minXAxis, settings.maxXAxis],
-                  type: settings.logXAxis,
+                title: {
+                  text: settings.titleLabel,
+                  y: 0.9, 
                 },
-                yaxis: {
-                  title: { text: settings.yLabel },
-                  ticks: "outside",
-                  showgrid: settings.gridYAxis === "true",
-                  griddash: settings.gridLineStyleYAxis,
-                  autorange: settings.rangeYAxis,
-                  range: [settings.minYAxis, settings.maxYAxis],
-                  type: settings.logYAxis,
+                xaxis: xAxisOptions,
+                yaxis: yAxisOptions,
+                width: 500,
+                height: 400, 
+                margin: {
+                  t: 50,
+                  b: 50,
+                  r: 50,
+                  l: 50,
                 },
-                width: 600,
-                height: 500,
               }}
               config={{
                 displayModeBar: true,
                 modeBarButtonsToRemove: ["lasso2d", "select2d", "pan2d"],
               }}
             />
-          </Card>
+          </Container>
         </>
       ) : null}
     </>
