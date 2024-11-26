@@ -6,8 +6,7 @@ import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
 import GraphTitle from "../Components/GraphTitle";
 import PlottingProperties from "../Components/PlottingProperties";
-import PlotCard from "@/Components/PlotCard";
-import PlotList from "@/Components/PlotList";
+import PlotList from "../Components/PlotList";
 
 export default function HomePage({
   hasClickedGetStarted,
@@ -39,8 +38,6 @@ export default function HomePage({
   return (
     <div>
       <StartPage onGetStarted={onGetStarted} />
-      <PlotList />
-      {/* <PlotCard /> */}
       <UploadData
         fileObject={fileObject}
         onUploadFile={onUploadFile}

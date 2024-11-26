@@ -3,15 +3,15 @@ import Plot from "../../../db/models/Plot";
 
 export default async function handler(request, response) {
   await dbConnect();
-  const { _id } = request.query;
+  const { id } = request.query;
 
   if (request.method === "GET") {
-    const plot = await Plot.findById(_id);
+    const plots = await Plot.findById(id);
 
-    if (!plot) {
+    if (!plots) {
       return response.status(404).json({ status: "Not Found" });
     }
 
-    response.status(200).json(plot);
+    response.status(200).json(plots);
   }
 }

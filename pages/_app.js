@@ -1,10 +1,13 @@
 import GlobalStyle from "../styles";
+import { SWRConfig } from "swr";
 import Layout from "../Components/Layout";
 import { useState } from "react";
 import CorrectArrays from "../Components/CorrectArrays";
 import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
 export default function App({ Component, pageProps }) {
+  const fetcher = (url) => fetch(url).then((response) => response.json());
+
   // State to store the status about if the user has clicked on the "Get started" button
   const [hasClickedGetStarted, setHasClickedGetStarted] = useState(false);
 
@@ -165,36 +168,40 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout>
       <GlobalStyle />
-      <Component
-        {...pageProps}
-        hasClickedGetStarted={hasClickedGetStarted}
-        onGetStarted={handleGetStarted}
-        keynames={keynames}
-        fileObject={fileObject}
-        onUploadFile={handleUploadFile}
-        onConversion={handleConversion}
-        clickedChartType={clickedChartType}
-        onSelectChartType={handleSelectChartType}
-        xKey={xKey}
-        yKey={yKey}
-        xVariable={xVariable}
-        yVariable={yVariable}
-        onXChange={handleXChange}
-        onYChange={handleYChange}
-        onAssignVariables={handleAssignVariables}
-        settings={settings}
-        onSettingsChange={handleSettingsChange}
-        hasCompletedStep4={hasCompletedStep4}
-        onHasCompletedStep4={handleHasCompletedStep4}
-        hasCompletedStep5={hasCompletedStep5}
-        onHasCompletedStep5={handleHasCompletedStep5}
-        hasCompletedDistributionProperties={hasCompletedDistributionProperties}
-        onHasCompletedDistributionProperties={
-          handleHasCompletedDistributionProperties
-        }
-        hasCompletedStep6={hasCompletedStep6}
-        onHasCompletedStep6={handleHasCompletedStep6}
-      />
+      <SWRConfig value={{ fetcher }}>
+        <Component
+          {...pageProps}
+          hasClickedGetStarted={hasClickedGetStarted}
+          onGetStarted={handleGetStarted}
+          keynames={keynames}
+          fileObject={fileObject}
+          onUploadFile={handleUploadFile}
+          onConversion={handleConversion}
+          clickedChartType={clickedChartType}
+          onSelectChartType={handleSelectChartType}
+          xKey={xKey}
+          yKey={yKey}
+          xVariable={xVariable}
+          yVariable={yVariable}
+          onXChange={handleXChange}
+          onYChange={handleYChange}
+          onAssignVariables={handleAssignVariables}
+          settings={settings}
+          onSettingsChange={handleSettingsChange}
+          hasCompletedStep4={hasCompletedStep4}
+          onHasCompletedStep4={handleHasCompletedStep4}
+          hasCompletedStep5={hasCompletedStep5}
+          onHasCompletedStep5={handleHasCompletedStep5}
+          hasCompletedDistributionProperties={
+            hasCompletedDistributionProperties
+          }
+          onHasCompletedDistributionProperties={
+            handleHasCompletedDistributionProperties
+          }
+          hasCompletedStep6={hasCompletedStep6}
+          onHasCompletedStep6={handleHasCompletedStep6}
+        />
+      </SWRConfig>
     </Layout>
   );
 }
