@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import Image from "next/image";
 import logoImage from "../../assets/plotdata-logo.png";
-import SingInForm from "../SignInForm";
+import Button from "../Button";
+import { useRouter } from "next/router";
 import Container from "../Container";
 
 const StyledTitle = styled.section`
@@ -18,6 +19,7 @@ const StyledTitle = styled.section`
 `;
 
 export default function Title() {
+  const router = useRouter();
   return (
     <>
       <StyledTitle>
@@ -28,7 +30,9 @@ export default function Title() {
             width={300}
             height={74}
           />
-          <SingInForm />
+          <Button $variant="login" onClick={() => router.push("/SignInForm")}>
+            Login
+          </Button>
         </Container>
       </StyledTitle>
     </>
