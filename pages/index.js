@@ -6,7 +6,6 @@ import XandYLabelsGraph from "../Components/XandYLabelsGraph";
 import ChooseVariables from "../Components/ChooseVariables";
 import GraphTitle from "../Components/GraphTitle";
 import PlottingProperties from "../Components/PlottingProperties";
-import PlotList from "../Components/PlotList";
 
 export default function HomePage({
   hasClickedGetStarted,
