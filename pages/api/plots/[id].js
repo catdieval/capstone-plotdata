@@ -6,12 +6,12 @@ export default async function handler(request, response) {
   const { id } = request.query;
 
   if (request.method === "GET") {
-    const plots = await Plot.findById(id);
+    const plot = await Plot.findById(id);
 
-    if (!plots) {
+    if (!plot) {
       return response.status(404).json({ status: "Not Found" });
     }
 
-    response.status(200).json(plots);
+    response.status(200).json(plot);
   }
 }
