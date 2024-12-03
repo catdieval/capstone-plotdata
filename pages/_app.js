@@ -1,11 +1,16 @@
 import GlobalStyle from "../styles";
+import { SWRConfig } from "swr";
 import Layout from "../Components/Layout";
 import { useState } from "react";
 import CorrectArrays from "../Components/CorrectArrays";
 import ConvertCSVToArray from "../Components/ConvertCSVToArray";
 
 export default function App({ Component, pageProps }) {
-  
+  const fetcher = (url) => fetch(url).then((response) => response.json());
+
+  // State to store the status about if the user has clicked on the "Get started" button
+  const [hasClickedGetStarted, setHasClickedGetStarted] = useState(false);
+
   // Step 1: Upload CSV-file
   // State to store keys from the CSV file
   const [keynames, setKeynames] = useState([]);
@@ -161,6 +166,7 @@ export default function App({ Component, pageProps }) {
   return (
     <Layout>
       <GlobalStyle />
+      <SWRConfig value={{ fetcher }}>
       <Component
         {...pageProps}
         keynames={keynames}
@@ -184,6 +190,7 @@ export default function App({ Component, pageProps }) {
         currentStep={currentStep}
         clickedSteps={clickedSteps}
       />
+      </SWRConfig>
     </Layout>
   );
 }
