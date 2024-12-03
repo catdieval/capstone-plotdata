@@ -6,6 +6,7 @@ import {
   StepperContainer,
   StyledList,
   SingleStepContainer,
+  StyledNav
 } from "./styledNavigation";
 import { arrayOfSteps } from "../../lib/arrayOfSteps";
 import { useRouter } from "next/router";
@@ -99,7 +100,7 @@ export default function Navigation({
 
   return (
     <StepperContainer>
-      <nav>
+      <StyledNav>
         <ButtonContainer>
           <Button $variant="back" onClick={handleBackStartPage}>
             Home
@@ -151,7 +152,7 @@ export default function Navigation({
             <Button $variant="plot" onClick={handlePlotNavigation} disabled={handleDisablePlotButton()}>Plot</Button>
           )}
         </ButtonContainer>
-      </nav>
+      </StyledNav>
     </StepperContainer>
   );
 }
