@@ -1,11 +1,12 @@
 import StepItem from "../StepItem";
 import Button from "../Button";
-import AllSteps from "../AllSteps";
+import OneStepAtATime from "../OneStepAtATime";
 import {
   ButtonContainer,
   StepperContainer,
   StyledList,
   SingleStepContainer,
+  StyledNav
 } from "./styledNavigation";
 import { arrayOfSteps } from "../../lib/arrayOfSteps";
 import { useRouter } from "next/router";
@@ -13,7 +14,7 @@ import { useRouter } from "next/router";
 export default function Navigation({
   onNext,
   onBack,
-  onStepChange,
+  onClickStepper,
   currentStep,
   clickedSteps,
   fileObject,
@@ -34,18 +35,50 @@ export default function Navigation({
 }) {
   const router = useRouter();
 
-  //Destructuring id from arrayOfSteps corresponding to step 6.
+  // Destructuring id from arrayOfSteps corresponding to step 6.
   const { id } = arrayOfSteps[5];
+  const idStep6 = id;
 
+  // This function redirects the user to the page with the chart
   function handlePlotNavigation() {
     router.push("/plot");
   }
 
+  // This function redirects the user to the startpage
   function handleBackStartPage() {
     router.push("/");
   }
 
-  function handleDisabledButton() {
+  const hasNotEnteredMarkerProperties = (!settings.markerColor || !settings.markerSymbol || !settings.markerSize);
+  const hasNotEnteredLineProperties = (!settings.lineColor || !settings.lineStyle || !settings.lineWidth);
+
+  const hasNotEnteredInputsStep6 = (
+    ((clickedChartType === "bar-plot" && !settings.barColor) || 
+     (clickedChartType === "scatter-plot" && hasNotEnteredMarkerProperties) ||
+     (clickedChartType === "line-plot" && hasNotEnteredLineProperties) || 
+     (clickedChartType === "line-markers-plot" && (hasNotEnteredLineProperties || hasNotEnteredMarkerProperties))) ||
+    (!settings.gridXAxis || (settings.gridXAxis === "true" && !settings.gridLineStyleXAxis)) || 
+    (!settings.gridYAxis || (settings.gridYAxis === "true" && !settings.gridLineStyleYAxis)) ||
+    (!settings.rangeXAxis || (settings.rangeXAxis === "min max" && (!settings.minXAxis || !settings.maxXAxis))) || 
+    (!settings.rangeYAxis || (settings.rangeYAxis === "min max" && (!settings.minYAxis || !settings.maxYAxis))) ||
+    !settings.logXAxis ||
+    !settings.logYAxis
+  );
+
+  const hasForgottenInputForReplotting = (
+    ((clickedChartType === "bar-plot" && !settings.barColor) || 
+    (clickedChartType === "scatter-plot" && hasNotEnteredMarkerProperties) ||
+    (clickedChartType === "line-plot" && hasNotEnteredLineProperties) || 
+    (clickedChartType === "line-markers-plot" && (hasNotEnteredLineProperties || hasNotEnteredMarkerProperties))) ||
+    (settings.gridXAxis === "true" && !settings.gridLineStyleXAxis) || 
+    (settings.gridYAxis === "true" && !settings.gridLineStyleYAxis) ||
+    (settings.rangeXAxis === "min max" && (!settings.minXAxis || !settings.maxXAxis)) || 
+    (settings.rangeYAxis === "min max" && (!settings.minYAxis || !settings.maxYAxis)) 
+  );
+
+  /* This function serves to disable the "Next" button if the user has not made all inputs for the
+  current step */
+  function handleDisableNextButton() {
     if (currentStep === 1) {
       return !fileObject;
     } else if (currentStep === 2) {
@@ -57,20 +90,17 @@ export default function Navigation({
     } else if (currentStep === 5) {
       return settings.titleLabel.length === 0;
     } else if (currentStep === 6) {
-      return !(
-        settings.gridXAxis &&
-        settings.gridYAxis &&
-        settings.rangeXAxis &&
-        settings.rangeYAxis &&
-        settings.logXAxis &&
-        settings.logYAxis
-      );
+      return hasNotEnteredInputsStep6;
     }
+  } 
+
+  function handleDisablePlotButton() {
+    return hasForgottenInputForReplotting;
   }
 
   return (
     <StepperContainer>
-      <nav>
+      <StyledNav>
         <ButtonContainer>
           <Button $variant="back" onClick={handleBackStartPage}>
             Home
@@ -86,13 +116,16 @@ export default function Navigation({
                   buttonNumber={id}
                   id={id}
                   currentStep={currentStep}
-                  onStepChange={() => onStepChange(id)}
+                  onClickStepper={() => onClickStepper(id)}
                   clickedSteps={clickedSteps}
                 />
               </SingleStepContainer>
-              <AllSteps
+              <OneStepAtATime
                 currentStep={currentStep}
                 id={id}
+                onDisableNextButton={handleDisableNextButton()}
+                onNext={onNext}
+                onBack={onBack}
                 keynames={keynames}
                 fileObject={fileObject}
                 onUploadFile={onUploadFile}
@@ -109,37 +142,17 @@ export default function Navigation({
                 settings={settings}
                 onSettingsChange={onSettingsChange}
               />
-              <ButtonContainer>
-                {
-                  //The currentStep > 1 && currentStep === id condition is used to show the "Back" button only when the user has reached Step 2 to Step 6 and when currentStep === id.
-                }
-                {currentStep > 1 && currentStep === id ? (
-                  <Button $variant="back" onClick={onBack}>
-                    Back
-                  </Button>
-                ) : null}
-                {
-                  // The currentStep === id condition is used to show the "Next" button only when the condition is true.
-                }
-                {currentStep === id && (
-                  <Button
-                    $variant="next"
-                    onClick={onNext}
-                    disabled={handleDisabledButton()}
-                  >
-                    {currentStep === arrayOfSteps.length ? "Finish" : "Next"}
-                  </Button>
-                )}
-              </ButtonContainer>
             </StyledList>
           );
         })}
         <ButtonContainer>
-          {clickedSteps.includes(id) && (
-            <Button onClick={handlePlotNavigation}>Plot</Button>
+          { /* The "Plot" button is displayed only if the user has clicked the "Next" button 
+            for step 6 */
+          clickedSteps.includes(idStep6) && (
+            <Button $variant="plot" onClick={handlePlotNavigation} disabled={handleDisablePlotButton()}>Plot</Button>
           )}
         </ButtonContainer>
-      </nav>
+      </StyledNav>
     </StepperContainer>
   );
 }

@@ -6,13 +6,13 @@ import { useRouter } from "next/router";
 export default function Plot({
   xVariable,
   yVariable,
-  hasCompletedAllSteps,
   settings,
   onSettingsChange,
   clickedChartType,
 }) {
   const router = useRouter();
 
+  // This function serves to redirect the user to the page with the steps
   function handleBackSteps() {
     router.push("/steps");
   }
@@ -24,7 +24,6 @@ export default function Plot({
         xVariable={xVariable}
         yVariable={yVariable}
         settings={settings}
-        hasCompletedAllSteps={hasCompletedAllSteps}
         onSettingsChange={onSettingsChange}
       />
       <Container $centered="center" $margin>

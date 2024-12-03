@@ -9,15 +9,11 @@ import {
 } from "../../lib/listOfMarkerProperties";
 
 export default function MarkerProperties({ onSettingsChange }) {
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
 
   return (
     <>
       <Container $centered="center" $gap $margin>
         <StyledH3>Marker properties</StyledH3>
-        <form onSubmit={handleSubmit}>
           <Paragraph>Marker color:</Paragraph>
           <DropDownMenu
             nameString="markerColor"
@@ -35,8 +31,7 @@ export default function MarkerProperties({ onSettingsChange }) {
             nameString="markerSize"
             onChange={onSettingsChange}
             arrayOfOptions={markerSizeArray}
-          />
-        </form>
+          /> 
       </Container>
     </>
   );

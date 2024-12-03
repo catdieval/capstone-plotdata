@@ -20,6 +20,7 @@ export default function InputTypeRadio({
         id={idString}
         onChange={onChange}
         checked={checked()}
+        required
       />
       <StyledLabel htmlFor={idString}>{labelString}</StyledLabel>
     </RadioButton>

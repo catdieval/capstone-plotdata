@@ -26,3 +26,9 @@ export const SingleStepContainer = styled.section`
 export const StyledList = styled.li`
   list-style-type: none;
 `;
+
+export const StyledNav= styled.nav`
+display: flex;
+flex-direction: column;
+gap: 1.4rem;
+`;
