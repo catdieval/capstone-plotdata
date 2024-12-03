@@ -20,6 +20,7 @@ export default createGlobalStyle`
     --secondary-color:#00bfff;
     --neutral-color:#F8F8F8;
     --info-color: #f9e154; 
+    --disabled-color:#c9c9c9;
   }
 
   body {

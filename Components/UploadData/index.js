@@ -1,16 +1,9 @@
-import Heading from "../Heading";
 import { Card } from "../Card/card.styled";
 import Paragraph from "../Paragraph";
 import Container from "../Container";
 import FileUploader from "../FileUploader";
-import InputTypeSubmit from "../InputTypeSubmit";
 
-export default function UploadData({
-  fileObject,
-  onUploadFile,
-  onConversion,
-  hasClickedGetStarted,
-}) {
+export default function UploadData({ fileObject, onUploadFile }) {
   // Name of file
   const fileName = fileObject?.name;
 
@@ -20,44 +13,28 @@ export default function UploadData({
 
   return (
     <>
-      {hasClickedGetStarted && (
-        <>
-          <Heading>Step 1: Upload a CSV file</Heading>
-          <Card>
-            <Paragraph $variant="bold">Requirements:</Paragraph>
-            <Paragraph $variant="start">
-              <span> ✔ </span> The file should have a maximum size of 4GB.
-            </Paragraph>
-            <Paragraph $variant="start">
-              <span> ✔ </span> The file should have a header.
-            </Paragraph>
-            <Paragraph $variant="start">
-              <span> ✔ </span>The file should be comma-delimited and the decimal
-              separator for numbers should be a period (.).
-            </Paragraph>
-            <Paragraph $variant="start">
-              <span> ✔ </span> If the file contains missing values, then replace
-              these values in the file by null.
-            </Paragraph>
-          </Card>
-          <form onSubmit={handleSubmit}>
-            <Container $centered="center" $margin>
-              <FileUploader onUploadFile={onUploadFile} />
-              {fileName ? (
-                <p>Uploaded file: {fileName}</p>
-              ) : (
-                <p>No file chosen</p>
-              )}
-              <InputTypeSubmit
-                $nomargin
-                value="Next"
-                onClick={onConversion}
-                disabled={fileObject === null || fileObject === undefined}
-              />
-            </Container>
-          </form>
-        </>
-      )}
+      <Card>
+        <Paragraph $variant="bold">Requirements:</Paragraph>
+        <Paragraph $variant="start">
+          <span> ✔ </span> The file should have a header and a maximum size of
+          4GB.
+        </Paragraph>
+        <Paragraph $variant="start">
+          <span> ✔ </span>The file should be comma-delimited and the decimal
+          separator for numbers should be a period (.).
+        </Paragraph>
+        <Paragraph $variant="start">
+          <span> ✔ </span> If the file contains missing values, then replace
+          these values in the file by null.
+        </Paragraph>
+      </Card>
+
+      <form onSubmit={handleSubmit}>
+        <Container $centered="center">
+          <FileUploader onUploadFile={onUploadFile} />
+          {fileName ? <p>Uploaded file: {fileName}</p> : <p>No file chosen</p>}
+        </Container>
+      </form>
     </>
   );
 }

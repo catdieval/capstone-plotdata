@@ -1,98 +1,57 @@
-import StartPage from "../Components/StartPage";
-import UploadData from "../Components/UploadData";
-import ListOfCharts from "../Components/ListOfCharts";
-import Plotting from "../Components/Plotting";
-import XandYLabelsGraph from "../Components/XandYLabelsGraph";
-import ChooseVariables from "../Components/ChooseVariables";
-import GraphTitle from "../Components/GraphTitle";
-import PlottingProperties from "../Components/PlottingProperties";
+import Paragraph from "../Components/Paragraph";
+import UnorderedList from "../Components/UnorderedList";
+import Button from "../Components/Button";
+import ImageContainer from "../Components/ImageContainer";
+import Heading from "../Components/Heading";
+import Container from "../Components/Container";
+import Image from "next/image";
+import { arrayOfSteps, arrayOfActions } from "../lib/listOfBulletPoints";
+import { examplePlotsArray } from "../lib/examplePlotsArray";
+import { useRouter } from "next/router";
 
-export default function HomePage({
-  hasClickedGetStarted,
-  onGetStarted,
-  keynames,
-  fileObject,
-  onUploadFile,
-  onConversion,
-  clickedChartType,
-  onSelectChartType,
-  xVariable,
-  yVariable,
-  onXChange,
-  onYChange,
-  xKey,
-  yKey,
-  onAssignVariables,
-  settings,
-  onSettingsChange,
-  hasCompletedStep4,
-  onHasCompletedStep4,
-  onHasCompletedStep5,
-  hasCompletedStep5,
-  hasCompletedDistributionProperties,
-  onHasCompletedDistributionProperties,
-  onHasCompletedStep6,
-  hasCompletedStep6,
-}) {
+export default function StartPage() {
+  const router = useRouter();
+
+  function handleGetStarted() {
+    router.push("/steps");
+  }
+
   return (
-    <div>
-      <StartPage onGetStarted={onGetStarted} />
-      <UploadData
-        fileObject={fileObject}
-        onUploadFile={onUploadFile}
-        onConversion={onConversion}
-        hasClickedGetStarted={hasClickedGetStarted}
-      />
-      <ListOfCharts
-        onSelectChartType={onSelectChartType}
-        keynames={keynames}
-        clickedChartType={clickedChartType}
-      />
-      <ChooseVariables
-        keynames={keynames}
-        clickedChartType={clickedChartType}
-        onAssignVariables={onAssignVariables}
-        onXChange={onXChange}
-        onYChange={onYChange}
-        xKey={xKey}
-        yKey={yKey}
-      />
-      <XandYLabelsGraph
-        xKey={xKey}
-        yKey={yKey}
-        xVariable={xVariable}
-        yVariable={yVariable}
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-        onHasCompletedStep4={onHasCompletedStep4}
-      />
-      <GraphTitle
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-        hasCompletedStep4={hasCompletedStep4}
-        onHasCompletedStep5={onHasCompletedStep5}
-      />
-      <PlottingProperties
-        clickedChartType={clickedChartType}
-        hasCompletedStep5={hasCompletedStep5}
-        onHasCompletedDistributionProperties={
-          onHasCompletedDistributionProperties
-        }
-        hasCompletedDistributionProperties={hasCompletedDistributionProperties}
-        onHasCompletedStep6={onHasCompletedStep6}
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-      />
-      <Plotting
-        clickedChartType={clickedChartType}
-        xVariable={xVariable}
-        yVariable={yVariable}
-        hasCompletedStep4={hasCompletedStep4}
-        hasCompletedStep5={hasCompletedStep5}
-        hasCompletedStep6={hasCompletedStep6}
-        settings={settings}
-        onSettingsChange={onSettingsChange}
-      />
-    </div>
+    <>
+      <Paragraph>
+        With PlotData you can easily make customisable publication-quality
+        charts, all without programming skills.
+      </Paragraph>
+      <Container $wrap="wrap" $gap>
+        {examplePlotsArray.map((item) => {
+          return (
+            <ImageContainer key={item.name}>
+              <Image src={item.path} height={250} width={300} alt={item.name} />
+            </ImageContainer>
+          );
+        })}
+      </Container>
+      <Heading>Overview:</Heading>
+      <Container $centered="center">
+        <UnorderedList $arrayOfBulletPoints={arrayOfSteps} />
+      </Container>
+      <Paragraph>
+        Et voila! An interactive chart gets generated, with the help of the
+        <br />
+        <a href="https://plotly.com/javascript/basic-charts/" target="_blank">
+          Plotly JavaScript library
+        </a>
+        .
+      </Paragraph>
+      <Container $centered="center">
+        <UnorderedList $arrayOfBulletPoints={arrayOfActions} />
+        <Paragraph>
+          You can find <a href="https://catdieval.github.io/" target="_blank">here</a> a CSV file for testing the process.
+        </Paragraph>
+        <Container $centered="center" $margin $margin_bottom>
+          <Button onClick={handleGetStarted}>Get started</Button>
+        </Container>
+      </Container>
+    </>
   );
 }
